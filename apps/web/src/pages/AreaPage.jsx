@@ -12,6 +12,7 @@ import { AREAS, getArea, getAreaGradient } from '@/data/hub';
 import { useAuth } from '@/contexts/AuthContext';
 import { useIntegratedAi } from '@/hooks/use-integrated-ai';
 import { pocketbaseClient } from '@/lib/pocketbaseClient';
+import { toast } from '@/hooks/use-toast';
 
 const emptyForm = {
     empresa: '',
@@ -25,13 +26,28 @@ const emptyForm = {
 export default function AreaPage() {
     const { areaId } = useParams();
     const area = getArea(areaId);
-    const { isAuthed } = useAuth();
+    const { isAuthed, user, requestVerification } = useAuth();
     const [subdivision, setSubdivision] = useState(null);
     const [form, setForm] = useState(emptyForm);
     const [submitted, setSubmitted] = useState(false);
+    const [resending, setResending] = useState(false);
     const { messages, isStreaming, sendMessage } = useIntegratedAi();
     const g = getAreaGradient(areaId);
     const savedRef = useRef(false);
+    const needsVerification = isAuthed && user && !user.verified;
+
+    const handleResendVerification = async () => {
+        if (!user?.email || resending) return;
+        setResending(true);
+        try {
+            await requestVerification(user.email);
+            toast({ title: 'E-mail enviado', description: 'Confira sua caixa de entrada para confirmar o e-mail.' });
+        } catch {
+            toast({ variant: 'destructive', title: 'Erro', description: 'Não foi possível reenviar o e-mail. Tente novamente em instantes.' });
+        } finally {
+            setResending(false);
+        }
+    };
 
     const preview = useMemo(() => {
         const assistants = messages.filter((m) => m.role === 'assistant' && m.content);
@@ -198,9 +214,24 @@ export default function AreaPage() {
                                                     </p>
                                                 )}
 
+                                                {needsVerification && (
+                                                    <div className="rounded-xl border border-white/10 bg-white/5 p-4 text-sm text-[hsl(var(--muted-foreground))]">
+                                                        <p>Confirme seu e-mail para gerar a prévia com IA. Não recebeu?</p>
+                                                        <button
+                                                            type="button"
+                                                            onClick={handleResendVerification}
+                                                            disabled={resending}
+                                                            className="mt-2 inline-flex items-center gap-2 font-semibold text-gradient-orange-pink disabled:opacity-60"
+                                                        >
+                                                            {resending ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : null}
+                                                            {resending ? 'Enviando…' : 'Reenviar e-mail de confirmação'}
+                                                        </button>
+                                                    </div>
+                                                )}
+
                                                 <button
                                                     type="submit"
-                                                    disabled={isStreaming || !form.problema.trim()}
+                                                    disabled={isStreaming || !form.problema.trim() || needsVerification}
                                                     className="group mt-2 inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-aurora px-5 py-3 font-semibold text-white shadow-3d transition-transform hover:brightness-110 active:scale-[0.98] disabled:opacity-60"
                                                 >
                                                     {isStreaming ? <Loader2 className="h-4 w-4 animate-spin" /> : <Sparkles className="h-4 w-4" />}
