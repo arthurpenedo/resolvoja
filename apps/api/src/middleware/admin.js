@@ -23,7 +23,8 @@ export default async function adminMiddleware(req, res, next) {
         const email = data?.record?.email;
         if (!email) return unauthorized();
 
-        if (ADMIN_EMAILS.length > 0 && !ADMIN_EMAILS.includes(email)) return forbidden();
+        // Fail closed: with no ADMIN_EMAILS configured, nobody is admin
+        if (!ADMIN_EMAILS.includes(email)) return forbidden();
 
         req.user = { id: data.record.id, email };
     } catch {
