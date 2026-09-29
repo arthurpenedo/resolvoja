@@ -214,12 +214,45 @@ export async function stream({ userId, systemPrompt, userMessage }) {
 
 	streamFromAnthropic({ userId, systemPrompt, userMessage, anthropicMessages, passThrough }).catch((error) => {
 		logger.error('Failed to stream from Anthropic', error);
-		passThrough.write(`data: ${JSON.stringify({ type: SSEEventType.Error, data: { content: error.message } })}\n\n`);
+		passThrough.write(`data: ${JSON.stringify({ type: SSEEventType.Error, data: toClientError(error) })}\n\n`);
 	}).finally(() => {
 		passThrough.end(`data: ${JSON.stringify({ type: SSEEventType.Completed, data: { content: '[COMPLETED]' } })}\n\n`);
 	});
 
 	return passThrough;
+}
+
+export const AiErrorCode = Object.freeze({
+	Unavailable: 'ai_unavailable',
+	RateLimited: 'ai_rate_limited',
+	Refused: 'ai_refused',
+});
+
+class PreviewRefusedError extends Error {}
+
+/**
+ * Maps an Anthropic/SDK failure to a message that is safe to show to the visitor.
+ * Configuration problems (invalid key, no credits) and outages never leak raw API text.
+ *
+ * @param {unknown} error
+ * @returns {{ content: string, code: string }}
+ */
+export function toClientError(error) {
+	if (error instanceof PreviewRefusedError) {
+		return { code: AiErrorCode.Refused, content: error.message };
+	}
+
+	if (error instanceof Anthropic.RateLimitError) {
+		return {
+			code: AiErrorCode.RateLimited,
+			content: 'Muitas prévias sendo geradas agora. Seu pedido foi registrado; tente gerar a prévia de novo em alguns minutos.',
+		};
+	}
+
+	return {
+		code: AiErrorCode.Unavailable,
+		content: 'A prévia instantânea está indisponível no momento. Seu pedido foi registrado e nossa equipe responde por e-mail.',
+	};
 }
 
 /**
@@ -250,7 +283,7 @@ async function streamFromAnthropic({ userId, systemPrompt, userMessage, anthropi
 	const finalMessage = await anthropicStream.finalMessage();
 
 	if (finalMessage.stop_reason === 'refusal') {
-		throw new Error('A IA recusou gerar esta prévia. Tente reformular o problema descrito.');
+		throw new PreviewRefusedError('A IA recusou gerar esta prévia. Tente reformular o problema descrito.');
 	}
 
 	await saveMessages({ userId, messages: [

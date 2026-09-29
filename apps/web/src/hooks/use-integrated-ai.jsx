@@ -226,6 +226,7 @@ function mapAssistantMessages({ message }) {
 function useIntegratedAi() {
 	const [messages, setMessages] = useState([]);
 	const [isStreaming, setIsStreaming] = useState(false);
+	const [error, setError] = useState(null);
 	const [isLoadingHistory, setIsLoadingHistory] = useState(true);
 	const abortControllerRef = useRef(null);
 	const turnIdRef = useRef(0);
@@ -337,6 +338,7 @@ function useIntegratedAi() {
 
 	const sendMessage = useCallback(async (userMessage, images = []) => {
 		setIsStreaming(true);
+		setError(null);
 		turnIdRef.current += 1;
 
 		setMessages(prev => [
@@ -398,7 +400,9 @@ function useIntegratedAi() {
 					const parsed = JSON.parse(eventData);
 
 					if (parsed.type === SSEEventType.Error) {
-						throw new Error(parsed.data.content);
+						const streamError = new Error(parsed.data.content);
+						streamError.code = parsed.data.code;
+						throw streamError;
 					}
 
 					if (parsed.type === SSEEventType.Completed) {
@@ -424,9 +428,11 @@ function useIntegratedAi() {
 				return;
 			}
 
+			setError({ message: err.message, code: err.code ?? null });
+
 			toast({
 				variant: 'destructive',
-				title: 'Erro',
+				title: err.code ? 'Prévia indisponível' : 'Erro',
 				description: err.message,
 			});
 
@@ -455,6 +461,7 @@ function useIntegratedAi() {
 		messages,
 		isStreaming,
 		isLoadingHistory,
+		error,
 		sendMessage,
 		clearMessages,
 	};

@@ -2,7 +2,7 @@ import React, { useMemo, useRef, useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { Link, Navigate, useParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft, ArrowRight, Loader2, Sparkles, Wand2 } from 'lucide-react';
+import { ArrowLeft, ArrowRight, CheckCircle2, Loader2, Sparkles, Wand2 } from 'lucide-react';
 import Reveal from '@/components/Reveal';
 import AuroraBackground from '@/components/AuroraBackground';
 import SiteHeader from '@/components/SiteHeader';
@@ -31,7 +31,8 @@ export default function AreaPage() {
     const [form, setForm] = useState(emptyForm);
     const [submitted, setSubmitted] = useState(false);
     const [resending, setResending] = useState(false);
-    const { messages, isStreaming, sendMessage } = useIntegratedAi();
+    const [briefingSaved, setBriefingSaved] = useState(null);
+    const { messages, isStreaming, sendMessage, error: aiError } = useIntegratedAi();
     const g = getAreaGradient(areaId);
     const savedRef = useRef(false);
     const needsVerification = isAuthed && user && !user.verified;
@@ -56,10 +57,12 @@ export default function AreaPage() {
 
     useEffect(() => {
         savedRef.current = false;
+        setBriefingSaved(null);
     }, [subdivision]);
 
+    // Salva o briefing mesmo quando a IA falha: o pedido chega ao painel admin e o lead não se perde.
     useEffect(() => {
-        if (!submitted || isStreaming || !preview || savedRef.current || !isAuthed) return;
+        if (!submitted || isStreaming || !(preview || aiError) || savedRef.current || !isAuthed) return;
         savedRef.current = true;
         pocketbaseClient.collection('briefings').create({
             userId: pocketbaseClient.authStore.model?.id,
@@ -72,10 +75,12 @@ export default function AreaPage() {
             problema: form.problema,
             tentativas: form.tentativas,
             objetivo: form.objetivo,
-            preview,
+            preview: preview || '',
             status: 'aguardando',
-        }).catch(() => {});
-    }, [submitted, isStreaming, preview]);
+        })
+            .then(() => setBriefingSaved(true))
+            .catch(() => setBriefingSaved(false));
+    }, [submitted, isStreaming, preview, aiError]);
 
     if (!area) return <Navigate to="/" replace />;
 
@@ -84,6 +89,8 @@ export default function AreaPage() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (!form.problema.trim() || isStreaming) return;
+        savedRef.current = false;
+        setBriefingSaved(null);
         setSubmitted(true);
         await sendMessage(
             `ÁREA: ${area.name}\nSUBDIVISÃO: ${subdivision}\nEmpresa: ${form.empresa || 'não informado'}\nSetor: ${form.setor || 'não informado'}\nPorte: ${form.porte}\nProblema: ${form.problema}\nJá tentou: ${form.tentativas || 'nada relevante'}\nObjetivo em 90 dias: ${form.objetivo || 'não informado'}\n\nGere a prévia da solução seguindo a estrutura definida.`,
@@ -263,13 +270,28 @@ export default function AreaPage() {
                                                                         <Loader2 className="h-4 w-4 animate-spin text-[hsl(var(--primary))]" />
                                                                         A IA está montando o diagnóstico…
                                                                     </>
+                                                                ) : aiError ? (
+                                                                    <div className="flex items-start gap-3">
+                                                                        <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-400" />
+                                                                        <div>
+                                                                            <p className="font-semibold text-foreground">
+                                                                                {briefingSaved === true && 'Recebemos seu pedido!'}
+                                                                                {briefingSaved === false && 'Não foi possível gerar a prévia agora.'}
+                                                                                {briefingSaved === null && 'Registrando seu pedido…'}
+                                                                            </p>
+                                                                            {briefingSaved === true && <p className="mt-1">{aiError.message}</p>}
+                                                                            {briefingSaved === false && (
+                                                                                <p className="mt-1">Também não conseguimos registrar seu pedido. Tente novamente em alguns minutos.</p>
+                                                                            )}
+                                                                        </div>
+                                                                    </div>
                                                                 ) : (
                                                                     'Nenhuma prévia ainda. Verifique se você está logado e com e-mail confirmado, e tente novamente.'
                                                                 )}
                                                             </div>
                                                         )}
 
-                                                        {preview && !isStreaming && (
+                                                        {(preview || (aiError && briefingSaved)) && !isStreaming && (
                                                             <motion.div
                                                                 initial={{ opacity: 0, y: 12 }}
                                                                 animate={{ opacity: 1, y: 0 }}
