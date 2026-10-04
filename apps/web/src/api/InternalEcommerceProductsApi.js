@@ -36,14 +36,17 @@ export async function getOneTimeProducts() {
  *   });
  *   window.location = url;
  *
- * @param {{ priceId: string, successUrl: string, cancelUrl: string }} params
+ * `area` and `subdivision` identify the problem being bought, so the order can deliver
+ * the matching Kit de Arranque.
+ *
+ * @param {{ priceId: string, successUrl: string, cancelUrl: string, area?: string, subdivision?: string }} params
  * @returns {Promise<{ url: string }>}
  */
-export async function createOneTimeCheckout({ priceId, successUrl, cancelUrl }) {
+export async function createOneTimeCheckout({ priceId, successUrl, cancelUrl, area, subdivision }) {
 	const response = await apiServerClient.fetch('/ecommerce/products/checkout', {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json', ...authHeader() },
-		body: JSON.stringify({ priceId, successUrl, cancelUrl }),
+		body: JSON.stringify({ priceId, successUrl, cancelUrl, area, subdivision }),
 	});
 	if (!response.ok) {
 		let body = null;
@@ -58,7 +61,7 @@ export async function createOneTimeCheckout({ priceId, successUrl, cancelUrl }) 
  * records the order, so the success page can show what was purchased.
  *
  * @param {{ sessionId: string }} params
- * @returns {Promise<{ order: { id: string, productTitle: string, amountFormatted: string } }>}
+ * @returns {Promise<{ order: { id: string, productTitle: string, amountFormatted: string, area: string, subdivision: string, kit: { title: string } | null } }>}
  */
 export async function confirmOneTimeOrder({ sessionId }) {
 	const response = await apiServerClient.fetch('/ecommerce/products/confirm', {
@@ -72,4 +75,43 @@ export async function confirmOneTimeOrder({ sessionId }) {
 		throw new Error(body?.message ?? `Failed to confirm order: ${response.status}`);
 	}
 	return response.json();
+}
+
+/**
+ * GET `/ecommerce/products/orders` — the user's paid orders, each with its Kit de Arranque (if any).
+ *
+ * @returns {Promise<{ orders: Array<{ id: string, productTitle: string, amountFormatted: string, area: string, subdivision: string, kit: { title: string } | null, created: string }> }>}
+ */
+export async function getMyOrders() {
+	const response = await apiServerClient.fetch('/ecommerce/products/orders', { headers: authHeader() });
+	if (!response.ok) {
+		throw new Error(`Failed to fetch orders: ${response.status}`);
+	}
+	return response.json();
+}
+
+/**
+ * GET `/ecommerce/products/orders/:orderId/kit` — downloads the order's Kit de Arranque
+ * (.xlsx). The endpoint needs the auth header, so the file is fetched as a blob and saved
+ * through a temporary link instead of a plain `<a href>`.
+ *
+ * @param {{ orderId: string }} params
+ */
+export async function downloadOrderKit({ orderId }) {
+	const response = await apiServerClient.fetch(`/ecommerce/products/orders/${encodeURIComponent(orderId)}/kit`, {
+		headers: authHeader(),
+	});
+	if (!response.ok) {
+		throw new Error(`Failed to download kit: ${response.status}`);
+	}
+	const disposition = response.headers.get('Content-Disposition') ?? '';
+	const filename = /filename="?([^";]+)"?/.exec(disposition)?.[1] ?? 'kit-de-arranque.xlsx';
+	const url = URL.createObjectURL(await response.blob());
+	const link = document.createElement('a');
+	link.href = url;
+	link.download = filename;
+	document.body.appendChild(link);
+	link.click();
+	link.remove();
+	URL.revokeObjectURL(url);
 }

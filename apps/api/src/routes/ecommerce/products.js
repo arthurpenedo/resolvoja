@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { createOneTimeCheckoutSession, confirmOneTimeOrder } from '../../api/ecommerce-products.js';
+import { createOneTimeCheckoutSession, confirmOneTimeOrder, listUserOrders, getOrderKit } from '../../api/ecommerce-products.js';
 
 const router = Router();
 
@@ -32,7 +32,7 @@ function getUserIdFromRequest(req) {
  * Creates a Stripe Checkout session (one-time payment) for the resolved user and returns its URL.
  */
 router.post('/checkout', async (req, res) => {
-	const { priceId, successUrl, cancelUrl } = req.body;
+	const { priceId, successUrl, cancelUrl, area, subdivision } = req.body;
 	const userId = getUserIdFromRequest(req);
 
 	if (!userId) {
@@ -48,6 +48,8 @@ router.post('/checkout', async (req, res) => {
 		priceId: priceId.trim(),
 		successUrl: successUrl.trim(),
 		cancelUrl: cancelUrl.trim(),
+		area,
+		subdivision,
 	});
 
 	return res.json({ url });
@@ -71,6 +73,36 @@ router.post('/confirm', async (req, res) => {
 	const order = await confirmOneTimeOrder({ userId, sessionId: sessionId.trim() });
 
 	return res.json({ order });
+});
+
+/**
+ * Lists the authenticated user's paid orders, each with its Kit de Arranque (if any).
+ */
+router.get('/orders', async (req, res) => {
+	const userId = getUserIdFromRequest(req);
+
+	if (!userId) {
+		throw new Error('User ID is required');
+	}
+
+	const orders = await listUserOrders({ userId });
+
+	return res.json({ orders });
+});
+
+/**
+ * Downloads the Kit de Arranque spreadsheet of an order owned by the authenticated user.
+ */
+router.get('/orders/:orderId/kit', async (req, res) => {
+	const userId = getUserIdFromRequest(req);
+
+	if (!userId) {
+		throw new Error('User ID is required');
+	}
+
+	const kit = await getOrderKit({ userId, orderId: req.params.orderId });
+
+	return res.download(kit.filePath, kit.filename);
 });
 
 export default router;

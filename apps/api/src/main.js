@@ -40,6 +40,7 @@ app.use(cors({
 	origin: process.env.CORS_ORIGIN || false, // deny cors when unset (on purpose)
 	methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS', 'QUERY'],
 	allowedHeaders: ['Authorization', 'Content-Type'],
+	exposedHeaders: ['Content-Disposition'], // nome do arquivo no download do Kit de Arranque
 }));
 app.use(morgan('combined'));
 app.use(globalRateLimit);

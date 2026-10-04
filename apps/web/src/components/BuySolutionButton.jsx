@@ -28,6 +28,8 @@ export default function BuySolutionButton({ context, className }) {
                 priceId: product.priceId,
                 successUrl: `${window.location.origin}/consultoria/obrigado?session_id={CHECKOUT_SESSION_ID}`,
                 cancelUrl: window.location.href,
+                area: context?.area,
+                subdivision: context?.subdivision,
             });
             sessionStorage.setItem('ultimaSolucao', JSON.stringify(context ?? {}));
             window.location = url;

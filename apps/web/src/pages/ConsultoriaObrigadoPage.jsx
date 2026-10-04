@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import { confirmOneTimeOrder } from '@/api/InternalEcommerceProductsApi';
+import KitDownloadButton from '@/components/KitDownloadButton';
 
 /**
  * Post-checkout landing for the Consultoria (one-time) purchase. Stripe redirects here
@@ -48,9 +49,21 @@ export default function ConsultoriaObrigadoPage() {
 					<>
 						<h1 className="font-display text-3xl font-semibold">Compra confirmada!</h1>
 						<p className="mt-4 text-[hsl(var(--muted-foreground))]">
-							{order ? `Pagamento de ${order.amountFormatted} confirmado para ${order.productTitle}.` : 'Pagamento confirmado.'}
-							{' '}Nossa equipe vai entrar em contato em breve.
+							{order ? `Pagamento de ${order.amountFormatted} confirmado para ${order.productTitle}${order.subdivision ? ` (${order.subdivision})` : ''}.` : 'Pagamento confirmado.'}
+							{' '}Nossa equipe vai entrar em contato em breve para montar a solução completa.
 						</p>
+						{order?.kit && (
+							<div className="mt-8 rounded-2xl border border-[hsl(var(--primary)/0.4)] bg-[hsl(var(--primary)/0.08)] p-6 text-left">
+								<p className="font-semibold">Comece agora: seu Kit de Arranque está pronto</p>
+								<p className="mt-2 text-sm text-[hsl(var(--muted-foreground))]">
+									Uma planilha pronta para usar enquanto preparamos a sua solução completa, com passo a passo, fórmulas e painel.
+									Abre no Excel, no Google Sheets e no LibreOffice. Ela também fica disponível no seu painel.
+								</p>
+								<div className="mt-4">
+									<KitDownloadButton orderId={order.id} />
+								</div>
+							</div>
+						)}
 						<Link to="/painel" className="mt-8 inline-block rounded-md bg-primary text-primary-foreground px-4 py-2 font-medium hover:bg-primary/90">
 							Ir para meu painel
 						</Link>

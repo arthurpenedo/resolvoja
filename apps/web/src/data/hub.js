@@ -82,6 +82,12 @@ export const AREAS = [
     },
 ];
 
+// Subdivisões que já têm Kit de Arranque (planilha entregue na hora da compra).
+// Manter em sincronia com apps/api/src/constants/kits.js.
+export const KIT_SUBDIVISIONS = new Set(['Controle de estoque', 'Gestão de estoque', 'Gestão de pedidos', 'Controle de vencimentos']);
+
+export const hasKit = (subdivision) => KIT_SUBDIVISIONS.has(subdivision);
+
 export const TOTAL_SOLUTIONS = AREAS.reduce((sum, area) => sum + area.items.length, 0);
 
 export const getArea = (id) => AREAS.find((area) => area.id === id) ?? null;

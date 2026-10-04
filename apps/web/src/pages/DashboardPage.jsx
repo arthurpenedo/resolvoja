@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { Link, useSearchParams } from 'react-router-dom';
-import { ArrowRight, CheckCircle2, Sparkles } from 'lucide-react';
+import { ArrowRight, CheckCircle2, FileSpreadsheet, Sparkles } from 'lucide-react';
 import Reveal from '@/components/Reveal';
 import TiltCard from '@/components/TiltCard';
 import AuroraBackground from '@/components/AuroraBackground';
@@ -11,6 +11,8 @@ import SubscriptionAccountSection from '@/components/SubscriptionAccountSection.
 import { AREAS, getAreaGradient } from '@/data/hub';
 import { useAuth } from '@/contexts/AuthContext';
 import { pocketbaseClient } from '@/lib/pocketbaseClient';
+import { getMyOrders } from '@/api/InternalEcommerceProductsApi';
+import KitDownloadButton from '@/components/KitDownloadButton';
 
 const STATUS_CONFIG = {
     aguardando: { label: 'Em análise', color: 'text-yellow-400 bg-yellow-400/10 border-yellow-400/30' },
@@ -24,6 +26,7 @@ export default function DashboardPage() {
     const justBought = params.get('compra') === '1';
     const [briefings, setBriefings] = useState([]);
     const [briefingsLoading, setBriefingsLoading] = useState(true);
+    const [kitOrders, setKitOrders] = useState([]);
 
     let lastSolution = null;
     try {
@@ -37,6 +40,9 @@ export default function DashboardPage() {
             .then(setBriefings)
             .catch(() => setBriefings([]))
             .finally(() => setBriefingsLoading(false));
+        getMyOrders()
+            .then(({ orders }) => setKitOrders(orders.filter((o) => o.kit)))
+            .catch(() => setKitOrders([]));
     }, []);
 
     return (
@@ -94,6 +100,32 @@ export default function DashboardPage() {
                             </section>
                         </Reveal>
                     </div>
+
+                    {kitOrders.length > 0 && (
+                        <section className="mt-12">
+                            <Reveal>
+                                <h2 className="flex items-center gap-2 font-display text-2xl font-semibold">
+                                    <FileSpreadsheet className="h-5 w-5 text-[hsl(var(--primary))]" /> Meus Kits de Arranque
+                                </h2>
+                                <p className="mt-2 text-sm text-[hsl(var(--muted-foreground))]">
+                                    Planilhas prontas para você começar enquanto a equipe monta a solução completa.
+                                </p>
+                            </Reveal>
+                            <div className="mt-4 divide-y divide-white/10 overflow-hidden rounded-2xl border border-white/10 glass">
+                                {kitOrders.map((o) => (
+                                    <div key={o.id} className="flex flex-wrap items-center justify-between gap-3 px-5 py-4">
+                                        <div className="min-w-0">
+                                            <p className="font-semibold">{o.kit.title}</p>
+                                            <p className="mt-0.5 text-sm text-[hsl(var(--muted-foreground))]">
+                                                {o.subdivision} · comprado em {new Date(o.created).toLocaleDateString('pt-BR')}
+                                            </p>
+                                        </div>
+                                        <KitDownloadButton orderId={o.id} label="Baixar planilha" />
+                                    </div>
+                                ))}
+                            </div>
+                        </section>
+                    )}
 
                     {/* Meus pedidos */}
                     <section className="mt-12">

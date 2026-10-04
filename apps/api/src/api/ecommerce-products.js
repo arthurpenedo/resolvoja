@@ -1,6 +1,13 @@
 import stripeClient from '../utils/stripe.js';
 import pocketbaseClient from '../utils/pocketbaseClient.js';
 import { findOrCreateStripeCustomer, getStoredStripeCustomerId, formatBrl } from './ecommerce-subscriptions.js';
+import { getKit, kitSlugFor } from '../constants/kits.js';
+
+const METADATA_MAX = 200;
+
+function metadataValue(value) {
+	return typeof value === 'string' ? value.trim().slice(0, METADATA_MAX) : '';
+}
 
 /**
  * @typedef {object} EcommerceOneTimeProduct
@@ -46,10 +53,14 @@ export async function listOneTimeProducts() {
 /**
  * Create a Stripe Checkout Session for a one-time (non-subscription) purchase.
  *
- * @param {{ userId: string, priceId: string, successUrl: string, cancelUrl: string }} params
+ * `area` and `subdivision` (what the customer picked on the AreaPage) travel in the
+ * session metadata so the confirmed order knows which problem was bought, and which
+ * Kit de Arranque to deliver.
+ *
+ * @param {{ userId: string, priceId: string, successUrl: string, cancelUrl: string, area?: string, subdivision?: string }} params
  * @returns {Promise<string>} Checkout URL to redirect the customer to.
  */
-export async function createOneTimeCheckoutSession({ userId, priceId, successUrl, cancelUrl }) {
+export async function createOneTimeCheckoutSession({ userId, priceId, successUrl, cancelUrl, area, subdivision }) {
 	const customerId = await findOrCreateStripeCustomer({ userId });
 
 	const session = await stripeClient.checkout.sessions.create({
@@ -58,6 +69,10 @@ export async function createOneTimeCheckoutSession({ userId, priceId, successUrl
 		line_items: [{ price: priceId, quantity: 1 }],
 		success_url: successUrl,
 		cancel_url: cancelUrl,
+		metadata: {
+			area: metadataValue(area),
+			subdivision: metadataValue(subdivision),
+		},
 	});
 
 	return session.url;
@@ -72,7 +87,7 @@ export async function createOneTimeCheckoutSession({ userId, priceId, successUrl
  * Idempotent: re-confirming the same session returns the existing record.
  *
  * @param {{ userId: string, sessionId: string }} params
- * @returns {Promise<{ id: string, productTitle: string, amountFormatted: string }>}
+ * @returns {Promise<{ id: string, productTitle: string, amountFormatted: string, area: string, subdivision: string, kit: { title: string } | null }>}
  */
 export async function confirmOneTimeOrder({ userId, sessionId }) {
 	const storedCustomerId = await getStoredStripeCustomerId(userId);
@@ -86,7 +101,7 @@ export async function confirmOneTimeOrder({ userId, sessionId }) {
 
 	const existing = await pocketbaseClient
 		.collection('consultoria_orders')
-		.getFirstListItem(`stripe_session_id = "${sessionId}"`)
+		.getFirstListItem(pocketbaseClient.filter('stripe_session_id = {:sessionId}', { sessionId }))
 		.catch(() => null);
 
 	if (existing) {
@@ -96,6 +111,7 @@ export async function confirmOneTimeOrder({ userId, sessionId }) {
 	const user = await pocketbaseClient.collection('users').getOne(userId);
 	const lineItem = session.line_items.data[0];
 	const product = lineItem.price.product;
+	const subdivision = metadataValue(session.metadata?.subdivision);
 
 	const record = await pocketbaseClient.collection('consultoria_orders').create({
 		userId,
@@ -103,15 +119,50 @@ export async function confirmOneTimeOrder({ userId, sessionId }) {
 		product_title: typeof product === 'string' ? product : product.name,
 		amount_in_cents: lineItem.amount_total,
 		stripe_session_id: session.id,
+		area: metadataValue(session.metadata?.area),
+		subdivision,
+		kit_slug: kitSlugFor(subdivision) ?? '',
 	});
 
 	return mapOrder(record);
 }
 
 function mapOrder(record) {
+	const kit = getKit(record.kit_slug);
 	return {
 		id: record.id,
 		productTitle: record.product_title,
 		amountFormatted: formatBrl(record.amount_in_cents),
+		area: record.area ?? '',
+		subdivision: record.subdivision ?? '',
+		kit: kit ? { title: kit.title } : null,
 	};
+}
+
+/**
+ * Lists the user's paid orders (newest first), each with its kit, if any.
+ *
+ * @param {{ userId: string }} params
+ */
+export async function listUserOrders({ userId }) {
+	const records = await pocketbaseClient.collection('consultoria_orders').getFullList({
+		filter: pocketbaseClient.filter('userId = {:userId}', { userId }),
+		sort: '-created',
+	});
+	return records.map((record) => ({ ...mapOrder(record), created: record.created }));
+}
+
+/**
+ * Returns the Kit de Arranque file for an order, only if the order belongs to `userId`.
+ *
+ * @param {{ userId: string, orderId: string }} params
+ * @returns {Promise<{ title: string, filename: string, filePath: string }>}
+ */
+export async function getOrderKit({ userId, orderId }) {
+	const notFound = Object.assign(new Error('Kit não encontrado para este pedido'), { status: 404 });
+	const record = await pocketbaseClient.collection('consultoria_orders').getOne(orderId).catch(() => null);
+	if (!record || record.userId !== userId) throw notFound;
+	const kit = getKit(record.kit_slug);
+	if (!kit) throw notFound;
+	return kit;
 }

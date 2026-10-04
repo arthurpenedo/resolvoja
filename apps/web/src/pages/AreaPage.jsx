@@ -8,7 +8,7 @@ import AuroraBackground from '@/components/AuroraBackground';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import BuySolutionButton from '@/components/BuySolutionButton';
-import { AREAS, getArea, getAreaGradient } from '@/data/hub';
+import { AREAS, getArea, getAreaGradient, hasKit } from '@/data/hub';
 import { useAuth } from '@/contexts/AuthContext';
 import { useIntegratedAi } from '@/hooks/use-integrated-ai';
 import { pocketbaseClient } from '@/lib/pocketbaseClient';
@@ -298,7 +298,14 @@ export default function AreaPage() {
                                                                 transition={{ delay: 0.2, duration: 0.4 }}
                                                                 className="mt-6 grid gap-3 sm:grid-cols-2"
                                                             >
-                                                                <BuySolutionButton context={{ area: area.name, subdivision }} />
+                                                                <div>
+                                                                    <BuySolutionButton context={{ area: area.name, subdivision }} />
+                                                                    {hasKit(subdivision) && (
+                                                                        <p className="mt-2 text-xs text-[hsl(var(--muted-foreground))]">
+                                                                            Inclui o <strong className="text-foreground">Kit de Arranque</strong>: uma planilha pronta para baixar logo após o pagamento.
+                                                                        </p>
+                                                                    )}
+                                                                </div>
                                                                 <Link
                                                                     to="/plans"
                                                                     className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-5 py-3 text-center text-sm font-semibold transition-colors hover:bg-white/10"
