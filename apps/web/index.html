@@ -2,6 +2,12 @@
 <html lang="pt-BR">
 	<head>
 		<meta charset="UTF-8" />
+		<script>
+			// www.resolvoja.com → resolvoja.com (CORS e login só aceitam o domínio sem www)
+			if (location.hostname === 'www.resolvoja.com') {
+				location.replace('https://resolvoja.com' + location.pathname + location.search + location.hash);
+			}
+		</script>
 		<link rel="icon" type="image/png" href="/favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Resolvo Já — Soluções de IA para pequenas empresas</title>
