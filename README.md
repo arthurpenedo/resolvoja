@@ -70,4 +70,4 @@ npm run dev   # web :3000 · api :3001 · pocketbase :8090
 
 ---
 
-Desenvolvido por [Arthur Penedo](https://github.com/arthurpenedo) · [LinkedIn](https://www.linkedin.com/in/arthuralves-penedo)
+Desenvolvido por [Arthur Penedo](https://github.com/arthurpenedo) · [LinkedIn](https://www.linkedin.com/in/arthurpenedo)
