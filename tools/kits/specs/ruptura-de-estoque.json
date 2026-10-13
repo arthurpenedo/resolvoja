@@ -1,0 +1,86 @@
+{
+  "slug": "ruptura-de-estoque",
+  "titulo": "Ruptura de estoque",
+  "area": "estoque",
+  "subdivisoes": ["Ruptura de estoque"],
+  "resumo": "Registre cada falta de produto, estime a venda perdida, descubra as causas e crie ações para evitar que se repita. Ao final você terá menos clientes saindo de mãos vazias e dados para comprar melhor.",
+  "como_usar": [
+    "Toda vez que um cliente pedir algo que está em falta, o atendente anota na aba 'Registro de faltas'.",
+    "Uma vez por semana, some as faltas por produto e estime a venda perdida em reais.",
+    "Na aba 'Causas e ações', classifique a causa de cada ruptura relevante.",
+    "Defina uma ação corretiva (subir o mínimo, trocar fornecedor, criar substituto).",
+    "Acompanhe o índice de ruptura mês a mês."
+  ],
+  "diagnostico": [
+    "Seus clientes já saíram sem comprar porque o produto estava em falta?",
+    "Você anota as faltas ou só se lembra delas?",
+    "O sistema mostra estoque positivo mas o produto não está na prateleira?",
+    "Seus campeões de venda ficam em falta com frequência?",
+    "Você sabe quanto vendeu a menos por causa de faltas no mês passado?",
+    "Os fornecedores atrasam e você não tem plano B?",
+    "Há produto sem alternativa ou substituto para oferecer ao cliente?",
+    "O estoque mínimo existe e é revisado?",
+    "Quem atende o cliente avisa quem compra sobre o que falta?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Colocar um caderno ou formulário simples no balcão para anotar cada falta", "responsavel": "Dono", "prazo_dias": 2},
+    {"etapa": "Semana 1", "acao": "Treinar os atendentes a anotar produto, quantidade pedida e se o cliente aceitou substituto", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 2", "acao": "Fazer o primeiro resumo semanal de faltas e estimar a venda perdida", "responsavel": "Comprador", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Cruzar as faltas com o estoque mínimo e prazo do fornecedor para achar a causa", "responsavel": "Comprador", "prazo_dias": 21},
+    {"etapa": "Semana 4", "acao": "Subir o mínimo dos itens com falta repetida e definir substitutos aceitos", "responsavel": "Dono", "prazo_dias": 30},
+    {"etapa": "Mês 2", "acao": "Cadastrar um segundo fornecedor para os 10 itens críticos", "responsavel": "Comprador", "prazo_dias": 45},
+    {"etapa": "Mês 2", "acao": "Criar a lista de espera: avisar o cliente por WhatsApp quando o item chegar", "responsavel": "Vendedor", "prazo_dias": 60},
+    {"etapa": "Mês 3", "acao": "Calcular o índice de ruptura e comparar com o primeiro mês", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Registrar a falta", "como": "Anote data, produto, quantidade pedida e se o cliente comprou outro item.", "cuidado": "Se o registro dá trabalho, ninguém faz; deixe em uma linha só."},
+    {"passo": "Conferir a falta real", "como": "Cheque se o produto realmente não existe, pois pode estar mal guardado ou sem baixa no sistema.", "cuidado": "Estoque do sistema errado esconde a causa."},
+    {"passo": "Estimar a venda perdida", "como": "Multiplique unidades pedidas pelo preço de venda e subtraia as vendas recuperadas por substituto.", "cuidado": "Conte só quem de fato queria comprar."},
+    {"passo": "Achar a causa", "como": "Classifique: compra tardia, mínimo baixo, atraso do fornecedor, erro de contagem, venda acima do previsto.", "cuidado": "Culpar o fornecedor sem checar se o pedido foi feito em dia."},
+    {"passo": "Definir a ação", "como": "Para cada causa, defina a correção: ajustar mínimo, mudar a data do pedido, trocar fornecedor.", "cuidado": "Ação sem dono e prazo não acontece."},
+    {"passo": "Oferecer substituto", "como": "Prepare uma lista de produtos equivalentes e ensine a equipe a sugeri-los.", "cuidado": "Substituto de marca ou qualidade muito diferentes gera reclamação."},
+    {"passo": "Avisar quando chegar", "como": "Guarde nome e telefone de quem pediu e avise na reposição.", "cuidado": "Respeitar a LGPD: use o contato só para esse aviso, com consentimento."},
+    {"passo": "Medir o índice", "como": "Índice de ruptura = itens em falta / itens ativos, medido todo mês.", "cuidado": "Medir apenas os itens campeões esconde a visão geral."}
+  ],
+  "abas": [
+    {
+      "nome": "Registro de faltas",
+      "descricao": "Cada vez que o cliente pediu um produto indisponível.",
+      "colunas": [
+        {"nome": "Data", "tipo": "data"},
+        {"nome": "Produto", "tipo": "texto"},
+        {"nome": "Quantidade pedida", "tipo": "numero"},
+        {"nome": "Preço de venda", "tipo": "moeda"},
+        {"nome": "Resultado", "tipo": "lista", "opcoes": ["Comprou substituto", "Foi embora", "Deixou encomenda"]}
+      ],
+      "exemplos": [
+        ["-2", "Produto A", 3, 29.9, "Foi embora"],
+        ["-1", "Produto B", 1, 89.0, "Comprou substituto"],
+        ["0", "Produto A", 2, 29.9, "Deixou encomenda"]
+      ]
+    },
+    {
+      "nome": "Causas e ações",
+      "descricao": "Por que faltou e o que fazer para não repetir.",
+      "colunas": [
+        {"nome": "Produto", "tipo": "texto"},
+        {"nome": "Causa", "tipo": "lista", "opcoes": ["Mínimo baixo", "Pedido atrasado", "Fornecedor atrasou", "Erro de contagem", "Pico de venda"]},
+        {"nome": "Ação corretiva", "tipo": "texto"},
+        {"nome": "Responsável", "tipo": "texto"},
+        {"nome": "Prazo", "tipo": "data"},
+        {"nome": "Status", "tipo": "lista", "opcoes": ["Aberta", "Em andamento", "Concluída"]}
+      ],
+      "exemplos": [
+        ["Produto A", "Mínimo baixo", "Subir mínimo para 60 unidades", "Comprador", "+7", "Aberta"],
+        ["Produto B", "Fornecedor atrasou", "Cadastrar segundo fornecedor", "Dono", "+30", "Em andamento"]
+      ]
+    }
+  ],
+  "dicas": [
+    "O que não é medido não melhora: o simples caderno de faltas já revela os itens que precisam de atenção.",
+    "Priorize a ruptura dos produtos que fazem o cliente voltar (os de uso recorrente).",
+    "Combine com o fornecedor um estoque de consignação para os itens críticos, se possível.",
+    "Antes de datas fortes, contate o fornecedor com antecedência para garantir a quantidade.",
+    "Faltas no sistema (saldo positivo e nada na prateleira) são um sinal para fazer inventário rotativo."
+  ]
+}

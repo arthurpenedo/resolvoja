@@ -1,0 +1,102 @@
+{
+  "slug": "organizacao-de-arquivos",
+  "titulo": "Organização de arquivos",
+  "area": "tecnologia",
+  "subdivisoes": ["Organização de arquivos"],
+  "resumo": "Sistema pronto de pastas, nomes de arquivos e permissões para sua equipe achar qualquer documento em segundos. Inclui estrutura de pastas, padrão de nomenclatura e plano de faxina dos arquivos antigos.",
+  "como_usar": [
+    "Responda o diagnóstico para ver o tamanho da bagunça.",
+    "Adapte a estrutura sugerida na aba Estrutura de pastas ao seu negócio.",
+    "Defina o padrão de nomes na aba Padrão de nomes e use os exemplos como modelo.",
+    "Faça a faxina seguindo a aba Faxina de arquivos antigos, pasta por pasta.",
+    "Treine a equipe e faça uma revisão rápida todo mês."
+  ],
+  "diagnostico": [
+    "Você demora mais de 1 minuto para achar um contrato ou nota antiga?",
+    "Existem versões como 'final', 'final2' e 'final_agora' dos mesmos arquivos?",
+    "Cada pessoa guarda arquivos no próprio computador ou na área de trabalho?",
+    "Há documentos importantes só no WhatsApp ou no e-mail?",
+    "Todo mundo tem acesso a tudo, inclusive pastas financeiras ou de RH?",
+    "Quando alguém sai, seus arquivos ficam perdidos?",
+    "Você sabe se os arquivos têm backup?",
+    "Você tem arquivos antigos que ninguém sabe se pode apagar?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Escolher o local único dos arquivos da empresa (Google Drive, OneDrive, Dropbox ou servidor)", "responsavel": "Dono", "prazo_dias": 2},
+    {"etapa": "Dia 3", "acao": "Definir a estrutura de pastas de primeiro nível (por área ou por cliente)", "responsavel": "Dono + equipe", "prazo_dias": 4},
+    {"etapa": "Semana 1", "acao": "Definir o padrão de nomes de arquivos e escrever uma página de regras", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 1", "acao": "Definir permissões: quem vê e edita cada pasta", "responsavel": "Dono", "prazo_dias": 8},
+    {"etapa": "Semana 2", "acao": "Criar a estrutura vazia e testar com uma área", "responsavel": "Equipe", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Mover arquivos atuais (últimos 12 meses) para a nova estrutura", "responsavel": "Equipe", "prazo_dias": 21},
+    {"etapa": "Semana 4", "acao": "Reunir arquivos antigos em uma pasta 'Arquivo morto' por ano, sem apagar nada ainda", "responsavel": "Equipe", "prazo_dias": 28},
+    {"etapa": "Semana 5", "acao": "Treinar a equipe e proibir salvar na área de trabalho", "responsavel": "Dono", "prazo_dias": 35},
+    {"etapa": "Dia 45", "acao": "Confirmar com contador/advogado quais documentos precisam ser guardados e por quanto tempo antes de apagar qualquer coisa", "responsavel": "Dono + contador", "prazo_dias": 45},
+    {"etapa": "Dia 60", "acao": "Primeira revisão mensal: arquivos fora do lugar, nomes fora do padrão", "responsavel": "Responsável", "prazo_dias": 60},
+    {"etapa": "Dia 90", "acao": "Conferir se o backup cobre toda a nova estrutura", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Um único lugar", "como": "Escolha uma ferramenta oficial e acabe com os arquivos soltos em computadores, pen drives e conversas.", "cuidado": "Manter duas nuvens 'por segurança' e ninguém saber qual vale."},
+    {"passo": "Pastas por assunto, poucas camadas", "como": "No máximo 3 a 4 níveis. Exemplo: 01 Administrativo, 02 Financeiro, 03 Clientes, 04 Marketing, 05 RH.", "cuidado": "Pastas dentro de pastas dentro de pastas; ninguém mais acha nada."},
+    {"passo": "Padrão de nomes", "como": "Use AAAA-MM-DD no início, tipo e nome. Ex.: 2026-03-15_Contrato_ClienteA_v1.", "cuidado": "Espaços, acentos e palavras como 'novo' ou 'final'."},
+    {"passo": "Controlar versões", "como": "Use v1, v2... ou o histórico de versões da própria nuvem; mantenha só a versão atual na pasta principal.", "cuidado": "Enviar anexos por e-mail e perder qual é a versão mais recente."},
+    {"passo": "Definir permissões", "como": "Pastas financeiras e de RH só para quem precisa. Conceda acesso a grupos, não a pessoas.", "cuidado": "Compartilhar com 'qualquer pessoa com o link' para documentos internos."},
+    {"passo": "Fazer a faxina", "como": "Mova antes de apagar. Arquivos sem uso por 2 anos vão para 'Arquivo morto'; só apague com autorização e conferência.", "cuidado": "Apagar documentos fiscais ou trabalhistas que precisam ser guardados."},
+    {"passo": "Colocar o backup", "como": "Certifique-se de que a estrutura nova tem backup automático e histórico de versões.", "cuidado": "Organizar tudo e esquecer de proteger."},
+    {"passo": "Manter vivo", "como": "Uma pessoa responsável faz revisão mensal de 30 minutos e lembra a equipe das regras.", "cuidado": "Estrutura criada e ignorada depois de 2 meses."}
+  ],
+  "abas": [
+    {
+      "nome": "Estrutura de pastas",
+      "descricao": "Mapa das pastas principais e quem acessa.",
+      "colunas": [
+        {"nome": "Pasta", "tipo": "texto"},
+        {"nome": "Conteúdo", "tipo": "texto"},
+        {"nome": "Responsável", "tipo": "texto"},
+        {"nome": "Quem acessa", "tipo": "texto"},
+        {"nome": "Nível", "tipo": "lista", "opcoes": ["Aberto à equipe", "Restrito", "Confidencial"]}
+      ],
+      "exemplos": [
+        ["01 Administrativo", "Contratos, certidões, documentos da empresa", "Dono", "Dono, administrativo", "Restrito"],
+        ["02 Financeiro", "Notas, extratos, comprovantes", "Financeiro", "Dono, financeiro", "Confidencial"],
+        ["03 Clientes", "Pasta por cliente com propostas e entregas", "Comercial", "Equipe toda", "Aberto à equipe"]
+      ]
+    },
+    {
+      "nome": "Padrão de nomes",
+      "descricao": "Regras de nomenclatura com exemplo certo e errado.",
+      "colunas": [
+        {"nome": "Tipo de arquivo", "tipo": "texto"},
+        {"nome": "Padrão", "tipo": "texto"},
+        {"nome": "Exemplo certo", "tipo": "texto"},
+        {"nome": "Exemplo errado", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["Contrato", "AAAA-MM-DD_Contrato_Cliente_vN", "2026-03-15_Contrato_ClienteA_v2", "contrato final novo.docx"],
+        ["Nota fiscal", "AAAA-MM_NF_Fornecedor_Numero", "2026-03_NF_FornecedorB_1234", "nota março.pdf"]
+      ]
+    },
+    {
+      "nome": "Faxina de arquivos antigos",
+      "descricao": "Controle da limpeza pasta por pasta, sem perder nada.",
+      "colunas": [
+        {"nome": "Pasta ou local", "tipo": "texto"},
+        {"nome": "Tamanho aproximado (GB)", "tipo": "numero"},
+        {"nome": "Ação", "tipo": "lista", "opcoes": ["Mover", "Arquivar", "Apagar", "Manter"]},
+        {"nome": "Precisa validar com contador", "tipo": "lista", "opcoes": ["Sim", "Não"]},
+        {"nome": "Prazo", "tipo": "data"},
+        {"nome": "Status", "tipo": "lista", "opcoes": ["Pendente", "Em andamento", "Concluído"]}
+      ],
+      "exemplos": [
+        ["Área de trabalho do computador A", 4, "Mover", "Não", "+10", "Pendente"],
+        ["Pasta 'Financeiro antigo'", 12, "Arquivar", "Sim", "+25", "Pendente"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Comece pelo que mais dói: documentos que a equipe procura toda semana.",
+    "Não tente organizar o passado inteiro; organize bem o presente e arquive o resto.",
+    "Use atalhos e busca da nuvem, mas não dependa só deles; nomes padronizados fazem a busca funcionar melhor.",
+    "Documentos de clientes com dados pessoais devem ficar em pastas com acesso restrito.",
+    "Antes de apagar documentos fiscais, trabalhistas e contratos, confirme o prazo de guarda com seu contador."
+  ]
+}

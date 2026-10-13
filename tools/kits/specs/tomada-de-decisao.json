@@ -1,0 +1,97 @@
+{
+  "slug": "tomada-de-decisao",
+  "titulo": "Tomada de decisão",
+  "area": "gestao",
+  "subdivisoes": ["Tomada de decisão"],
+  "resumo": "Um roteiro para decidir com clareza decisões importantes (contratar, investir, mudar preço, aceitar um cliente) comparando opções com critérios e riscos. Ao final você decide mais rápido, com registro do motivo.",
+  "como_usar": [
+    "Escreva a decisão em forma de pergunta na aba 'Decisão'.",
+    "Liste as opções (incluindo 'não fazer nada') e os critérios que importam.",
+    "Dê notas e pesos na aba 'Matriz de decisão' para comparar opções.",
+    "Avalie o pior cenário e o plano B na aba 'Riscos da decisão'.",
+    "Decida, registre o motivo e marque uma data para revisar o resultado."
+  ],
+  "diagnostico": [
+    "Você adia decisões importantes por medo de errar?",
+    "Decide por impulso ou por pressão de vendedor/fornecedor?",
+    "Costuma considerar a opção de não fazer nada?",
+    "Calcula o custo e o retorno antes de investir?",
+    "Define critérios antes de comparar as opções?",
+    "Pensa no pior cenário e em como se recuperaria?",
+    "Registra o motivo das decisões para aprender depois?",
+    "Consulta pessoas com experiência ou números reais antes de decidir?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Listar as 3 decisões pendentes mais importantes do negócio", "responsavel": "Dono", "prazo_dias": 1},
+    {"etapa": "Dia 2", "acao": "Para a mais urgente, escrever a pergunta, o prazo para decidir e o que acontece se nada for feito", "responsavel": "Dono", "prazo_dias": 2},
+    {"etapa": "Dia 4", "acao": "Levantar de 2 a 4 opções, incluindo 'não fazer nada'", "responsavel": "Dono", "prazo_dias": 4},
+    {"etapa": "Semana 1", "acao": "Definir de 4 a 6 critérios e pesos (custo, retorno, risco, tempo, esforço)", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 1", "acao": "Coletar números reais para cada opção (preços, prazos, referências)", "responsavel": "Dono", "prazo_dias": 10},
+    {"etapa": "Semana 2", "acao": "Preencher a matriz de decisão e conversar com 1 ou 2 pessoas de confiança", "responsavel": "Dono", "prazo_dias": 14},
+    {"etapa": "Semana 2", "acao": "Decidir, anotar o motivo e comunicar a quem for afetado", "responsavel": "Dono", "prazo_dias": 16},
+    {"etapa": "Mês 2", "acao": "Revisar o resultado da decisão contra o que se esperava", "responsavel": "Dono", "prazo_dias": 60},
+    {"etapa": "Mês 3", "acao": "Aplicar o mesmo método a outras decisões e criar um histórico", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Formule a pergunta", "como": "Ex.: 'Devo contratar um segundo atendente agora ou em 3 meses?'.", "cuidado": "Decidir sem saber exatamente o que está decidindo."},
+    {"passo": "Defina o prazo", "como": "Dê uma data limite proporcional ao impacto: decisões pequenas em horas, grandes em semanas.", "cuidado": "Prazo aberto vira procrastinação."},
+    {"passo": "Liste opções reais", "como": "Mínimo duas, e sempre inclua 'manter como está' ou 'adiar'.", "cuidado": "Escolher entre 'sim' e 'não' quando há alternativas melhores."},
+    {"passo": "Escolha critérios e pesos", "como": "Dê pesos de 1 a 5 aos critérios que importam e nota de 1 a 5 a cada opção.", "cuidado": "Escolher os critérios depois, para justificar a opção preferida."},
+    {"passo": "Calcule o pior caso", "como": "Pergunte: se der errado, quanto perco e consigo me recuperar? Decisões reversíveis podem ser rápidas.", "cuidado": "Tratar toda decisão como irreversível."},
+    {"passo": "Decida e registre", "como": "Escreva a decisão, o motivo e o resultado esperado, com data de revisão.", "cuidado": "Revisitar a decisão toda semana sem fato novo."}
+  ],
+  "abas": [
+    {
+      "nome": "Decisão",
+      "descricao": "A pergunta, o prazo, o que está em jogo e o que ficou decidido.",
+      "colunas": [
+        {"nome": "Decisão (pergunta)", "tipo": "texto"},
+        {"nome": "Prazo para decidir", "tipo": "data"},
+        {"nome": "Valor em jogo", "tipo": "moeda"},
+        {"nome": "Reversível?", "tipo": "lista", "opcoes": ["Sim", "Em parte", "Não"]},
+        {"nome": "Decisão tomada", "tipo": "texto"},
+        {"nome": "Motivo", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["Contratar atendente em tempo integral ou meio período?", "+10", 24000.0, "Em parte", "Meio período por 3 meses", "Menor risco enquanto testa demanda"],
+        ["Aumentar o preço do serviço principal em 8%?", "+5", 6000.0, "Sim", "", ""]
+      ]
+    },
+    {
+      "nome": "Matriz de decisão",
+      "descricao": "Compara as opções por critérios com peso.",
+      "colunas": [
+        {"nome": "Opção", "tipo": "texto"},
+        {"nome": "Critério", "tipo": "texto"},
+        {"nome": "Peso (1 a 5)", "tipo": "numero"},
+        {"nome": "Nota (1 a 5)", "tipo": "numero"},
+        {"nome": "Comentário", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["Contratar tempo integral", "Custo mensal", 5, 2, "Aumenta custo fixo em R$ 2.800"],
+        ["Contratar meio período", "Custo mensal", 5, 4, "Custo menor e testável"],
+        ["Contratar meio período", "Capacidade de atender", 4, 3, "Cobre os horários de pico"]
+      ]
+    },
+    {
+      "nome": "Riscos da decisão",
+      "descricao": "Pior cenário e plano de recuperação de cada opção.",
+      "colunas": [
+        {"nome": "Opção", "tipo": "texto"},
+        {"nome": "Pior cenário", "tipo": "texto"},
+        {"nome": "Perda máxima", "tipo": "moeda"},
+        {"nome": "Plano B", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["Aumentar preço em 8%", "Perder 10% dos clientes", 3000.0, "Oferecer condição especial a clientes antigos"],
+        ["Contratar tempo integral", "Demanda não cresce", 12000.0, "Reduzir horas ou realocar a pessoa"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Decisões reversíveis devem ser tomadas rápido; invista tempo só nas irreversíveis.",
+    "Se estiver 60% a 70% seguro, decida. Esperar 100% de certeza custa mais que errar pouco.",
+    "Durma sobre decisões grandes e evite decidir com raiva ou pressa.",
+    "Peça a alguém de fora para apontar o que você não está vendo."
+  ]
+}

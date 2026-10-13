@@ -1,0 +1,86 @@
+{
+  "slug": "negociacao",
+  "titulo": "Negociação",
+  "area": "estoque",
+  "subdivisoes": ["Negociação"],
+  "resumo": "Prepare cada negociação com fornecedor com dados, meta, limite e alternativas, para conseguir melhor preço, prazo e condições. Ao final você terá um roteiro pronto e um registro do que foi conseguido.",
+  "como_usar": [
+    "Antes da conversa, preencha a aba 'Preparação' com o que você compra, o preço atual e o que quer.",
+    "Defina meta, limite (o pior aceitável) e alternativa caso não haja acordo.",
+    "Use o roteiro do procedimento para conduzir a conversa e anote as concessões.",
+    "Registre o acordo na aba 'Acordos', com validade e condições.",
+    "Revise o cumprimento do acordo todo mês."
+  ],
+  "diagnostico": [
+    "Você aceita o primeiro preço do fornecedor?",
+    "Sabe quanto compra por ano de cada fornecedor?",
+    "Conhece o preço de pelo menos mais um fornecedor para os principais itens?",
+    "Já pediu prazo de pagamento maior ou desconto por volume?",
+    "Combina as condições por escrito?",
+    "Negocia somente preço, esquecendo prazo, frete, troca e entrega?",
+    "Sabe o seu limite e a sua alternativa antes de negociar?",
+    "Compra de forma concentrada para ter mais poder de negociação?",
+    "Revisa se o acordo foi cumprido?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Listar os 5 fornecedores com maior valor de compra anual", "responsavel": "Dono", "prazo_dias": 3},
+    {"etapa": "Semana 1", "acao": "Levantar o histórico de preços e o volume comprado de cada um", "responsavel": "Comprador", "prazo_dias": 7},
+    {"etapa": "Semana 1", "acao": "Pedir cotações alternativas para ter argumento e uma alternativa real", "responsavel": "Comprador", "prazo_dias": 10},
+    {"etapa": "Semana 2", "acao": "Definir meta, limite e concessões possíveis para cada negociação", "responsavel": "Dono", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Realizar a negociação com o primeiro fornecedor (presencial ou por vídeo, melhor que por mensagem)", "responsavel": "Dono", "prazo_dias": 21},
+    {"etapa": "Semana 4", "acao": "Formalizar o acordo por escrito (e-mail de confirmação)", "responsavel": "Comprador", "prazo_dias": 28},
+    {"etapa": "Mês 2", "acao": "Repetir o processo com os outros 4 fornecedores", "responsavel": "Dono", "prazo_dias": 55},
+    {"etapa": "Mês 3", "acao": "Medir a economia obtida e conferir se o acordo está sendo cumprido", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Reunir os dados", "como": "Anote quanto compra por mês, o preço atual, o prazo e os problemas ocorridos.", "cuidado": "Negociar sem números é pedir favor."},
+    {"passo": "Definir a meta", "como": "Estabeleça o que quer (ex.: 5% de desconto e 14 dias a mais de prazo).", "cuidado": "Meta vaga como 'um preço melhor' não orienta."},
+    {"passo": "Definir limite e alternativa", "como": "Escolha o pior acordo aceitável e o que fará se não conseguir (outro fornecedor).", "cuidado": "Negociar sem alternativa te deixa sem poder."},
+    {"passo": "Começar pela relação", "como": "Reconheça o que funciona e fale do potencial de comprar mais.", "cuidado": "Abrir com ameaça trava a conversa."},
+    {"passo": "Pedir mais que a meta", "como": "Peça um pouco acima do desejado para ter espaço de ceder.", "cuidado": "Pedir algo absurdo faz perder credibilidade."},
+    {"passo": "Negociar o pacote", "como": "Troque concessões: volume por preço, pagamento antecipado por desconto, prazo maior por maior pedido.", "cuidado": "Dar sem pedir nada em troca."},
+    {"passo": "Fechar por escrito", "como": "Envie um e-mail resumindo preço, quantidade, prazo, frete e validade do acordo.", "cuidado": "Acordo verbal é esquecido ou mal interpretado."},
+    {"passo": "Acompanhar", "como": "Confira nas próximas notas se o preço e as condições combinadas estão valendo.", "cuidado": "Fornecedores podem voltar ao preço antigo sem avisar."}
+  ],
+  "abas": [
+    {
+      "nome": "Preparação",
+      "descricao": "Dados, meta e limite antes de cada negociação.",
+      "colunas": [
+        {"nome": "Fornecedor", "tipo": "texto"},
+        {"nome": "Compra anual estimada", "tipo": "moeda"},
+        {"nome": "Preço atual do item principal", "tipo": "moeda"},
+        {"nome": "Meta de preço", "tipo": "moeda"},
+        {"nome": "Limite de preço", "tipo": "moeda"},
+        {"nome": "Alternativa", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["Fornecedor A", 60000.0, 12.5, 11.5, 12.2, "Fornecedor C cotou 12,10"],
+        ["Fornecedor B", 24000.0, 48.0, 44.0, 47.0, "Comprar menos e mais vezes do concorrente"]
+      ]
+    },
+    {
+      "nome": "Acordos",
+      "descricao": "Registro das condições fechadas.",
+      "colunas": [
+        {"nome": "Fornecedor", "tipo": "texto"},
+        {"nome": "Data do acordo", "tipo": "data"},
+        {"nome": "Condição obtida", "tipo": "texto"},
+        {"nome": "Economia mensal estimada", "tipo": "moeda"},
+        {"nome": "Válido até", "tipo": "data"},
+        {"nome": "Cumprido?", "tipo": "lista", "opcoes": ["Sim", "Não", "Parcial", "Ainda não avaliado"]}
+      ],
+      "exemplos": [
+        ["Fornecedor A", "-10", "4% de desconto acima de 100 unidades e 28 dias de prazo", 320.0, "+80", "Sim"],
+        ["Fornecedor B", "-3", "Frete grátis acima de R$ 1.500", 90.0, "+57", "Ainda não avaliado"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Prazo de pagamento maior equivale a desconto: 30 dias a mais pode valer mais que 1% no preço, dependendo do seu custo de dinheiro.",
+    "Negocie no começo do mês ou do trimestre, quando o vendedor busca bater metas.",
+    "Reunir os pedidos em um só aumenta o volume e o poder de pedir desconto.",
+    "Faça perguntas abertas: o que seria possível se eu fechasse o dobro por mês?",
+    "Se juntar com outros lojistas da região para comprar em grupo, confirme com o contador e o jurídico a forma correta de fazer."
+  ]
+}

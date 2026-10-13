@@ -151,6 +151,8 @@ export async function createCheckoutSession({ userId, priceId, successUrl, cance
 
 	const session = await stripeClient.checkout.sessions.create({
 		mode: 'subscription',
+		// campo "Adicionar código promocional" no checkout do Stripe (cupons criados no painel do Stripe)
+		allow_promotion_codes: true,
 		customer: customerId,
 		line_items: [{ price: priceId, quantity: 1 }],
 		success_url: successUrl,
@@ -213,6 +215,11 @@ export async function listPlans() {
 		});
 	}
 
+	// Mensal antes de Anual em todo plano (a primeira variante é a que aparece selecionada por padrão)
+	const ORDEM_PERIODO = { Mensal: 0, Anual: 1 };
+	for (const plan of productsById.values()) {
+		plan.variants.sort((a, b) => (ORDEM_PERIODO[a.title] ?? 9) - (ORDEM_PERIODO[b.title] ?? 9));
+	}
 	return [...productsById.values()].sort((a, b) => a.order - b.order);
 }
 

@@ -1,0 +1,81 @@
+{
+  "slug": "reforma-tributaria",
+  "titulo": "Reforma tributária",
+  "area": "contabil",
+  "subdivisoes": ["Reforma tributária"],
+  "resumo": "Entenda de forma simples o que muda com a transição para CBS e IBS e prepare sua empresa: preços, sistemas, notas e fluxo de caixa. Você terá um plano de adaptação sem depender de datas que ainda mudam.",
+  "como_usar": [
+    "Leia o resumo geral e responda o diagnóstico para ver o quanto a mudança toca seu negócio.",
+    "Preencha a aba Impactos com o que pode mudar em cada área da empresa.",
+    "Use a aba Preparação para acompanhar o que já foi feito.",
+    "Pergunte ao contador, com a lista pronta, quais regras e prazos valem para o seu caso.",
+    "Revise a cada trimestre, pois a transição acontece por etapas e as regras são detalhadas aos poucos."
+  ],
+  "diagnostico": [
+    "Você sabe, em linhas gerais, o que são CBS e IBS?",
+    "Seu sistema de emissão de notas é atualizado pelo fornecedor?",
+    "Você trabalha com muitos fornecedores que dão crédito de imposto?",
+    "Seus preços foram calculados considerando os impostos atuais?",
+    "Seus clientes são empresas que podem aproveitar créditos?",
+    "Seu contador já falou sobre a transição com você?",
+    "Seu fluxo de caixa seria afetado se o pagamento de impostos mudasse de forma ou data?",
+    "Você vende para outros estados ou presta serviços fora da sua cidade?",
+    "Tem contratos de longo prazo com preço fixo?"
+  ],
+  "plano": [
+    {"etapa": "Semana 1", "acao": "Ler um resumo oficial da reforma e anotar o que entendeu e o que ficou em dúvida", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 2", "acao": "Perguntar ao contador se e como a transição afeta o regime da empresa", "responsavel": "Dono", "prazo_dias": 14},
+    {"etapa": "Semana 2", "acao": "Perguntar ao fornecedor do sistema de notas como e quando as atualizações para CBS/IBS serão feitas", "responsavel": "Administrativo", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Preencher a aba Impactos com possíveis efeitos em preço, compras, caixa e contratos", "responsavel": "Dono", "prazo_dias": 21},
+    {"etapa": "Mês 2", "acao": "Listar principais fornecedores e verificar se serão importantes para créditos futuros", "responsavel": "Administrativo", "prazo_dias": 40},
+    {"etapa": "Mês 2", "acao": "Revisar contratos de longo prazo e checar cláusulas de reajuste por mudança de impostos", "responsavel": "Dono", "prazo_dias": 55},
+    {"etapa": "Mês 2", "acao": "Fazer simulação inicial de preços e margem com cenários de variação de imposto, usando percentuais de exemplo", "responsavel": "Administrativo", "prazo_dias": 65},
+    {"etapa": "Mês 3", "acao": "Treinar a pessoa que emite notas para as mudanças de campos e regras informadas pelo sistema", "responsavel": "Administrativo", "prazo_dias": 80},
+    {"etapa": "Mês 3", "acao": "Validar com o contador o plano de adaptação, os prazos e as regras que valem para a sua empresa", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Entender o básico", "como": "CBS e IBS substituem, de forma gradual, vários tributos sobre consumo atuais. A transição acontece em etapas.", "cuidado": "Não se baseie em datas de notícias; confirme com o contador as vigentes."},
+    {"passo": "Mapear seu negócio", "como": "Anote o que você compra, vende, para quem e onde. Isso define o impacto.", "cuidado": "Cada setor é afetado de forma diferente."},
+    {"passo": "Checar sistemas", "como": "Pergunte aos fornecedores de sistema e emissor de notas se há plano de atualização.", "cuidado": "Sistema desatualizado pode impedir a emissão correta."},
+    {"passo": "Revisar preços e contratos", "como": "Veja se seus preços e contratos aceitam ajustes quando os tributos mudarem.", "cuidado": "Contrato de preço fixo sem cláusula de reajuste pode comprimir sua margem."},
+    {"passo": "Cuidar do caixa", "como": "Projete cenários em que a forma ou o prazo de pagar tributos mude e reserve folga.", "cuidado": "Surpresa de caixa derruba empresas saudáveis."},
+    {"passo": "Acompanhar mudanças", "como": "Receba atualizações do contador e das entidades do seu setor e atualize a planilha.", "cuidado": "Informação de redes sociais costuma estar desatualizada ou errada."}
+  ],
+  "abas": [
+    {
+      "nome": "Impactos",
+      "descricao": "Possíveis efeitos da transição em cada área da empresa.",
+      "colunas": [
+        {"nome": "Área", "tipo": "lista", "opcoes": ["Preços", "Compras", "Notas fiscais", "Caixa", "Contratos", "Sistemas"]},
+        {"nome": "Possível impacto", "tipo": "texto"},
+        {"nome": "Nível", "tipo": "lista", "opcoes": ["Alto", "Médio", "Baixo", "A confirmar"]},
+        {"nome": "Dúvida para o contador", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["Preços", "Preço pode precisar de revisão se a carga mudar", "A confirmar", "Qual será minha carga no novo modelo?"],
+        ["Sistemas", "Emissor de notas precisa trazer novos campos", "Alto", "O sistema atual será atualizado?"],
+        ["Compras", "Créditos podem mudar o custo dos fornecedores", "A confirmar", "Quais fornecedores geram crédito?"]
+      ]
+    },
+    {
+      "nome": "Preparação",
+      "descricao": "Ações de preparação e andamento.",
+      "colunas": [
+        {"nome": "Ação", "tipo": "texto"},
+        {"nome": "Responsável", "tipo": "texto"},
+        {"nome": "Prazo", "tipo": "data"},
+        {"nome": "Status", "tipo": "lista", "opcoes": ["Não iniciada", "Em andamento", "Concluída"]}
+      ],
+      "exemplos": [
+        ["Conversar com o fornecedor do sistema", "Administrativo", "+10", "Em andamento"],
+        ["Revisar contratos de longo prazo", "Dono", "+40", "Não iniciada"]
+      ]
+    }
+  ],
+  "dicas": [
+    "A transição é gradual; não precisa mudar tudo de uma vez, mas precisa acompanhar.",
+    "Não confie em datas e alíquotas de notícias; peça ao contador as regras vigentes.",
+    "Guardar notas de compra organizadas deve ficar ainda mais importante com a lógica de créditos.",
+    "Quem tem boa organização fiscal hoje terá menos dificuldade na adaptação."
+  ]
+}

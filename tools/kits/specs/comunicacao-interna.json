@@ -1,0 +1,97 @@
+{
+  "slug": "comunicacao-interna",
+  "titulo": "Comunicação interna",
+  "area": "pessoas",
+  "subdivisoes": ["Comunicação interna"],
+  "resumo": "Define quem fala o quê, por qual canal e com que frequência na empresa, reduzindo ruído e recados perdidos. Você termina com um mapa de canais, uma rotina de reuniões curtas e um mural de avisos organizado.",
+  "como_usar": [
+    "Liste na aba 'Canais e regras' cada canal usado (WhatsApp, quadro, reunião) e para que serve.",
+    "Defina na aba 'Rotina de reuniões' quais reuniões curtas existem, quem participa e o que deve sair delas.",
+    "Registre na aba 'Comunicados' cada aviso importante com público, canal e confirmação de leitura.",
+    "Combine com a equipe regras simples, como horários de resposta e o que vai para o grupo geral.",
+    "Revise a cada mês o que funcionou e corte canais redundantes."
+  ],
+  "diagnostico": [
+    "Os funcionários sabem onde procurar informações importantes?",
+    "Existe um grupo de WhatsApp que mistura trabalho, brincadeira e assuntos pessoais sem regra?",
+    "Recados importantes se perdem ou chegam atrasados?",
+    "Você faz reuniões curtas e regulares com a equipe?",
+    "Mudanças de regras e horários são avisadas por escrito?",
+    "A equipe sabe a quem recorrer em cada tipo de dúvida?",
+    "Você confirma que o comunicado foi entendido?",
+    "Os funcionários têm espaço para dar sugestões e fazer perguntas?",
+    "Chega informação duplicada ou contraditória de pessoas diferentes?"
+  ],
+  "plano": [
+    {"etapa": "Semana 1", "acao": "Mapear todos os canais usados hoje e o que circula em cada um.", "responsavel": "Dono", "prazo_dias": 5},
+    {"etapa": "Semana 1", "acao": "Definir um canal único para avisos oficiais (grupo de avisos só para comunicados) e outro para conversa do dia a dia.", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 2", "acao": "Escrever regras curtas de uso dos canais (horário de mensagem, o que postar, quem responde) e apresentar à equipe.", "responsavel": "Gerente", "prazo_dias": 14},
+    {"etapa": "Semana 2", "acao": "Instalar quadro de avisos físico para escalas, regras e comunicados em local visível.", "responsavel": "Assistente administrativo", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Implantar reunião rápida de 10 a 15 minutos no início do turno ou semanal, com pauta fixa.", "responsavel": "Gerente", "prazo_dias": 21},
+    {"etapa": "Mês 1", "acao": "Passar a registrar comunicados importantes e pedir confirmação de leitura (\"ok\" ou assinatura).", "responsavel": "Assistente administrativo", "prazo_dias": 30},
+    {"etapa": "Mês 2", "acao": "Criar caixa de sugestões (física ou formulário) e responder às ideias em até 15 dias.", "responsavel": "Dono", "prazo_dias": 60},
+    {"etapa": "Mês 3", "acao": "Perguntar à equipe o que melhorou e ajustar canais e reuniões.", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Escolher o canal certo", "como": "Use aviso formal para regras e mudanças, conversa em pessoa para feedback e grupo para o dia a dia.", "cuidado": "Dar feedback negativo em grupo."},
+    {"passo": "Escrever a mensagem", "como": "Diga o que mudou, para quem vale, a partir de quando e a quem perguntar.", "cuidado": "Mensagens longas e confusas sem data nem responsável."},
+    {"passo": "Fazer a reunião rápida", "como": "Pauta fixa: resultados de ontem, prioridades de hoje, alertas e dúvidas; no máximo 15 minutos.", "cuidado": "Reunião sem fim que vira conversa solta."},
+    {"passo": "Confirmar entendimento", "como": "Peça que alguém repita com as próprias palavras ou responda \"ok\" no grupo.", "cuidado": "Supor que quem não respondeu entendeu."},
+    {"passo": "Registrar decisões", "como": "Anote no caderno ou planilha o que foi decidido e quem faz o quê.", "cuidado": "Decidir de boca e discutir depois quem disse o quê."},
+    {"passo": "Ouvir a equipe", "como": "Reserve um espaço fixo para sugestões e responda a todas.", "cuidado": "Pedir sugestão e nunca dar retorno."}
+  ],
+  "abas": [
+    {
+      "nome": "Canais e regras",
+      "descricao": "O que cada canal de comunicação serve e as regras de uso.",
+      "colunas": [
+        {"nome": "Canal", "tipo": "texto"},
+        {"nome": "Para que serve", "tipo": "texto"},
+        {"nome": "Quem publica", "tipo": "texto"},
+        {"nome": "Regra de uso", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["Grupo de avisos (WhatsApp)", "Comunicados oficiais", "Dono e gerente", "Só aviso; dúvidas no privado ao gerente"],
+        ["Quadro de avisos", "Escala e regras da casa", "Assistente administrativo", "Atualizar toda segunda"],
+        ["Reunião de início de turno", "Prioridades do dia", "Gerente", "15 minutos, em pé"]
+      ]
+    },
+    {
+      "nome": "Rotina de reuniões",
+      "descricao": "Reuniões recorrentes com objetivo e duração.",
+      "colunas": [
+        {"nome": "Reunião", "tipo": "texto"},
+        {"nome": "Frequência", "tipo": "lista", "opcoes": ["Diária", "Semanal", "Quinzenal", "Mensal"]},
+        {"nome": "Duração (min)", "tipo": "numero"},
+        {"nome": "Participantes", "tipo": "texto"},
+        {"nome": "Resultado esperado", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["Alinhamento do turno", "Diária", 15, "Equipe do turno", "Prioridades e alertas definidos"],
+        ["Resultados da semana", "Semanal", 30, "Líderes", "Metas e problemas encaminhados"]
+      ]
+    },
+    {
+      "nome": "Comunicados",
+      "descricao": "Registro dos avisos importantes e da confirmação de leitura.",
+      "colunas": [
+        {"nome": "Assunto", "tipo": "texto"},
+        {"nome": "Data", "tipo": "data"},
+        {"nome": "Público", "tipo": "texto"},
+        {"nome": "Canal", "tipo": "texto"},
+        {"nome": "Confirmação", "tipo": "lista", "opcoes": ["Pendente", "Confirmado por todos"]}
+      ],
+      "exemplos": [
+        ["Mudança no horário de sábado", "-2", "Toda a equipe", "Grupo de avisos", "Confirmado por todos"],
+        ["Novo procedimento de troca", "0", "Atendimento", "Quadro de avisos", "Pendente"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Menos canais, mais claros: um grupo de avisos só com comunicados já reduz muito o ruído.",
+    "Mensagem boa responde a quatro perguntas: o quê, quem, quando e a quem perguntar.",
+    "Evite mensagens fora do horário de trabalho, salvo urgência combinada.",
+    "Elogie em público e trate assuntos delicados em particular.",
+    "Reunião curta e diária vale mais que reunião longa e rara."
+  ]
+}

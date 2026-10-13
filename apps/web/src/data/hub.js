@@ -1,3 +1,5 @@
+import kitSubdivisions from './kitSubdivisions.json';
+
 export const AREAS = [
     {
         id: 'gestao',
@@ -82,9 +84,9 @@ export const AREAS = [
     },
 ];
 
-// Subdivisões que já têm Kit de Arranque (planilha entregue na hora da compra).
-// Manter em sincronia com apps/api/src/constants/kits.js.
-export const KIT_SUBDIVISIONS = new Set(['Controle de estoque', 'Gestão de estoque', 'Gestão de pedidos', 'Controle de vencimentos']);
+// Subdivisões que já têm Kit de Arranque (planilha entregue na hora da compra). A lista é gerada por
+// tools/kits/gerar_kits_genericos.py junto com apps/api/kits/indice.json, então não sai de sincronia.
+export const KIT_SUBDIVISIONS = new Set(kitSubdivisions);
 
 export const hasKit = (subdivision) => KIT_SUBDIVISIONS.has(subdivision);
 

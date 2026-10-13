@@ -1,0 +1,82 @@
+{
+  "slug": "dashboard-gerencial",
+  "titulo": "Dashboard gerencial",
+  "area": "gestao",
+  "subdivisoes": ["Dashboard gerencial"],
+  "resumo": "Um painel de uma tela com os números que mandam no seu negócio (caixa, vendas, clientes, lucro), alimentado por uma planilha simples. Ao final você abre uma página e entende a saúde da empresa em 2 minutos.",
+  "como_usar": [
+    "Preencha a aba 'Dados do mês' com os números do mês (faturamento, despesas, clientes, etc.).",
+    "Mantenha a aba 'Metas do painel' atualizada com o que você espera de cada número.",
+    "Use a aba 'Alertas' para definir quando um número deve virar sinal de atenção.",
+    "Revise o painel toda segunda-feira, em 10 minutos.",
+    "Quando um alerta estiver ativo, anote a causa e a ação ao lado."
+  ],
+  "diagnostico": [
+    "Para saber como a empresa está, você precisa abrir várias planilhas, sistemas ou extratos?",
+    "Você descobre problemas de caixa só quando o dinheiro já faltou?",
+    "Sabe, hoje, quanto já vendeu no mês e quanto falta para a meta?",
+    "Sabe quanto tem a receber e a pagar nos próximos 30 dias?",
+    "Você olha os números num dia e horário fixos?",
+    "Alguém além de você consegue ler e atualizar o painel?",
+    "Seus números principais cabem em uma única tela ou folha?",
+    "Os números mostram tendência (comparação com meses anteriores), e não só o valor atual?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Escolher de 6 a 10 números essenciais (caixa, vendas, ticket médio, clientes novos, inadimplência, lucro)", "responsavel": "Dono", "prazo_dias": 1},
+    {"etapa": "Dia 3", "acao": "Mapear onde cada dado mora hoje (sistema, banco, planilha)", "responsavel": "Dono", "prazo_dias": 3},
+    {"etapa": "Semana 1", "acao": "Montar a aba 'Dados do mês' e lançar os últimos 3 meses de histórico", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 2", "acao": "Definir metas e faixas de alerta para cada número", "responsavel": "Dono", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Criar gráficos simples: faturamento mensal, caixa projetado e funil de vendas", "responsavel": "Dono ou assistente", "prazo_dias": 21},
+    {"etapa": "Semana 4", "acao": "Rodar o painel por 4 semanas seguidas e anotar o que faltou", "responsavel": "Dono", "prazo_dias": 28},
+    {"etapa": "Mês 2", "acao": "Treinar uma pessoa para atualizar os dados semanalmente", "responsavel": "Dono", "prazo_dias": 45},
+    {"etapa": "Mês 3", "acao": "Enxugar: remover números sem uso e acrescentar o que a rotina pedir", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Defina o público do painel", "como": "Pergunte: quem vai ler e que decisão vai tomar? Para o dono, caixa e vendas vêm primeiro.", "cuidado": "Querer que o painel sirva a todos e ficar poluído."},
+    {"passo": "Reúna os dados em um só lugar", "como": "Crie uma planilha com uma linha por semana ou mês e uma coluna por número.", "cuidado": "Dados espalhados em muitos arquivos quebram o hábito."},
+    {"passo": "Padronize as definições", "como": "Escreva ao lado de cada número o que ele inclui (ex.: faturamento = vendas faturadas, sem devoluções).", "cuidado": "Mudar o critério de um mês para outro."},
+    {"passo": "Monte os gráficos", "como": "Use linha para tendência, barra para comparar meses e número grande para o valor atual.", "cuidado": "Gráficos 3D ou com muitas cores atrapalham a leitura."},
+    {"passo": "Adicione cores de alerta", "como": "Verde dentro da meta, amarelo perto do limite, vermelho fora.", "cuidado": "Alertas sem regra clara geram falso alarme."},
+    {"passo": "Crie a rotina de leitura", "como": "Segunda de manhã, 10 minutos: olhe os vermelhos, decida 1 ação.", "cuidado": "Painel bonito que ninguém abre."}
+  ],
+  "abas": [
+    {
+      "nome": "Dados do mês",
+      "descricao": "Números essenciais que alimentam o painel, um registro por semana.",
+      "colunas": [
+        {"nome": "Semana de", "tipo": "data"},
+        {"nome": "Vendas da semana", "tipo": "moeda"},
+        {"nome": "Despesas da semana", "tipo": "moeda"},
+        {"nome": "Saldo em caixa", "tipo": "moeda"},
+        {"nome": "Clientes novos", "tipo": "numero"},
+        {"nome": "A receber em 30 dias", "tipo": "moeda"}
+      ],
+      "exemplos": [
+        ["-14", 7200.0, 5100.0, 11800.0, 6, 9500.0],
+        ["-7", 8400.0, 5600.0, 14600.0, 9, 10200.0],
+        ["0", 6900.0, 4800.0, 16700.0, 5, 9800.0]
+      ]
+    },
+    {
+      "nome": "Alertas",
+      "descricao": "Regras que definem quando um número vira sinal de atenção.",
+      "colunas": [
+        {"nome": "Número", "tipo": "texto"},
+        {"nome": "Limite de atenção", "tipo": "numero"},
+        {"nome": "Limite crítico", "tipo": "numero"},
+        {"nome": "Se acionar, fazer", "tipo": "texto"},
+        {"nome": "Responsável", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["Saldo em caixa", 10000, 5000, "Adiar compras não urgentes e cobrar clientes", "Dono"],
+        ["Clientes novos por semana", 6, 3, "Reforçar divulgação e contato com indicações", "Responsável A"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Menos é mais: um painel com 8 números usados vale mais que um com 40 ignorados.",
+    "Se puder, conecte a planilha ao Google Sheets para ver no celular.",
+    "Mostre sempre a comparação com o mesmo período do ano anterior, se tiver histórico.",
+    "Atualize antes de olhar: painel desatualizado é pior que nenhum."
+  ]
+}

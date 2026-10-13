@@ -1,0 +1,86 @@
+{
+  "slug": "organizacao-fiscal",
+  "titulo": "Organização fiscal",
+  "area": "contabil",
+  "subdivisoes": ["Organização fiscal"],
+  "resumo": "Monte uma rotina simples para guardar notas, comprovantes e prazos fiscais da empresa em um só lugar. Ao final, você terá um calendário mensal e um mapa de onde fica cada documento.",
+  "como_usar": [
+    "Preencha o diagnóstico para ver onde seu controle fiscal está falho.",
+    "Cadastre na aba Calendário fiscal todas as guias e entregas do seu regime.",
+    "Use a aba Mapa de documentos para definir onde cada tipo de papel ou arquivo fica guardado.",
+    "Siga o plano de 90 dias, uma etapa por vez.",
+    "Todo mês, rode o procedimento de fechamento antes de enviar tudo ao contador."
+  ],
+  "diagnostico": [
+    "Você sabe de cabeça quais impostos sua empresa paga e em que dia vencem?",
+    "As notas de compra e venda ficam num único lugar (pasta ou sistema)?",
+    "Você consegue achar uma nota de 6 meses atrás em menos de 5 minutos?",
+    "Já pagou multa ou juros por atraso de guia nos últimos 12 meses?",
+    "Mistura gastos pessoais com gastos da empresa na mesma conta?",
+    "Seu contador precisa cobrar documentos de você todo mês?",
+    "Você guarda comprovantes de pagamento das guias de impostos?",
+    "Alguém além de você sabe onde ficam os documentos fiscais?",
+    "Existe uma data fixa no mês para separar e enviar os documentos?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Criar a pasta raiz 'Fiscal' (nuvem) com subpastas por ano e mês", "responsavel": "Dono", "prazo_dias": 2},
+    {"etapa": "Semana 1", "acao": "Listar todos os impostos e obrigações da empresa na aba Calendário fiscal, perguntando ao contador se algo falta", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 2", "acao": "Abrir conta bancária exclusiva da empresa, se ainda não houver, e parar de misturar gastos", "responsavel": "Dono", "prazo_dias": 14},
+    {"etapa": "Semana 2", "acao": "Definir o dia fixo do mês para fechamento fiscal (ex.: dia 3)", "responsavel": "Dono", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Pedir ao contador os XMLs/notas de entrada e saída dos últimos 12 meses e organizar nas pastas", "responsavel": "Administrativo", "prazo_dias": 21},
+    {"etapa": "Semana 4", "acao": "Programar lembretes no celular 5 dias antes de cada vencimento", "responsavel": "Administrativo", "prazo_dias": 28},
+    {"etapa": "Mês 2", "acao": "Fazer o primeiro fechamento mensal completo seguindo o procedimento", "responsavel": "Administrativo", "prazo_dias": 45},
+    {"etapa": "Mês 2", "acao": "Treinar uma segunda pessoa para substituir você no fechamento", "responsavel": "Dono", "prazo_dias": 60},
+    {"etapa": "Mês 3", "acao": "Conferir se todas as guias do trimestre têm comprovante de pagamento arquivado", "responsavel": "Administrativo", "prazo_dias": 80},
+    {"etapa": "Mês 3", "acao": "Validar com o contador o calendário, a lista de documentos e o prazo de guarda de cada item", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Reunir notas do mês", "como": "Baixe as notas emitidas e recebidas e coloque na subpasta do mês, separando Entradas e Saídas.", "cuidado": "Não deixe notas no e-mail ou WhatsApp sem salvar na pasta."},
+    {"passo": "Nomear os arquivos", "como": "Use o padrão AAAA-MM-DD_fornecedor_valor. Assim a busca fica rápida.", "cuidado": "Nomes como 'nota1.pdf' viram problema depois."},
+    {"passo": "Conferir com o extrato", "como": "Compare as despesas do extrato bancário com as notas guardadas e marque o que está sem nota.", "cuidado": "Gasto sem nota pode não ser aceito como despesa."},
+    {"passo": "Registrar no calendário", "como": "Atualize o status de cada obrigação do mês: pendente, paga ou entregue.", "cuidado": "Não marque como paga sem o comprovante salvo."},
+    {"passo": "Arquivar comprovantes", "como": "Salve o comprovante de pagamento de cada guia na pasta Guias do mês.", "cuidado": "Print de tela não substitui o comprovante bancário."},
+    {"passo": "Enviar ao contador", "como": "Mande o link da pasta do mês e um aviso de que o fechamento foi concluído.", "cuidado": "Não envie em fotos soltas pelo WhatsApp."},
+    {"passo": "Backup", "como": "Confirme que a pasta está sincronizada na nuvem e uma cópia fica em outro local.", "cuidado": "Só no computador da loja é risco de perder tudo."}
+  ],
+  "abas": [
+    {
+      "nome": "Calendário fiscal",
+      "descricao": "Lista de guias e entregas com vencimento e status.",
+      "colunas": [
+        {"nome": "Obrigação", "tipo": "texto"},
+        {"nome": "Vencimento", "tipo": "data"},
+        {"nome": "Valor estimado", "tipo": "moeda"},
+        {"nome": "Responsável", "tipo": "texto"},
+        {"nome": "Status", "tipo": "lista", "opcoes": ["Pendente", "Paga", "Entregue", "Atrasada"]}
+      ],
+      "exemplos": [
+        ["Guia do imposto mensal do regime", "+10", 850.0, "Administrativo", "Pendente"],
+        ["Folha e encargos", "+5", 1900.0, "Contador", "Pendente"],
+        ["Entrega de documentos ao contador", "+3", 0.0, "Dono", "Entregue"]
+      ]
+    },
+    {
+      "nome": "Mapa de documentos",
+      "descricao": "Define onde cada tipo de documento fiscal é guardado e por quem.",
+      "colunas": [
+        {"nome": "Tipo de documento", "tipo": "texto"},
+        {"nome": "Onde fica", "tipo": "texto"},
+        {"nome": "Formato", "tipo": "lista", "opcoes": ["Digital", "Papel", "Ambos"]},
+        {"nome": "Responsável", "tipo": "texto"},
+        {"nome": "Última conferência", "tipo": "data"}
+      ],
+      "exemplos": [
+        ["Notas de venda emitidas", "Nuvem/Fiscal/2026/Saídas", "Digital", "Administrativo", "-10"],
+        ["Notas de compra", "Nuvem/Fiscal/2026/Entradas", "Ambos", "Administrativo", "-10"],
+        ["Comprovantes de guias", "Nuvem/Fiscal/2026/Guias", "Digital", "Dono", "-20"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Peça sempre a nota fiscal no CNPJ da empresa, não no CPF do sócio.",
+    "Crie um e-mail só para receber notas de fornecedores e deixe o contador com acesso.",
+    "Quinze minutos por semana de organização evitam um dia inteiro de correria no fim do mês.",
+    "Prazos de guarda de documentos variam; confirme com o contador antes de descartar qualquer papel."
+  ]
+}

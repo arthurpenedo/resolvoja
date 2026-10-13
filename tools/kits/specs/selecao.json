@@ -1,0 +1,95 @@
+{
+  "slug": "selecao",
+  "titulo": "Seleção",
+  "area": "pessoas",
+  "subdivisoes": ["Seleção"],
+  "resumo": "Um processo de seleção simples e justo, com roteiro de entrevista e nota por critério, para escolher a pessoa certa com base em fatos e não em impressão. Você termina com uma decisão registrada e comparável entre candidatos.",
+  "como_usar": [
+    "Antes de entrevistar, liste na aba 'Critérios da vaga' de 4 a 6 competências ligadas ao trabalho e o peso de cada uma.",
+    "Use as perguntas da aba 'Roteiro de entrevista' com todos os candidatos, na mesma ordem.",
+    "Logo após cada entrevista, dê nota de 1 a 5 por critério na aba 'Avaliação dos candidatos'.",
+    "Compare as notas totais e converse com quem entrevistou junto antes de decidir.",
+    "Faça a proposta por escrito e avise os demais candidatos do resultado."
+  ],
+  "diagnostico": [
+    "Você define os critérios de escolha antes de começar a entrevistar?",
+    "Todos os candidatos da mesma vaga respondem às mesmas perguntas?",
+    "Você anota as respostas durante ou logo depois da entrevista?",
+    "Mais de uma pessoa participa da decisão?",
+    "Você usa algum teste prático ligado ao trabalho real (ex.: atender um cliente simulado)?",
+    "Você confere referências profissionais antes de contratar?",
+    "Suas perguntas são sobre o trabalho e não sobre vida pessoal, família, religião ou saúde?",
+    "Você já contratou alguém por simpatia e se arrependeu?",
+    "Você registra o motivo da escolha e da não escolha de cada candidato?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Definir de 4 a 6 critérios objetivos para a vaga (ex.: experiência com atendimento, organização, comunicação, disponibilidade de horário).", "responsavel": "Dono", "prazo_dias": 1},
+    {"etapa": "Dia 3", "acao": "Montar o roteiro de entrevista com perguntas de comportamento passado (\"conte uma situação em que...\").", "responsavel": "Dono", "prazo_dias": 3},
+    {"etapa": "Semana 1", "acao": "Preparar um teste prático curto (15 a 30 minutos) com uma tarefa real do cargo.", "responsavel": "Gerente", "prazo_dias": 7},
+    {"etapa": "Semana 2", "acao": "Realizar as entrevistas com duas pessoas presentes sempre que possível e preencher a avaliação logo em seguida.", "responsavel": "Dono", "prazo_dias": 14},
+    {"etapa": "Semana 2", "acao": "Pedir e conferir duas referências profissionais dos finalistas, com autorização deles.", "responsavel": "Assistente administrativo", "prazo_dias": 16},
+    {"etapa": "Semana 3", "acao": "Comparar as notas, decidir e enviar a proposta por escrito com cargo, salário, horário e data de início.", "responsavel": "Dono", "prazo_dias": 21},
+    {"etapa": "Semana 3", "acao": "Avisar os não selecionados com mensagem respeitosa e arquivar a avaliação.", "responsavel": "Assistente administrativo", "prazo_dias": 25},
+    {"etapa": "Dia 90", "acao": "Revisar se o contratado atingiu o esperado e ajustar os critérios para as próximas seleções.", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Fixar os critérios", "como": "Escolha competências que realmente influenciam o resultado no cargo e dê peso 1 a 3 para cada.", "cuidado": "Usar critérios vagos como \"boa aparência\" ou \"perfil\"; critérios devem ser ligados ao trabalho."},
+    {"passo": "Abrir a entrevista", "como": "Apresente a empresa, a vaga e o roteiro em 3 minutos, deixando o candidato à vontade.", "cuidado": "Falar mais do que ouvir; o candidato deve falar cerca de 70% do tempo."},
+    {"passo": "Perguntar sobre fatos", "como": "Peça exemplos reais: o que a pessoa fez, como fez e qual foi o resultado.", "cuidado": "Perguntas sobre gravidez, filhos, estado civil, religião, idade, orientação ou saúde: não pergunte, não são critérios de trabalho."},
+    {"passo": "Aplicar teste prático", "como": "Simule uma tarefa do dia a dia e observe como a pessoa resolve.", "cuidado": "Teste longo demais ou que usa o candidato como mão de obra gratuita."},
+    {"passo": "Pontuar na hora", "como": "Dê nota de 1 a 5 por critério e escreva uma frase de evidência.", "cuidado": "Deixar para pontuar no fim da semana e misturar candidatos."},
+    {"passo": "Decidir e comunicar", "como": "Some as notas ponderadas, discuta com o outro entrevistador e comunique todos os candidatos.", "cuidado": "Desempatar por afinidade pessoal em vez de voltar aos critérios."}
+  ],
+  "abas": [
+    {
+      "nome": "Critérios da vaga",
+      "descricao": "Define o que será avaliado e o peso de cada critério.",
+      "colunas": [
+        {"nome": "Critério", "tipo": "texto"},
+        {"nome": "O que observar", "tipo": "texto"},
+        {"nome": "Peso (1 a 3)", "tipo": "numero"}
+      ],
+      "exemplos": [
+        ["Comunicação com cliente", "Clareza, educação, escuta", 3],
+        ["Organização", "Exemplos de rotina e controle de tarefas", 2],
+        ["Disponibilidade de horário", "Compatível com a escala da loja", 2]
+      ]
+    },
+    {
+      "nome": "Roteiro de entrevista",
+      "descricao": "Perguntas padronizadas para todos os candidatos.",
+      "colunas": [
+        {"nome": "Pergunta", "tipo": "texto"},
+        {"nome": "Critério avaliado", "tipo": "texto"},
+        {"nome": "Sinal positivo", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["Conte uma situação em que um cliente ficou insatisfeito. O que você fez?", "Comunicação com cliente", "Ouviu, resolveu e fez acompanhamento"],
+        ["Como você organiza suas tarefas numa semana corrida?", "Organização", "Usa lista, prioridade e prazo"]
+      ]
+    },
+    {
+      "nome": "Avaliação dos candidatos",
+      "descricao": "Notas por critério e decisão final.",
+      "colunas": [
+        {"nome": "Candidato", "tipo": "texto"},
+        {"nome": "Vaga", "tipo": "texto"},
+        {"nome": "Data da entrevista", "tipo": "data"},
+        {"nome": "Nota total (1 a 5)", "tipo": "numero"},
+        {"nome": "Decisão", "tipo": "lista", "opcoes": ["Avançar", "Aguardar", "Reprovado", "Contratado"]}
+      ],
+      "exemplos": [
+        ["Candidato A", "Auxiliar de atendimento", "-4", 4, "Avançar"],
+        ["Candidato B", "Auxiliar de atendimento", "-3", 3, "Aguardar"],
+        ["Candidato C", "Auxiliar de atendimento", "-2", 5, "Contratado"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Perguntas sobre situações reais do passado preveem melhor o desempenho que perguntas hipotéticas.",
+    "Evite qualquer critério ligado a sexo, idade, cor, estado civil, gravidez, religião, deficiência ou aparência: além de injusto, pode gerar problema jurídico.",
+    "Dois entrevistadores reduzem o risco de decidir por simpatia.",
+    "Guarde as avaliações por pelo menos alguns meses, para explicar a decisão se alguém perguntar.",
+    "Um bom período de experiência não substitui uma boa seleção, mas ajuda a confirmar a escolha."
+  ]
+}

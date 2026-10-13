@@ -1,0 +1,97 @@
+{
+  "slug": "planejamento-tributario",
+  "titulo": "Planejamento tributário",
+  "area": "contabil",
+  "subdivisoes": ["Planejamento tributário"],
+  "resumo": "Aprenda a prever os impostos do ano, separar o dinheiro das guias e identificar oportunidades legais de pagar menos. Você terá um planejamento mensal e uma lista de perguntas certas para o contador.",
+  "como_usar": [
+    "Faça o diagnóstico para ver o quanto você é pego de surpresa por impostos.",
+    "Preencha a aba Projeção anual com o faturamento previsto mês a mês.",
+    "Use a aba Reserva para impostos para separar o dinheiro das guias.",
+    "Revise o planejamento a cada trimestre com o contador.",
+    "Leve a lista de oportunidades ao contador, que diz o que é permitido no seu caso."
+  ],
+  "diagnostico": [
+    "Você já foi surpreendido por uma guia de imposto maior do que esperava?",
+    "Separa uma parte de cada venda para pagar impostos?",
+    "Sabe quanto de imposto sua empresa pagou nos últimos 12 meses?",
+    "Faz previsão de faturamento para o ano?",
+    "Costuma comprar equipamentos sem checar o efeito fiscal?",
+    "Seu contador faz reuniões de planejamento, ou só entrega guias?",
+    "Você guarda notas de todas as despesas da empresa?",
+    "Conhece benefícios fiscais do seu setor ou da sua cidade?",
+    "Alguma vez perdeu um crédito ou dedução por falta de documento?"
+  ],
+  "plano": [
+    {"etapa": "Semana 1", "acao": "Somar todos os impostos pagos nos últimos 12 meses e calcular o percentual sobre o faturamento", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 1", "acao": "Abrir uma conta ou subconta só para reserva de impostos", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 2", "acao": "Definir o percentual de reserva (com base no item 1) e transferir a cada venda recebida", "responsavel": "Administrativo", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Preencher a Projeção anual com faturamento previsto mês a mês", "responsavel": "Dono", "prazo_dias": 21},
+    {"etapa": "Semana 4", "acao": "Listar investimentos planejados (equipamentos, contratações, expansão)", "responsavel": "Dono", "prazo_dias": 28},
+    {"etapa": "Mês 2", "acao": "Agendar reunião de planejamento com o contador levando projeção e investimentos", "responsavel": "Dono", "prazo_dias": 45},
+    {"etapa": "Mês 2", "acao": "Registrar as oportunidades legais apontadas pelo contador e o custo de cada uma", "responsavel": "Administrativo", "prazo_dias": 55},
+    {"etapa": "Mês 3", "acao": "Comparar o previsto com o realizado e ajustar o percentual de reserva", "responsavel": "Administrativo", "prazo_dias": 80},
+    {"etapa": "Mês 3", "acao": "Validar com o contador o planejamento completo antes de executar qualquer mudança", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Descobrir sua carga real", "como": "Divida o total de impostos pagos no ano pelo faturamento do ano. Esse é seu percentual efetivo.", "cuidado": "Não use só a alíquota nominal; use o que realmente saiu do caixa."},
+    {"passo": "Projetar o ano", "como": "Estime o faturamento mês a mês considerando sazonalidade e anote na planilha.", "cuidado": "Projeção otimista demais leva a reserva insuficiente."},
+    {"passo": "Reservar o imposto", "como": "A cada recebimento, transfira o percentual definido para a conta de reserva.", "cuidado": "Usar a reserva para pagar fornecedor gera atraso de guia."},
+    {"passo": "Mapear investimentos", "como": "Antes de comprar algo grande, pergunte ao contador se há efeito fiscal na forma e na data da compra.", "cuidado": "Comprar sem nota ou em nome de pessoa física perde o benefício."},
+    {"passo": "Listar oportunidades", "como": "Anote ideias legais (créditos, deduções, incentivos) e peça confirmação ao contador.", "cuidado": "Nunca adote prática 'que o amigo faz' sem validar; pode ser sonegação."},
+    {"passo": "Acompanhar trimestralmente", "como": "Compare o imposto previsto com o pago e ajuste a projeção.", "cuidado": "Deixar para revisar só no fim do ano."}
+  ],
+  "abas": [
+    {
+      "nome": "Projeção anual",
+      "descricao": "Faturamento previsto e imposto estimado por mês.",
+      "colunas": [
+        {"nome": "Mês", "tipo": "texto"},
+        {"nome": "Faturamento previsto", "tipo": "moeda"},
+        {"nome": "Percentual de imposto (%)", "tipo": "numero"},
+        {"nome": "Imposto estimado", "tipo": "moeda"},
+        {"nome": "Faturamento realizado", "tipo": "moeda"}
+      ],
+      "exemplos": [
+        ["Janeiro", 30000.0, 9, 2700.0, 28000.0],
+        ["Fevereiro", 32000.0, 9, 2880.0, 31500.0],
+        ["Março", 38000.0, 9, 3420.0, 0.0]
+      ]
+    },
+    {
+      "nome": "Reserva para impostos",
+      "descricao": "Controle do dinheiro separado para pagar as guias.",
+      "colunas": [
+        {"nome": "Data", "tipo": "data"},
+        {"nome": "Venda recebida", "tipo": "moeda"},
+        {"nome": "Valor reservado", "tipo": "moeda"},
+        {"nome": "Guia destino", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["-8", 5000.0, 450.0, "Imposto mensal"],
+        ["-4", 3200.0, 288.0, "Imposto mensal"],
+        ["-1", 7500.0, 675.0, "Imposto mensal"]
+      ]
+    },
+    {
+      "nome": "Oportunidades",
+      "descricao": "Ideias de economia legal a confirmar com o contador.",
+      "colunas": [
+        {"nome": "Ideia", "tipo": "texto"},
+        {"nome": "Economia possível", "tipo": "moeda"},
+        {"nome": "Confirmada pelo contador", "tipo": "lista", "opcoes": ["Sim", "Não", "Aguardando"]},
+        {"nome": "Prazo", "tipo": "data"}
+      ],
+      "exemplos": [
+        ["Verificar créditos sobre compras de insumos", 1200.0, "Aguardando", "+30"],
+        ["Revisar enquadramento da atividade", 800.0, "Aguardando", "+45"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Planejar é legal; sonegar é crime. A diferença está em usar apenas o que a lei permite.",
+    "Reserve o imposto no dia em que o dinheiro entra, não no dia da guia.",
+    "Peça ao contador uma reunião de planejamento, não só a entrega de guias.",
+    "Guarde nota de tudo: sem documento, o benefício pode ser perdido."
+  ]
+}

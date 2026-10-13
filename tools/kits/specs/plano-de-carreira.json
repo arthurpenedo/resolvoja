@@ -1,0 +1,99 @@
+{
+  "slug": "plano-de-carreira",
+  "titulo": "Plano de carreira",
+  "area": "pessoas",
+  "subdivisoes": ["Plano de carreira"],
+  "resumo": "Desenha trilhas simples de crescimento, com degraus, requisitos e faixas salariais, mesmo em empresa pequena. Você termina com um caminho claro para cada função e um plano individual para os funcionários-chave.",
+  "como_usar": [
+    "Na aba 'Trilhas por função', desenhe os degraus de crescimento (ex.: Auxiliar, Atendente, Líder) com requisitos para subir.",
+    "Defina na aba 'Faixas e critérios' a faixa salarial e o que é exigido em cada degrau.",
+    "Converse com cada funcionário e registre na aba 'Plano individual' onde ele quer chegar e o que precisa desenvolver.",
+    "Combine metas e treinamentos de 6 a 12 meses para o próximo degrau.",
+    "Revise as promoções uma ou duas vezes ao ano, de forma transparente e apoiada em critérios."
+  ],
+  "diagnostico": [
+    "Os funcionários sabem como podem crescer na sua empresa?",
+    "Existem degraus ou níveis dentro de uma mesma função (júnior, pleno, sênior ou equivalentes)?",
+    "Promoções acontecem por critérios claros, e não por simpatia ou tempo de casa apenas?",
+    "Você conversa com os funcionários sobre seus objetivos profissionais?",
+    "Há treinamentos ligados ao crescimento de cada pessoa?",
+    "As faixas salariais por degrau estão definidas?",
+    "A empresa já perdeu bons funcionários por falta de perspectiva?",
+    "Quem foi promovido sabia o que precisava fazer para isso?",
+    "Existe sucessor ou alguém sendo preparado para funções-chave?"
+  ],
+  "plano": [
+    {"etapa": "Semana 1", "acao": "Listar as funções da empresa e identificar onde existe possibilidade real de crescimento (vertical ou de especialização).", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 2", "acao": "Desenhar de 2 a 4 degraus por trilha, com nome do degrau e responsabilidades adicionais.", "responsavel": "Dono", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Definir requisitos de promoção: tempo mínimo na função, resultados, competências e treinamentos.", "responsavel": "Dono", "prazo_dias": 21},
+    {"etapa": "Mês 1", "acao": "Definir faixas salariais por degrau dentro do que o caixa suporta e comparar com o mercado local.", "responsavel": "Dono", "prazo_dias": 30},
+    {"etapa": "Mês 1", "acao": "Apresentar as trilhas à equipe, explicando que promoção depende de critérios e de abertura de necessidade no negócio.", "responsavel": "Dono", "prazo_dias": 40},
+    {"etapa": "Mês 2", "acao": "Realizar conversa de carreira individual e registrar o plano de cada funcionário.", "responsavel": "Gerente", "prazo_dias": 60},
+    {"etapa": "Mês 2", "acao": "Vincular treinamentos e projetos ao plano de cada pessoa.", "responsavel": "Gerente", "prazo_dias": 75},
+    {"etapa": "Mês 3", "acao": "Primeira revisão de promoções com base nos critérios, com feedback a todos; formalizar mudanças com o contador.", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Desenhar degraus", "como": "Crie níveis com mais responsabilidade ou mais domínio técnico em cada degrau.", "cuidado": "Criar títulos sem mudança real de responsabilidade."},
+    {"passo": "Definir critérios", "como": "Escreva o que a pessoa deve demonstrar para passar de nível, com exemplos.", "cuidado": "Critérios vagos que viram escolha por afinidade."},
+    {"passo": "Alinhar com a realidade financeira", "como": "Calcule o custo das promoções previstas e planeje por etapas.", "cuidado": "Prometer promoção que o caixa não suporta."},
+    {"passo": "Conversar com cada pessoa", "como": "Pergunte onde quer estar em 2 a 3 anos e o que gosta de fazer.", "cuidado": "Supor que todos querem ser chefes; alguns preferem crescer como especialistas."},
+    {"passo": "Montar o plano individual", "como": "Defina 2 a 3 ações de desenvolvimento com prazo para o próximo degrau.", "cuidado": "Plano genérico igual para todos."},
+    {"passo": "Revisar e formalizar", "como": "Reveja a cada 6 meses, comunique a decisão com justificativa e formalize alterações de cargo e salário.", "cuidado": "Promover só de boca ou sem registrar o novo cargo e salário."}
+  ],
+  "abas": [
+    {
+      "nome": "Trilhas por função",
+      "descricao": "Degraus de crescimento em cada área da empresa.",
+      "colunas": [
+        {"nome": "Trilha", "tipo": "texto"},
+        {"nome": "Degrau", "tipo": "texto"},
+        {"nome": "Nível", "tipo": "numero"},
+        {"nome": "Responsabilidades a mais", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["Atendimento", "Atendente I", 1, "Atende clientes seguindo o roteiro"],
+        ["Atendimento", "Atendente II", 2, "Resolve reclamações sozinho e orienta novatos"],
+        ["Atendimento", "Líder de atendimento", 3, "Organiza escala e acompanha indicadores"]
+      ]
+    },
+    {
+      "nome": "Faixas e critérios",
+      "descricao": "Requisitos e faixa salarial para cada degrau.",
+      "colunas": [
+        {"nome": "Degrau", "tipo": "texto"},
+        {"nome": "Tempo mínimo (meses)", "tipo": "numero"},
+        {"nome": "Critério de promoção", "tipo": "texto"},
+        {"nome": "Salário inicial", "tipo": "moeda"},
+        {"nome": "Salário final", "tipo": "moeda"}
+      ],
+      "exemplos": [
+        ["Atendente I", 0, "Admissão", 1650.0, 1850.0],
+        ["Atendente II", 12, "Avaliação acima de 4 e treinamento concluído", 1900.0, 2200.0],
+        ["Líder de atendimento", 24, "Liderou projeto e formou um novato", 2500.0, 3000.0]
+      ]
+    },
+    {
+      "nome": "Plano individual",
+      "descricao": "Plano de desenvolvimento por funcionário.",
+      "colunas": [
+        {"nome": "Funcionário", "tipo": "texto"},
+        {"nome": "Degrau atual", "tipo": "texto"},
+        {"nome": "Próximo degrau", "tipo": "texto"},
+        {"nome": "Ação de desenvolvimento", "tipo": "texto"},
+        {"nome": "Prazo", "tipo": "data"},
+        {"nome": "Situação", "tipo": "lista", "opcoes": ["A fazer", "Em andamento", "Concluído"]}
+      ],
+      "exemplos": [
+        ["Funcionário A", "Atendente I", "Atendente II", "Curso de atendimento ao cliente", "+90", "Em andamento"],
+        ["Funcionário B", "Atendente II", "Líder de atendimento", "Conduzir a reunião semanal da equipe", "+60", "A fazer"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Em empresa pequena, o crescimento nem sempre é de cargo; pode ser ampliar responsabilidades, especializar-se ou ganhar mais autonomia.",
+    "Seja transparente: promoção depende de resultado e de necessidade do negócio.",
+    "Conte a trilha na entrevista de contratação; isso atrai pessoas que querem crescer.",
+    "Formalize toda mudança de cargo e salário por escrito e avise o contador.",
+    "Preparar um sucessor para funções-chave protege o negócio."
+  ]
+}

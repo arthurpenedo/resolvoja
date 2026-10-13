@@ -1,0 +1,105 @@
+{
+  "slug": "implementar-crm",
+  "titulo": "Implementar CRM",
+  "area": "tecnologia",
+  "subdivisoes": ["Implementar CRM"],
+  "resumo": "Guia para escolher e colocar um CRM em uso na sua equipe: requisitos, funil de vendas, importação de contatos, comparação de ferramentas e plano de adoção. O objetivo é que o CRM seja usado todo dia, não que fique parado.",
+  "como_usar": [
+    "Responda o diagnóstico para identificar onde você perde vendas hoje.",
+    "Desenhe seu funil na aba Funil de vendas, com as etapas reais do seu processo.",
+    "Liste o que o CRM precisa fazer na aba Requisitos e separe o essencial do desejável.",
+    "Compare 2 ou 3 CRMs na aba Comparação de CRMs e faça teste gratuito.",
+    "Importe os contatos, treine a equipe e acompanhe o uso pelo plano de adoção."
+  ],
+  "diagnostico": [
+    "Você sabe hoje quantos orçamentos estão abertos e em que fase estão?",
+    "Os contatos de clientes estão espalhados entre WhatsApp, planilhas e caderno?",
+    "Já perdeu venda por esquecer de retornar um cliente?",
+    "Existe mais de uma pessoa atendendo ou vendendo?",
+    "Você sabe de onde vêm seus clientes (indicação, Instagram, anúncio)?",
+    "Seu processo de venda tem etapas que se repetem (contato, orçamento, negociação, fechamento)?",
+    "Você quer enviar mensagens ou e-mails de acompanhamento automaticamente?",
+    "Alguém vai ser responsável por manter os dados do CRM atualizados?",
+    "Você teria que integrar o CRM com WhatsApp, site ou financeiro?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Mapear as etapas reais da venda, do primeiro contato ao pós-venda", "responsavel": "Dono", "prazo_dias": 3},
+    {"etapa": "Semana 1", "acao": "Listar requisitos essenciais e desejáveis com a equipe", "responsavel": "Dono + equipe", "prazo_dias": 7},
+    {"etapa": "Semana 1", "acao": "Limpar a base: juntar contatos duplicados, padronizar nomes e telefones", "responsavel": "Equipe", "prazo_dias": 10},
+    {"etapa": "Semana 2", "acao": "Testar 2 a 3 CRMs (ex.: RD Station CRM, Pipedrive, HubSpot, Agendor, Zoho CRM, Ploomes) em teste gratuito", "responsavel": "Dono", "prazo_dias": 18},
+    {"etapa": "Semana 3", "acao": "Escolher, conferir termos de contrato, cancelamento e exportação de dados", "responsavel": "Dono", "prazo_dias": 21},
+    {"etapa": "Semana 3", "acao": "Configurar funil, campos, usuários e permissões", "responsavel": "Dono", "prazo_dias": 24},
+    {"etapa": "Semana 4", "acao": "Importar contatos e negócios em aberto; conferir uma amostra", "responsavel": "Dono", "prazo_dias": 28},
+    {"etapa": "Semana 4", "acao": "Treinar a equipe (1 hora) e definir regras: tudo que é venda entra no CRM", "responsavel": "Dono", "prazo_dias": 30},
+    {"etapa": "Dia 45", "acao": "Reunião semanal olhando só o CRM; o que não está lá não existe", "responsavel": "Dono", "prazo_dias": 45},
+    {"etapa": "Dia 60", "acao": "Ligar integração com WhatsApp, formulário do site e e-mail", "responsavel": "Dono", "prazo_dias": 60},
+    {"etapa": "Dia 75", "acao": "Validar com advogado como tratar e armazenar dados pessoais dos clientes (LGPD)", "responsavel": "Dono + advogado", "prazo_dias": 75},
+    {"etapa": "Dia 90", "acao": "Avaliar uso e resultado: taxa de conversão, tempo de resposta e vendas por origem", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Desenhar o funil", "como": "Escolha de 4 a 7 etapas, por exemplo: Novo contato, Orçamento enviado, Negociação, Fechado, Perdido.", "cuidado": "Criar etapas demais; a equipe desiste de atualizar."},
+    {"passo": "Definir campos obrigatórios", "como": "Nome, telefone, origem, valor estimado e próximo contato. Só o que será usado.", "cuidado": "Pedir 30 campos que ninguém preenche."},
+    {"passo": "Limpar e padronizar a base", "como": "Reúna contatos em uma planilha, remova duplicados, padronize telefones com DDD e importe por CSV.", "cuidado": "Importar lixo; o CRM nasce confuso."},
+    {"passo": "Escolher pelo uso real", "como": "Teste o dia a dia: cadastrar contato, mover negócio, agendar retorno. Veja se funciona bem no celular.", "cuidado": "Escolher o CRM com mais recursos em vez do que sua equipe vai realmente abrir."},
+    {"passo": "Conferir contrato", "como": "Veja preço por usuário, limite de contatos, taxa de implantação, e se dá para exportar todos os dados.", "cuidado": "Fidelidade longa e dados presos na ferramenta."},
+    {"passo": "Criar rotinas de follow-up", "como": "Todo negócio precisa de uma próxima ação com data. Configure lembretes.", "cuidado": "Negócio sem próxima ação é negócio esquecido."},
+    {"passo": "Treinar e acompanhar", "como": "Treinamento curto, regras claras e revisão do funil toda semana.", "cuidado": "Instalar e não cobrar uso; a equipe volta para o caderno."},
+    {"passo": "Medir", "como": "Acompanhe taxa de conversão por etapa e por origem; ajuste o processo.", "cuidado": "Olhar só o número de contatos e não o de vendas."}
+  ],
+  "abas": [
+    {
+      "nome": "Funil de vendas",
+      "descricao": "Etapas do seu processo e o que fazer em cada uma.",
+      "colunas": [
+        {"nome": "Etapa", "tipo": "texto"},
+        {"nome": "Objetivo", "tipo": "texto"},
+        {"nome": "Ação padrão", "tipo": "texto"},
+        {"nome": "Prazo máximo (dias)", "tipo": "numero"},
+        {"nome": "Responsável", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["Novo contato", "Entender a necessidade", "Responder em até 15 minutos", 1, "Vendedor"],
+        ["Orçamento enviado", "Apresentar proposta", "Ligar para confirmar recebimento", 3, "Vendedor"],
+        ["Negociação", "Resolver dúvidas e preço", "Agendar conversa final", 7, "Dono"]
+      ]
+    },
+    {
+      "nome": "Requisitos",
+      "descricao": "O que o CRM precisa ter; separa o essencial do desejável.",
+      "colunas": [
+        {"nome": "Requisito", "tipo": "texto"},
+        {"nome": "Prioridade", "tipo": "lista", "opcoes": ["Essencial", "Desejável", "Dispensável"]},
+        {"nome": "Quem pediu", "tipo": "texto"},
+        {"nome": "Atendido por qual CRM", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["Aplicativo no celular", "Essencial", "Vendedor", "A testar"],
+        ["Integração com WhatsApp", "Essencial", "Dono", "A testar"],
+        ["Relatório por origem do cliente", "Desejável", "Dono", "A testar"]
+      ]
+    },
+    {
+      "nome": "Comparação de CRMs",
+      "descricao": "Mesmos critérios para todos os candidatos.",
+      "colunas": [
+        {"nome": "CRM", "tipo": "texto"},
+        {"nome": "Custo por usuário/mês", "tipo": "moeda"},
+        {"nome": "Teste gratuito", "tipo": "lista", "opcoes": ["Sim", "Não", "A confirmar"]},
+        {"nome": "App no celular", "tipo": "lista", "opcoes": ["Sim", "Não", "A confirmar"]},
+        {"nome": "Integra WhatsApp", "tipo": "lista", "opcoes": ["Nativo", "Via integração", "Não"]},
+        {"nome": "Nota (1 a 5)", "tipo": "numero"}
+      ],
+      "exemplos": [
+        ["CRM A", 0.0, "A confirmar", "A confirmar", "Via integração", 4],
+        ["CRM B", 0.0, "A confirmar", "A confirmar", "Nativo", 3]
+      ]
+    }
+  ],
+  "dicas": [
+    "Se sua equipe é de 1 a 3 pessoas, um CRM simples ou até uma planilha bem organizada pode ser suficiente no começo.",
+    "Preencha os custos só depois de ver o preço no site oficial ou receber proposta por escrito.",
+    "O melhor CRM é o que sua equipe usa todo dia.",
+    "Defina um dono do CRM que garante a qualidade dos dados.",
+    "Exporte seus dados todo mês para ter cópia própria."
+  ]
+}

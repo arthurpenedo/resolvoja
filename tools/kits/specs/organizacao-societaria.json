@@ -1,0 +1,102 @@
+{
+  "slug": "organizacao-societaria",
+  "titulo": "Organização societária",
+  "area": "administrativo",
+  "subdivisoes": ["Organização societária"],
+  "resumo": "Organiza os documentos e as informações dos sócios, do contrato social e das alterações da empresa, com um dossiê societário completo e um mapa de quem decide o quê. Não substitui advogado ou contador: prepara tudo para que eles trabalhem rápido.",
+  "como_usar": [
+    "Reúna os documentos societários e use a aba Dossiê societário para conferir o que existe e o que falta.",
+    "Preencha o Quadro de sócios com participação, função e dados de contato.",
+    "Anote decisões importantes (retiradas, entrada de sócio, mudanças) no Registro de decisões.",
+    "Use o procedimento antes de qualquer mudança: alteração de endereço, atividade, capital ou sócios.",
+    "Leve o dossiê ao contador e ao advogado quando for formalizar mudanças.",
+    "Este material orienta e organiza; não garante validade jurídica."
+  ],
+  "diagnostico": [
+    "Você tem o contrato social atual (com todas as alterações) à mão em PDF?",
+    "O endereço e a atividade que constam no cartão CNPJ conferem com a realidade?",
+    "Existe acordo escrito entre os sócios sobre retirada, decisões e saída de sócio?",
+    "Está claro quem pode assinar e representar a empresa?",
+    "A divisão do lucro e das responsabilidades entre sócios está registrada?",
+    "Houve mudança de sócio, endereço ou atividade que ainda não foi formalizada?",
+    "Você mistura contas pessoais com as da empresa?",
+    "Todos os sócios têm cópia dos documentos da empresa?",
+    "Você sabe qual é o porte e o regime tributário atual e se ainda cabem na realidade da empresa?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Baixar e guardar: cartão CNPJ atualizado, contrato social com todas as alterações e certidão simplificada da junta comercial (ou documento equivalente).", "responsavel": "Dono", "prazo_dias": 3},
+    {"etapa": "Semana 1", "acao": "Montar o dossiê societário na pasta 01 Societário com documentos pessoais dos sócios (RG/CPF, comprovante de endereço).", "responsavel": "Administrativo", "prazo_dias": 7},
+    {"etapa": "Semana 2", "acao": "Preencher o quadro de sócios: participação, função, pró-labore, poderes de assinatura.", "responsavel": "Dono", "prazo_dias": 14},
+    {"etapa": "Semana 2", "acao": "Conferir se dados do contrato social, cartão CNPJ e realidade (endereço, atividade, capital) batem; listar divergências.", "responsavel": "Administrativo", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Registrar por escrito as regras informais entre sócios (retirada, tarefas, decisões) para levar ao advogado.", "responsavel": "Dono", "prazo_dias": 21},
+    {"etapa": "Semana 4", "acao": "Separar pessoa física de jurídica: conta bancária, cartão e pró-labore definido.", "responsavel": "Dono", "prazo_dias": 28},
+    {"etapa": "Semana 6", "acao": "Consultar o contador sobre adequação do porte, regime tributário e atividades (CNAE) ao que a empresa faz hoje.", "responsavel": "Dono", "prazo_dias": 45},
+    {"etapa": "Semana 8", "acao": "Contratar o advogado ou contador para formalizar alterações pendentes e eventual acordo de sócios.", "responsavel": "Dono", "prazo_dias": 60},
+    {"etapa": "Semana 10", "acao": "Arquivar alterações registradas e atualizar quadro de sócios e dossiê.", "responsavel": "Administrativo", "prazo_dias": 75},
+    {"etapa": "Dia 90", "acao": "Validar com advogado e contador o dossiê final e as regras entre sócios antes de considerá-las oficiais.", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Reunir documentos base", "como": "Cartão CNPJ, contrato social e alterações, inscrições estadual/municipal, documentos dos sócios.", "cuidado": "Guardar só o contrato original sem as alterações posteriores."},
+    {"passo": "Conferir dados", "como": "Compare endereço, atividades, capital e quadro de sócios entre os documentos e a realidade.", "cuidado": "Assumir que o cadastro está certo porque 'sempre foi assim'."},
+    {"passo": "Mapear poderes", "como": "Anote quem representa a empresa, limites de assinatura e decisões que exigem todos os sócios.", "cuidado": "Deixar poderes de assinatura indefinidos."},
+    {"passo": "Registrar combinados", "como": "Escreva em linguagem simples as regras entre sócios (retirada, entrada/saída, desempate) para o advogado formalizar.", "cuidado": "Confiar em acordos de boca entre sócios."},
+    {"passo": "Antes de qualquer mudança", "como": "Liste o que muda (endereço, atividade, sócio, capital), junte os documentos e peça ao contador o caminho de formalização.", "cuidado": "Mudar na prática sem atualizar o registro."},
+    {"passo": "Formalizar", "como": "Contador/advogado elabora e protocola a alteração; você acompanha e guarda a via registrada.", "cuidado": "Assinar documentos sem ler o que mudou."},
+    {"passo": "Atualizar o dossiê", "como": "Substitua documentos antigos pelos novos, mantendo histórico, e atualize o quadro de sócios.", "cuidado": "Apagar a versão antiga em vez de arquivar."}
+  ],
+  "abas": [
+    {
+      "nome": "Quadro de sócios",
+      "descricao": "Quem são os sócios, participação, função e poderes.",
+      "colunas": [
+        {"nome": "Sócio", "tipo": "texto"},
+        {"nome": "Participação (%)", "tipo": "numero"},
+        {"nome": "Função", "tipo": "texto"},
+        {"nome": "Pode assinar sozinho", "tipo": "lista", "opcoes": ["Sim", "Não", "Até um limite"]},
+        {"nome": "Pró-labore", "tipo": "moeda"},
+        {"nome": "Entrada na empresa", "tipo": "data"}
+      ],
+      "exemplos": [
+        ["Sócio A", 60, "Administração e vendas", "Sim", 3000.0, "-900"],
+        ["Sócio B", 40, "Operações", "Até um limite", 2000.0, "-900"]
+      ]
+    },
+    {
+      "nome": "Dossiê societário",
+      "descricao": "Checklist dos documentos societários e se estão atualizados.",
+      "colunas": [
+        {"nome": "Documento", "tipo": "texto"},
+        {"nome": "Situação", "tipo": "lista", "opcoes": ["Atualizado", "Desatualizado", "Faltando"]},
+        {"nome": "Data do documento", "tipo": "data"},
+        {"nome": "Local", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["Contrato social + alterações", "Atualizado", "-500", "01 Societário"],
+        ["Cartão CNPJ", "Desatualizado", "-700", "01 Societário"],
+        ["Acordo entre sócios", "Faltando", "0", "A formalizar"]
+      ]
+    },
+    {
+      "nome": "Registro de decisões",
+      "descricao": "Decisões importantes tomadas pelos sócios.",
+      "colunas": [
+        {"nome": "Data", "tipo": "data"},
+        {"nome": "Decisão", "tipo": "texto"},
+        {"nome": "Quem decidiu", "tipo": "texto"},
+        {"nome": "Precisa formalizar", "tipo": "lista", "opcoes": ["Sim", "Não"]},
+        {"nome": "Status", "tipo": "lista", "opcoes": ["Decidido", "Em formalização", "Formalizado"]}
+      ],
+      "exemplos": [
+        ["-20", "Mudar endereço da sede", "Sócios A e B", "Sim", "Em formalização"],
+        ["-8", "Definir retirada mensal", "Sócios A e B", "Não", "Decidido"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Todo combinado importante entre sócios deve ir para o papel enquanto todo mundo está de acordo.",
+    "Mudou algo na prática (endereço, atividade, sócio)? O registro oficial precisa acompanhar.",
+    "Mantenha cópias dos documentos pessoais dos sócios em pasta restrita, com acesso limitado.",
+    "Regras de tipo societário, retirada e responsabilidade dependem do seu caso; validar com advogado ou contador.",
+    "Não tome decisões como 'dar sociedade a alguém' sem orientação jurídica."
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "slug": "gestao-de-funcionarios",
+  "titulo": "Gestão de funcionários",
+  "area": "pessoas",
+  "subdivisoes": ["Gestão de funcionários"],
+  "resumo": "Cadastro central de todos os funcionários, com datas importantes, documentos e ocorrências. Você termina com um controle simples que evita esquecer vencimentos (experiência, exames, férias) e deixa a rotina de RH organizada.",
+  "como_usar": [
+    "Cadastre cada funcionário na aba 'Cadastro' com cargo, data de admissão e contrato.",
+    "Registre na aba 'Vencimentos e prazos' as datas que exigem ação: fim do contrato de experiência, exame periódico, treinamentos.",
+    "Anote ocorrências relevantes (advertências, elogios, atestados) na aba 'Ocorrências' com data e assunto.",
+    "Revise a planilha toda segunda-feira, olhando o que vence nos próximos 30 dias.",
+    "Guarde os documentos físicos ou digitais numa pasta por funcionário, com acesso restrito."
+  ],
+  "diagnostico": [
+    "Você tem uma lista atualizada com todos os funcionários, cargos e datas de admissão?",
+    "Sabe quando termina o contrato de experiência de cada novato?",
+    "Os exames médicos admissionais e periódicos estão em dia?",
+    "Existe pasta organizada por funcionário com documentos essenciais?",
+    "Ocorrências importantes (faltas, advertências, atestados) ficam registradas?",
+    "Você sabe quem está de férias vencidas ou perto de vencer?",
+    "Dados pessoais dos funcionários ficam protegidos e acessíveis só a quem precisa?",
+    "A equipe conhece as regras da casa (horário, faltas, uso de celular)?",
+    "Há contato de emergência atualizado de cada funcionário?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Listar todos os funcionários com nome, cargo, data de admissão, tipo de contrato e gestor direto.", "responsavel": "Assistente administrativo", "prazo_dias": 1},
+    {"etapa": "Semana 1", "acao": "Pedir ao contador cópia do cadastro oficial e conferir se bate com a planilha.", "responsavel": "Assistente administrativo", "prazo_dias": 7},
+    {"etapa": "Semana 1", "acao": "Montar a pasta individual com cópias dos documentos essenciais e a lista de contato de emergência.", "responsavel": "Assistente administrativo", "prazo_dias": 10},
+    {"etapa": "Semana 2", "acao": "Cadastrar todos os vencimentos: contratos de experiência, exames periódicos, treinamentos obrigatórios, férias.", "responsavel": "Assistente administrativo", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Escrever as regras da casa em uma folha, colher assinatura de ciência e arquivar.", "responsavel": "Dono", "prazo_dias": 21},
+    {"etapa": "Mês 1", "acao": "Criar o hábito semanal de revisar vencimentos e ocorrências, com alerta no calendário.", "responsavel": "Gerente", "prazo_dias": 30},
+    {"etapa": "Mês 2", "acao": "Definir acesso restrito às pastas e orientar quem manuseia dados pessoais sobre a LGPD.", "responsavel": "Dono", "prazo_dias": 60},
+    {"etapa": "Mês 3", "acao": "Revisar o processo com o contador e ajustar o que faltar, validando com contador/advogado trabalhista as regras e documentos exigidos para a sua atividade.", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Cadastrar na admissão", "como": "Inclua o funcionário na planilha no mesmo dia em que o contador confirmar a admissão.", "cuidado": "Deixar para cadastrar depois e perder datas."},
+    {"passo": "Registrar vencimentos", "como": "Para cada data importante, crie linha com antecedência de alerta de 30 dias.", "cuidado": "Depender da memória para lembrar do fim do contrato de experiência."},
+    {"passo": "Anotar ocorrências", "como": "Escreva fato, data e quem estava presente, sem opinião.", "cuidado": "Registrar adjetivos (\"preguiçoso\") em vez de fatos."},
+    {"passo": "Guardar atestados e documentos", "como": "Arquive atestados médicos e comprovantes na pasta individual e repasse ao contador.", "cuidado": "Compartilhar atestado com a equipe; informação de saúde é sensível."},
+    {"passo": "Comunicar alterações", "como": "Mudanças de cargo, salário ou horário devem ser formalizadas por escrito com ciência do funcionário.", "cuidado": "Combinar tudo só de boca."},
+    {"passo": "Proteger os dados", "como": "Limite acesso, use senha na planilha e não envie documentos por grupos abertos.", "cuidado": "Deixar pasta de documentos em local aberto."}
+  ],
+  "abas": [
+    {
+      "nome": "Cadastro",
+      "descricao": "Dados básicos de cada funcionário.",
+      "colunas": [
+        {"nome": "Nome", "tipo": "texto"},
+        {"nome": "Cargo", "tipo": "texto"},
+        {"nome": "Admissão", "tipo": "data"},
+        {"nome": "Contrato", "tipo": "lista", "opcoes": ["Experiência", "Prazo indeterminado", "Prazo determinado", "Estágio", "Aprendiz"]},
+        {"nome": "Gestor direto", "tipo": "texto"},
+        {"nome": "Salário", "tipo": "moeda"}
+      ],
+      "exemplos": [
+        ["Funcionário A", "Atendente", "-200", "Prazo indeterminado", "Gerente", 1800.0],
+        ["Funcionário B", "Auxiliar", "-30", "Experiência", "Gerente", 1650.0]
+      ]
+    },
+    {
+      "nome": "Vencimentos e prazos",
+      "descricao": "Datas que exigem ação para não perder prazo.",
+      "colunas": [
+        {"nome": "Funcionário", "tipo": "texto"},
+        {"nome": "Tipo", "tipo": "lista", "opcoes": ["Fim da experiência", "Exame periódico", "Treinamento", "Férias", "Outro"]},
+        {"nome": "Data limite", "tipo": "data"},
+        {"nome": "Situação", "tipo": "lista", "opcoes": ["Pendente", "Providenciado"]}
+      ],
+      "exemplos": [
+        ["Funcionário B", "Fim da experiência", "+15", "Pendente"],
+        ["Funcionário A", "Exame periódico", "+40", "Pendente"],
+        ["Funcionário A", "Treinamento", "-5", "Providenciado"]
+      ]
+    },
+    {
+      "nome": "Ocorrências",
+      "descricao": "Registro de fatos relevantes da vida funcional.",
+      "colunas": [
+        {"nome": "Funcionário", "tipo": "texto"},
+        {"nome": "Data", "tipo": "data"},
+        {"nome": "Tipo", "tipo": "lista", "opcoes": ["Elogio", "Atraso/falta", "Advertência", "Atestado", "Mudança de função", "Outro"]},
+        {"nome": "Descrição do fato", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["Funcionário A", "-12", "Elogio", "Resolveu reclamação de cliente com agilidade"],
+        ["Funcionário B", "-4", "Atestado", "Atestado de 1 dia entregue"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Confirme com seu contador prazos de contrato de experiência, exames e documentos obrigatórios do seu ramo.",
+    "Registre fatos, não opiniões: um registro objetivo protege você e o funcionário.",
+    "Atestados e dados de saúde são informações sensíveis: restrinja o acesso.",
+    "Uma revisão semanal de 15 minutos evita 90% dos sustos com prazos.",
+    "Valide com contador/advogado trabalhista qualquer decisão disciplinar mais séria antes de executá-la."
+  ]
+}

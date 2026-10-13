@@ -1,0 +1,96 @@
+{
+  "slug": "padronizacao-de-tarefas",
+  "titulo": "Padronização de tarefas",
+  "area": "operacoes",
+  "subdivisoes": ["Padronização de tarefas"],
+  "resumo": "Transforma tarefas que cada pessoa faz de um jeito em checklists e padrões únicos de execução. Ao final, o resultado fica igual independentemente de quem faz.",
+  "como_usar": [
+    "Na aba 'Tarefas a padronizar', liste as tarefas repetidas que mais variam de pessoa para pessoa.",
+    "Observe duas pessoas fazendo a mesma tarefa e anote as diferenças.",
+    "Escolha o melhor jeito e escreva o padrão na aba 'Checklists padrao'.",
+    "Treine a equipe, cole o checklist no local de trabalho e acompanhe a adesão.",
+    "Revise o padrão a cada 3 meses ou quando algo der errado."
+  ],
+  "diagnostico": [
+    "Duas pessoas diferentes entregam a mesma tarefa com resultados diferentes?",
+    "Você já corrigiu o mesmo erro mais de uma vez com pessoas diferentes?",
+    "Existe um 'jeito certo' escrito para suas 5 tarefas mais repetidas?",
+    "A qualidade cai quando a pessoa mais experiente está ausente?",
+    "Funcionário novo depende de perguntar a colegas para saber como fazer?",
+    "Há tarefas em que cada um usa seus próprios materiais, medidas ou ordem?",
+    "Você mede o tempo que cada tarefa leva?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Listar as 10 tarefas mais repetidas e marcar as 3 em que o resultado mais varia.", "responsavel": "Dono", "prazo_dias": 3},
+    {"etapa": "Semana 1", "acao": "Observar a tarefa 1 sendo feita por duas pessoas e anotar cada diferença.", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 2", "acao": "Definir o padrão da tarefa 1 (ordem, materiais, medidas, tempo-alvo) com quem faz melhor.", "responsavel": "Dono e executor", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Transformar o padrão em checklist de no máximo 10 itens e imprimir.", "responsavel": "Líder", "prazo_dias": 21},
+    {"etapa": "Semana 4", "acao": "Treinar toda a equipe fazendo junto a primeira execução com o checklist.", "responsavel": "Líder", "prazo_dias": 30},
+    {"etapa": "Semana 6", "acao": "Auditar 5 execuções da tarefa 1 e medir quantas seguiram o padrão.", "responsavel": "Líder", "prazo_dias": 45},
+    {"etapa": "Semana 8", "acao": "Repetir o ciclo com as tarefas 2 e 3.", "responsavel": "Líder", "prazo_dias": 60},
+    {"etapa": "Semana 12", "acao": "Definir data fixa trimestral de revisão dos padrões e coletar sugestões da equipe.", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Escolha a tarefa", "como": "Pegue uma tarefa frequente em que o resultado varia ou que gera erro.", "cuidado": "Não comece por tarefas raras; o ganho vem da repetição."},
+    {"passo": "Observe de verdade", "como": "Acompanhe a execução sem interromper e anote ordem, ferramentas e tempo.", "cuidado": "Perguntar 'como você faz?' dá a versão idealizada."},
+    {"passo": "Escolha o melhor jeito", "como": "Junte o que cada um faz de melhor e fixe uma única forma, com medidas e tempos.", "cuidado": "Não imponha sem ouvir; o executor conhece o detalhe que importa."},
+    {"passo": "Escreva o checklist", "como": "Verbos no imperativo, um item por ação, máximo 10 itens, com o critério de 'pronto'.", "cuidado": "Checklist longo demais não é usado."},
+    {"passo": "Treine e acompanhe", "como": "Faça junto da primeira vez e confira nas duas primeiras semanas.", "cuidado": "Só entregar o papel não muda hábito."},
+    {"passo": "Melhore sempre", "como": "Quando alguém sugerir um jeito melhor, teste e atualize o padrão com data.", "cuidado": "Padrão congelado vira burocracia."}
+  ],
+  "abas": [
+    {
+      "nome": "Tarefas a padronizar",
+      "descricao": "Fila priorizada das tarefas que precisam de padrão.",
+      "colunas": [
+        {"nome": "Tarefa", "tipo": "texto"},
+        {"nome": "Quem executa", "tipo": "texto"},
+        {"nome": "Vezes por semana", "tipo": "numero"},
+        {"nome": "Variação do resultado", "tipo": "lista", "opcoes": ["Alta", "Média", "Baixa"]},
+        {"nome": "Situação", "tipo": "lista", "opcoes": ["A fazer", "Em observação", "Padrão criado", "Treinado"]}
+      ],
+      "exemplos": [
+        ["Embalar pedido", "Pessoa A e B", 40, "Alta", "Em observação"],
+        ["Atender primeiro contato", "Pessoa C", 25, "Média", "A fazer"],
+        ["Limpeza do final do dia", "Equipe", 6, "Alta", "Padrão criado"]
+      ]
+    },
+    {
+      "nome": "Checklists padrao",
+      "descricao": "Itens do checklist de cada tarefa, com tempo-alvo e critério de pronto.",
+      "colunas": [
+        {"nome": "Tarefa", "tipo": "texto"},
+        {"nome": "Ordem", "tipo": "numero"},
+        {"nome": "Ação", "tipo": "texto"},
+        {"nome": "Critério de pronto", "tipo": "texto"},
+        {"nome": "Tempo-alvo (min)", "tipo": "numero"}
+      ],
+      "exemplos": [
+        ["Embalar pedido", 1, "Conferir itens com o pedido impresso", "Todos os itens marcados", 2],
+        ["Embalar pedido", 2, "Proteger itens frágeis", "Sem folga na caixa", 3],
+        ["Embalar pedido", 3, "Colar etiqueta e fotografar", "Foto salva com número do pedido", 1]
+      ]
+    },
+    {
+      "nome": "Auditoria de adesao",
+      "descricao": "Registro de conferências para ver se o padrão está sendo seguido.",
+      "colunas": [
+        {"nome": "Data", "tipo": "data"},
+        {"nome": "Tarefa", "tipo": "texto"},
+        {"nome": "Executor", "tipo": "texto"},
+        {"nome": "Seguiu o padrão", "tipo": "lista", "opcoes": ["Sim", "Parcial", "Não"]},
+        {"nome": "Observação", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["-2", "Embalar pedido", "Pessoa A", "Sim", ""],
+        ["-1", "Embalar pedido", "Pessoa B", "Parcial", "Pulou a foto"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Padronize o que dá erro ou varia; não precisa padronizar o que já funciona bem.",
+    "Use fotos do resultado correto: valem mais que parágrafos.",
+    "Peça para a pessoa que faz melhor escrever o padrão com você; ela vai defendê-lo para os colegas.",
+    "Cole o checklist plastificado onde a tarefa acontece."
+  ]
+}

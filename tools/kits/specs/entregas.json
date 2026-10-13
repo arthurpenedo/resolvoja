@@ -1,0 +1,84 @@
+{
+  "slug": "entregas",
+  "titulo": "Entregas",
+  "area": "operacoes",
+  "subdivisoes": ["Entregas"],
+  "resumo": "Organiza a última milha: roteiro do dia, janelas de horário, comprovante de entrega e tratamento de falhas. Ao final cada entrega sai no horário combinado e com prova de recebimento.",
+  "como_usar": [
+    "Na véspera ou de manhã, liste na aba 'Roteiro do dia' todas as entregas com endereço e janela de horário.",
+    "Ordene por região e horário para formar a rota mais curta.",
+    "Ao entregar, registre horário, quem recebeu e ocorrência.",
+    "Para as entregas que falharam, use a aba 'Falhas de entrega' e reagende no mesmo dia.",
+    "Semanalmente, veja o percentual de entregas no prazo e as causas de falha."
+  ],
+  "diagnostico": [
+    "O cliente sabe a janela de horário da entrega antes dela acontecer?",
+    "O entregador sai com a rota organizada, e não pedido por pedido?",
+    "Há comprovante de recebimento (assinatura, foto ou nome)?",
+    "Você sabe a porcentagem de entregas feitas no prazo?",
+    "O endereço e o telefone são confirmados antes da saída?",
+    "Existe regra para quando o cliente está ausente?",
+    "O cliente é avisado quando o entregador está a caminho?",
+    "Há registro de custo por entrega (combustível, tempo, motoboy)?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Definir janelas de entrega oferecidas (ex.: manhã 9h-12h, tarde 13h-18h) e horário de corte do pedido.", "responsavel": "Dono", "prazo_dias": 2},
+    {"etapa": "Semana 1", "acao": "Criar mensagem padrão de confirmação de endereço, janela e telefone para enviar antes da saída.", "responsavel": "Atendimento", "prazo_dias": 7},
+    {"etapa": "Semana 2", "acao": "Começar a montar o roteiro diário na planilha, agrupando por região.", "responsavel": "Expedição", "prazo_dias": 14},
+    {"etapa": "Semana 2", "acao": "Adotar comprovante de entrega: foto do pacote com o nome de quem recebeu.", "responsavel": "Entregador", "prazo_dias": 14},
+    {"etapa": "Semana 4", "acao": "Definir a regra para cliente ausente: duas tentativas, depois contato e reagendamento ou retirada.", "responsavel": "Dono", "prazo_dias": 28},
+    {"etapa": "Semana 6", "acao": "Passar a avisar o cliente quando o entregador sair com o pedido.", "responsavel": "Atendimento", "prazo_dias": 42},
+    {"etapa": "Semana 8", "acao": "Calcular custo médio por entrega e percentual no prazo dos primeiros 30 dias.", "responsavel": "Dono", "prazo_dias": 60},
+    {"etapa": "Semana 12", "acao": "Rever taxa de entrega cobrada e áreas atendidas conforme o custo real.", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Confirme antes de sair", "como": "Mande mensagem pedindo confirmar endereço, referência e alguém para receber.", "cuidado": "Endereço errado é a falha de entrega mais comum."},
+    {"passo": "Monte a rota", "como": "Agrupe por bairro e ordene considerando a janela de cada cliente.", "cuidado": "Rota na ordem de chegada dos pedidos dobra o percurso."},
+    {"passo": "Carregue e confira", "como": "Confira cada volume com a lista antes de sair e carregue na ordem inversa da entrega.", "cuidado": "Descobrir item faltando na rua custa a viagem inteira."},
+    {"passo": "Entregue com comprovante", "como": "Colete assinatura ou foto do pacote e nome de quem recebeu.", "cuidado": "Sem comprovante, contestação de 'não recebi' vira perda."},
+    {"passo": "Trate a ausência", "como": "Ligue na hora, aguarde poucos minutos e registre; reagende no mesmo dia se possível.", "cuidado": "Deixar com vizinho sem autorização do cliente gera problema."},
+    {"passo": "Feche o dia", "como": "Atualize o status de todas as entregas e anote falhas e causas.", "cuidado": "Falha não registrada se repete."}
+  ],
+  "abas": [
+    {
+      "nome": "Roteiro do dia",
+      "descricao": "Lista de entregas do dia ordenada por rota e janela de horário.",
+      "colunas": [
+        {"nome": "Ordem", "tipo": "numero"},
+        {"nome": "Pedido", "tipo": "texto"},
+        {"nome": "Bairro", "tipo": "texto"},
+        {"nome": "Janela", "tipo": "lista", "opcoes": ["Manhã", "Tarde", "Noite", "Horário marcado"]},
+        {"nome": "Telefone do cliente", "tipo": "texto"},
+        {"nome": "Status", "tipo": "lista", "opcoes": ["Aguardando saída", "Em rota", "Entregue", "Falhou"]},
+        {"nome": "Comprovante", "tipo": "lista", "opcoes": ["Foto", "Assinatura", "Nenhum"]}
+      ],
+      "exemplos": [
+        [1, "Pedido 201", "Centro", "Manhã", "(00) 90000-0001", "Entregue", "Foto"],
+        [2, "Pedido 205", "Jardim A", "Manhã", "(00) 90000-0002", "Em rota", "Nenhum"],
+        [3, "Pedido 208", "Vila B", "Tarde", "(00) 90000-0003", "Aguardando saída", "Nenhum"]
+      ]
+    },
+    {
+      "nome": "Falhas de entrega",
+      "descricao": "Registro de entregas que não deram certo e como foram resolvidas.",
+      "colunas": [
+        {"nome": "Data", "tipo": "data"},
+        {"nome": "Pedido", "tipo": "texto"},
+        {"nome": "Motivo", "tipo": "lista", "opcoes": ["Cliente ausente", "Endereço errado", "Recusou", "Atraso nosso", "Produto danificado"]},
+        {"nome": "Nova tentativa", "tipo": "data"},
+        {"nome": "Custo extra", "tipo": "moeda"},
+        {"nome": "Resolvido", "tipo": "lista", "opcoes": ["Sim", "Não"]}
+      ],
+      "exemplos": [
+        ["-2", "Pedido 190", "Cliente ausente", "-1", 15.0, "Sim"],
+        ["-1", "Pedido 195", "Endereço errado", "+1", 22.0, "Não"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Entregas com janela de 3 horas reduzem ausência sem prometer hora exata impossível.",
+    "Foto do pacote na porta com a fachada visível serve de prova prática.",
+    "Cobrar taxa de nova tentativa desencoraja ausências sem aviso, se combinada antes.",
+    "Peça ponto de referência e nome de quem vai receber no momento do pedido."
+  ]
+}

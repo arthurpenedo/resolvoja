@@ -1,0 +1,85 @@
+{
+  "slug": "estoque-maximo",
+  "titulo": "Estoque máximo",
+  "area": "estoque",
+  "subdivisoes": ["Estoque máximo"],
+  "resumo": "Defina o teto de estoque por produto para não imobilizar dinheiro, estourar o espaço físico nem perder mercadoria por validade. Ao final você terá um limite por item e uma regra de quanto comprar sem passar dele.",
+  "como_usar": [
+    "Preencha na aba 'Limites' a venda média por dia, o espaço disponível e o prazo de validade ou de obsolescência de cada item.",
+    "Escolha quantos dias de venda você aceita cobrir em estoque (cobertura máxima).",
+    "A planilha calcula o máximo pela cobertura e compara com o limite do espaço.",
+    "Use o menor dos dois valores como estoque máximo do produto.",
+    "Antes de cada pedido, confira na aba 'Pedido' a quantidade que cabe sem ultrapassar o máximo."
+  ],
+  "diagnostico": [
+    "Seu estoque está cheio de itens que vendem pouco?",
+    "Você compra mais para ganhar desconto sem calcular se vai vender antes de pagar?",
+    "Falta espaço no depósito ou prateleira para guardar o que chega?",
+    "Já perdeu produto por validade, mofo, moda ou modelo que saiu de linha?",
+    "Você sabe quanto dinheiro está parado no estoque hoje?",
+    "Seu fluxo de caixa aperta porque você pagou compras grandes de uma vez?",
+    "Existe um limite de compra por produto ou o comprador decide na hora?",
+    "Você sabe quantos dias de venda cada item tem em estoque?",
+    "Compra em volume de fornecedor sem comparar o custo de manter o produto parado?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Calcular o valor total do estoque (quantidade x custo) para ver o dinheiro parado", "responsavel": "Dono", "prazo_dias": 3},
+    {"etapa": "Semana 1", "acao": "Calcular a cobertura atual (estoque / venda diária) dos 30 principais itens", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 2", "acao": "Definir a cobertura máxima por classe: A=30 dias, B=45 dias, C=60 dias (ajuste ao seu ramo)", "responsavel": "Dono", "prazo_dias": 14},
+    {"etapa": "Semana 2", "acao": "Medir o espaço físico de cada categoria e a capacidade em unidades", "responsavel": "Estoquista", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Preencher a aba Limites e fixar o estoque máximo de cada item", "responsavel": "Dono", "prazo_dias": 21},
+    {"etapa": "Semana 4", "acao": "Passar a regra ao comprador: nenhum pedido deixa o estoque acima do máximo", "responsavel": "Dono", "prazo_dias": 30},
+    {"etapa": "Mês 2", "acao": "Listar itens acima do máximo e planejar saída (promoção, kit, devolução)", "responsavel": "Dono", "prazo_dias": 45},
+    {"etapa": "Mês 3", "acao": "Rever máximos e medir quanto o dinheiro parado caiu", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Descobrir a cobertura", "como": "Divida o estoque atual pela venda média diária e veja para quantos dias ele dura.", "cuidado": "Se a venda é irregular, use a média de 90 dias e não de uma semana boa."},
+    {"passo": "Fixar a cobertura máxima", "como": "Escolha por classe os dias de venda aceitáveis em estoque; menor para perecíveis e moda.", "cuidado": "Não use o mesmo número para tudo."},
+    {"passo": "Calcular o máximo por venda", "como": "Máximo = venda por dia x cobertura máxima em dias.", "cuidado": "Some o estoque mínimo se o seu método de reposição não incluir a segurança."},
+    {"passo": "Checar limite físico", "como": "Veja quantas unidades cabem no espaço dedicado ao produto.", "cuidado": "Estoque no corredor atrapalha a operação e esconde a contagem real."},
+    {"passo": "Checar limite de validade", "como": "O máximo não pode passar do que se vende antes de vencer (menos folga de 20%).", "cuidado": "Produto com validade curta pesa mais que desconto de volume."},
+    {"passo": "Escolher o menor", "como": "O máximo oficial é o menor valor entre venda, espaço e validade.", "cuidado": "Escolher o maior desfaz a regra."},
+    {"passo": "Comparar compra com desconto", "como": "Calcule o custo de manter parado (juros do capital e perdas) antes de aceitar uma compra grande.", "cuidado": "Desconto de 5% não compensa 90 dias de dinheiro parado se seu custo de dinheiro é alto."},
+    {"passo": "Aplicar no pedido", "como": "Quantidade a comprar = máximo - estoque atual - pedidos a caminho.", "cuidado": "Esquecer pedidos em trânsito."}
+  ],
+  "abas": [
+    {
+      "nome": "Limites",
+      "descricao": "Cálculo do estoque máximo por produto.",
+      "colunas": [
+        {"nome": "Produto", "tipo": "texto"},
+        {"nome": "Venda média por dia", "tipo": "numero"},
+        {"nome": "Cobertura máxima (dias)", "tipo": "numero"},
+        {"nome": "Capacidade do espaço (un.)", "tipo": "numero"},
+        {"nome": "Validade ou vida útil (dias)", "tipo": "numero"}
+      ],
+      "exemplos": [
+        ["Produto A", 8, 30, 400, 180],
+        ["Produto B", 3, 45, 100, 60],
+        ["Produto C", 1, 60, 80, 365]
+      ]
+    },
+    {
+      "nome": "Pedido",
+      "descricao": "Quanto comprar sem passar do máximo.",
+      "colunas": [
+        {"nome": "Produto", "tipo": "texto"},
+        {"nome": "Estoque atual", "tipo": "numero"},
+        {"nome": "Pedidos a caminho", "tipo": "numero"},
+        {"nome": "Custo unitário", "tipo": "moeda"},
+        {"nome": "Situação", "tipo": "lista", "opcoes": ["Dentro do limite", "Acima do máximo", "Abaixo do mínimo"]}
+      ],
+      "exemplos": [
+        ["Produto A", 120, 0, 15.0, "Dentro do limite"],
+        ["Produto C", 90, 0, 40.0, "Acima do máximo"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Dinheiro parado em estoque tem custo: se você paga juros ou perde investimento, some isso no cálculo.",
+    "Estoque acima do máximo vira meta de promoção, e não de compra.",
+    "Em itens com pouca saída, prefira comprar em quantidades menores e mais frequentes, mesmo que o preço unitário suba um pouco.",
+    "Negocie com o fornecedor entregas parceladas para ganhar o desconto de volume sem estocar tudo.",
+    "Cuidado com lançamentos: estoque máximo baixo no início evita ficar com a sobra."
+  ]
+}

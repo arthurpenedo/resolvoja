@@ -1,0 +1,84 @@
+{
+  "slug": "triagem-de-curriculos",
+  "titulo": "Triagem de currículos",
+  "area": "pessoas",
+  "subdivisoes": ["Triagem de currículos"],
+  "resumo": "Um método rápido e objetivo para separar os currículos que merecem entrevista, usando critérios ligados ao trabalho. Você reduz horas de leitura e evita decidir por impressão ou preconceito.",
+  "como_usar": [
+    "Defina na aba 'Critérios de triagem' o que é eliminatório (ex.: disponibilidade de horário) e o que pontua.",
+    "Registre cada currículo na aba 'Triagem' e responda cada critério com sim ou não.",
+    "Dê a nota conforme o resultado e classifique em A (chamar), B (reserva) ou C (não segue).",
+    "Chame os candidatos A para entrevista em até 3 dias e mantenha os B como reserva.",
+    "Envie resposta aos candidatos C e arquive os dados com cuidado."
+  ],
+  "diagnostico": [
+    "Você tem critérios escritos antes de abrir o primeiro currículo?",
+    "Sabe separar o que é eliminatório do que é apenas desejável?",
+    "Gasta mais de 2 minutos em cada currículo na primeira leitura?",
+    "Já descartou alguém por motivo que não tem relação com o trabalho (foto, idade, endereço, nome)?",
+    "Registra a decisão e o motivo para cada candidato?",
+    "Aceita currículos em formatos simples, inclusive de quem não tem currículo formatado?",
+    "Responde aos candidatos que não avançam?",
+    "Guarda os dados de forma organizada e só por tempo necessário?",
+    "Se usa filtro automático ou ferramenta de IA, confere o resultado com uma leitura humana?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Definir de 3 a 5 critérios eliminatórios objetivos (ex.: disponibilidade, escolaridade mínima exigida, localização viável para o deslocamento).", "responsavel": "Dono", "prazo_dias": 1},
+    {"etapa": "Dia 2", "acao": "Definir critérios de pontuação: experiência em atividade parecida, cursos relevantes, clareza do currículo.", "responsavel": "Dono", "prazo_dias": 2},
+    {"etapa": "Semana 1", "acao": "Montar a planilha de triagem e treinar quem vai ajudar a usá-la da mesma forma.", "responsavel": "Assistente administrativo", "prazo_dias": 5},
+    {"etapa": "Semana 1", "acao": "Triar o primeiro lote de currículos em blocos de 20 a 30 minutos, sempre com os mesmos critérios.", "responsavel": "Assistente administrativo", "prazo_dias": 7},
+    {"etapa": "Semana 2", "acao": "Conferir uma amostra dos descartados para ver se algum bom candidato ficou de fora por erro de critério.", "responsavel": "Dono", "prazo_dias": 12},
+    {"etapa": "Semana 2", "acao": "Enviar mensagem aos candidatos A com convite e aos C com resposta educada.", "responsavel": "Assistente administrativo", "prazo_dias": 14},
+    {"etapa": "Mês 1", "acao": "Apagar ou arquivar com segurança os currículos de quem não autorizou o banco de talentos, conforme a LGPD.", "responsavel": "Assistente administrativo", "prazo_dias": 30},
+    {"etapa": "Mês 3", "acao": "Comparar a nota de triagem com o desempenho dos contratados e ajustar os critérios.", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Preparar critérios", "como": "Escreva eliminatórios e pontuáveis antes de ler qualquer currículo.", "cuidado": "Mudar os critérios no meio da triagem para encaixar um candidato preferido."},
+    {"passo": "Leitura rápida", "como": "Em 1 a 2 minutos, procure no currículo apenas os itens dos critérios.", "cuidado": "Reparar em foto, nome, bairro, idade ou estado civil; ignore o que não ajuda a prever o trabalho."},
+    {"passo": "Marcar sim ou não", "como": "Para cada critério anote sim/não na planilha.", "cuidado": "Anotar \"parece bom\" sem evidência."},
+    {"passo": "Classificar", "como": "A = atende todos os eliminatórios e boa pontuação; B = atende com lacunas; C = não atende eliminatório.", "cuidado": "Descartar experiência diferente mas transferível, como quem trabalhou em outro setor com atendimento."},
+    {"passo": "Revisar amostra", "como": "Releia 5 currículos descartados para checar se o critério não está excluindo bons perfis.", "cuidado": "Confiar cegamente em filtro automático ou palavra-chave."},
+    {"passo": "Responder e guardar", "como": "Mensagem curta a cada candidato; guarde apenas o necessário e com finalidade clara.", "cuidado": "Compartilhar currículos em grupos de WhatsApp sem permissão."}
+  ],
+  "abas": [
+    {
+      "nome": "Critérios de triagem",
+      "descricao": "Regras objetivas usadas para todos os currículos da vaga.",
+      "colunas": [
+        {"nome": "Critério", "tipo": "texto"},
+        {"nome": "Tipo", "tipo": "lista", "opcoes": ["Eliminatório", "Pontua", "Desejável"]},
+        {"nome": "Pontos", "tipo": "numero"},
+        {"nome": "Como verificar", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["Disponibilidade para escala 6x1", "Eliminatório", 0, "Perguntar ou conferir no currículo"],
+        ["Experiência com atendimento ao público", "Pontua", 3, "Trabalhos anteriores ou voluntariado"],
+        ["Curso de informática básica", "Desejável", 1, "Item de formação"]
+      ]
+    },
+    {
+      "nome": "Triagem",
+      "descricao": "Registro de cada currículo avaliado e a decisão.",
+      "colunas": [
+        {"nome": "Candidato", "tipo": "texto"},
+        {"nome": "Vaga", "tipo": "texto"},
+        {"nome": "Data", "tipo": "data"},
+        {"nome": "Pontuação", "tipo": "numero"},
+        {"nome": "Classe", "tipo": "lista", "opcoes": ["A - chamar", "B - reserva", "C - não segue"]},
+        {"nome": "Motivo", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["Candidato A", "Auxiliar de atendimento", "-2", 5, "A - chamar", "Experiência em loja e disponibilidade ok"],
+        ["Candidato B", "Auxiliar de atendimento", "-2", 3, "B - reserva", "Sem experiência, boa formação"],
+        ["Candidato C", "Auxiliar de atendimento", "-1", 0, "C - não segue", "Sem disponibilidade de horário"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Nunca use idade, sexo, cor, estado civil, filhos, religião, orientação ou aparência para filtrar; isso é discriminação e pode gerar processo.",
+    "Se usar ferramenta de IA ou filtro automático, trate o resultado como sugestão e revise com olhos humanos.",
+    "Quem tem currículo simples pode ser ótimo; avalie o que a pessoa fez, não o design do documento.",
+    "Defina um tempo máximo por currículo para não se cansar e perder o critério.",
+    "Mantenha dados de candidatos só pelo tempo necessário e peça autorização para o banco de talentos."
+  ]
+}

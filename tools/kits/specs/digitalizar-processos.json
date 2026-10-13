@@ -1,0 +1,105 @@
+{
+  "slug": "digitalizar-processos",
+  "titulo": "Digitalizar processos",
+  "area": "tecnologia",
+  "subdivisoes": ["Digitalizar processos"],
+  "resumo": "Método para tirar do papel, do WhatsApp solto e da cabeça das pessoas os processos da empresa e colocá-los em formulários, planilhas e fluxos automáticos. Você sai com os processos priorizados, mapeados e prontos para digitalizar.",
+  "como_usar": [
+    "Responda o diagnóstico para ver quais processos mais consomem tempo ou geram erro.",
+    "Liste os processos na aba Inventário de processos e pontue o impacto.",
+    "Mapeie o passo a passo do processo escolhido na aba Mapeamento passo a passo.",
+    "Escolha a ferramenta (formulário, planilha, app no-code, sistema) na aba Ferramentas por processo.",
+    "Teste com uma pessoa, treine a equipe e só então desligue o papel."
+  ],
+  "diagnostico": [
+    "Você ainda usa papel, caderno ou fichas para registrar pedidos, ordens de serviço ou atendimentos?",
+    "Pedidos e informações chegam por WhatsApp, voz, foto e se perdem?",
+    "Alguém precisa redigitar dados de um lugar para outro?",
+    "Você já perdeu documento ou informação por falta de registro?",
+    "Seus processos só funcionam se uma pessoa específica estiver presente?",
+    "Você demora para responder 'em que ponto está o pedido do cliente X'?",
+    "Você assina ou envia contratos impressos?",
+    "Sua equipe tem celular e aceita usar app ou formulário?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Listar todos os processos recorrentes da empresa (vender, comprar, entregar, cobrar, contratar)", "responsavel": "Dono + equipe", "prazo_dias": 3},
+    {"etapa": "Semana 1", "acao": "Pontuar cada um por frequência, tempo gasto e erros; escolher 1 piloto", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 2", "acao": "Mapear o processo piloto passo a passo com quem executa", "responsavel": "Dono + executor", "prazo_dias": 14},
+    {"etapa": "Semana 2", "acao": "Eliminar passos inúteis antes de digitalizar", "responsavel": "Dono", "prazo_dias": 16},
+    {"etapa": "Semana 3", "acao": "Escolher ferramenta: Google Forms + Planilhas, Microsoft Forms, Airtable, Notion, Trello, Pipefy ou sistema específico", "responsavel": "Dono", "prazo_dias": 21},
+    {"etapa": "Semana 3", "acao": "Montar o formulário ou fluxo e configurar avisos automáticos", "responsavel": "Dono ou técnico", "prazo_dias": 28},
+    {"etapa": "Semana 4", "acao": "Piloto de 2 semanas com uma pessoa ou turno, mantendo o papel como plano B", "responsavel": "Equipe", "prazo_dias": 42},
+    {"etapa": "Semana 6", "acao": "Ajustar com base nos problemas e treinar toda a equipe", "responsavel": "Dono", "prazo_dias": 45},
+    {"etapa": "Semana 7", "acao": "Desligar o papel e usar só o fluxo digital", "responsavel": "Dono", "prazo_dias": 50},
+    {"etapa": "Dia 60", "acao": "Digitalizar documentos antigos importantes (escanear, nomear e guardar com backup)", "responsavel": "Equipe", "prazo_dias": 60},
+    {"etapa": "Dia 75", "acao": "Confirmar com contador e advogado prazos de guarda e validade de documentos e assinaturas digitais", "responsavel": "Dono + contador", "prazo_dias": 75},
+    {"etapa": "Dia 90", "acao": "Medir tempo economizado e erros e escolher o próximo processo", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Escolher o processo certo", "como": "Comece por um processo frequente, com poucos passos e que irrita a equipe, não o mais complexo.", "cuidado": "Querer digitalizar tudo ao mesmo tempo."},
+    {"passo": "Mapear como realmente é feito", "como": "Acompanhe quem executa e anote cada passo, quem faz, o que usa e quanto tempo leva.", "cuidado": "Mapear como 'deveria ser' em vez de como é."},
+    {"passo": "Cortar o desnecessário", "como": "Para cada passo, pergunte: se eu tirar, o que quebra? Remova assinaturas, cópias e conferências inúteis.", "cuidado": "Automatizar um processo ruim."},
+    {"passo": "Definir os dados mínimos", "como": "Liste só os campos necessários e use listas de opções para padronizar.", "cuidado": "Formulário gigante que ninguém preenche."},
+    {"passo": "Montar com ferramenta simples", "como": "Formulário que grava em planilha e envia aviso por e-mail ou WhatsApp já resolve muitos casos.", "cuidado": "Comprar sistema caro antes de provar que o fluxo funciona."},
+    {"passo": "Rodar o piloto", "como": "Uma pessoa usa por 2 semanas; anote dificuldades e ajuste.", "cuidado": "Lançar para todos sem teste."},
+    {"passo": "Treinar e definir regra", "como": "Combine a data em que o papel deixa de valer e deixe um guia de uma página.", "cuidado": "Manter papel e digital em paralelo para sempre."},
+    {"passo": "Guardar e proteger", "como": "Salve arquivos com nome padrão, permissões e backup. Documentos com valor legal: confirme com contador ou advogado.", "cuidado": "Descartar originais físicos sem checar a obrigação legal de guarda."}
+  ],
+  "abas": [
+    {
+      "nome": "Inventário de processos",
+      "descricao": "Todos os processos e a pontuação para priorizar.",
+      "colunas": [
+        {"nome": "Processo", "tipo": "texto"},
+        {"nome": "Frequência", "tipo": "lista", "opcoes": ["Diária", "Semanal", "Mensal"]},
+        {"nome": "Horas por semana", "tipo": "numero"},
+        {"nome": "Erros frequentes", "tipo": "lista", "opcoes": ["Muitos", "Alguns", "Raros"]},
+        {"nome": "Prioridade", "tipo": "lista", "opcoes": ["Alta", "Média", "Baixa"]},
+        {"nome": "Responsável", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["Registro de pedidos", "Diária", 6, "Muitos", "Alta", "Atendente"],
+        ["Ordem de serviço", "Diária", 4, "Alguns", "Alta", "Técnico"],
+        ["Controle de contratos", "Mensal", 2, "Raros", "Média", "Dono"]
+      ]
+    },
+    {
+      "nome": "Mapeamento passo a passo",
+      "descricao": "Fluxo de um processo, do início ao fim.",
+      "colunas": [
+        {"nome": "Passo", "tipo": "numero"},
+        {"nome": "Atividade", "tipo": "texto"},
+        {"nome": "Quem faz", "tipo": "texto"},
+        {"nome": "Ferramenta hoje", "tipo": "texto"},
+        {"nome": "Pode ser automatizado", "tipo": "lista", "opcoes": ["Sim", "Não", "Em parte"]}
+      ],
+      "exemplos": [
+        [1, "Cliente envia pedido por WhatsApp", "Cliente", "WhatsApp", "Em parte"],
+        [2, "Atendente anota em caderno", "Atendente", "Papel", "Sim"],
+        [3, "Dono confere e passa para produção", "Dono", "Papel", "Sim"]
+      ]
+    },
+    {
+      "nome": "Ferramentas por processo",
+      "descricao": "Qual ferramenta atende cada processo e quanto custa.",
+      "colunas": [
+        {"nome": "Processo", "tipo": "texto"},
+        {"nome": "Ferramenta escolhida", "tipo": "texto"},
+        {"nome": "Custo mensal", "tipo": "moeda"},
+        {"nome": "Início do piloto", "tipo": "data"},
+        {"nome": "Status", "tipo": "lista", "opcoes": ["Planejado", "Em piloto", "Ativo"]}
+      ],
+      "exemplos": [
+        ["Registro de pedidos", "Formulário + planilha", 0.0, "+14", "Planejado"],
+        ["Ordem de serviço", "App no-code ou sistema de OS", 0.0, "+30", "Planejado"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Um formulário ligado a uma planilha já elimina grande parte do papel e custa pouco ou nada.",
+    "Envolva quem executa o processo; quem faz sabe onde estão os atalhos e os problemas.",
+    "Foto de documento não é digitalização organizada: nomeie e pasta os arquivos de forma padronizada.",
+    "Assinaturas digitais têm validade jurídica em muitos casos, mas confirme com advogado conforme o documento.",
+    "Meça antes e depois para mostrar o ganho à equipe."
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "slug": "controle-de-producao",
+  "titulo": "Controle de produção",
+  "area": "operacoes",
+  "subdivisoes": ["Controle de produção"],
+  "resumo": "Organiza o que será produzido, quando e em que quantidade, acompanha o realizado contra o planejado e mostra perdas. Ao final você sabe o que está atrasado e quanto cada lote realmente custa e rende.",
+  "como_usar": [
+    "Toda semana preencha a aba 'Plano de producao' com o que precisa ser produzido, quantidade e data limite.",
+    "No fim de cada dia, registre na aba 'Apontamento diario' o que foi realmente produzido e as perdas.",
+    "Compare planejado e realizado; a planilha mostra o percentual cumprido.",
+    "Na reunião semanal de 15 minutos, trate só os atrasos e as perdas acima da meta.",
+    "Use os dados de perda e tempo para ajustar prazos prometidos ao cliente."
+  ],
+  "diagnostico": [
+    "Você sabe hoje quais pedidos estão em produção e quais estão atrasados?",
+    "A produção começa pelo que tem prazo mais curto, e não pelo que alguém pediu mais alto?",
+    "Há registro diário do que foi produzido e das perdas?",
+    "Você conhece o tempo médio de produzir cada item?",
+    "Falta material no meio da produção com frequência?",
+    "Há máquinas ou pessoas paradas esperando etapa anterior?",
+    "Você promete prazos ao cliente com base em dados reais de capacidade?",
+    "O custo real de cada lote é conhecido?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Listar os itens produzidos e o tempo médio de produzir uma unidade de cada.", "responsavel": "Responsável de produção", "prazo_dias": 3},
+    {"etapa": "Semana 1", "acao": "Calcular a capacidade semanal (horas disponíveis divididas pelo tempo por unidade).", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 2", "acao": "Começar o plano semanal na planilha, ordenado por data de entrega.", "responsavel": "Responsável de produção", "prazo_dias": 14},
+    {"etapa": "Semana 2", "acao": "Iniciar o apontamento diário de produzido e perdido ao fim do turno.", "responsavel": "Equipe", "prazo_dias": 14},
+    {"etapa": "Semana 4", "acao": "Rodar a primeira reunião semanal de 15 minutos sobre atrasos e perdas.", "responsavel": "Dono", "prazo_dias": 28},
+    {"etapa": "Semana 6", "acao": "Definir meta de perda aceitável por item com base nos 30 dias de dados.", "responsavel": "Dono", "prazo_dias": 42},
+    {"etapa": "Semana 8", "acao": "Ajustar prazos prometidos aos clientes à capacidade real medida.", "responsavel": "Vendas", "prazo_dias": 60},
+    {"etapa": "Semana 12", "acao": "Calcular custo real por lote (material, mão de obra, perda) e revisar preços com o contador se necessário.", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Meça tempo por unidade", "como": "Cronometre 5 produções de cada item e use a média.", "cuidado": "Estimar 'de cabeça' costuma ser otimista em 30% ou mais."},
+    {"passo": "Programe pela data de entrega", "como": "Ordene a fila por prazo e agrupe itens parecidos para reduzir troca de preparação.", "cuidado": "Agrupar demais atrasa pedidos urgentes."},
+    {"passo": "Confira material antes de começar", "como": "Antes de iniciar o lote, confirme insumos e embalagens para a quantidade planejada.", "cuidado": "Parar o lote no meio por falta de material custa mais que atrasar o início."},
+    {"passo": "Apontamento diário", "como": "Ao fim do turno, anote por item: quantidade boa, quantidade perdida e motivo.", "cuidado": "Apontar só no fim da semana perde os detalhes."},
+    {"passo": "Compare plano e realizado", "como": "Veja o percentual cumprido e identifique a causa dos desvios.", "cuidado": "Não culpe pessoas; olhe falta de material, quebra e retrabalho."},
+    {"passo": "Reserve folga", "como": "Planeje no máximo 80-85% da capacidade para absorver imprevistos.", "cuidado": "Plano a 100% da capacidade garante atraso."}
+  ],
+  "abas": [
+    {
+      "nome": "Plano de producao",
+      "descricao": "O que produzir na semana, por prazo, com capacidade e situação.",
+      "colunas": [
+        {"nome": "Pedido/Lote", "tipo": "texto"},
+        {"nome": "Item", "tipo": "texto"},
+        {"nome": "Quantidade planejada", "tipo": "numero"},
+        {"nome": "Minutos por unidade", "tipo": "numero"},
+        {"nome": "Data de entrega", "tipo": "data"},
+        {"nome": "Situação", "tipo": "lista", "opcoes": ["Aguardando material", "Programado", "Em produção", "Concluído", "Atrasado"]}
+      ],
+      "exemplos": [
+        ["Lote 001", "Produto A", 200, 6, "+4", "Em produção"],
+        ["Lote 002", "Produto B", 80, 15, "+7", "Programado"],
+        ["Lote 003", "Produto A", 120, 6, "+2", "Aguardando material"]
+      ]
+    },
+    {
+      "nome": "Apontamento diario",
+      "descricao": "Registro do que foi produzido e perdido a cada dia.",
+      "colunas": [
+        {"nome": "Data", "tipo": "data"},
+        {"nome": "Pedido/Lote", "tipo": "texto"},
+        {"nome": "Produzido (bom)", "tipo": "numero"},
+        {"nome": "Perdas", "tipo": "numero"},
+        {"nome": "Motivo da perda", "tipo": "lista", "opcoes": ["Defeito de material", "Erro de execução", "Quebra de máquina", "Medida errada", "Nenhuma"]},
+        {"nome": "Custo da perda", "tipo": "moeda"}
+      ],
+      "exemplos": [
+        ["-2", "Lote 001", 90, 4, "Erro de execução", 32.0],
+        ["-1", "Lote 001", 95, 2, "Defeito de material", 16.0],
+        ["0", "Lote 003", 40, 0, "Nenhuma", 0.0]
+      ]
+    }
+  ],
+  "dicas": [
+    "Quadro branco na parede com os lotes do dia ajuda mais que qualquer sistema complicado.",
+    "Se a perda passa de 5% de um item, investigue na semana, não no fim do mês.",
+    "Produção sem estoque de segurança de insumos crítico vive parando; defina quantidade mínima.",
+    "Registre sempre o motivo da parada: é o melhor material para melhorar."
+  ]
+}

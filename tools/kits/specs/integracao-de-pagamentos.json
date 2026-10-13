@@ -1,0 +1,105 @@
+{
+  "slug": "integracao-de-pagamentos",
+  "titulo": "Integração de pagamentos",
+  "area": "tecnologia",
+  "subdivisoes": ["Integração de pagamentos"],
+  "resumo": "Guia para escolher e integrar meios de pagamento (Pix, cartão, boleto, link de pagamento, assinatura) ao seu site, loja ou sistema, com comparação de taxas, conciliação e checklist de segurança e testes.",
+  "como_usar": [
+    "Responda o diagnóstico para entender qual tipo de cobrança você precisa.",
+    "Liste os meios de pagamento e o fluxo desejado na aba Meios de pagamento.",
+    "Compare provedores na aba Comparação de provedores usando taxas reais por escrito.",
+    "Siga o plano de integração e rode os testes da aba Testes de pagamento antes de abrir.",
+    "Use a aba Conciliação para conferir se o dinheiro que entrou bate com as vendas."
+  ],
+  "diagnostico": [
+    "Você vende online, presencialmente, por link, ou os três?",
+    "Seus clientes pedem Pix, cartão parcelado ou boleto?",
+    "Você precisa de cobrança recorrente (mensalidade, assinatura)?",
+    "Você sabe a taxa total que paga hoje em cada meio de pagamento?",
+    "Seu pagamento é conferido manualmente (extrato bancário x pedidos)?",
+    "Você já teve pagamento aprovado que não foi registrado no sistema, ou o contrário?",
+    "Você sabe como funciona estorno, chargeback (contestação) e fraude?",
+    "Você sabe quando o dinheiro cai na sua conta em cada meio?",
+    "Seu site ou loja usa conexão segura (HTTPS)?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Listar meios de pagamento que seus clientes usam e o fluxo de venda (site, link, presencial)", "responsavel": "Dono", "prazo_dias": 2},
+    {"etapa": "Semana 1", "acao": "Levantar taxas atuais e prazo de recebimento de cada meio; calcular custo médio por venda", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 1", "acao": "Pedir proposta por escrito a 3 provedores (ex.: Mercado Pago, PagBank, Pagar.me, Stripe, Asaas, Cielo, Stone, InfinitePay)", "responsavel": "Dono", "prazo_dias": 10},
+    {"etapa": "Semana 2", "acao": "Comparar na aba de provedores e escolher; ler regras de bloqueio, antecipação e contestação", "responsavel": "Dono", "prazo_dias": 14},
+    {"etapa": "Semana 2", "acao": "Abrir conta como empresa e concluir verificação de documentos", "responsavel": "Dono", "prazo_dias": 18},
+    {"etapa": "Semana 3", "acao": "Integrar à loja/site/sistema (plugin nativo, link de pagamento ou API)", "responsavel": "Técnico ou Dono", "prazo_dias": 25},
+    {"etapa": "Semana 3", "acao": "Configurar webhooks/notificações para o sistema saber quando o pagamento foi aprovado", "responsavel": "Técnico", "prazo_dias": 28},
+    {"etapa": "Semana 4", "acao": "Rodar testes em ambiente de testes (sandbox) e depois uma compra real de valor baixo", "responsavel": "Dono", "prazo_dias": 32},
+    {"etapa": "Semana 5", "acao": "Liberar para clientes e acompanhar diariamente aprovações, recusas e estornos", "responsavel": "Dono", "prazo_dias": 40},
+    {"etapa": "Dia 60", "acao": "Montar rotina semanal de conciliação entre vendas, repasses e extrato", "responsavel": "Financeiro", "prazo_dias": 60},
+    {"etapa": "Dia 75", "acao": "Validar com contador a emissão de nota, a tributação e o lançamento das taxas", "responsavel": "Dono + contador", "prazo_dias": 75},
+    {"etapa": "Dia 90", "acao": "Rever taxas e meios; negociar se o volume cresceu", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Entender o que você precisa", "como": "Defina: Pix, cartão, boleto, parcelamento, recorrência, link de pagamento, maquininha. Cada provedor é forte em algumas.", "cuidado": "Contratar um pacote cheio de recursos que você não usa."},
+    {"passo": "Comparar o custo total", "como": "Considere taxa por transação, mensalidade, taxa de antecipação, taxa de estorno e prazo de recebimento. Peça tudo por escrito.", "cuidado": "Olhar só a taxa 'a partir de' anunciada; a real depende do seu perfil."},
+    {"passo": "Escolher a forma de integração", "como": "Plugin nativo da sua plataforma é o mais simples; link de pagamento serve para vender por WhatsApp; API é para sistema sob medida.", "cuidado": "Desenvolver integração própria quando um plugin pronto resolve."},
+    {"passo": "Nunca guardar dados do cartão", "como": "Use checkout do provedor, que cuida da segurança dos dados do cartão. Não peça número do cartão por WhatsApp.", "cuidado": "Salvar dados de cartão em planilha ou sistema próprio."},
+    {"passo": "Receber confirmação automática", "como": "Configure notificações do provedor para atualizar o pedido assim que o pagamento é aprovado.", "cuidado": "Confirmar pagamento por comprovante enviado pelo cliente; é comum em fraude."},
+    {"passo": "Testar todos os cenários", "como": "Aprovado, recusado, boleto vencido, Pix expirado, estorno parcial e total.", "cuidado": "Testar apenas o caminho feliz."},
+    {"passo": "Prevenir fraude", "como": "Ative antifraude do provedor, confira pedidos de alto valor com dados diferentes e desconfie de entregas para endereços atípicos.", "cuidado": "Despachar pedido grande sem checagem e perder a venda com chargeback."},
+    {"passo": "Conciliar", "como": "Toda semana compare vendas, valores recebidos e taxas cobradas; investigue diferenças.", "cuidado": "Só descobrir erros no fechamento do mês ou nunca."}
+  ],
+  "abas": [
+    {
+      "nome": "Meios de pagamento",
+      "descricao": "O que será aceito, por onde e como será confirmado.",
+      "colunas": [
+        {"nome": "Meio", "tipo": "texto"},
+        {"nome": "Canal de venda", "tipo": "lista", "opcoes": ["Site/loja", "WhatsApp/link", "Presencial", "Recorrente"]},
+        {"nome": "Taxa (%)", "tipo": "numero"},
+        {"nome": "Prazo de recebimento (dias)", "tipo": "numero"},
+        {"nome": "Confirmação automática", "tipo": "lista", "opcoes": ["Sim", "Não", "A confirmar"]}
+      ],
+      "exemplos": [
+        ["Pix", "Site/loja", 0, 0, "A confirmar"],
+        ["Cartão de crédito", "Site/loja", 0, 0, "A confirmar"],
+        ["Link de pagamento", "WhatsApp/link", 0, 0, "A confirmar"]
+      ]
+    },
+    {
+      "nome": "Comparação de provedores",
+      "descricao": "Condições comerciais lado a lado.",
+      "colunas": [
+        {"nome": "Provedor", "tipo": "texto"},
+        {"nome": "Mensalidade", "tipo": "moeda"},
+        {"nome": "Taxa Pix (%)", "tipo": "numero"},
+        {"nome": "Taxa cartão à vista (%)", "tipo": "numero"},
+        {"nome": "Plugin para minha plataforma", "tipo": "lista", "opcoes": ["Sim", "Não", "A confirmar"]},
+        {"nome": "Cobrança recorrente", "tipo": "lista", "opcoes": ["Sim", "Não", "A confirmar"]}
+      ],
+      "exemplos": [
+        ["Provedor A", 0.0, 0, 0, "A confirmar", "A confirmar"],
+        ["Provedor B", 0.0, 0, 0, "A confirmar", "Sim"]
+      ]
+    },
+    {
+      "nome": "Testes de pagamento",
+      "descricao": "Registro dos testes antes e depois de abrir.",
+      "colunas": [
+        {"nome": "Cenário", "tipo": "texto"},
+        {"nome": "Resultado esperado", "tipo": "texto"},
+        {"nome": "Data do teste", "tipo": "data"},
+        {"nome": "Resultado", "tipo": "lista", "opcoes": ["Passou", "Falhou", "Pendente"]}
+      ],
+      "exemplos": [
+        ["Pix aprovado", "Pedido muda para pago em segundos", "+20", "Pendente"],
+        ["Cartão recusado", "Cliente vê mensagem e pode tentar outro cartão", "+20", "Pendente"],
+        ["Estorno total", "Pedido cancelado e valor devolvido", "+22", "Pendente"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Taxas e prazos mudam e dependem do seu volume; mantenha as colunas de taxa como 'a confirmar' até ter proposta escrita.",
+    "Pix costuma ser mais barato que cartão em muitos provedores, mas confira a taxa real do seu contrato.",
+    "Ofereça sempre mais de uma forma de pagar, sem complicar o checkout.",
+    "Guarde registros de contestação com comprovantes de entrega e conversas.",
+    "Peça ao contador como lançar taxas e antecipações no financeiro."
+  ]
+}

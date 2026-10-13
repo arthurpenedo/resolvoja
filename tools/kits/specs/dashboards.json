@@ -1,0 +1,104 @@
+{
+  "slug": "dashboards",
+  "titulo": "Dashboards",
+  "area": "tecnologia",
+  "subdivisoes": ["Dashboards"],
+  "resumo": "Passo a passo para montar um painel simples com os poucos números que realmente guiam suas decisões: escolha dos indicadores, fontes de dados, desenho do painel e rotina de revisão. Funciona em planilha, Looker Studio ou Power BI.",
+  "como_usar": [
+    "Responda o diagnóstico para saber quais decisões o painel precisa apoiar.",
+    "Escolha de 5 a 8 indicadores na aba Indicadores e metas, com meta e responsável.",
+    "Confirme de onde vem cada número na aba Fontes de dados.",
+    "Desenhe o painel na aba Layout do painel, do mais importante para o menos.",
+    "Monte na ferramenta escolhida e crie a rotina de revisão semanal."
+  ],
+  "diagnostico": [
+    "Você sabe hoje, sem abrir cinco planilhas, quanto vendeu no mês até agora?",
+    "Você acompanha metas de vendas, caixa e custos com frequência?",
+    "As decisões importantes ainda são tomadas na intuição?",
+    "Cada pessoa calcula os números de um jeito diferente?",
+    "Os dados estão espalhados entre sistema, planilhas e redes sociais?",
+    "Você perde tempo juntando números todo fim de mês?",
+    "Alguém na equipe consegue manter o painel atualizado?",
+    "Você tem clareza de quais 5 números mais importam para o negócio?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Escrever as 5 decisões mais importantes que você toma toda semana", "responsavel": "Dono", "prazo_dias": 2},
+    {"etapa": "Dia 3", "acao": "Escolher de 5 a 8 indicadores que ajudam nessas decisões (vendas, margem, caixa, inadimplência, leads)", "responsavel": "Dono", "prazo_dias": 4},
+    {"etapa": "Semana 1", "acao": "Definir fórmula, fonte, meta e responsável de cada indicador", "responsavel": "Dono + equipe", "prazo_dias": 7},
+    {"etapa": "Semana 2", "acao": "Padronizar e limpar os dados nas planilhas ou sistemas de origem", "responsavel": "Equipe", "prazo_dias": 14},
+    {"etapa": "Semana 2", "acao": "Escolher a ferramenta: Google Planilhas, Excel, Looker Studio, Power BI, Metabase ou painel do próprio sistema", "responsavel": "Dono", "prazo_dias": 16},
+    {"etapa": "Semana 3", "acao": "Montar a primeira versão do painel com dados reais do último trimestre", "responsavel": "Dono ou técnico", "prazo_dias": 24},
+    {"etapa": "Semana 3", "acao": "Conferir os números do painel com os do sistema ou do contador", "responsavel": "Dono", "prazo_dias": 28},
+    {"etapa": "Semana 4", "acao": "Automatizar a atualização dos dados e definir quem confere", "responsavel": "Técnico", "prazo_dias": 35},
+    {"etapa": "Semana 5", "acao": "Primeira reunião semanal de 20 minutos usando só o painel", "responsavel": "Dono + equipe", "prazo_dias": 40},
+    {"etapa": "Dia 60", "acao": "Cortar indicadores que ninguém usa e incluir metas por responsável", "responsavel": "Dono", "prazo_dias": 60},
+    {"etapa": "Dia 75", "acao": "Se o painel tiver dados pessoais de clientes, validar com advogado quem pode ver (LGPD)", "responsavel": "Dono + advogado", "prazo_dias": 75},
+    {"etapa": "Dia 90", "acao": "Avaliar quais decisões mudaram por causa do painel e planejar a próxima versão", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Partir das decisões", "como": "Para cada indicador, pergunte: que decisão eu tomo com esse número? Se não há decisão, tire-o.", "cuidado": "Encher o painel de gráficos bonitos que ninguém usa."},
+    {"passo": "Escolher poucos indicadores", "como": "5 a 8 já bastam. Misture resultado (vendas, lucro) e indicadores de ação (orçamentos enviados, visitas).", "cuidado": "Acompanhar só o que já aconteceu e nada que antecipe."},
+    {"passo": "Definir cada indicador", "como": "Escreva a fórmula, o período e a fonte. Exemplo: ticket médio = faturamento do mês ÷ número de vendas.", "cuidado": "Duas pessoas calculando 'margem' de formas diferentes."},
+    {"passo": "Garantir dados confiáveis", "como": "Dados limpos, datas e valores padronizados na origem. Painel só mostra o que existe.", "cuidado": "Culpar o painel por dado mal registrado."},
+    {"passo": "Desenhar o painel", "como": "Números grandes no topo (vendas, caixa, meta), tendência ao longo do tempo no meio, detalhes embaixo. Uma tela só.", "cuidado": "Gráficos 3D, cores demais e eixos enganosos."},
+    {"passo": "Comparar com meta e período anterior", "como": "Todo número tem comparação (meta, mês anterior ou mesmo mês do ano anterior) para fazer sentido.", "cuidado": "Mostrar números soltos sem contexto."},
+    {"passo": "Automatizar a atualização", "como": "Conecte à planilha ou sistema para atualizar sozinho; defina um responsável por conferir semanalmente.", "cuidado": "Atualização manual que ninguém faz."},
+    {"passo": "Criar a rotina de uso", "como": "Reunião semanal curta olhando o painel e definindo uma ação para cada desvio.", "cuidado": "Painel que só é aberto quando algo dá errado."}
+  ],
+  "abas": [
+    {
+      "nome": "Indicadores e metas",
+      "descricao": "Lista dos indicadores do painel, com fórmula e meta.",
+      "colunas": [
+        {"nome": "Indicador", "tipo": "texto"},
+        {"nome": "Como calcula", "tipo": "texto"},
+        {"nome": "Meta", "tipo": "numero"},
+        {"nome": "Frequência", "tipo": "lista", "opcoes": ["Diária", "Semanal", "Mensal"]},
+        {"nome": "Responsável", "tipo": "texto"},
+        {"nome": "Decisão que apoia", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["Faturamento do mês", "Soma das vendas pagas no mês", 50000, "Semanal", "Dono", "Ajustar ações de venda"],
+        ["Ticket médio", "Faturamento ÷ número de vendas", 150, "Mensal", "Comercial", "Definir combos e ofertas"],
+        ["Contas vencidas", "Soma dos valores em atraso", 0, "Semanal", "Financeiro", "Priorizar cobrança"]
+      ]
+    },
+    {
+      "nome": "Fontes de dados",
+      "descricao": "De onde vem cada número e quem garante a qualidade.",
+      "colunas": [
+        {"nome": "Fonte", "tipo": "texto"},
+        {"nome": "Dados que fornece", "tipo": "texto"},
+        {"nome": "Como extrair", "tipo": "lista", "opcoes": ["Conexão direta", "Exportação CSV", "Digitação"]},
+        {"nome": "Responsável", "tipo": "texto"},
+        {"nome": "Atualiza", "tipo": "lista", "opcoes": ["Automático", "Manual diário", "Manual semanal"]}
+      ],
+      "exemplos": [
+        ["Sistema de vendas", "Pedidos, valores, clientes", "Exportação CSV", "Comercial", "Manual semanal"],
+        ["Planilha de contas a pagar", "Vencimentos e valores", "Conexão direta", "Financeiro", "Automático"]
+      ]
+    },
+    {
+      "nome": "Layout do painel",
+      "descricao": "Ordem e tipo de gráfico de cada bloco.",
+      "colunas": [
+        {"nome": "Bloco", "tipo": "texto"},
+        {"nome": "Indicador", "tipo": "texto"},
+        {"nome": "Tipo de visual", "tipo": "lista", "opcoes": ["Número grande", "Linha no tempo", "Barras", "Tabela"]},
+        {"nome": "Posição", "tipo": "lista", "opcoes": ["Topo", "Meio", "Embaixo"]}
+      ],
+      "exemplos": [
+        ["Resumo do mês", "Faturamento do mês", "Número grande", "Topo"],
+        ["Evolução", "Faturamento por semana", "Linha no tempo", "Meio"],
+        ["Detalhe", "Contas vencidas por cliente", "Tabela", "Embaixo"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Uma planilha bem feita com gráficos simples já é um dashboard; ferramenta mais sofisticada só quando precisar.",
+    "Se o número não bate com o do contador, descubra por quê antes de mostrar para a equipe.",
+    "Prefira barras e linhas; gráfico de pizza só para poucas partes.",
+    "Mostre o painel em telas na empresa só se não tiver dados sensíveis ou pessoais.",
+    "Revise o painel a cada trimestre: empresas mudam, indicadores também."
+  ]
+}

@@ -3,6 +3,7 @@ import { useSubscriptionAuth } from '@/contexts/SubscriptionAuthContext.jsx';
 import { useEcommerceSubscriptionsPlans } from '@/hooks/useEcommerceSubscriptionsPlans';
 import SubscribeButton from './SubscribeButton.jsx';
 import ManageSubscriptionButton from './ManageSubscriptionButton.jsx';
+import { ListaBeneficios, PLANO_RECOMENDADO } from './PricingCards.jsx';
 
 /**
  * Shipped pricing grid: loads plans via {@link useEcommerceSubscriptionsPlans} and renders one
@@ -23,9 +24,12 @@ import ManageSubscriptionButton from './ManageSubscriptionButton.jsx';
  * Agents may restyle layout and copy; keep `useEcommerceSubscriptionsPlans`,
  * the `SubscribeButton plan/variant` wiring, and the Subscribe→Manage swap on the active-tier card.
  *
- * @param {{ className?: string }} props
+ * `periodo` ('Mensal' | 'Anual') escolhe a variante de todos os cartões de uma vez (seletor no topo da página);
+ * `antes` é renderizado como primeiro item da grade (ex.: a solução avulsa).
+ *
+ * @param {{ className?: string, periodo?: string, antes?: React.ReactNode }} props
  */
-export default function PlansList({ className }) {
+export default function PlansList({ className, periodo, antes }) {
 	const { plans, loading, error } = useEcommerceSubscriptionsPlans();
 	const { subscriptions, polling } = useSubscriptionAuth();
 
@@ -40,11 +44,11 @@ export default function PlansList({ className }) {
 	}
 
 	if (error) {
-		return <p className="text-destructive">Failed to load subscription plans.</p>;
+		return <p className="text-destructive">Não foi possível carregar os planos. Recarregue a página.</p>;
 	}
 
 	if (!plans.length) {
-		return <p className="text-muted-foreground">No subscription plans available yet.</p>;
+		return <p className="text-muted-foreground">Nenhum plano disponível no momento.</p>;
 	}
 
 	return (
@@ -52,15 +56,17 @@ export default function PlansList({ className }) {
 			{polling && (
 				<div className="mb-6 flex items-center gap-3 rounded-lg border bg-card p-4">
 					<div className="h-5 w-5 animate-spin rounded-full border-2 border-primary border-t-transparent" />
-					<p className="text-sm text-muted-foreground">Updating your subscription…</p>
+					<p className="text-sm text-muted-foreground">Atualizando sua assinatura…</p>
 				</div>
 			)}
 			<div className={className ?? 'grid gap-6 md:grid-cols-3'}>
+				{antes}
 				{plans.map((plan) => (
 					<PlanCard
 						key={plan.id}
 						plan={plan}
 						subscriptions={subscriptions}
+						periodo={periodo}
 					/>
 				))}
 			</div>
@@ -68,9 +74,12 @@ export default function PlansList({ className }) {
 	);
 }
 
-function PlanCard({ plan, subscriptions }) {
+function PlanCard({ plan, subscriptions, periodo }) {
 	const variants = plan.variants ?? [];
-	const [selectedVariant, setSelectedVariant] = useState(variants[0]);
+	const [escolhida, setSelectedVariant] = useState(variants[0]);
+	// com seletor global, a variante segue o período; se o plano não tiver aquele período, fica na primeira
+	const selectedVariant = periodo ? (variants.find((v) => v.title === periodo) ?? variants[0]) : escolhida;
+	const recomendado = plan.title === PLANO_RECOMENDADO;
 	const isCurrentPlan = subscriptions.some(
 		(subscription) => subscription && subscription.product_id === plan.id && (subscription.status === 'active' || subscription.status === 'trialing'),
 	);
@@ -80,19 +89,24 @@ function PlanCard({ plan, subscriptions }) {
 	const isLocked = hasAnyActiveSub && !isCurrentPlan;
 
 	return (
-		<div className={`rounded-lg border bg-card p-6 flex flex-col ${isLocked ? 'opacity-60' : ''}`}>
+		<div className={`relative rounded-lg border bg-card p-6 flex flex-col ${recomendado ? 'border-[hsl(var(--primary))]' : ''} ${isLocked ? 'opacity-60' : ''}`}>
+			{recomendado && (
+				<span className="absolute -top-3 left-6 rounded-full bg-[hsl(var(--primary))] px-3 py-1 text-xs font-semibold text-[hsl(var(--primary-foreground))]">
+					Recomendado
+				</span>
+			)}
 			<div className="flex items-start justify-between gap-2 mb-2">
 				<h3 className="text-xl font-semibold">{plan.title}</h3>
 				{isCurrentPlan && (
 					<span className="inline-flex items-center rounded-full bg-primary/10 text-primary px-2 py-1 text-xs font-semibold uppercase tracking-wide">
-						Current plan
+						Seu plano
 					</span>
 				)}
 			</div>
 			{plan.description && (
 				<p className="text-muted-foreground mb-4">{plan.description}</p>
 			)}
-			{variants.length > 1 && (
+			{!periodo && variants.length > 1 && (
 				<div className="mb-4 inline-flex rounded-lg border bg-background p-1 gap-1 self-start">
 					{variants.map((variant) => (
 						<button
@@ -123,6 +137,7 @@ function PlanCard({ plan, subscriptions }) {
 					<span className="text-sm font-normal text-muted-foreground"> / {selectedVariant.title}</span>
 				</p>
 			)}
+			<ListaBeneficios titulo={plan.title} />
 			<div className="mt-auto">
 				{selectedVariant && (
 					isCurrentPlan ? (

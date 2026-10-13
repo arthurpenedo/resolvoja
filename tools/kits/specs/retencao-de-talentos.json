@@ -1,0 +1,98 @@
+{
+  "slug": "retencao-de-talentos",
+  "titulo": "Retenção de talentos",
+  "area": "pessoas",
+  "subdivisoes": ["Retenção de talentos"],
+  "resumo": "Ajuda a descobrir por que as pessoas saem, quem pode sair em breve e o que fazer para manter os melhores, mesmo com orçamento pequeno. Você termina com um mapa de risco, ações de retenção e um registro de entrevistas de desligamento.",
+  "como_usar": [
+    "Calcule seu giro (quantos saíram no ano) e registre os motivos na aba 'Saídas e motivos'.",
+    "Na aba 'Mapa de risco', avalie cada funcionário-chave quanto ao risco de sair e ao impacto da saída.",
+    "Converse individualmente com os de maior risco e importância (\"conversa de permanência\").",
+    "Escolha de 3 a 5 ações de retenção da aba 'Ações de retenção' e execute com responsável e prazo.",
+    "Revise o mapa a cada trimestre e compare a taxa de saída."
+  ],
+  "diagnostico": [
+    "Você sabe quantas pessoas saíram da empresa nos últimos 12 meses e por quê?",
+    "Faz conversa de saída com quem pede demissão?",
+    "Sabe quais funcionários são difíceis de substituir?",
+    "Os salários estão próximos do que o mercado local paga para a mesma função?",
+    "As pessoas têm perspectiva de crescimento ou aprendizado?",
+    "Há reconhecimento frequente pelo bom trabalho?",
+    "Funcionários se sentem à vontade para falar de problemas com você?",
+    "Houve saída de bons funcionários para a concorrência recentemente?",
+    "Você sabe o custo de perder e substituir uma pessoa?"
+  ],
+  "plano": [
+    {"etapa": "Semana 1", "acao": "Levantar as saídas dos últimos 12 meses (cargo, tempo de casa, motivo informado) e calcular o percentual de rotatividade.", "responsavel": "Assistente administrativo", "prazo_dias": 7},
+    {"etapa": "Semana 1", "acao": "Estimar o custo de cada saída: tempo de recrutamento, treinamento, queda de produtividade e erros.", "responsavel": "Dono", "prazo_dias": 10},
+    {"etapa": "Semana 2", "acao": "Identificar funcionários-chave e avaliar o risco de saída de cada um.", "responsavel": "Dono", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Realizar conversas de permanência com os de maior risco: o que está bom, o que incomoda, o que mudaria.", "responsavel": "Dono", "prazo_dias": 21},
+    {"etapa": "Mês 1", "acao": "Pesquisar faixas salariais da região para as funções críticas e corrigir distorções que couberem no orçamento.", "responsavel": "Dono", "prazo_dias": 30},
+    {"etapa": "Mês 1", "acao": "Implantar ações de baixo custo: reconhecimento mensal, flexibilidade combinada, folga de aniversário, treinamento.", "responsavel": "Gerente", "prazo_dias": 45},
+    {"etapa": "Mês 2", "acao": "Estruturar entrevista de desligamento padrão e aplicá-la a toda saída.", "responsavel": "Assistente administrativo", "prazo_dias": 60},
+    {"etapa": "Mês 3", "acao": "Medir novamente a rotatividade e o risco, e ajustar as ações que não funcionaram.", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Medir a rotatividade", "como": "Divida o número de saídas do ano pela média de funcionários e multiplique por 100.", "cuidado": "Olhar só o total e não ver quem sai (cargo, tempo de casa)."},
+    {"passo": "Descobrir os motivos", "como": "Converse com quem saiu 1 a 2 semanas depois, sem pressão, e anote as razões.", "cuidado": "Aceitar \"foi por motivo pessoal\" sem perguntar mais."},
+    {"passo": "Mapear quem pode sair", "como": "Para cada pessoa-chave avalie sinais: queda de energia, faltas, comentários, propostas externas.", "cuidado": "Descobrir só quando a pessoa já pediu demissão."},
+    {"passo": "Conversar de forma franca", "como": "Pergunte o que a mantém aqui, o que poderia fazê-la sair e o que ela quer nos próximos anos.", "cuidado": "Prometer o que não pode cumprir."},
+    {"passo": "Agir em poucos pontos", "como": "Escolha as 3 causas mais frequentes e resolva uma de cada vez com prazo.", "cuidado": "Fazer lista de 20 ações e executar nenhuma."},
+    {"passo": "Reconhecer sempre", "como": "Elogie com fatos, agradeça publicamente e marque conquistas.", "cuidado": "Reconhecer só quando o resultado é grande."}
+  ],
+  "abas": [
+    {
+      "nome": "Saídas e motivos",
+      "descricao": "Registro de cada saída e o que ela ensina.",
+      "colunas": [
+        {"nome": "Funcionário", "tipo": "texto"},
+        {"nome": "Cargo", "tipo": "texto"},
+        {"nome": "Data da saída", "tipo": "data"},
+        {"nome": "Tempo de casa (meses)", "tipo": "numero"},
+        {"nome": "Motivo principal", "tipo": "lista", "opcoes": ["Salário", "Crescimento", "Chefia/ambiente", "Horário/escala", "Mudança pessoal", "Desempenho (empresa decidiu)", "Outro"]}
+      ],
+      "exemplos": [
+        ["Funcionário A", "Atendente", "-45", 7, "Salário"],
+        ["Funcionário B", "Auxiliar", "-100", 14, "Crescimento"],
+        ["Funcionário C", "Vendedor", "-20", 3, "Horário/escala"]
+      ]
+    },
+    {
+      "nome": "Mapa de risco",
+      "descricao": "Avalia quem tem maior risco de sair e quanto isso dói.",
+      "colunas": [
+        {"nome": "Funcionário", "tipo": "texto"},
+        {"nome": "Cargo", "tipo": "texto"},
+        {"nome": "Risco de sair", "tipo": "lista", "opcoes": ["Baixo", "Médio", "Alto"]},
+        {"nome": "Impacto se sair", "tipo": "lista", "opcoes": ["Baixo", "Médio", "Alto"]},
+        {"nome": "Ação planejada", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["Funcionário D", "Gerente de loja", "Médio", "Alto", "Conversa de permanência e plano de carreira"],
+        ["Funcionário E", "Atendente", "Alto", "Médio", "Rever horário e reconhecer desempenho"]
+      ]
+    },
+    {
+      "nome": "Ações de retenção",
+      "descricao": "Plano de ações com responsável, prazo e custo.",
+      "colunas": [
+        {"nome": "Ação", "tipo": "texto"},
+        {"nome": "Responsável", "tipo": "texto"},
+        {"nome": "Prazo", "tipo": "data"},
+        {"nome": "Custo mensal", "tipo": "moeda"},
+        {"nome": "Situação", "tipo": "lista", "opcoes": ["A fazer", "Em andamento", "Feita"]}
+      ],
+      "exemplos": [
+        ["Reconhecimento mensal do destaque", "Dono", "+15", 100.0, "A fazer"],
+        ["Folga de aniversário", "Gerente", "+20", 0.0, "Em andamento"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Quase sempre a pessoa não sai da empresa, sai do chefe ou da falta de perspectiva; ouça antes de ajustar salário.",
+    "Salário importa, mas reconhecimento, respeito e crescimento pesam muito, e custam menos.",
+    "Calcule o custo de uma saída: ele costuma ser de alguns meses de salário, o que justifica investir em retenção.",
+    "Pergunte \"o que te mantém aqui?\" com regularidade, não só quando há problema.",
+    "Seja honesto sobre o que pode e não pode oferecer."
+  ]
+}

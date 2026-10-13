@@ -1,0 +1,106 @@
+{
+  "slug": "integracao-marketplaces",
+  "titulo": "Integração marketplaces",
+  "area": "tecnologia",
+  "subdivisoes": ["Integração marketplaces"],
+  "resumo": "Planejamento para vender em marketplaces (Mercado Livre, Shopee, Amazon, Magalu e outros) com estoque, preço e pedidos sincronizados, sem vender o que não tem. Inclui comparação de canais e de integradores, regras de preço e checklist de lançamento.",
+  "como_usar": [
+    "Responda o diagnóstico para saber se está pronto para vender em mais de um canal.",
+    "Cadastre seus produtos e custos na aba Catálogo e margem por canal para calcular o preço real em cada marketplace.",
+    "Compare canais e integradores nas abas de comparação.",
+    "Siga o plano: começar por um canal, estabilizar a operação e só depois expandir.",
+    "Use o checklist de lançamento e o controle de pedidos para acompanhar a operação."
+  ],
+  "diagnostico": [
+    "Seu estoque é controlado com precisão em um único sistema?",
+    "Você sabe a margem real de cada produto depois de comissão, taxa fixa, frete e impostos?",
+    "Você consegue enviar o pedido no prazo exigido pelo marketplace (geralmente 1 a 2 dias úteis)?",
+    "Você emite nota fiscal para cada venda?",
+    "Hoje você atualiza preço e estoque manualmente em mais de um lugar?",
+    "Seus produtos têm código de barras (GTIN/EAN), fotos com fundo branco e título padronizado?",
+    "Já vendeu algo sem estoque e teve que cancelar?",
+    "Você tem alguém para responder perguntas e reclamações dos marketplaces todos os dias?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Escolher 1 marketplace inicial conforme seu produto e público", "responsavel": "Dono", "prazo_dias": 3},
+    {"etapa": "Semana 1", "acao": "Organizar catálogo: SKU único, GTIN, peso, dimensões, fotos e descrições", "responsavel": "Dono + equipe", "prazo_dias": 7},
+    {"etapa": "Semana 1", "acao": "Calcular margem por canal: custo + comissão + taxa fixa + frete + imposto + embalagem", "responsavel": "Dono", "prazo_dias": 8},
+    {"etapa": "Semana 2", "acao": "Abrir conta como pessoa jurídica e concluir verificação de identidade", "responsavel": "Dono", "prazo_dias": 14},
+    {"etapa": "Semana 2", "acao": "Escolher integrador/ERP que centralize estoque e pedidos (ex.: Bling, Tiny, Olist, Anymarket, Ideris, Magis5)", "responsavel": "Dono", "prazo_dias": 16},
+    {"etapa": "Semana 3", "acao": "Conectar o marketplace ao integrador e cadastrar 10 produtos de teste", "responsavel": "Dono ou técnico", "prazo_dias": 24},
+    {"etapa": "Semana 3", "acao": "Configurar regras de estoque (reserva de segurança), preço por canal e emissão de NF", "responsavel": "Dono + contador", "prazo_dias": 26},
+    {"etapa": "Semana 4", "acao": "Publicar o catálogo e acompanhar os primeiros pedidos de perto", "responsavel": "Equipe", "prazo_dias": 32},
+    {"etapa": "Semana 6", "acao": "Medir reputação, tempo de envio, cancelamentos e devoluções", "responsavel": "Dono", "prazo_dias": 42},
+    {"etapa": "Dia 60", "acao": "Adicionar o segundo canal só se o primeiro estiver estável", "responsavel": "Dono", "prazo_dias": 60},
+    {"etapa": "Dia 75", "acao": "Validar com contador regime tributário, emissão de notas e retenções nas vendas em marketplaces", "responsavel": "Dono + contador", "prazo_dias": 75},
+    {"etapa": "Dia 90", "acao": "Revisar margem real por canal e retirar produtos que dão prejuízo", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Começar com um canal", "como": "Domine um marketplace antes de abrir o próximo. Cada um tem regras, prazos e taxas diferentes.", "cuidado": "Abrir em cinco canais de uma vez e perder o controle do estoque."},
+    {"passo": "Padronizar o catálogo", "como": "Crie um SKU único por produto e variação. Use o mesmo SKU em todos os canais e no integrador.", "cuidado": "Códigos diferentes por canal; a integração não consegue ligar."},
+    {"passo": "Calcular o preço certo", "como": "Para cada canal: preço mínimo = (custo + frete + embalagem) ÷ (1 - comissão% - imposto% - margem%) + taxa fixa. Confirme comissões atuais no site de cada canal.", "cuidado": "Usar o mesmo preço em todos os canais sem checar a comissão."},
+    {"passo": "Centralizar estoque", "como": "Use um integrador ou ERP como fonte única do estoque, e deixe-o atualizar todos os canais.", "cuidado": "Atualizar estoque manualmente em cada marketplace."},
+    {"passo": "Deixar estoque de segurança", "como": "Publique menos do que tem (ex.: 90%) para evitar vender o último item duas vezes.", "cuidado": "Cancelar pedidos prejudica reputação e pode gerar penalidades."},
+    {"passo": "Cumprir prazos", "como": "Defina rotina diária de separar, embalar, emitir nota e postar até o horário de corte.", "cuidado": "Atrasar envio; reputação cai e a visibilidade diminui."},
+    {"passo": "Atender rápido", "como": "Responda perguntas em poucas horas e trate reclamações antes de virarem mediação.", "cuidado": "Ignorar perguntas; elas viram vendas perdidas."},
+    {"passo": "Conferir financeiro", "como": "Concilie repasses de cada marketplace com os pedidos; confira taxas, frete e estornos.", "cuidado": "Confiar nos valores sem conferir; erros de repasse existem."}
+  ],
+  "abas": [
+    {
+      "nome": "Catálogo e margem por canal",
+      "descricao": "Preço mínimo por canal para não vender no prejuízo.",
+      "colunas": [
+        {"nome": "SKU", "tipo": "texto"},
+        {"nome": "Produto", "tipo": "texto"},
+        {"nome": "Custo total (produto + embalagem)", "tipo": "moeda"},
+        {"nome": "Comissão do canal (%)", "tipo": "numero"},
+        {"nome": "Taxa fixa por venda", "tipo": "moeda"},
+        {"nome": "Imposto (%)", "tipo": "numero"},
+        {"nome": "Preço praticado", "tipo": "moeda"}
+      ],
+      "exemplos": [
+        ["SKU001", "Produto A", 30.0, 14, 6.0, 6, 89.9],
+        ["SKU002", "Produto B", 15.0, 14, 6.0, 6, 49.9],
+        ["SKU003", "Produto C", 80.0, 16, 0.0, 6, 189.9]
+      ]
+    },
+    {
+      "nome": "Comparação de canais",
+      "descricao": "Compare marketplaces com os mesmos critérios.",
+      "colunas": [
+        {"nome": "Marketplace", "tipo": "texto"},
+        {"nome": "Comissão média (%)", "tipo": "numero"},
+        {"nome": "Prazo de repasse (dias)", "tipo": "numero"},
+        {"nome": "Logística própria", "tipo": "lista", "opcoes": ["Sim", "Não", "Opcional"]},
+        {"nome": "Bom para meu produto", "tipo": "lista", "opcoes": ["Sim", "Talvez", "Não"]}
+      ],
+      "exemplos": [
+        ["Mercado Livre", 0, 0, "Opcional", "Talvez"],
+        ["Shopee", 0, 0, "Opcional", "Talvez"],
+        ["Amazon", 0, 0, "Opcional", "Talvez"]
+      ]
+    },
+    {
+      "nome": "Comparação de integradores",
+      "descricao": "Escolha o sistema que centraliza estoque e pedidos.",
+      "colunas": [
+        {"nome": "Integrador", "tipo": "texto"},
+        {"nome": "Mensalidade", "tipo": "moeda"},
+        {"nome": "Canais suportados", "tipo": "texto"},
+        {"nome": "Emite NF", "tipo": "lista", "opcoes": ["Sim", "Não", "A confirmar"]},
+        {"nome": "Teste gratuito", "tipo": "lista", "opcoes": ["Sim", "Não", "A confirmar"]}
+      ],
+      "exemplos": [
+        ["Integrador A", 0.0, "Mercado Livre, Shopee", "A confirmar", "A confirmar"],
+        ["Integrador B", 0.0, "Mercado Livre, Amazon, Magalu", "A confirmar", "A confirmar"]
+      ]
+    }
+  ],
+  "dicas": [
+    "As colunas de comissão e prazo ficam zeradas de propósito: preencha com valores atuais do site oficial de cada marketplace.",
+    "Comissão varia por categoria e muda com o tempo; revise a cada trimestre.",
+    "Comece com produtos de giro rápido e margem boa, não com o catálogo inteiro.",
+    "Fotos e títulos bem feitos mudam mais resultado do que anúncio pago no começo.",
+    "Mantenha também sua loja ou WhatsApp: marketplace é canal, mas o cliente é do marketplace."
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "slug": "criar-site",
+  "titulo": "Criar site",
+  "area": "tecnologia",
+  "subdivisoes": ["Criar site"],
+  "resumo": "Planejamento completo para colocar o site institucional da sua empresa no ar: briefing, páginas, comparação de ferramentas, checklist de lançamento e cronograma. Serve para fazer sozinho ou contratar sem ser enganado.",
+  "como_usar": [
+    "Responda o diagnóstico para saber se você precisa mesmo de um site completo ou só de algo mais simples.",
+    "Preencha a aba Briefing do site com o que sua empresa faz, para quem e qual ação o visitante deve tomar.",
+    "Monte o mapa de páginas na aba Páginas e conteúdos e reúna textos e fotos antes de começar.",
+    "Compare 2 ou 3 ferramentas ou fornecedores na aba Comparação de opções e peça orçamento por escrito.",
+    "Siga o plano de ações e o cronograma, e use o checklist de lançamento antes de publicar.",
+    "Se contratar, use a lista de cuidados para garantir que o domínio e os arquivos fiquem no seu nome."
+  ],
+  "diagnostico": [
+    "Seus clientes procuram sua empresa no Google antes de comprar?",
+    "Você já tem um domínio (ex.: suaempresa.com.br) registrado no seu nome?",
+    "Você tem fotos de qualidade dos seus produtos, serviços ou equipe?",
+    "Você sabe dizer em uma frase o que o visitante deve fazer no site (ligar, pedir orçamento, chamar no WhatsApp)?",
+    "Você tem textos prontos sobre a empresa, serviços e contato?",
+    "Alguém na empresa vai atualizar o site depois de publicado?",
+    "Você já definiu um orçamento máximo para criar e para manter o site por ano?",
+    "Seu e-mail profissional usa o domínio da empresa (contato@suaempresa.com.br)?",
+    "Você sabe quem é o dono legal do domínio e da hospedagem hoje?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Definir objetivo do site (gerar contatos, mostrar portfólio, informar) e a ação principal do visitante", "responsavel": "Dono", "prazo_dias": 2},
+    {"etapa": "Semana 1", "acao": "Registrar o domínio no nome da empresa (Registro.br para .com.br) e anotar login e e-mail de cadastro", "responsavel": "Dono", "prazo_dias": 5},
+    {"etapa": "Semana 1", "acao": "Preencher o briefing e listar 3 sites de concorrentes e 3 de referência que você gosta", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 2", "acao": "Definir mapa de páginas e escrever os textos de cada uma", "responsavel": "Dono", "prazo_dias": 14},
+    {"etapa": "Semana 2", "acao": "Reunir fotos, logo em alta resolução e depoimentos de clientes (com autorização)", "responsavel": "Dono ou equipe", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Comparar ferramentas ou fornecedores e pedir orçamento por escrito de pelo menos 3", "responsavel": "Dono", "prazo_dias": 21},
+    {"etapa": "Semana 4", "acao": "Escolher e fechar com contrato descrevendo entregas, prazo, revisões e propriedade dos arquivos", "responsavel": "Dono", "prazo_dias": 28},
+    {"etapa": "Semana 5 e 6", "acao": "Construir o site e revisar uma versão de teste (celular e computador)", "responsavel": "Fornecedor ou Dono", "prazo_dias": 42},
+    {"etapa": "Semana 7", "acao": "Instalar Google Analytics, cadastrar no Google Search Console e criar o perfil no Google Meu Negócio", "responsavel": "Dono", "prazo_dias": 49},
+    {"etapa": "Semana 8", "acao": "Passar pelo checklist de lançamento e publicar", "responsavel": "Dono", "prazo_dias": 56},
+    {"etapa": "Dia 60", "acao": "Incluir política de privacidade e aviso de cookies; validar os textos com seu advogado ou assessoria jurídica (LGPD)", "responsavel": "Dono + advogado", "prazo_dias": 60},
+    {"etapa": "Dia 90", "acao": "Avaliar resultados: visitas, cliques no WhatsApp, pedidos de orçamento; ajustar páginas fracas", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Definir o objetivo", "como": "Escreva uma frase: 'O visitante deve [ação]'. Todo o site deve levar a essa ação, com botão visível em toda página.", "cuidado": "Querer que o site faça tudo; sem foco ninguém clica em nada."},
+    {"passo": "Registrar o domínio", "como": "Registre em seu nome ou CNPJ no Registro.br (para .com.br) e ative a verificação em duas etapas.", "cuidado": "Deixar o fornecedor registrar no nome dele: você pode perder o endereço do site."},
+    {"passo": "Escolher o caminho", "como": "Para quem quer autonomia: construtores como Wix, Hostinger Builder ou WordPress com hospedagem. Para algo sob medida: agência ou freelancer.", "cuidado": "Escolher só pelo menor preço sem ler o que está incluso (hospedagem, e-mails, manutenção)."},
+    {"passo": "Montar o mapa de páginas", "como": "Comece com Início, Serviços/Produtos, Sobre, Contato e talvez Perguntas frequentes. Escreva o texto de cada uma antes.", "cuidado": "Criar o site sem textos prontos e atrasar semanas esperando conteúdo."},
+    {"passo": "Escrever para o cliente", "como": "Fale o problema do cliente e como você resolve. Inclua cidade/região, horário e telefone em lugar fácil de achar.", "cuidado": "Textos genéricos como 'qualidade e excelência' sem dizer o que você faz."},
+    {"passo": "Otimizar para celular", "como": "Teste no seu próprio celular: botões grandes, texto legível e botão de WhatsApp.", "cuidado": "Aprovar só vendo no computador; a maioria dos acessos vem do celular."},
+    {"passo": "Configurar o básico de Google", "como": "Título e descrição de cada página, Google Search Console e Meu Negócio com o mesmo endereço e telefone.", "cuidado": "Dados diferentes (telefone, endereço) em lugares diferentes."},
+    {"passo": "Testar tudo antes de publicar", "como": "Clique em todos os links e botões, envie um formulário de teste e confira se chega no seu e-mail.", "cuidado": "Publicar com formulário que não envia ou com texto de exemplo (lorem ipsum)."},
+    {"passo": "Combinar a manutenção", "como": "Defina quem atualiza, quem renova domínio e hospedagem e quem faz backup, e anote as datas de renovação.", "cuidado": "Esquecer renovação do domínio e ver o site sair do ar."}
+  ],
+  "abas": [
+    {
+      "nome": "Briefing do site",
+      "descricao": "Respostas-base que qualquer fornecedor ou construtor vai precisar.",
+      "colunas": [
+        {"nome": "Item", "tipo": "texto"},
+        {"nome": "Resposta", "tipo": "texto"},
+        {"nome": "Quem responde", "tipo": "texto"},
+        {"nome": "Status", "tipo": "lista", "opcoes": ["Pendente", "Respondido", "Revisado"]}
+      ],
+      "exemplos": [
+        ["O que a empresa vende e para quem", "Marmitas saudáveis para escritórios da zona sul", "Dono", "Respondido"],
+        ["Ação principal do visitante", "Clicar no botão de WhatsApp e pedir cardápio", "Dono", "Respondido"],
+        ["Sites de referência", "3 links de concorrentes e 3 de inspiração", "Dono", "Pendente"]
+      ]
+    },
+    {
+      "nome": "Páginas e conteúdos",
+      "descricao": "Controle do que cada página precisa e se o conteúdo já está pronto.",
+      "colunas": [
+        {"nome": "Página", "tipo": "texto"},
+        {"nome": "Objetivo da página", "tipo": "texto"},
+        {"nome": "Texto pronto", "tipo": "lista", "opcoes": ["Sim", "Não", "Em andamento"]},
+        {"nome": "Imagens prontas", "tipo": "lista", "opcoes": ["Sim", "Não", "Em andamento"]},
+        {"nome": "Prazo", "tipo": "data"}
+      ],
+      "exemplos": [
+        ["Início", "Mostrar o que fazemos e levar ao contato", "Em andamento", "Não", "+7"],
+        ["Serviços", "Explicar cada serviço e para quem serve", "Não", "Não", "+10"],
+        ["Contato", "Telefone, WhatsApp, mapa e formulário", "Sim", "Sim", "+3"]
+      ]
+    },
+    {
+      "nome": "Comparação de opções",
+      "descricao": "Compare ferramentas ou fornecedores com os mesmos critérios.",
+      "colunas": [
+        {"nome": "Opção", "tipo": "texto"},
+        {"nome": "Tipo", "tipo": "lista", "opcoes": ["Construtor (Wix, Hostinger...)", "WordPress", "Agência", "Freelancer"]},
+        {"nome": "Custo de criação", "tipo": "moeda"},
+        {"nome": "Custo mensal/anual", "tipo": "moeda"},
+        {"nome": "Domínio no seu nome", "tipo": "lista", "opcoes": ["Sim", "Não", "A confirmar"]},
+        {"nome": "Prazo (dias)", "tipo": "numero"}
+      ],
+      "exemplos": [
+        ["Construtor A", "Construtor (Wix, Hostinger...)", 0.0, 0.0, "Sim", 15],
+        ["Freelancer B", "WordPress", 0.0, 0.0, "A confirmar", 30]
+      ]
+    }
+  ],
+  "dicas": [
+    "Se o objetivo for só ser encontrado e receber contatos, um site de 4 a 5 páginas bem escritas basta.",
+    "Exija por escrito que domínio, hospedagem e arquivos fiquem no seu nome ou CNPJ.",
+    "Desconfie de quem promete 'primeiro lugar no Google' ou cobra mensalidade sem dizer o que inclui.",
+    "Peça sempre a lista de entregas e quantas rodadas de ajuste estão incluídas.",
+    "Anote login e senha de domínio, hospedagem e e-mail em um gerenciador de senhas, não em papel solto."
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "slug": "backup",
+  "titulo": "Backup",
+  "area": "tecnologia",
+  "subdivisoes": ["Backup"],
+  "resumo": "Plano de backup simples e testável para pequena empresa: o que copiar, onde guardar, com que frequência e como provar que a restauração funciona. Você sai com uma rotina escrita e um registro de testes.",
+  "como_usar": [
+    "Responda o diagnóstico para descobrir o que hoje está sem proteção.",
+    "Liste o que precisa ser copiado na aba O que proteger, com a importância de cada item.",
+    "Defina onde e como cada item será copiado na aba Rotina de backup.",
+    "Execute o plano e anote cada teste de restauração na aba Registro de testes.",
+    "Revise a rotina a cada 3 meses ou quando mudar sistemas ou equipamentos."
+  ],
+  "diagnostico": [
+    "Se o computador principal quebrasse hoje, você perderia arquivos?",
+    "Você tem pelo menos uma cópia dos dados fora da empresa (nuvem ou outro local)?",
+    "Você já tentou restaurar um backup para ver se funciona?",
+    "O backup é automático ou depende de alguém lembrar?",
+    "Você sabe se o sistema que usa (ERP, vendas) faz backup e por quanto tempo guarda?",
+    "Os celulares com WhatsApp Business e fotos de produtos têm backup?",
+    "Seu HD externo fica o tempo todo ligado no computador?",
+    "Alguém além de você sabe onde estão os backups e como restaurar?",
+    "Você sabe quanto tempo de trabalho poderia perder (de ontem? da semana passada?)?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Listar onde estão os dados importantes: computadores, celulares, sistemas online, e-mail, planilhas", "responsavel": "Dono", "prazo_dias": 2},
+    {"etapa": "Dia 3", "acao": "Classificar cada item por importância e definir quanto tempo de dados você aceita perder", "responsavel": "Dono", "prazo_dias": 4},
+    {"etapa": "Semana 1", "acao": "Escolher soluções: nuvem (Google Drive, OneDrive, Dropbox, Backblaze), HD externo e backups nativos dos sistemas", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 1", "acao": "Organizar arquivos em pastas padronizadas para facilitar o backup", "responsavel": "Equipe", "prazo_dias": 10},
+    {"etapa": "Semana 2", "acao": "Configurar backup automático dos computadores para a nuvem", "responsavel": "Dono ou técnico", "prazo_dias": 14},
+    {"etapa": "Semana 2", "acao": "Ligar o backup dos celulares (Google/iCloud e backup do WhatsApp) e exportar contatos", "responsavel": "Equipe", "prazo_dias": 16},
+    {"etapa": "Semana 3", "acao": "Ativar e conferir o backup dos sistemas online; fazer exportação manual mensal dos dados", "responsavel": "Dono", "prazo_dias": 21},
+    {"etapa": "Semana 3", "acao": "Fazer cópia offline em HD externo, guardado fora da empresa", "responsavel": "Dono", "prazo_dias": 24},
+    {"etapa": "Semana 4", "acao": "Primeiro teste de restauração: recuperar 5 arquivos e uma planilha importante", "responsavel": "Dono", "prazo_dias": 30},
+    {"etapa": "Dia 45", "acao": "Escrever o guia 'como restaurar' em uma página e passar para outra pessoa de confiança", "responsavel": "Dono", "prazo_dias": 45},
+    {"etapa": "Dia 60", "acao": "Definir por quanto tempo guardar cada tipo de documento; confirmar prazos fiscais e trabalhistas com contador", "responsavel": "Dono + contador", "prazo_dias": 60},
+    {"etapa": "Dia 90", "acao": "Segundo teste de restauração e revisão do plano", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Aplicar a regra 3-2-1", "como": "Tenha 3 cópias dos dados, em 2 tipos de mídia diferentes, com 1 delas fora da empresa.", "cuidado": "Achar que 'estar na nuvem' é o mesmo que ter backup; apagar ou sincronizar errado apaga em todo lugar."},
+    {"passo": "Separar sincronização de backup", "como": "Sincronizar (Drive, Dropbox) espelha apagamentos. Backup guarda versões antigas. Use um que mantenha histórico.", "cuidado": "Arquivo apagado por engano sumindo de todos os aparelhos."},
+    {"passo": "Automatizar", "como": "Configure agendamento (diário para dados que mudam muito, semanal para o resto). Não dependa de memória.", "cuidado": "Backup manual que ninguém lembra de fazer."},
+    {"passo": "Proteger as cópias", "como": "Use senha, criptografia e duas etapas na conta de nuvem. HD externo guardado desconectado.", "cuidado": "Backup acessível ao mesmo vírus que infectou o computador."},
+    {"passo": "Incluir sistemas online", "como": "Pergunte ao fornecedor: há backup? Qual frequência? Dá para exportar tudo? Faça exportações periódicas próprias.", "cuidado": "Assumir que o sistema em nuvem guarda tudo para sempre."},
+    {"passo": "Backup de celulares e e-mail", "como": "Ative backup do WhatsApp e das fotos; exporte e-mails e contatos críticos.", "cuidado": "Celular perdido com contatos e conversas só nele."},
+    {"passo": "Testar restauração", "como": "Em uma data marcada, restaure arquivos em outro lugar e confira se abrem e estão completos.", "cuidado": "Só descobrir que o backup estava vazio ou corrompido no dia do desastre."},
+    {"passo": "Documentar", "como": "Registre: o que é copiado, onde, quando, quem é responsável, como restaurar e onde está a senha.", "cuidado": "Só uma pessoa saber como restaurar."}
+  ],
+  "abas": [
+    {
+      "nome": "O que proteger",
+      "descricao": "Lista de dados por importância e tolerância à perda.",
+      "colunas": [
+        {"nome": "Dado ou sistema", "tipo": "texto"},
+        {"nome": "Onde está", "tipo": "texto"},
+        {"nome": "Importância", "tipo": "lista", "opcoes": ["Crítica", "Alta", "Média", "Baixa"]},
+        {"nome": "Perda máxima aceitável (horas)", "tipo": "numero"},
+        {"nome": "Responsável", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["Planilhas financeiras", "Notebook do financeiro", "Crítica", 24, "Financeiro"],
+        ["Sistema de vendas (online)", "Fornecedor do sistema", "Crítica", 24, "Dono"],
+        ["Fotos de produtos", "Pasta no computador", "Alta", 168, "Marketing"]
+      ]
+    },
+    {
+      "nome": "Rotina de backup",
+      "descricao": "Como e onde cada item é copiado e quando.",
+      "colunas": [
+        {"nome": "Dado", "tipo": "texto"},
+        {"nome": "Destino", "tipo": "texto"},
+        {"nome": "Frequência", "tipo": "lista", "opcoes": ["Diária", "Semanal", "Mensal"]},
+        {"nome": "Automático", "tipo": "lista", "opcoes": ["Sim", "Não"]},
+        {"nome": "Guarda versões", "tipo": "lista", "opcoes": ["Sim", "Não", "A confirmar"]},
+        {"nome": "Custo mensal", "tipo": "moeda"}
+      ],
+      "exemplos": [
+        ["Planilhas financeiras", "Nuvem com histórico de versões", "Diária", "Sim", "Sim", 0.0],
+        ["Exportação do sistema de vendas", "HD externo fora da empresa", "Mensal", "Não", "Sim", 0.0]
+      ]
+    },
+    {
+      "nome": "Registro de testes",
+      "descricao": "Evidência de que a restauração funciona.",
+      "colunas": [
+        {"nome": "Data do teste", "tipo": "data"},
+        {"nome": "O que foi restaurado", "tipo": "texto"},
+        {"nome": "Resultado", "tipo": "lista", "opcoes": ["Funcionou", "Parcial", "Falhou"]},
+        {"nome": "Tempo gasto (min)", "tipo": "numero"},
+        {"nome": "Ação corretiva", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["-30", "5 arquivos da pasta Financeiro", "Funcionou", 15, ""],
+        ["-5", "Planilha de clientes do dia anterior", "Parcial", 40, "Ajustar frequência para diária"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Se tudo que importa cabe em uma pasta, comece por aí: já é melhor do que não ter nada.",
+    "Confirme valores e limites de armazenamento nos sites oficiais; planos mudam.",
+    "Teste de restauração é o que transforma 'acho que tenho backup' em 'tenho backup'.",
+    "Guarde a senha de recuperação do backup em local separado do computador.",
+    "Dados com obrigação legal de guarda (fiscais, trabalhistas) devem seguir os prazos definidos com o contador."
+  ]
+}

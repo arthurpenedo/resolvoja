@@ -1,0 +1,84 @@
+{
+  "slug": "adequacao-a-legislacao",
+  "titulo": "Adequação à legislação",
+  "area": "contabil",
+  "subdivisoes": ["Adequação à legislação"],
+  "resumo": "Faça um check-up de conformidade da empresa: cadastros, licenças, regras fiscais e trabalhistas básicas. Você terá uma lista de pendências priorizadas e um plano para regularizar.",
+  "como_usar": [
+    "Responda o diagnóstico para ver as áreas de maior risco.",
+    "Preencha a aba Checklist de conformidade item por item.",
+    "Registre cada irregularidade na aba Pendências com prazo para resolver.",
+    "Comece pelas pendências de maior risco ou multa.",
+    "Reavalie a cada 6 meses ou quando a legislação mudar."
+  ],
+  "diagnostico": [
+    "O CNPJ, endereço e atividades (CNAE) estão atualizados?",
+    "A empresa tem alvará de funcionamento válido?",
+    "Possui as licenças exigidas para sua atividade?",
+    "Todas as vendas são com nota fiscal?",
+    "Os funcionários estão registrados e com documentos em dia?",
+    "O contrato social está atualizado com os sócios e o capital atuais?",
+    "Os certificados e certidões (negativas) estão dentro da validade?",
+    "Há política de privacidade e cuidado com dados de clientes?",
+    "Alguém acompanha mudanças de regras que afetam seu negócio?",
+    "O contador já fez uma revisão geral da conformidade da empresa?"
+  ],
+  "plano": [
+    {"etapa": "Semana 1", "acao": "Consultar o CNPJ no portal oficial e conferir endereço, sócios e atividades", "responsavel": "Dono", "prazo_dias": 5},
+    {"etapa": "Semana 1", "acao": "Listar licenças e alvarás exigidos para sua atividade e conferir validade", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 2", "acao": "Preencher o Checklist de conformidade com o status de cada item", "responsavel": "Administrativo", "prazo_dias": 14},
+    {"etapa": "Semana 2", "acao": "Emitir certidões negativas e verificar se há pendências nos órgãos", "responsavel": "Administrativo", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Conferir registro, contratos e documentos de todos os funcionários", "responsavel": "Administrativo", "prazo_dias": 21},
+    {"etapa": "Semana 4", "acao": "Registrar cada irregularidade na aba Pendências, ordenando por risco", "responsavel": "Dono", "prazo_dias": 28},
+    {"etapa": "Mês 2", "acao": "Regularizar as pendências de alto risco primeiro (licença vencida, nota não emitida, etc.)", "responsavel": "Dono", "prazo_dias": 50},
+    {"etapa": "Mês 2", "acao": "Elaborar política simples de privacidade para clientes e conferir como os dados são guardados", "responsavel": "Administrativo", "prazo_dias": 65},
+    {"etapa": "Mês 3", "acao": "Pedir ao contador e a um advogado, se necessário, alertas sobre mudanças que afetem o negócio", "responsavel": "Dono", "prazo_dias": 80},
+    {"etapa": "Mês 3", "acao": "Validar com o contador o checklist, as pendências e o plano de regularização", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Conferir cadastros", "como": "Compare CNPJ, contrato social e cadastros em órgãos com a realidade atual.", "cuidado": "Mudou de endereço e não atualizou? Isso pode gerar problemas."},
+    {"passo": "Verificar licenças", "como": "Liste cada licença e alvará exigido, com data de validade, e marque as vencidas.", "cuidado": "Exigências variam por cidade e atividade; confirme localmente."},
+    {"passo": "Checar o fiscal", "como": "Confirme que vendas têm nota e que guias e declarações estão em dia.", "cuidado": "Atraso recorrente pode levar a restrições."},
+    {"passo": "Checar o trabalhista", "como": "Confirme registro de funcionários, exames, folha e recolhimentos.", "cuidado": "Funcionário sem registro é um dos maiores riscos."},
+    {"passo": "Priorizar pendências", "como": "Classifique em alto, médio e baixo risco e resolva do maior para o menor.", "cuidado": "Resolver só o fácil e deixar o grave."},
+    {"passo": "Acompanhar mudanças", "como": "Peça ao contador avisos sobre mudanças de regras e registre o impacto.", "cuidado": "Não acompanhe leis por rumores de redes sociais."}
+  ],
+  "abas": [
+    {
+      "nome": "Checklist de conformidade",
+      "descricao": "Itens de conformidade com status e validade.",
+      "colunas": [
+        {"nome": "Item", "tipo": "texto"},
+        {"nome": "Área", "tipo": "lista", "opcoes": ["Cadastro", "Licença", "Fiscal", "Trabalhista", "Dados pessoais"]},
+        {"nome": "Validade/Data", "tipo": "data"},
+        {"nome": "Situação", "tipo": "lista", "opcoes": ["Em dia", "Vence em breve", "Vencido", "Não se aplica"]}
+      ],
+      "exemplos": [
+        ["Alvará de funcionamento", "Licença", "+40", "Em dia"],
+        ["Certidão negativa federal", "Fiscal", "+10", "Vence em breve"],
+        ["Contrato social atualizado", "Cadastro", "-200", "Em dia"]
+      ]
+    },
+    {
+      "nome": "Pendências",
+      "descricao": "Irregularidades encontradas, risco e prazo para resolver.",
+      "colunas": [
+        {"nome": "Pendência", "tipo": "texto"},
+        {"nome": "Risco", "tipo": "lista", "opcoes": ["Alto", "Médio", "Baixo"]},
+        {"nome": "Responsável", "tipo": "texto"},
+        {"nome": "Prazo", "tipo": "data"},
+        {"nome": "Custo estimado", "tipo": "moeda"}
+      ],
+      "exemplos": [
+        ["Licença sanitária vencida", "Alto", "Dono", "+15", 350.0],
+        ["Endereço desatualizado no cadastro", "Médio", "Contador", "+30", 150.0]
+      ]
+    }
+  ],
+  "dicas": [
+    "Anote no calendário a validade de cada licença e certidão com 30 dias de antecedência.",
+    "As exigências mudam por atividade, cidade e estado; não copie o que outro negócio faz.",
+    "Resolver uma pendência pequena hoje custa menos que uma multa amanhã.",
+    "Para dúvidas jurídicas mais complexas, procure também um advogado."
+  ]
+}

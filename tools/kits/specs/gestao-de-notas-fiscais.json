@@ -1,0 +1,89 @@
+{
+  "slug": "gestao-de-notas-fiscais",
+  "titulo": "Gestão de notas fiscais",
+  "area": "administrativo",
+  "subdivisoes": ["Gestão de notas fiscais"],
+  "resumo": "Cria um controle simples das notas fiscais emitidas e recebidas, com rotina de conferência e envio ao contador. Ao final você sabe quais notas faltam, quais já foram pagas e nada fica sem lançar no fim do mês.",
+  "como_usar": [
+    "Responda o diagnóstico para descobrir onde notas se perdem (e-mail, WhatsApp, papel).",
+    "Crie as pastas e a regra de nome para as notas, seguindo o plano.",
+    "Registre toda nota emitida na aba Notas emitidas e toda nota recebida na aba Notas recebidas.",
+    "Faça a conferência semanal descrita no procedimento.",
+    "Feche o mês enviando ao contador o pacote completo na data combinada.",
+    "Confirme com o contador regras fiscais específicas do seu regime."
+  ],
+  "diagnostico": [
+    "Você emite nota fiscal para todas as vendas e serviços que exigem?",
+    "As notas recebidas de fornecedores chegam em lugares diferentes (e-mail, WhatsApp, papel)?",
+    "Você sabe quais notas do mês ainda não foram pagas?",
+    "Já ficou sem nota de uma compra e não conseguiu lançar a despesa?",
+    "Envia as notas ao contador todo mês antes do prazo dele?",
+    "Você guarda o arquivo XML além do PDF das notas?",
+    "Confere se os dados da nota (CNPJ, valores, descrição) estão corretos antes de aceitar?",
+    "Já precisou cancelar ou corrigir nota e não soube como?",
+    "Existe uma pessoa responsável pelas notas quando você está ausente?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Definir o e-mail ou pasta única onde todas as notas fiscais devem ser enviadas (ex.: notas@suaempresa).", "responsavel": "Dono", "prazo_dias": 1},
+    {"etapa": "Semana 1", "acao": "Criar a estrutura de pastas Notas/AAAA/MM com subpastas Emitidas e Recebidas e guardar XML e PDF.", "responsavel": "Administrativo", "prazo_dias": 7},
+    {"etapa": "Semana 1", "acao": "Avisar fornecedores e clientes recorrentes para enviarem as notas ao e-mail definido.", "responsavel": "Administrativo", "prazo_dias": 7},
+    {"etapa": "Semana 2", "acao": "Montar as abas de controle e lançar as notas dos últimos 2 meses para ter histórico.", "responsavel": "Administrativo", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Combinar com o contador o dia de corte e o formato do pacote mensal de documentos.", "responsavel": "Dono", "prazo_dias": 21},
+    {"etapa": "Semana 4", "acao": "Estabelecer a conferência semanal de 20 minutos (sexta-feira) para cruzar notas e pagamentos.", "responsavel": "Administrativo", "prazo_dias": 28},
+    {"etapa": "Semana 6", "acao": "Listar vendas sem nota emitida e regularizar com orientação do contador.", "responsavel": "Dono", "prazo_dias": 45},
+    {"etapa": "Semana 8", "acao": "Criar checklist de fechamento mensal e testar com o primeiro mês completo.", "responsavel": "Administrativo", "prazo_dias": 60},
+    {"etapa": "Dia 90", "acao": "Revisar o processo, registrar problemas recorrentes e validar rotina e prazos de guarda com o contador.", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Receber a nota", "como": "Toda nota recebida vai para o e-mail único ou pasta de entrada no mesmo dia, em XML e PDF.", "cuidado": "Aceitar só foto de nota no WhatsApp."},
+    {"passo": "Conferir os dados", "como": "Verifique se CNPJ da sua empresa, valor, descrição e data estão corretos antes de aceitar a compra.", "cuidado": "Nota emitida com CNPJ ou CPF errado."},
+    {"passo": "Lançar no controle", "como": "Registre número, fornecedor, valor, data, vencimento e status de pagamento na aba correspondente.", "cuidado": "Deixar para lançar tudo no fim do mês."},
+    {"passo": "Emitir nota de venda", "como": "Emita a nota na hora da venda ou entrega, conforme a regra da sua atividade, e envie ao cliente.", "cuidado": "Adiar a emissão e esquecer."},
+    {"passo": "Conciliar pagamentos", "como": "Toda semana, compare notas com o extrato bancário e marque pago, a pagar ou recebido.", "cuidado": "Pagar a mesma nota duas vezes."},
+    {"passo": "Tratar erros", "como": "Em nota errada, entre em contato com o emissor e peça a correção ou o cancelamento nos prazos legais, falando com o contador.", "cuidado": "Corrigir por conta própria sem orientação."},
+    {"passo": "Enviar ao contador", "como": "No dia de corte, envie XMLs, relatório do controle e extratos num único pacote.", "cuidado": "Mandar documentos aos poucos e desencontrados."}
+  ],
+  "abas": [
+    {
+      "nome": "Notas emitidas",
+      "descricao": "Notas fiscais de vendas e serviços emitidas pela empresa.",
+      "colunas": [
+        {"nome": "Número da nota", "tipo": "texto"},
+        {"nome": "Cliente", "tipo": "texto"},
+        {"nome": "Data de emissão", "tipo": "data"},
+        {"nome": "Valor", "tipo": "moeda"},
+        {"nome": "Vencimento", "tipo": "data"},
+        {"nome": "Status", "tipo": "lista", "opcoes": ["A receber", "Recebida", "Atrasada", "Cancelada"]}
+      ],
+      "exemplos": [
+        ["1021", "Cliente A", "-10", 3200.0, "+5", "A receber"],
+        ["1020", "Cliente B", "-25", 1450.0, "-5", "Recebida"],
+        ["1019", "Cliente C", "-40", 780.0, "-10", "Atrasada"]
+      ]
+    },
+    {
+      "nome": "Notas recebidas",
+      "descricao": "Notas de compras e despesas, com controle de pagamento.",
+      "colunas": [
+        {"nome": "Número da nota", "tipo": "texto"},
+        {"nome": "Fornecedor", "tipo": "texto"},
+        {"nome": "Data", "tipo": "data"},
+        {"nome": "Valor", "tipo": "moeda"},
+        {"nome": "Vencimento", "tipo": "data"},
+        {"nome": "Status", "tipo": "lista", "opcoes": ["A pagar", "Paga", "Atrasada", "Em contestação"]},
+        {"nome": "Enviada ao contador", "tipo": "lista", "opcoes": ["Sim", "Não"]}
+      ],
+      "exemplos": [
+        ["8841", "Fornecedor A", "-7", 920.0, "+7", "A pagar", "Não"],
+        ["3305", "Fornecedor B", "-20", 2100.0, "-2", "Paga", "Sim"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Peça sempre o XML junto com o PDF: é ele que o contador usa.",
+    "Defina um dia fixo por semana para conferir notas e pagamentos; vira hábito e evita acúmulo.",
+    "Compras sem nota dificultam comprovar despesa; avalie com seu contador como tratar.",
+    "As regras de emissão e cancelamento variam por município, estado e regime; valide com o contador.",
+    "Tenha um e-mail exclusivo para notas, assim nada se mistura com conversa comum."
+  ]
+}

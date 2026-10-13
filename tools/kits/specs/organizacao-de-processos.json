@@ -1,0 +1,84 @@
+{
+  "slug": "organizacao-de-processos",
+  "titulo": "Organização de processos",
+  "area": "operacoes",
+  "subdivisoes": ["Organização de processos"],
+  "resumo": "Mapeia os processos principais da empresa, define dono e prazo para cada um e mostra onde o trabalho trava. Ao final você terá um mapa simples de quem faz o quê, em que ordem e com quais entregas.",
+  "como_usar": [
+    "Preencha a aba 'Inventario de processos' listando tudo o que a empresa faz repetidamente (vender, entregar, cobrar, comprar etc.).",
+    "Responda o diagnóstico com toda a equipe junta; cada 'não' aponta um processo a organizar primeiro.",
+    "Escolha os 3 processos que mais doem e desenhe o fluxo de cada um na aba 'Fluxo etapa a etapa'.",
+    "Siga o plano de 90 dias, um processo por vez, sem tentar arrumar tudo ao mesmo tempo.",
+    "Revise o inventário todo mês e atualize status e donos."
+  ],
+  "diagnostico": [
+    "Cada processo importante tem uma pessoa responsável pelo resultado?",
+    "Se o dono ficar uma semana fora, a empresa entrega o mesmo resultado?",
+    "Todo mundo sabe qual é a próxima etapa depois da que acabou de fazer?",
+    "Existe algum lugar único onde ficam as informações do pedido/cliente (e não só no WhatsApp ou na cabeça)?",
+    "Você consegue dizer quanto tempo leva do pedido até a entrega?",
+    "Já mapeou onde as tarefas ficam paradas esperando alguém?",
+    "Novos funcionários aprendem o trabalho em dias, e não em meses?",
+    "Os mesmos problemas acontecem toda semana sem que ninguém ataque a causa?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Listar todos os processos recorrentes da empresa na aba de inventário, sem julgar.", "responsavel": "Dono", "prazo_dias": 2},
+    {"etapa": "Semana 1", "acao": "Definir um responsável nominal por cada processo do inventário.", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 2", "acao": "Priorizar os 3 processos com maior impacto em dinheiro, tempo ou reclamação de cliente.", "responsavel": "Dono e líderes", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Desenhar o fluxo do processo 1 etapa a etapa, conversando com quem executa de verdade.", "responsavel": "Responsável do processo", "prazo_dias": 21},
+    {"etapa": "Semana 4", "acao": "Marcar no fluxo os pontos de espera, repetição e dúvida; escolher 2 melhorias simples.", "responsavel": "Responsável do processo", "prazo_dias": 30},
+    {"etapa": "Semana 6", "acao": "Aplicar o novo fluxo do processo 1 por duas semanas e anotar o que mudou no tempo total.", "responsavel": "Equipe", "prazo_dias": 45},
+    {"etapa": "Semana 8", "acao": "Repetir o ciclo (mapear, melhorar, testar) com o processo 2.", "responsavel": "Responsável do processo", "prazo_dias": 60},
+    {"etapa": "Semana 12", "acao": "Repetir com o processo 3 e marcar uma reunião mensal de 30 minutos para revisar o inventário.", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Liste os processos", "como": "Anote tudo que se repete: vender, orçar, produzir, entregar, cobrar, comprar, atender reclamação.", "cuidado": "Não misture tarefas soltas com processos; processo tem começo, fim e entrega."},
+    {"passo": "Defina início e fim", "como": "Para cada processo escreva o que dispara (ex.: pedido recebido) e o que marca como concluído (ex.: cliente recebeu).", "cuidado": "Processo sem fim claro nunca é medido."},
+    {"passo": "Converse com quem executa", "como": "Pergunte a cada pessoa como faz na prática, etapa por etapa, e anote exatamente isso.", "cuidado": "Não desenhe o 'ideal' do escritório; mapeie o que realmente acontece."},
+    {"passo": "Marque os gargalos", "como": "Circule as etapas onde o trabalho espera, volta para correção ou depende de uma única pessoa.", "cuidado": "Não tente consertar tudo; escolha só 2 pontos por rodada."},
+    {"passo": "Teste a mudança", "como": "Aplique a versão nova por 2 semanas e compare tempo e erros com o antes.", "cuidado": "Mudar sem medir impede saber se melhorou."},
+    {"passo": "Registre e revise", "como": "Atualize o inventário com a versão vigente e a data da última revisão.", "cuidado": "Fluxo desatualizado é pior que nenhum."}
+  ],
+  "abas": [
+    {
+      "nome": "Inventario de processos",
+      "descricao": "Lista de todos os processos da empresa com dono, prioridade e situação.",
+      "colunas": [
+        {"nome": "Processo", "tipo": "texto"},
+        {"nome": "Responsável", "tipo": "texto"},
+        {"nome": "Frequência", "tipo": "lista", "opcoes": ["Diário", "Semanal", "Mensal", "Sob demanda"]},
+        {"nome": "Prioridade", "tipo": "lista", "opcoes": ["Alta", "Média", "Baixa"]},
+        {"nome": "Situação", "tipo": "lista", "opcoes": ["Não mapeado", "Em mapeamento", "Em teste", "Organizado"]},
+        {"nome": "Revisão", "tipo": "data"}
+      ],
+      "exemplos": [
+        ["Receber e confirmar pedido", "Pessoa A", "Diário", "Alta", "Em mapeamento", "+14"],
+        ["Cobrança de clientes", "Pessoa B", "Semanal", "Alta", "Não mapeado", "+30"],
+        ["Fechamento do caixa", "Dono", "Diário", "Média", "Organizado", "+60"]
+      ]
+    },
+    {
+      "nome": "Fluxo etapa a etapa",
+      "descricao": "Desenho em tabela de um processo, com tempo e problemas de cada etapa.",
+      "colunas": [
+        {"nome": "Processo", "tipo": "texto"},
+        {"nome": "Nº da etapa", "tipo": "numero"},
+        {"nome": "O que acontece", "tipo": "texto"},
+        {"nome": "Quem faz", "tipo": "texto"},
+        {"nome": "Tempo (min)", "tipo": "numero"},
+        {"nome": "Onde trava", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["Receber pedido", 1, "Cliente envia pedido pelo WhatsApp", "Atendente", 5, "Pedido incompleto"],
+        ["Receber pedido", 2, "Registrar na planilha e confirmar", "Atendente", 10, "Esquecem de registrar à noite"],
+        ["Receber pedido", 3, "Avisar a produção", "Atendente", 3, "Aviso verbal se perde"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Comece pelo processo que mais gera reclamação de cliente, não pelo mais fácil.",
+    "Um processo = um responsável. Se todos são donos, ninguém é.",
+    "Mapeie com quem faz o trabalho; o dono costuma imaginar um processo diferente do real.",
+    "Melhor um fluxo simples que a equipe usa do que um perfeito que fica na gaveta."
+  ]
+}

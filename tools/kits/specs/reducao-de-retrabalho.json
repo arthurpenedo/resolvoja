@@ -1,0 +1,82 @@
+{
+  "slug": "reducao-de-retrabalho",
+  "titulo": "Redução de retrabalho",
+  "area": "operacoes",
+  "subdivisoes": ["Redução de retrabalho"],
+  "resumo": "Registra cada vez que algo precisa ser refeito, calcula o custo em horas e dinheiro e descobre a causa raiz mais frequente. Ao final você ataca poucas causas que respondem pela maior parte do prejuízo.",
+  "como_usar": [
+    "Combine com a equipe que todo trabalho refeito deve ser anotado na aba 'Registro de retrabalho' no mesmo dia.",
+    "Registre o que foi refeito, quanto tempo e material custou e por quê.",
+    "Após 2 semanas, agrupe por causa e veja quais respondem pela maior parte do custo.",
+    "Use a aba 'Causa e acao' para definir uma ação para cada causa principal.",
+    "Continue registrando e compare o custo mensal para ver se caiu."
+  ],
+  "diagnostico": [
+    "Você sabe quantas horas por mês a equipe gasta refazendo coisas?",
+    "Pedidos voltam do cliente para correção com frequência?",
+    "Informações são pedidas mais de uma vez ao cliente ou a colegas?",
+    "A entrega muda de mãos várias vezes até ficar pronta?",
+    "Há tarefas começadas sem informação completa e depois refeitas?",
+    "Quem comete o erro costuma ser quem o descobre?",
+    "O retrabalho é anotado ou fica só na memória de quem sofreu?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Explicar à equipe o que conta como retrabalho e que o objetivo é achar causas, não culpados.", "responsavel": "Dono", "prazo_dias": 2},
+    {"etapa": "Semana 1", "acao": "Começar o registro diário na aba de retrabalho, com tempo e custo de cada caso.", "responsavel": "Equipe", "prazo_dias": 7},
+    {"etapa": "Semana 3", "acao": "Agrupar os registros por causa e identificar as 3 que mais custam.", "responsavel": "Dono", "prazo_dias": 21},
+    {"etapa": "Semana 4", "acao": "Investigar a causa nº 1 com a técnica dos '5 porquês' junto de quem executa.", "responsavel": "Dono e equipe", "prazo_dias": 28},
+    {"etapa": "Semana 5", "acao": "Aplicar a ação corretiva da causa nº 1 (checklist, campo obrigatório, conferência na entrada).", "responsavel": "Responsável", "prazo_dias": 35},
+    {"etapa": "Semana 7", "acao": "Repetir a investigação e a ação para as causas 2 e 3.", "responsavel": "Responsável", "prazo_dias": 50},
+    {"etapa": "Semana 10", "acao": "Comparar custo de retrabalho antes e depois e comemorar com a equipe.", "responsavel": "Dono", "prazo_dias": 70},
+    {"etapa": "Semana 13", "acao": "Transformar as ações que funcionaram em regra permanente e manter o registro mensal.", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Defina retrabalho", "como": "É tudo que foi feito mais de uma vez por falha na primeira: refazer, corrigir, reenviar, devolver.", "cuidado": "Mudança pedida pelo cliente por vontade própria não é retrabalho."},
+    {"passo": "Registre na hora", "como": "Anote o que, quem, tempo, material perdido e a causa provável em menos de 1 minuto.", "cuidado": "Registro semanal de memória perde detalhes."},
+    {"passo": "Calcule o custo", "como": "Horas gastas multiplicadas pelo custo da hora, mais o material perdido.", "cuidado": "Esquecer o tempo de quem atendeu a reclamação subestima o prejuízo."},
+    {"passo": "Ache a causa raiz", "como": "Pergunte 'por quê?' até chegar a algo que você controla (falta de informação, treino, ferramenta).", "cuidado": "'Descuido' não é causa; pergunte o que facilitou o descuido."},
+    {"passo": "Corrija na origem", "como": "Ajuste o início do processo: formulário com campos obrigatórios, conferência antes de passar adiante.", "cuidado": "Treinar só quem errou não resolve se o processo continua frágil."},
+    {"passo": "Verifique o resultado", "como": "Compare ocorrências e custo do mês seguinte com o anterior.", "cuidado": "Não declare vitória com só uma semana de dados."}
+  ],
+  "abas": [
+    {
+      "nome": "Registro de retrabalho",
+      "descricao": "Cada ocorrência de coisa refeita, com custo e causa.",
+      "colunas": [
+        {"nome": "Data", "tipo": "data"},
+        {"nome": "O que foi refeito", "tipo": "texto"},
+        {"nome": "Causa", "tipo": "lista", "opcoes": ["Informação incompleta", "Falta de treino", "Falha de ferramenta", "Falta de conferência", "Pedido mal entendido", "Outra"]},
+        {"nome": "Horas gastas", "tipo": "numero"},
+        {"nome": "Material perdido", "tipo": "moeda"},
+        {"nome": "Setor", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["-3", "Orçamento com preço errado reenviado", "Falta de conferência", 1, 0.0, "Vendas"],
+        ["-2", "Pedido produzido com cor errada", "Pedido mal entendido", 3, 85.0, "Produção"],
+        ["-1", "Endereço de entrega corrigido e nova etiqueta", "Informação incompleta", 1, 12.0, "Expedição"]
+      ]
+    },
+    {
+      "nome": "Causa e acao",
+      "descricao": "Plano de ação para as causas que mais custam.",
+      "colunas": [
+        {"nome": "Causa", "tipo": "texto"},
+        {"nome": "Ocorrências no mês", "tipo": "numero"},
+        {"nome": "Ação corretiva", "tipo": "texto"},
+        {"nome": "Responsável", "tipo": "texto"},
+        {"nome": "Prazo", "tipo": "data"},
+        {"nome": "Situação", "tipo": "lista", "opcoes": ["A iniciar", "Em andamento", "Concluída", "Funcionou"]}
+      ],
+      "exemplos": [
+        ["Pedido mal entendido", 9, "Repetir o pedido por escrito ao cliente antes de produzir", "Pessoa A", "+10", "Em andamento"],
+        ["Falta de conferência", 6, "Checklist de 5 itens antes de enviar orçamento", "Pessoa B", "+15", "A iniciar"]
+      ]
+    }
+  ],
+  "dicas": [
+    "O retrabalho mais caro costuma ser o descoberto pelo cliente; mova a conferência para antes da entrega.",
+    "Pergunte ao cliente tudo de uma vez no primeiro contato com um formulário curto.",
+    "Não puna quem registra o erro; senão ninguém registra mais.",
+    "Poucas causas geram a maior parte do custo: foque nas 3 maiores."
+  ]
+}

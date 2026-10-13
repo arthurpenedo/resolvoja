@@ -1,0 +1,90 @@
+{
+  "slug": "organizacao-documental",
+  "titulo": "Organização documental",
+  "area": "administrativo",
+  "subdivisoes": ["Organização documental"],
+  "resumo": "Cria uma estrutura única de pastas, nomes de arquivo e um índice para achar qualquer documento da empresa em menos de 1 minuto. Ao final você terá o arquivo digital organizado, prazos de guarda definidos e um responsável por área.",
+  "como_usar": [
+    "Preencha o diagnóstico para ver onde estão as maiores bagunças (papel, WhatsApp, e-mail, pendrive).",
+    "Siga o plano semana a semana: primeiro a estrutura de pastas, depois a migração dos documentos.",
+    "Use o procedimento para nomear, salvar e arquivar cada documento novo sempre do mesmo jeito.",
+    "Registre cada documento importante na aba Índice de documentos.",
+    "Use a aba Prazos de guarda para saber o que pode ser descartado e quando.",
+    "Revise o índice uma vez por mês, em 15 minutos."
+  ],
+  "diagnostico": [
+    "Você já perdeu mais de 10 minutos procurando um documento importante no último mês?",
+    "Existem documentos da empresa guardados apenas no WhatsApp ou no e-mail pessoal de alguém?",
+    "Há mais de uma versão do mesmo arquivo (ex.: contrato_final, contrato_final2) sem saber qual vale?",
+    "Os documentos digitais ficam só no computador, sem cópia na nuvem?",
+    "Cada pessoa nomeia e guarda os arquivos do seu jeito?",
+    "Você sabe por quanto tempo precisa guardar notas, contratos e documentos de funcionários?",
+    "Papéis importantes ficam soltos em gavetas ou pilhas sem identificação?",
+    "Se o responsável pelos arquivos saísse amanhã, outra pessoa acharia tudo?",
+    "Existe um lugar único para documentos da empresa separado dos pessoais do dono?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Escolher o local único dos arquivos digitais (Google Drive, OneDrive ou similar) e criar a pasta raiz com o nome da empresa.", "responsavel": "Dono", "prazo_dias": 1},
+    {"etapa": "Semana 1", "acao": "Criar as pastas principais: 01 Societário, 02 Contratos, 03 Fiscal e Contábil, 04 Pessoal/RH, 05 Financeiro, 06 Clientes, 07 Fornecedores, 08 Licenças e Alvarás.", "responsavel": "Administrativo", "prazo_dias": 7},
+    {"etapa": "Semana 1", "acao": "Definir e escrever o padrão de nome de arquivo: AAAA-MM-DD_Tipo_Parte_Descrição.", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 2", "acao": "Migrar os documentos digitais mais críticos (contrato social, CNPJ, alvarás, contratos ativos) para as pastas novas.", "responsavel": "Administrativo", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Separar os papéis físicos em 3 caixas: guardar (original exigido), digitalizar e descartar depois, descartar.", "responsavel": "Administrativo", "prazo_dias": 21},
+    {"etapa": "Semana 4", "acao": "Digitalizar os papéis (celular com app de scanner serve) e arquivar o original em pasta etiquetada por ano e assunto.", "responsavel": "Administrativo", "prazo_dias": 28},
+    {"etapa": "Semana 5", "acao": "Preencher a aba Índice de documentos com todos os documentos importantes e onde estão.", "responsavel": "Administrativo", "prazo_dias": 35},
+    {"etapa": "Semana 6", "acao": "Definir a tabela de prazos de guarda e marcar o que já pode ser descartado com segurança.", "responsavel": "Dono", "prazo_dias": 45},
+    {"etapa": "Semana 8", "acao": "Configurar cópia de segurança automática e permissões de acesso por pasta (quem edita, quem só vê).", "responsavel": "Dono", "prazo_dias": 60},
+    {"etapa": "Dia 90", "acao": "Fazer o teste: pedir a alguém para achar 5 documentos sorteados usando só o índice. Validar prazos de guarda com o contador.", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Receber o documento", "como": "Todo documento novo (papel, e-mail, WhatsApp) é levado no mesmo dia para a pasta de entrada ou direto à pasta certa.", "cuidado": "Deixar documento 'para organizar depois' no WhatsApp: ele se perde."},
+    {"passo": "Nomear do jeito padrão", "como": "Use AAAA-MM-DD_Tipo_Parte_Descrição, ex.: 2026-03-10_Contrato_FornecedorA_Embalagens.pdf.", "cuidado": "Não use 'final', 'novo' ou 'versão 2' no nome; use a data."},
+    {"passo": "Guardar na pasta certa", "como": "Escolha a pasta principal pelo assunto e uma subpasta por ano ou por parte (cliente, fornecedor).", "cuidado": "Criar subpastas demais; mais de 3 níveis atrapalha a busca."},
+    {"passo": "Salvar em PDF", "como": "Converta documentos fechados para PDF; mantenha o editável (Word/Excel) só na pasta de trabalho.", "cuidado": "Guardar só o editável de um documento assinado."},
+    {"passo": "Registrar no índice", "como": "Para documentos importantes, anote tipo, partes, data, validade e link na aba Índice.", "cuidado": "Esquecer a data de validade; ela alimenta os alertas."},
+    {"passo": "Arquivar o físico", "como": "Guarde só o que exige original, em pasta etiquetada por ano e assunto, com o caminho do digital anotado.", "cuidado": "Descartar originais sem checar o prazo de guarda."},
+    {"passo": "Backup e acesso", "como": "Ative cópia automática na nuvem e dê acesso só a quem precisa, com 2 pessoas que conhecem a estrutura.", "cuidado": "Compartilhar a pasta inteira com link aberto."},
+    {"passo": "Revisão mensal", "como": "Uma vez por mês, esvazie a pasta de entrada, confira o índice e descarte o que venceu o prazo.", "cuidado": "Pular a revisão: em 3 meses a bagunça volta."}
+  ],
+  "abas": [
+    {
+      "nome": "Índice de documentos",
+      "descricao": "Lista central de todos os documentos importantes e onde encontrá-los.",
+      "colunas": [
+        {"nome": "Documento", "tipo": "texto"},
+        {"nome": "Categoria", "tipo": "lista", "opcoes": ["Societário", "Contrato", "Fiscal", "RH", "Financeiro", "Licença/Alvará", "Outro"]},
+        {"nome": "Data do documento", "tipo": "data"},
+        {"nome": "Validade", "tipo": "data"},
+        {"nome": "Local (pasta ou link)", "tipo": "texto"},
+        {"nome": "Original físico", "tipo": "lista", "opcoes": ["Sim", "Não"]},
+        {"nome": "Responsável", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["Contrato social consolidado", "Societário", "-400", "0", "01 Societário/2025", "Sim", "Dono"],
+        ["Alvará de funcionamento", "Licença/Alvará", "-200", "+165", "08 Licenças/2026", "Sim", "Administrativo"],
+        ["Contrato de aluguel da sala", "Contrato", "-300", "+430", "02 Contratos/Aluguel", "Sim", "Dono"]
+      ]
+    },
+    {
+      "nome": "Prazos de guarda",
+      "descricao": "Quanto tempo guardar cada tipo de documento antes de descartar.",
+      "colunas": [
+        {"nome": "Tipo de documento", "tipo": "texto"},
+        {"nome": "Prazo sugerido (anos)", "tipo": "numero"},
+        {"nome": "Formato aceito", "tipo": "lista", "opcoes": ["Só original", "Digital serve", "Ambos"]},
+        {"nome": "Observação", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["Notas fiscais e livros fiscais", 5, "Digital serve", "Confirmar prazo com o contador"],
+        ["Documentos trabalhistas e de funcionários", 5, "Ambos", "Alguns itens têm prazo maior; validar com contador"],
+        ["Contratos comerciais", 5, "Ambos", "Contar após o fim da vigência"]
+      ]
+    }
+  ],
+  "dicas": [
+    "O melhor sistema é o mais simples: se exige mais de 30 segundos para guardar, ninguém usa.",
+    "Tire foto/escaneie no ato: papel recebido hoje vira PDF hoje.",
+    "Os prazos de guarda variam conforme o tipo de documento e o regime da empresa; confirme com seu contador antes de descartar qualquer coisa.",
+    "Nunca misture documentos pessoais do dono com os da empresa na mesma pasta.",
+    "Combine com o contador uma pasta compartilhada só para ele enviar e receber guias e relatórios."
+  ]
+}

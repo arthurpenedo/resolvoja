@@ -1,0 +1,106 @@
+{
+  "slug": "seguranca-da-informacao",
+  "titulo": "Segurança da informação",
+  "area": "tecnologia",
+  "subdivisoes": ["Segurança da informação"],
+  "resumo": "Kit de proteção digital para pequena empresa: inventário de acessos e equipamentos, regras de senha, verificação em duas etapas, resposta a incidentes e cuidados com dados de clientes. Reduz o risco de golpes, vazamentos e perda de dados sem precisar de equipe de TI.",
+  "como_usar": [
+    "Responda o diagnóstico para descobrir seus pontos mais frágeis.",
+    "Liste contas e acessos na aba Inventário de acessos e confira quem ainda tem acesso sem precisar.",
+    "Registre computadores e celulares na aba Equipamentos e proteções.",
+    "Defina o que fazer em caso de golpe ou vazamento na aba Plano de resposta.",
+    "Siga o plano em ordem: primeiro senhas e duas etapas, depois backup, equipamentos e treinamento."
+  ],
+  "diagnostico": [
+    "Você ou sua equipe usam a mesma senha em vários sites?",
+    "Suas contas importantes (e-mail, banco, Instagram, WhatsApp Business) usam verificação em duas etapas?",
+    "Funcionários compartilham logins em vez de ter acesso individual?",
+    "Quando alguém sai da empresa, seus acessos são removidos no mesmo dia?",
+    "Os computadores têm antivírus ou proteção ativa e sistema atualizado?",
+    "Você tem cópias de segurança dos arquivos importantes, testadas?",
+    "A equipe sabe reconhecer mensagens falsas pedindo pagamento, senha ou código?",
+    "Você guarda dados pessoais de clientes (CPF, endereço, saúde) em planilhas soltas ou WhatsApp?",
+    "Existe um plano do que fazer se a conta for invadida ou o computador for roubado?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Ativar verificação em duas etapas no e-mail principal, banco, redes sociais e WhatsApp Business", "responsavel": "Dono", "prazo_dias": 1},
+    {"etapa": "Dia 3", "acao": "Instalar um gerenciador de senhas (ex.: Bitwarden, 1Password) e trocar senhas repetidas das contas importantes", "responsavel": "Dono", "prazo_dias": 3},
+    {"etapa": "Semana 1", "acao": "Montar o inventário de acessos e remover quem não precisa mais", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 2", "acao": "Atualizar sistemas, navegadores e programas; ativar atualização automática", "responsavel": "Equipe", "prazo_dias": 14},
+    {"etapa": "Semana 2", "acao": "Garantir proteção nos computadores (Windows Defender ativo ou antivírus confiável) e senha na tela", "responsavel": "Equipe", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Configurar backup automático e testar restauração", "responsavel": "Dono ou técnico", "prazo_dias": 21},
+    {"etapa": "Semana 4", "acao": "Cada pessoa com login individual e permissão só do que usa", "responsavel": "Dono", "prazo_dias": 28},
+    {"etapa": "Semana 5", "acao": "Treinar a equipe por 1 hora sobre golpes comuns (falso boleto, falso Pix, phishing, golpe do WhatsApp)", "responsavel": "Dono", "prazo_dias": 35},
+    {"etapa": "Semana 6", "acao": "Escrever o plano de resposta a incidentes e fixar contatos importantes", "responsavel": "Dono", "prazo_dias": 42},
+    {"etapa": "Dia 60", "acao": "Mapear quais dados pessoais de clientes e funcionários a empresa guarda, onde e por quê", "responsavel": "Dono", "prazo_dias": 60},
+    {"etapa": "Dia 75", "acao": "Validar com advogado as obrigações da LGPD, política de privacidade e comunicação de incidentes", "responsavel": "Dono + advogado", "prazo_dias": 75},
+    {"etapa": "Dia 90", "acao": "Revisar o inventário de acessos e repetir o diagnóstico; agendar revisão trimestral", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Proteger o e-mail", "como": "O e-mail principal recupera todas as outras contas. Use senha longa e única e verificação em duas etapas por aplicativo autenticador.", "cuidado": "Usar SMS como única segunda etapa; chips podem ser clonados."},
+    {"passo": "Usar gerenciador de senhas", "como": "Guarde todas as senhas nele e crie senhas longas e diferentes para cada serviço.", "cuidado": "Anotar senhas em papel colado no monitor ou em mensagem para si mesmo."},
+    {"passo": "Dar acesso individual", "como": "Cada pessoa tem seu login; permissões só do necessário. Evite usar a conta do dono para tudo.", "cuidado": "Compartilhar o login de redes sociais ou sistema com a equipe toda."},
+    {"passo": "Ao desligar alguém", "como": "No mesmo dia: troque senhas compartilhadas, remova acessos e recupere equipamentos.", "cuidado": "Esquecer contas de anúncios, redes sociais e planilhas compartilhadas."},
+    {"passo": "Atualizar tudo", "como": "Sistema operacional, celulares, navegador e sistemas devem atualizar automaticamente.", "cuidado": "Adiar atualizações por meses; muitos ataques exploram falhas já corrigidas."},
+    {"passo": "Treinar contra golpes", "como": "Regra: ninguém paga boleto novo, muda dado bancário ou passa código recebido sem confirmar por outro canal (ligação para número conhecido).", "cuidado": "Confiar em mensagem 'urgente' do suposto dono ou fornecedor."},
+    {"passo": "Backup", "como": "Regra 3-2-1: 3 cópias, 2 tipos de mídia, 1 fora do local. Teste a restauração.", "cuidado": "Backup no mesmo computador ou em HD que fica ligado sempre (ransomware criptografa também)."},
+    {"passo": "Plano de resposta", "como": "Escreva quem chamar, o que desligar, quais senhas trocar e quem avisar (clientes, banco, polícia) se algo acontecer.", "cuidado": "Descobrir o que fazer só quando o problema já aconteceu."},
+    {"passo": "Proteger dados pessoais", "como": "Guarde só o necessário, com acesso restrito, e apague o que não precisa mais.", "cuidado": "Enviar documentos de clientes por WhatsApp e deixar nas conversas indefinidamente."}
+  ],
+  "abas": [
+    {
+      "nome": "Inventário de acessos",
+      "descricao": "Quem tem acesso a quê. Revise a cada trimestre.",
+      "colunas": [
+        {"nome": "Sistema ou conta", "tipo": "texto"},
+        {"nome": "Quem tem acesso", "tipo": "texto"},
+        {"nome": "Nível", "tipo": "lista", "opcoes": ["Administrador", "Edita", "Só vê"]},
+        {"nome": "Duas etapas ativas", "tipo": "lista", "opcoes": ["Sim", "Não"]},
+        {"nome": "Última revisão", "tipo": "data"}
+      ],
+      "exemplos": [
+        ["E-mail da empresa", "Dono", "Administrador", "Sim", "-10"],
+        ["Instagram da empresa", "Dono; Social media", "Administrador", "Não", "-30"],
+        ["Sistema de vendas", "Equipe de vendas (3)", "Edita", "Não", "-60"]
+      ]
+    },
+    {
+      "nome": "Equipamentos e proteções",
+      "descricao": "Computadores, celulares e outros aparelhos com dados da empresa.",
+      "colunas": [
+        {"nome": "Equipamento", "tipo": "texto"},
+        {"nome": "Responsável", "tipo": "texto"},
+        {"nome": "Senha de tela", "tipo": "lista", "opcoes": ["Sim", "Não"]},
+        {"nome": "Atualizado", "tipo": "lista", "opcoes": ["Sim", "Não", "Não sei"]},
+        {"nome": "Backup", "tipo": "lista", "opcoes": ["Automático", "Manual", "Nenhum"]}
+      ],
+      "exemplos": [
+        ["Notebook do financeiro", "Financeiro", "Sim", "Sim", "Manual"],
+        ["Celular do dono", "Dono", "Sim", "Não sei", "Automático"],
+        ["Computador do balcão", "Atendimento", "Não", "Não", "Nenhum"]
+      ]
+    },
+    {
+      "nome": "Plano de resposta",
+      "descricao": "O que fazer em cada tipo de incidente.",
+      "colunas": [
+        {"nome": "Situação", "tipo": "texto"},
+        {"nome": "Primeira ação", "tipo": "texto"},
+        {"nome": "Quem chamar", "tipo": "texto"},
+        {"nome": "Prazo (horas)", "tipo": "numero"}
+      ],
+      "exemplos": [
+        ["Conta invadida", "Trocar senha e encerrar sessões em todos os aparelhos", "Dono", 1],
+        ["Computador roubado", "Trocar senhas e bloquear acessos remotamente", "Dono", 2],
+        ["Golpe de Pix ou boleto", "Avisar o banco e registrar boletim de ocorrência", "Dono + banco", 4]
+      ]
+    }
+  ],
+  "dicas": [
+    "As duas medidas mais eficazes: senha única por serviço (com gerenciador) e verificação em duas etapas.",
+    "Não pague resgate de ransomware sem antes consultar um especialista; backup testado evita esse dilema.",
+    "Desconfie de qualquer pedido de dinheiro por mensagem, mesmo com foto de alguém conhecido; confirme por ligação.",
+    "Evite instalar programas piratas ou extensões desconhecidas nos computadores da empresa.",
+    "Obrigações de LGPD variam por caso; use o último passo do plano para validar com um advogado."
+  ]
+}

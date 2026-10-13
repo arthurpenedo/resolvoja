@@ -1,0 +1,96 @@
+{
+  "slug": "organizacao-interna",
+  "titulo": "Organização interna",
+  "area": "operacoes",
+  "subdivisoes": ["Organização interna"],
+  "resumo": "Organiza o dia a dia da equipe: quem faz o quê, rotinas, reuniões curtas, arquivos e ambiente de trabalho. Ao final cada pessoa sabe suas responsabilidades e a empresa funciona sem depender de o dono apagar incêndios.",
+  "como_usar": [
+    "Preencha a aba 'Responsabilidades' com cada pessoa, suas atribuições e quem a substitui.",
+    "Use a aba 'Rotina semanal' para fixar tarefas recorrentes por dia e responsável.",
+    "Registre na aba 'Pendencias da equipe' tudo o que ficou combinado nas reuniões, com dono e prazo.",
+    "Faça uma reunião curta semanal e revise só as pendências.",
+    "Aplique a regra 'um lugar para cada coisa' em arquivos digitais e no espaço físico."
+  ],
+  "diagnostico": [
+    "Cada pessoa sabe exatamente pelo que é responsável?",
+    "Quando alguém falta, existe um substituto definido?",
+    "As reuniões terminam com tarefas, responsáveis e prazos anotados?",
+    "Os arquivos e documentos da empresa ficam num local único e organizado?",
+    "As pessoas procuram coisas (ferramentas, arquivos, contatos) por mais de 5 minutos no dia?",
+    "Combinados feitos por WhatsApp se perdem no meio das conversas?",
+    "O dono é interrompido várias vezes ao dia para decisões pequenas?",
+    "O espaço físico de trabalho está limpo e com lugar definido para cada item?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Listar as funções da empresa e escrever o nome de quem responde por cada uma.", "responsavel": "Dono", "prazo_dias": 2},
+    {"etapa": "Semana 1", "acao": "Definir um substituto para cada função crítica e comunicar à equipe.", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 1", "acao": "Combinar quais decisões a equipe pode tomar sozinha (por exemplo, descontos até X ou trocas até Y reais).", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 2", "acao": "Montar a rotina semanal com tarefas fixas por dia (conferir estoque, limpeza, fechamento).", "responsavel": "Líder", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Criar uma estrutura única de pastas e nomear arquivos com padrão (data_cliente_assunto).", "responsavel": "Administrativo", "prazo_dias": 21},
+    {"etapa": "Semana 4", "acao": "Fazer mutirão de 5S (separar, organizar, limpar) no espaço físico e etiquetar os lugares.", "responsavel": "Equipe", "prazo_dias": 28},
+    {"etapa": "Semana 5", "acao": "Iniciar a reunião semanal de 20 minutos, sempre com a lista de pendências em mãos.", "responsavel": "Dono", "prazo_dias": 35},
+    {"etapa": "Semana 12", "acao": "Avaliar com a equipe o que ainda gera confusão e ajustar responsabilidades e rotinas.", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Defina responsabilidades", "como": "Para cada função escreva o resultado esperado, o responsável e o substituto.", "cuidado": "Responsabilidade compartilhada vira responsabilidade de ninguém."},
+    {"passo": "Delegue a decisão junto com a tarefa", "como": "Diga o limite de autonomia (valor, tipo de caso) e quando deve consultar.", "cuidado": "Delegar sem autoridade mantém o dono como gargalo."},
+    {"passo": "Monte a rotina", "como": "Fixe por dia da semana as tarefas recorrentes e quem faz.", "cuidado": "Rotina tem de caber na jornada; não preencha o dia todo."},
+    {"passo": "Reunião curta", "como": "20 minutos, em pé, com 3 perguntas: o que concluímos, o que está travado, o que fazemos na próxima semana.", "cuidado": "Reunião sem anotação de pendências é conversa."},
+    {"passo": "Um lugar para cada coisa", "como": "Etiquete gavetas e pastas e padronize nomes de arquivos.", "cuidado": "Organização de uma vez só desmancha em um mês sem manutenção."},
+    {"passo": "Registre combinados", "como": "Tudo que for decidido vai na lista de pendências com dono e prazo, não só no WhatsApp.", "cuidado": "Mensagens soltas se perdem e geram 'eu não sabia'."}
+  ],
+  "abas": [
+    {
+      "nome": "Responsabilidades",
+      "descricao": "Quem responde por cada função e quem a cobre na ausência.",
+      "colunas": [
+        {"nome": "Função", "tipo": "texto"},
+        {"nome": "Responsável", "tipo": "texto"},
+        {"nome": "Substituto", "tipo": "texto"},
+        {"nome": "Decide sozinho até", "tipo": "moeda"},
+        {"nome": "Relatar ao dono", "tipo": "lista", "opcoes": ["Diário", "Semanal", "Só exceções"]}
+      ],
+      "exemplos": [
+        ["Atendimento ao cliente", "Pessoa A", "Pessoa B", 100.0, "Só exceções"],
+        ["Fechamento do caixa", "Pessoa B", "Dono", 0.0, "Diário"],
+        ["Compra de insumos", "Pessoa C", "Pessoa A", 500.0, "Semanal"]
+      ]
+    },
+    {
+      "nome": "Rotina semanal",
+      "descricao": "Tarefas fixas por dia da semana.",
+      "colunas": [
+        {"nome": "Dia", "tipo": "lista", "opcoes": ["Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"]},
+        {"nome": "Tarefa", "tipo": "texto"},
+        {"nome": "Responsável", "tipo": "texto"},
+        {"nome": "Duração (min)", "tipo": "numero"}
+      ],
+      "exemplos": [
+        ["Segunda", "Reunião semanal e revisão de pendências", "Dono", 20],
+        ["Quarta", "Conferir estoque mínimo e listar compras", "Pessoa C", 30],
+        ["Sexta", "Limpeza geral e organização dos arquivos", "Equipe", 40]
+      ]
+    },
+    {
+      "nome": "Pendencias da equipe",
+      "descricao": "Compromissos assumidos com responsável e prazo.",
+      "colunas": [
+        {"nome": "Combinado", "tipo": "texto"},
+        {"nome": "Responsável", "tipo": "texto"},
+        {"nome": "Prazo", "tipo": "data"},
+        {"nome": "Situação", "tipo": "lista", "opcoes": ["A fazer", "Em andamento", "Concluído", "Travado"]}
+      ],
+      "exemplos": [
+        ["Etiquetar prateleiras do estoque", "Pessoa A", "+5", "Em andamento"],
+        ["Enviar orçamentos pendentes", "Pessoa B", "+2", "A fazer"],
+        ["Trocar lâmpada da expedição", "Pessoa C", "-1", "Concluído"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Regra dos 2 minutos: o que leva menos de 2 minutos, faça na hora.",
+    "Substituto não é detalhe: teste uma vez ao mês, pedindo que cubra a tarefa do titular.",
+    "Reunião em pé tende a terminar mais rápido.",
+    "O dono organiza melhor quando decide só o que só ele pode decidir."
+  ]
+}

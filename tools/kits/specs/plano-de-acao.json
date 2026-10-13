@@ -1,0 +1,84 @@
+{
+  "slug": "plano-de-acao",
+  "titulo": "Plano de ação",
+  "area": "gestao",
+  "subdivisoes": ["Plano de ação"],
+  "resumo": "Um modelo de plano de ação 5W2H que transforma qualquer problema ou objetivo em tarefas com responsável, prazo e custo. Ao final cada ação tem dono e data, e dá para cobrar.",
+  "como_usar": [
+    "Escreva o problema ou objetivo na aba 'Objetivo' em uma frase com número e prazo.",
+    "Liste as ações necessárias na aba 'Plano 5W2H', respondendo O quê, Por quê, Quem, Quando, Onde, Como e Quanto.",
+    "Defina uma data fixa semanal para revisar o plano (15 minutos).",
+    "Atualize o status e registre bloqueios na aba 'Acompanhamento'.",
+    "Ao concluir, anote o resultado e o aprendizado."
+  ],
+  "diagnostico": [
+    "Quando se decide algo em reunião, todo mundo sai sabendo quem faz o quê e até quando?",
+    "As tarefas importantes costumam atrasar por falta de dono?",
+    "Você já combinou algo com a equipe e descobriu depois que nada foi feito?",
+    "Existe um local único com a lista de ações em andamento?",
+    "Cada ação tem uma data de entrega definida?",
+    "As ações têm custo estimado antes de começar?",
+    "Há revisão regular do andamento do plano?",
+    "Você registra por que uma ação não foi concluída?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Escrever o objetivo ou problema com números e data final", "responsavel": "Dono", "prazo_dias": 1},
+    {"etapa": "Dia 2", "acao": "Identificar as causas principais (pergunte 'por quê?' 5 vezes)", "responsavel": "Dono e equipe", "prazo_dias": 2},
+    {"etapa": "Dia 3", "acao": "Listar todas as ações possíveis em uma chuva de ideias", "responsavel": "Equipe", "prazo_dias": 3},
+    {"etapa": "Semana 1", "acao": "Selecionar as ações de maior impacto e menor esforço", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 1", "acao": "Preencher o 5W2H de cada ação selecionada", "responsavel": "Dono e responsáveis", "prazo_dias": 8},
+    {"etapa": "Semana 2", "acao": "Primeira reunião de acompanhamento de 15 minutos", "responsavel": "Dono", "prazo_dias": 14},
+    {"etapa": "Semana 4", "acao": "Rever atrasos, remover bloqueios e redistribuir tarefas", "responsavel": "Dono", "prazo_dias": 30},
+    {"etapa": "Mês 2", "acao": "Medir o resultado em relação ao objetivo e ajustar as ações restantes", "responsavel": "Dono", "prazo_dias": 60},
+    {"etapa": "Mês 3", "acao": "Encerrar o plano, registrar aprendizados e comemorar entregas", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Escreva o objetivo", "como": "Ex.: 'Reduzir cancelamentos de 12% para 6% até 30/11'.", "cuidado": "Plano sem meta mensurável não permite saber se funcionou."},
+    {"passo": "Ache a causa", "como": "Pergunte 'por quê?' até chegar a algo que você consegue agir.", "cuidado": "Atacar o sintoma e não a causa."},
+    {"passo": "Responda O quê e Por quê", "como": "Escreva a ação com verbo no infinitivo e a razão ligada ao objetivo.", "cuidado": "Ação vaga como 'melhorar atendimento'."},
+    {"passo": "Responda Quem e Quando", "como": "Um único nome por ação e uma data de entrega.", "cuidado": "Colocar 'equipe' ou 'em breve'."},
+    {"passo": "Responda Onde e Como", "como": "Indique o local/canal e o método em 1 a 2 frases.", "cuidado": "Ação que depende de entender o 'como' só na hora de executar."},
+    {"passo": "Responda Quanto", "como": "Estime custo em reais e horas de trabalho.", "cuidado": "Descobrir só no meio que não havia verba."},
+    {"passo": "Acompanhe semanalmente", "como": "Marque status, bloqueio e nova data, se for o caso.", "cuidado": "Mudar a data repetidamente sem tratar o motivo."}
+  ],
+  "abas": [
+    {
+      "nome": "Plano 5W2H",
+      "descricao": "Cada ação com O quê, Por quê, Quem, Quando, Onde, Como e Quanto.",
+      "colunas": [
+        {"nome": "O quê (ação)", "tipo": "texto"},
+        {"nome": "Por quê", "tipo": "texto"},
+        {"nome": "Quem", "tipo": "texto"},
+        {"nome": "Quando (prazo)", "tipo": "data"},
+        {"nome": "Onde / Como", "tipo": "texto"},
+        {"nome": "Quanto custa", "tipo": "moeda"}
+      ],
+      "exemplos": [
+        ["Ligar para clientes que cancelaram no último trimestre", "Entender os motivos e tentar recuperar", "Responsável A", "+10", "Telefone, roteiro de 5 perguntas", 0.0],
+        ["Criar mensagem automática pós-venda no WhatsApp", "Reduzir cancelamento por falta de acompanhamento", "Dono", "+20", "WhatsApp Business, mensagens rápidas", 0.0],
+        ["Treinar equipe em contorno de objeções", "Segurar clientes na hora do cancelamento", "Gerente B", "+40", "Reunião de 2 horas na loja", 250.0]
+      ]
+    },
+    {
+      "nome": "Acompanhamento",
+      "descricao": "Registro semanal do andamento e dos bloqueios de cada ação.",
+      "colunas": [
+        {"nome": "Ação", "tipo": "texto"},
+        {"nome": "Data da revisão", "tipo": "data"},
+        {"nome": "Status", "tipo": "lista", "opcoes": ["Não iniciada", "Em andamento", "Concluída", "Bloqueada", "Atrasada"]},
+        {"nome": "Bloqueio ou observação", "tipo": "texto"},
+        {"nome": "Nova data", "tipo": "data"}
+      ],
+      "exemplos": [
+        ["Ligar para clientes que cancelaram", "+7", "Em andamento", "Faltam telefones atualizados", "+14"],
+        ["Mensagem automática pós-venda", "+7", "Não iniciada", "Aguardando textos aprovados", "+20"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Quanto menor a ação, maior a chance de ser feita: quebre tarefas grandes em partes de até 1 semana.",
+    "Evite mais de 7 ações por plano; priorize.",
+    "Combine o plano ao vivo, em voz alta, e registre na hora para ninguém sair com versão diferente.",
+    "Para cada ação atrasada, pergunte 'o que atrapalhou?' antes de cobrar."
+  ]
+}

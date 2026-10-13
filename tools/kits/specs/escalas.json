@@ -1,0 +1,99 @@
+{
+  "slug": "escalas",
+  "titulo": "Escalas",
+  "area": "pessoas",
+  "subdivisoes": ["Escalas"],
+  "resumo": "Monta escalas de trabalho semanais e mensais que cobrem os horários de maior movimento, respeitam folgas e intervalos e evitam conflitos entre a equipe. Você termina com uma escala clara, divulgada com antecedência e com registro de trocas.",
+  "como_usar": [
+    "Na aba 'Demanda por turno', anote quantas pessoas você precisa em cada dia e horário.",
+    "Na aba 'Disponibilidade', registre restrições e preferências de cada funcionário (estudo, outro compromisso).",
+    "Monte a escala na aba 'Escala semanal' distribuindo pessoas conforme a demanda e as folgas.",
+    "Divulgue a escala com antecedência combinada (por exemplo, 7 dias) e registre trocas na aba de trocas.",
+    "Confirme com o contador/advogado trabalhista se a sua jornada, folgas e horas extras estão corretas antes de adotar."
+  ],
+  "diagnostico": [
+    "Você sabe quantas pessoas precisa por turno nos dias fortes e fracos?",
+    "A escala é divulgada com antecedência para os funcionários se planejarem?",
+    "Há uma regra clara para trocar de turno entre colegas?",
+    "A jornada, o intervalo para descanso e o descanso semanal estão previstos na escala?",
+    "As folgas de final de semana são distribuídas de forma justa?",
+    "Você controla as horas trabalhadas (ponto) para saber de horas extras ou banco de horas?",
+    "A escala cobre faltas e atestados com uma pessoa de reserva?",
+    "Funcionários reclamam de injustiça ou de ser avisados de última hora?",
+    "A escala está registrada por escrito, e não só no WhatsApp?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Levantar o horário de funcionamento e o movimento por dia e turno (dias e horários de pico).", "responsavel": "Gerente", "prazo_dias": 1},
+    {"etapa": "Dia 3", "acao": "Definir quantas pessoas são necessárias por função em cada turno.", "responsavel": "Dono", "prazo_dias": 3},
+    {"etapa": "Semana 1", "acao": "Coletar disponibilidade e restrições de cada funcionário.", "responsavel": "Gerente", "prazo_dias": 7},
+    {"etapa": "Semana 1", "acao": "Confirmar com contador/advogado trabalhista o regime de jornada, intervalos, descanso semanal e o que o acordo ou a convenção coletiva da categoria prevê.", "responsavel": "Dono", "prazo_dias": 10},
+    {"etapa": "Semana 2", "acao": "Montar a primeira escala semanal e simular o mês para equilibrar finais de semana e feriados.", "responsavel": "Gerente", "prazo_dias": 14},
+    {"etapa": "Semana 2", "acao": "Divulgar a escala por escrito com antecedência e colher ciência da equipe.", "responsavel": "Gerente", "prazo_dias": 16},
+    {"etapa": "Mês 1", "acao": "Definir regra de trocas (quem aprova, prazo, registro) e implantar o controle de ponto/horas.", "responsavel": "Dono", "prazo_dias": 30},
+    {"etapa": "Mês 2", "acao": "Revisar horas extras, faltas e reclamações para ajustar a escala.", "responsavel": "Gerente", "prazo_dias": 60},
+    {"etapa": "Mês 3", "acao": "Consolidar o modelo de escala e validar com contador/advogado trabalhista jornada, horas extras e descansos.", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Mapear a demanda", "como": "Conte quantas pessoas são necessárias em cada hora de movimento, separando dia de semana, sábado, domingo e feriado.", "cuidado": "Usar a mesma quantidade de gente em todos os turnos."},
+    {"passo": "Coletar disponibilidade", "como": "Peça a cada funcionário que informe com antecedência restrições fixas.", "cuidado": "Descobrir a restrição na hora de escalar."},
+    {"passo": "Montar a escala", "como": "Preencha primeiro as folgas e descansos previstos, depois cubra os turnos críticos e distribua o restante.", "cuidado": "Escalar a mesma pessoa sempre nos piores horários."},
+    {"passo": "Conferir regras gerais", "como": "Verifique intervalo de descanso dentro da jornada, folga semanal e limite de horas, com base geral da CLT.", "cuidado": "Achar que a CLT permite tudo por combinação verbal; confirme com profissional."},
+    {"passo": "Divulgar", "como": "Publique em quadro e grupo da equipe, com data de corte para pedidos de ajuste.", "cuidado": "Mudar a escala de última hora sem combinar."},
+    {"passo": "Registrar trocas", "como": "Toda troca deve ter nome dos dois, data e aprovação do gerente.", "cuidado": "Trocas informais que geram confusão e horas extras sem controle."}
+  ],
+  "abas": [
+    {
+      "nome": "Demanda por turno",
+      "descricao": "Quantas pessoas são necessárias em cada dia e turno.",
+      "colunas": [
+        {"nome": "Dia", "tipo": "lista", "opcoes": ["Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado", "Domingo"]},
+        {"nome": "Turno", "tipo": "lista", "opcoes": ["Manhã", "Tarde", "Noite"]},
+        {"nome": "Pessoas necessárias", "tipo": "numero"},
+        {"nome": "Observação", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["Sexta", "Tarde", 4, "Pico de movimento"],
+        ["Terça", "Manhã", 2, "Movimento baixo"],
+        ["Sábado", "Manhã", 5, "Dia mais forte"]
+      ]
+    },
+    {
+      "nome": "Escala semanal",
+      "descricao": "Quem trabalha em cada dia e turno.",
+      "colunas": [
+        {"nome": "Funcionário", "tipo": "texto"},
+        {"nome": "Data", "tipo": "data"},
+        {"nome": "Turno", "tipo": "lista", "opcoes": ["Manhã", "Tarde", "Noite", "Folga"]},
+        {"nome": "Entrada", "tipo": "texto"},
+        {"nome": "Saída", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["Funcionário A", "+1", "Manhã", "08:00", "17:00"],
+        ["Funcionário B", "+1", "Tarde", "11:00", "20:00"],
+        ["Funcionário C", "+1", "Folga", "-", "-"]
+      ]
+    },
+    {
+      "nome": "Trocas e ajustes",
+      "descricao": "Registro das trocas de turno e quem aprovou.",
+      "colunas": [
+        {"nome": "Solicitante", "tipo": "texto"},
+        {"nome": "Com quem trocou", "tipo": "texto"},
+        {"nome": "Data original", "tipo": "data"},
+        {"nome": "Aprovado por", "tipo": "texto"},
+        {"nome": "Situação", "tipo": "lista", "opcoes": ["Pedido", "Aprovado", "Negado"]}
+      ],
+      "exemplos": [
+        ["Funcionário A", "Funcionário B", "+6", "Gerente", "Aprovado"],
+        ["Funcionário C", "Funcionário A", "+9", "Gerente", "Pedido"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Divulgue sempre com antecedência combinada; escala de última hora é a maior fonte de reclamação.",
+    "Revezar finais de semana e feriados passa sensação de justiça.",
+    "Controle de ponto e horas trabalhadas protege empresa e funcionário.",
+    "Tenha uma pessoa de reserva ou lista de quem aceita cobrir faltas.",
+    "As regras de jornada, intervalos, horas extras e banco de horas variam conforme o contrato e a convenção coletiva: validar com contador/advogado trabalhista."
+  ]
+}

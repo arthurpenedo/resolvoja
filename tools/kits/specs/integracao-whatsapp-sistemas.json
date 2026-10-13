@@ -1,0 +1,105 @@
+{
+  "slug": "integracao-whatsapp-sistemas",
+  "titulo": "Integração WhatsApp + sistemas",
+  "area": "tecnologia",
+  "subdivisoes": ["Integração WhatsApp + sistemas"],
+  "resumo": "Guia para ligar o WhatsApp da empresa ao seu CRM, ERP, planilha ou loja: escolha entre WhatsApp Business app e API oficial, mapa de mensagens automáticas, comparação de provedores e checklist de regras e consentimento.",
+  "como_usar": [
+    "Responda o diagnóstico para saber se o app WhatsApp Business basta ou se você precisa da API oficial.",
+    "Defina os fluxos desejados (pedido, cobrança, agendamento) na aba Fluxos de mensagens.",
+    "Cadastre os modelos de mensagem na aba Modelos de mensagem, respeitando as regras da Meta.",
+    "Compare provedores na aba Comparação de provedores e peça teste.",
+    "Siga o plano e use a aba Consentimento e contatos para respeitar as regras de envio."
+  ],
+  "diagnostico": [
+    "Mais de uma pessoa precisa atender no mesmo número de WhatsApp?",
+    "Você quer enviar mensagens automáticas (confirmação de pedido, lembrete de cobrança, rastreio)?",
+    "Hoje alguém copia dados do WhatsApp para planilha ou sistema?",
+    "Você tem consentimento dos clientes para receber mensagens da empresa?",
+    "Você já teve número bloqueado ou banido por envio em massa?",
+    "Você precisa de chatbot de atendimento inicial?",
+    "Seu sistema (CRM, ERP, loja) já oferece integração com WhatsApp?",
+    "Você tem um número dedicado à empresa, separado do pessoal?",
+    "Você aceita o custo por conversa/mensagem cobrado pela Meta e pelo provedor?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Separar um número exclusivo da empresa e migrar para WhatsApp Business", "responsavel": "Dono", "prazo_dias": 2},
+    {"etapa": "Semana 1", "acao": "Listar os fluxos que mais consomem tempo (pedido, orçamento, cobrança, agendamento, pós-venda)", "responsavel": "Dono + equipe", "prazo_dias": 7},
+    {"etapa": "Semana 1", "acao": "Decidir entre app Business (até poucos atendentes e sem integração) ou API oficial (múltiplos atendentes e integrações)", "responsavel": "Dono", "prazo_dias": 8},
+    {"etapa": "Semana 2", "acao": "Se API: criar conta Meta Business, verificar a empresa e escolher provedor oficial (BSP)", "responsavel": "Dono", "prazo_dias": 14},
+    {"etapa": "Semana 2", "acao": "Escrever os modelos de mensagem (templates) e enviar para aprovação da Meta", "responsavel": "Dono", "prazo_dias": 16},
+    {"etapa": "Semana 3", "acao": "Conectar WhatsApp ao CRM/ERP/loja (nativa, Zapier/Make/n8n ou API)", "responsavel": "Técnico ou provedor", "prazo_dias": 24},
+    {"etapa": "Semana 3", "acao": "Registrar consentimento (opt-in) dos clientes e criar opção de sair (opt-out)", "responsavel": "Dono", "prazo_dias": 26},
+    {"etapa": "Semana 4", "acao": "Testar com clientes internos: pedido, resposta, transferência para humano, falha", "responsavel": "Equipe", "prazo_dias": 32},
+    {"etapa": "Semana 5", "acao": "Lançar para parte da base e acompanhar respostas, bloqueios e reclamações", "responsavel": "Dono", "prazo_dias": 40},
+    {"etapa": "Dia 60", "acao": "Definir horário de atendimento, mensagens de ausência e tempo máximo de resposta", "responsavel": "Dono", "prazo_dias": 60},
+    {"etapa": "Dia 75", "acao": "Validar com advogado o uso dos dados dos clientes, consentimento e política de privacidade (LGPD)", "responsavel": "Dono + advogado", "prazo_dias": 75},
+    {"etapa": "Dia 90", "acao": "Medir tempo de resposta, conversões e custos; decidir ampliar automações", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Escolher o tipo de conta", "como": "WhatsApp Business app: simples, gratuito, poucos aparelhos. API oficial: múltiplos atendentes, automação e integração, via provedor autorizado.", "cuidado": "Usar APIs não oficiais ou programas 'disparadores': há risco real de banimento do número."},
+    {"passo": "Obter consentimento", "como": "Só envie mensagens ativas a quem aceitou receber; registre data e origem do aceite e permita sair a qualquer momento.", "cuidado": "Comprar lista de contatos e disparar em massa."},
+    {"passo": "Criar modelos de mensagem", "como": "Para iniciar conversas fora da janela de atendimento, a API exige modelos aprovados pela Meta, com variáveis como nome e pedido.", "cuidado": "Mensagens promocionais disfarçadas de aviso; podem ser reprovadas ou gerar denúncias."},
+    {"passo": "Mapear fluxos", "como": "Para cada fluxo, defina o gatilho no sistema (pedido pago), a mensagem e quem assume depois.", "cuidado": "Automação sem opção de falar com uma pessoa."},
+    {"passo": "Conectar ao sistema", "como": "Veja primeiro se seu CRM/ERP/loja tem integração nativa; senão use ferramentas como Zapier, Make ou n8n, ou o provedor de API.", "cuidado": "Desenvolver sob medida sem comparar com o que já existe pronto."},
+    {"passo": "Guardar histórico", "como": "Registre as conversas importantes no CRM para qualquer atendente ver o contexto.", "cuidado": "Histórico só no celular de um funcionário."},
+    {"passo": "Entender os custos", "como": "Há custo do provedor (mensalidade/usuário) e cobrança da Meta por conversa/mensagem conforme categoria. Confirme valores atuais no site oficial.", "cuidado": "Calcular só a mensalidade e esquecer o custo variável por mensagem."},
+    {"passo": "Testar e monitorar", "como": "Acompanhe taxa de entrega, respostas, bloqueios e qualidade do número no painel da Meta.", "cuidado": "Enviar muito de uma vez; qualidade cai e o limite diminui."}
+  ],
+  "abas": [
+    {
+      "nome": "Fluxos de mensagens",
+      "descricao": "Cada automação entre sistema e WhatsApp.",
+      "colunas": [
+        {"nome": "Fluxo", "tipo": "texto"},
+        {"nome": "Gatilho no sistema", "tipo": "texto"},
+        {"nome": "Mensagem", "tipo": "texto"},
+        {"nome": "Tipo", "tipo": "lista", "opcoes": ["Transacional", "Lembrete", "Marketing", "Atendimento"]},
+        {"nome": "Status", "tipo": "lista", "opcoes": ["Planejado", "Em teste", "Ativo"]}
+      ],
+      "exemplos": [
+        ["Confirmação de pedido", "Pedido pago na loja", "Olá {nome}, recebemos seu pedido {numero}.", "Transacional", "Planejado"],
+        ["Lembrete de pagamento", "3 dias antes do vencimento", "Olá {nome}, sua fatura vence em 3 dias.", "Lembrete", "Planejado"],
+        ["Pós-venda", "7 dias após entrega", "Como foi sua compra? Responda de 1 a 5.", "Atendimento", "Planejado"]
+      ]
+    },
+    {
+      "nome": "Modelos de mensagem",
+      "descricao": "Controle de aprovação dos templates.",
+      "colunas": [
+        {"nome": "Nome do modelo", "tipo": "texto"},
+        {"nome": "Categoria", "tipo": "lista", "opcoes": ["Utilidade", "Marketing", "Autenticação"]},
+        {"nome": "Texto com variáveis", "tipo": "texto"},
+        {"nome": "Enviado para aprovação", "tipo": "data"},
+        {"nome": "Situação", "tipo": "lista", "opcoes": ["Rascunho", "Em análise", "Aprovado", "Reprovado"]}
+      ],
+      "exemplos": [
+        ["pedido_confirmado", "Utilidade", "Olá {{1}}, seu pedido {{2}} foi confirmado.", "-2", "Em análise"],
+        ["oferta_mensal", "Marketing", "Olá {{1}}, temos novidades para você.", "-1", "Rascunho"]
+      ]
+    },
+    {
+      "nome": "Comparação de provedores",
+      "descricao": "Plataformas e provedores oficiais de WhatsApp API.",
+      "colunas": [
+        {"nome": "Provedor", "tipo": "texto"},
+        {"nome": "Mensalidade", "tipo": "moeda"},
+        {"nome": "Usuários incluídos", "tipo": "numero"},
+        {"nome": "Integra com seu CRM/ERP", "tipo": "lista", "opcoes": ["Sim", "Não", "A confirmar"]},
+        {"nome": "Chatbot incluso", "tipo": "lista", "opcoes": ["Sim", "Não", "A confirmar"]},
+        {"nome": "Provedor oficial Meta", "tipo": "lista", "opcoes": ["Sim", "Não", "A confirmar"]}
+      ],
+      "exemplos": [
+        ["Provedor A", 0.0, 3, "A confirmar", "A confirmar", "Sim"],
+        ["Provedor B", 0.0, 5, "A confirmar", "A confirmar", "A confirmar"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Antes de contratar, confirme que o provedor é parceiro oficial da Meta e peça o custo total por escrito, incluindo cobrança por mensagem.",
+    "Se você tem pouco volume, o WhatsApp Business app com respostas rápidas e catálogo já resolve muito.",
+    "Sempre ofereça saída para falar com uma pessoa.",
+    "Evite disparo em massa para quem não pediu; além de risco de banimento, prejudica a imagem da marca.",
+    "Regras e preços da Meta mudam; revise a documentação oficial a cada trimestre."
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "slug": "criar-loja-virtual",
+  "titulo": "Criar loja virtual",
+  "area": "tecnologia",
+  "subdivisoes": ["Criar loja virtual"],
+  "resumo": "Planejamento completo para abrir uma loja online: catálogo, frete, pagamentos, comparação de plataformas, checklist de lançamento e cronograma. Evita erros caros de quem começa sem planejar.",
+  "como_usar": [
+    "Responda o diagnóstico para ver se está pronto para vender online ou se precisa organizar produtos e estoque antes.",
+    "Cadastre seus produtos na aba Catálogo de produtos já com os dados que a plataforma vai pedir.",
+    "Compare plataformas na aba Comparação de plataformas, usando os mesmos critérios.",
+    "Defina frete e pagamentos na aba Frete e pagamentos.",
+    "Siga o plano e o checklist antes de divulgar a loja."
+  ],
+  "diagnostico": [
+    "Você tem fotos boas e descrição de cada produto?",
+    "Você controla o estoque com precisão (sabe quanto tem de cada item)?",
+    "Sabe o peso e as dimensões embaladas de cada produto para calcular frete?",
+    "Você tem CNPJ ou MEI para emitir nota fiscal quando necessário?",
+    "Já definiu como vai enviar (Correios, transportadora, Melhor Envio, motoboy local)?",
+    "Sabe calcular preço incluindo taxa de pagamento, frete grátis e embalagem?",
+    "Tem uma política de troca e devolução escrita?",
+    "Tem alguém que responda clientes todos os dias e embale em até 2 dias úteis?",
+    "Já tem público ou canal para trazer as primeiras visitas (Instagram, WhatsApp, indicação)?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Listar produtos que vão para a loja com custo, preço, peso e dimensões", "responsavel": "Dono", "prazo_dias": 3},
+    {"etapa": "Semana 1", "acao": "Fotografar produtos com fundo limpo e luz natural; ao menos 3 fotos por item", "responsavel": "Dono ou equipe", "prazo_dias": 7},
+    {"etapa": "Semana 1", "acao": "Calcular preço mínimo considerando taxa de cartão, imposto, frete e embalagem", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 2", "acao": "Comparar plataformas (Nuvemshop, Loja Integrada, Shopify, WooCommerce, Tray, Wix) e escolher", "responsavel": "Dono", "prazo_dias": 14},
+    {"etapa": "Semana 2", "acao": "Abrir conta em um meio de pagamento (Mercado Pago, Pagar.me, PagSeguro, Stripe, Asaas) e testar Pix", "responsavel": "Dono", "prazo_dias": 16},
+    {"etapa": "Semana 3", "acao": "Cadastrar produtos, categorias, frete e páginas de políticas (troca, privacidade, entrega)", "responsavel": "Dono", "prazo_dias": 24},
+    {"etapa": "Semana 3", "acao": "Fazer 3 compras de teste (Pix, cartão e boleto) e conferir e-mails e frete", "responsavel": "Dono", "prazo_dias": 26},
+    {"etapa": "Semana 4", "acao": "Configurar domínio próprio, Google Analytics e pixel das redes sociais", "responsavel": "Dono", "prazo_dias": 28},
+    {"etapa": "Semana 4", "acao": "Passar pelo checklist de lançamento e abrir a loja", "responsavel": "Dono", "prazo_dias": 30},
+    {"etapa": "Dia 45", "acao": "Revisar pedidos, tempo de envio, reclamações e produtos mais vistos", "responsavel": "Dono", "prazo_dias": 45},
+    {"etapa": "Dia 60", "acao": "Confirmar com o contador regime tributário, emissão de nota e obrigações da venda online", "responsavel": "Dono + contador", "prazo_dias": 60},
+    {"etapa": "Dia 90", "acao": "Ajustar preços, frete grátis e catálogo com base nos números", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Organizar o catálogo", "como": "Crie uma planilha com código, nome, descrição, preço, estoque, peso e dimensões. Importe ou digite na loja.", "cuidado": "Começar a cadastrar na plataforma sem ter os dados de peso e medida; o frete vem errado."},
+    {"passo": "Escolher a plataforma", "como": "Compare mensalidade, comissão sobre venda, taxas de pagamento, limite de produtos, integração com frete e nota fiscal.", "cuidado": "Olhar só a mensalidade e ignorar a taxa por venda e o custo de apps adicionais."},
+    {"passo": "Precificar", "como": "Preço = custo + embalagem + imposto + taxa de pagamento + frete (se grátis) + margem. Faça a conta por produto.", "cuidado": "Copiar o preço do concorrente sem saber sua própria margem."},
+    {"passo": "Configurar frete", "como": "Integre Correios e Melhor Envio, ou defina entrega local com taxa fixa por bairro. Defina prazo de postagem.", "cuidado": "Prometer prazos que você não cumpre; gera cancelamentos."},
+    {"passo": "Configurar pagamentos", "como": "Ative Pix e cartão, e boleto se seu público usa. Confira prazo de recebimento e taxas de cada um.", "cuidado": "Ativar parcelamento sem juros sem embutir a taxa no preço."},
+    {"passo": "Escrever as páginas obrigatórias", "como": "Políticas de troca, entrega, privacidade e dados da empresa (CNPJ, endereço, contato) no rodapé.", "cuidado": "Omitir informações do vendedor; o consumidor tem direito de arrependimento em compras online."},
+    {"passo": "Testar a compra", "como": "Compre você mesmo como cliente em celular, confira e-mails, estoque baixando e rastreio.", "cuidado": "Abrir sem teste e descobrir erros com cliente real."},
+    {"passo": "Preparar a operação", "como": "Defina quem separa, embala, emite nota e atende o WhatsApp, e com que prazo.", "cuidado": "Vender mais do que consegue enviar."}
+  ],
+  "abas": [
+    {
+      "nome": "Catálogo de produtos",
+      "descricao": "Dados que a plataforma exige, prontos para importar.",
+      "colunas": [
+        {"nome": "Código", "tipo": "texto"},
+        {"nome": "Produto", "tipo": "texto"},
+        {"nome": "Custo", "tipo": "moeda"},
+        {"nome": "Preço de venda", "tipo": "moeda"},
+        {"nome": "Estoque", "tipo": "numero"},
+        {"nome": "Peso (g)", "tipo": "numero"},
+        {"nome": "Fotos prontas", "tipo": "lista", "opcoes": ["Sim", "Não"]}
+      ],
+      "exemplos": [
+        ["P001", "Produto A", 25.0, 59.9, 30, 350, "Sim"],
+        ["P002", "Produto B", 12.5, 34.9, 80, 120, "Não"],
+        ["P003", "Kit C", 48.0, 109.0, 15, 700, "Sim"]
+      ]
+    },
+    {
+      "nome": "Comparação de plataformas",
+      "descricao": "Compare opções com os mesmos critérios antes de decidir.",
+      "colunas": [
+        {"nome": "Plataforma", "tipo": "texto"},
+        {"nome": "Mensalidade", "tipo": "moeda"},
+        {"nome": "Comissão por venda (%)", "tipo": "numero"},
+        {"nome": "Pix e boleto nativos", "tipo": "lista", "opcoes": ["Sim", "Não", "A confirmar"]},
+        {"nome": "Integra frete", "tipo": "lista", "opcoes": ["Sim", "Não", "A confirmar"]},
+        {"nome": "Emite nota fiscal", "tipo": "lista", "opcoes": ["Nativo", "Via app", "Não"]}
+      ],
+      "exemplos": [
+        ["Plataforma A", 0.0, 0, "A confirmar", "A confirmar", "Via app"],
+        ["Plataforma B", 0.0, 0, "A confirmar", "A confirmar", "Nativo"]
+      ]
+    },
+    {
+      "nome": "Frete e pagamentos",
+      "descricao": "Regras de entrega e taxas para calcular preço real.",
+      "colunas": [
+        {"nome": "Forma", "tipo": "texto"},
+        {"nome": "Tipo", "tipo": "lista", "opcoes": ["Frete", "Pagamento"]},
+        {"nome": "Taxa ou custo (%)", "tipo": "numero"},
+        {"nome": "Prazo", "tipo": "texto"},
+        {"nome": "Observação", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["Pix", "Pagamento", 1, "Imediato", "Conferir taxa do seu provedor"],
+        ["Cartão de crédito", "Pagamento", 4, "Conforme contrato", "Preencher com a taxa real"],
+        ["Correios PAC", "Frete", 0, "Conforme CEP", "Calculado pela plataforma"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Valores de mensalidade e taxas mudam; confirme sempre no site oficial e por escrito antes de fechar.",
+    "Comece com poucos produtos bem apresentados em vez de muitos mal cadastrados.",
+    "Compare também a possibilidade de vender em marketplaces, mas mantenha sua loja para fidelizar clientes.",
+    "Peça avaliação e foto aos primeiros clientes; prova social vende.",
+    "Não pague por 'pacote de loja pronta' sem ver exemplos reais de lojas entregues pelo mesmo fornecedor."
+  ]
+}

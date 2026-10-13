@@ -1,0 +1,95 @@
+{
+  "slug": "analise-swot",
+  "titulo": "Análise SWOT",
+  "area": "gestao",
+  "subdivisoes": ["Análise SWOT"],
+  "resumo": "Uma matriz SWOT guiada por perguntas, que cruza forças, fraquezas, oportunidades e ameaças e gera ações concretas. Ao final você sabe o que explorar, corrigir e proteger.",
+  "como_usar": [
+    "Responda as perguntas-guia da aba 'Perguntas-guia' sozinho ou com a equipe.",
+    "Liste os itens na aba 'Matriz SWOT', classificando e dando uma nota de importância.",
+    "Cruze os itens na aba 'Cruzamentos' para gerar ações (força x oportunidade etc.).",
+    "Escolha as 3 a 5 ações mais importantes e leve para o plano de ação.",
+    "Refaça a análise a cada 6 meses ou quando algo grande mudar."
+  ],
+  "diagnostico": [
+    "Você consegue listar 3 coisas que a sua empresa faz melhor que os concorrentes?",
+    "Sabe quais são suas 3 maiores fraquezas hoje?",
+    "Acompanha mudanças do mercado (novas tecnologias, hábitos de consumo, regulamentos)?",
+    "Conhece quem são as ameaças diretas (concorrentes, preço de insumos, plataformas)?",
+    "Você já perguntou a clientes por que compram ou deixam de comprar?",
+    "Depende de um único cliente, fornecedor ou canal de venda?",
+    "Já fez uma análise assim com a equipe, e não apenas sozinho?",
+    "As conclusões de análises anteriores viraram ações?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Ler as perguntas-guia e responder sozinho um primeiro rascunho", "responsavel": "Dono", "prazo_dias": 2},
+    {"etapa": "Semana 1", "acao": "Perguntar a 5 clientes e 2 funcionários o que a empresa faz bem e mal", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 1", "acao": "Pesquisar 3 concorrentes e 3 tendências do setor para completar oportunidades e ameaças", "responsavel": "Dono", "prazo_dias": 10},
+    {"etapa": "Semana 2", "acao": "Montar a matriz final e dar nota de 1 a 5 para a importância de cada item", "responsavel": "Dono e equipe", "prazo_dias": 14},
+    {"etapa": "Semana 2", "acao": "Fazer os cruzamentos e gerar a lista de ações", "responsavel": "Dono", "prazo_dias": 18},
+    {"etapa": "Semana 3", "acao": "Escolher as 3 a 5 ações prioritárias com responsável e prazo", "responsavel": "Dono", "prazo_dias": 21},
+    {"etapa": "Mês 2", "acao": "Verificar andamento das ações e atualizar a matriz com o que mudou", "responsavel": "Dono", "prazo_dias": 60},
+    {"etapa": "Mês 3", "acao": "Rever a matriz inteira e registrar o que foi resolvido", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Separe interno de externo", "como": "Forças e fraquezas são da empresa (você controla). Oportunidades e ameaças vêm de fora (você só reage).", "cuidado": "Classificar 'preço alto dos insumos' como fraqueza; é ameaça externa."},
+    {"passo": "Seja específico", "como": "Troque 'bom atendimento' por 'respondemos em até 10 minutos e 90% dos clientes elogiam'.", "cuidado": "Frases genéricas que servem a qualquer empresa."},
+    {"passo": "Escute os outros", "como": "Pergunte a clientes e funcionários; eles enxergam o que você não vê.", "cuidado": "Fazer sozinho e só confirmar o que já acha."},
+    {"passo": "Dê nota", "como": "Pontue cada item de 1 a 5 pelo impacto no negócio e priorize os 3 maiores de cada quadrante.", "cuidado": "Tratar todos os itens como igualmente importantes."},
+    {"passo": "Cruze os quadrantes", "como": "Use forças para aproveitar oportunidades; corrija fraquezas que deixam você vulnerável a ameaças.", "cuidado": "Parar na lista e não gerar ações."},
+    {"passo": "Transforme em ações", "como": "Escreva cada ação com verbo, responsável e prazo.", "cuidado": "Ações do tipo 'melhorar o marketing' sem detalhamento."}
+  ],
+  "abas": [
+    {
+      "nome": "Matriz SWOT",
+      "descricao": "Todos os itens da análise com classificação e importância.",
+      "colunas": [
+        {"nome": "Item", "tipo": "texto"},
+        {"nome": "Quadrante", "tipo": "lista", "opcoes": ["Força", "Fraqueza", "Oportunidade", "Ameaça"]},
+        {"nome": "Evidência", "tipo": "texto"},
+        {"nome": "Importância (1 a 5)", "tipo": "numero"}
+      ],
+      "exemplos": [
+        ["Atendimento rápido no WhatsApp", "Força", "Resposta média de 8 minutos e elogios frequentes", 4],
+        ["Dependência de um cliente (35% da receita)", "Fraqueza", "Contrato vence em 6 meses", 5],
+        ["Crescimento de pedidos por aplicativo no bairro", "Oportunidade", "Dados de entregas dos últimos 3 meses", 3],
+        ["Concorrente abriu a 2 quadras", "Ameaça", "Preços 10% menores", 4]
+      ]
+    },
+    {
+      "nome": "Cruzamentos",
+      "descricao": "Ações geradas ao combinar quadrantes.",
+      "colunas": [
+        {"nome": "Cruzamento", "tipo": "lista", "opcoes": ["Força x Oportunidade", "Força x Ameaça", "Fraqueza x Oportunidade", "Fraqueza x Ameaça"]},
+        {"nome": "Ação", "tipo": "texto"},
+        {"nome": "Responsável", "tipo": "texto"},
+        {"nome": "Prazo", "tipo": "data"}
+      ],
+      "exemplos": [
+        ["Força x Oportunidade", "Usar o atendimento rápido para captar pedidos por aplicativo", "Responsável A", "+30"],
+        ["Fraqueza x Ameaça", "Conquistar 5 clientes médios para reduzir dependência", "Dono", "+90"]
+      ]
+    },
+    {
+      "nome": "Perguntas-guia",
+      "descricao": "Perguntas para ajudar a preencher cada quadrante.",
+      "colunas": [
+        {"nome": "Quadrante", "tipo": "lista", "opcoes": ["Força", "Fraqueza", "Oportunidade", "Ameaça"]},
+        {"nome": "Pergunta", "tipo": "texto"},
+        {"nome": "Resposta", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["Força", "Por que os clientes escolhem você e voltam?", ""],
+        ["Fraqueza", "O que os clientes mais reclamam ou o que você evita fazer?", ""],
+        ["Oportunidade", "O que mudou nos hábitos dos clientes nos últimos 12 meses?", ""],
+        ["Ameaça", "O que, se acontecesse amanhã, deixaria seu negócio em apuros?", ""]
+      ]
+    }
+  ],
+  "dicas": [
+    "Limite cada quadrante a 5 a 7 itens; mais que isso perde o foco.",
+    "Comprove cada item com um dado ou exemplo, não com opinião.",
+    "Uma fraqueza pode virar força quando corrigida; marque as que são mais baratas de resolver.",
+    "Guarde a versão datada para comparar com a próxima análise."
+  ]
+}

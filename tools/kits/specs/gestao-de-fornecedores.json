@@ -1,0 +1,85 @@
+{
+  "slug": "gestao-de-fornecedores",
+  "titulo": "Gestão de fornecedores",
+  "area": "operacoes",
+  "subdivisoes": ["Gestão de fornecedores"],
+  "resumo": "Cadastra seus fornecedores, avalia cada um por preço, prazo e qualidade e controla combinados e vencimentos. Ao final você sabe em quem confiar, quem substituir e onde negociar.",
+  "como_usar": [
+    "Cadastre cada fornecedor na aba 'Cadastro de fornecedores', com contato, o que fornece, prazo e condição de pagamento.",
+    "A cada entrega recebida, registre na aba 'Avaliacao de entregas' se veio no prazo, completa e sem defeito.",
+    "No fim do mês, veja a nota de cada fornecedor e quais precisam de conversa.",
+    "Mantenha pelo menos um fornecedor alternativo para cada item crítico.",
+    "Use os dados para renegociar preço e prazo."
+  ],
+  "diagnostico": [
+    "Você tem a lista atualizada de fornecedores, com contato e condições combinadas?",
+    "Para os itens críticos, existe um segundo fornecedor possível?",
+    "Você registra atrasos, faltas e defeitos nas entregas recebidas?",
+    "As condições (preço, prazo, pagamento) combinadas estão por escrito?",
+    "Você compara preços entre fornecedores pelo menos uma vez por ano?",
+    "Sabe o quanto a empresa depende de cada fornecedor?",
+    "Quando algo falha, o fornecedor é comunicado com evidências?",
+    "Os pagamentos são feitos nas datas combinadas para manter boa relação?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Listar todos os fornecedores ativos com o que compram deles e o valor mensal aproximado.", "responsavel": "Dono", "prazo_dias": 3},
+    {"etapa": "Semana 1", "acao": "Completar o cadastro com contato, prazo de entrega, pedido mínimo e condição de pagamento.", "responsavel": "Compras", "prazo_dias": 7},
+    {"etapa": "Semana 2", "acao": "Identificar itens críticos (sem eles a operação para) e quais não têm alternativa.", "responsavel": "Dono", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Pedir orçamento a pelo menos 2 fornecedores alternativos para os itens críticos.", "responsavel": "Compras", "prazo_dias": 21},
+    {"etapa": "Semana 4", "acao": "Começar o registro de avaliação de cada entrega recebida.", "responsavel": "Recebimento", "prazo_dias": 28},
+    {"etapa": "Semana 8", "acao": "Calcular a nota dos fornecedores e conversar com os que tiveram desempenho abaixo do aceitável.", "responsavel": "Dono", "prazo_dias": 56},
+    {"etapa": "Semana 10", "acao": "Renegociar preço ou prazo com os maiores fornecedores usando os dados de volume.", "responsavel": "Dono", "prazo_dias": 70},
+    {"etapa": "Semana 13", "acao": "Formalizar por escrito (e-mail ou contrato) as condições acordadas; validar contratos longos com advogado.", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Cadastre completo", "como": "Registre razão social, contato, produtos, prazo, mínimo, pagamento e dados de entrega.", "cuidado": "Contato só no celular de uma pessoa trava a compra na ausência dela."},
+    {"passo": "Classifique por criticidade", "como": "Marque quais itens param a operação se faltarem e garanta uma alternativa para eles.", "cuidado": "Depender de um só fornecedor é risco, mesmo que o preço seja bom."},
+    {"passo": "Avalie cada entrega", "como": "Registre prazo cumprido, quantidade correta e qualidade; some em uma nota simples.", "cuidado": "Avaliar por 'sensação' favorece o simpático e não o confiável."},
+    {"passo": "Converse com evidências", "como": "Mostre ao fornecedor datas, fotos e números dos problemas e peça plano de correção.", "cuidado": "Reclamar sem registro enfraquece a negociação."},
+    {"passo": "Negocie com dados", "como": "Leve volume anual, histórico de pagamento em dia e cotação concorrente.", "cuidado": "Pressionar só por preço pode derrubar qualidade."},
+    {"passo": "Revise anualmente", "como": "Reavalie lista, alternativas e condições a cada 12 meses.", "cuidado": "Ficar anos sem cotar deixa o preço defasado."}
+  ],
+  "abas": [
+    {
+      "nome": "Cadastro de fornecedores",
+      "descricao": "Dados e condições de cada fornecedor.",
+      "colunas": [
+        {"nome": "Fornecedor", "tipo": "texto"},
+        {"nome": "O que fornece", "tipo": "texto"},
+        {"nome": "Contato", "tipo": "texto"},
+        {"nome": "Prazo de entrega (dias)", "tipo": "numero"},
+        {"nome": "Pedido mínimo", "tipo": "moeda"},
+        {"nome": "Pagamento", "tipo": "texto"},
+        {"nome": "Criticidade", "tipo": "lista", "opcoes": ["Crítico", "Importante", "Substituível"]}
+      ],
+      "exemplos": [
+        ["Fornecedor A", "Matéria-prima X", "contato A (00) 90000-1111", 5, 500.0, "28 dias", "Crítico"],
+        ["Fornecedor B", "Embalagens", "contato B (00) 90000-2222", 10, 300.0, "À vista", "Substituível"],
+        ["Fornecedor C", "Matéria-prima X", "contato C (00) 90000-3333", 7, 800.0, "21 dias", "Importante"]
+      ]
+    },
+    {
+      "nome": "Avaliacao de entregas",
+      "descricao": "Registro de cada entrega para gerar a nota do fornecedor.",
+      "colunas": [
+        {"nome": "Data", "tipo": "data"},
+        {"nome": "Fornecedor", "tipo": "texto"},
+        {"nome": "Veio no prazo", "tipo": "lista", "opcoes": ["Sim", "Não"]},
+        {"nome": "Quantidade correta", "tipo": "lista", "opcoes": ["Sim", "Não"]},
+        {"nome": "Qualidade", "tipo": "lista", "opcoes": ["Ótima", "Boa", "Ruim"]},
+        {"nome": "Observação", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["-6", "Fornecedor A", "Sim", "Sim", "Boa", ""],
+        ["-4", "Fornecedor B", "Não", "Sim", "Boa", "Atrasou 3 dias"],
+        ["-2", "Fornecedor C", "Sim", "Não", "Ruim", "Faltaram 20 unidades"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Peça sempre orçamento por escrito e guarde; ele vale como prova do combinado.",
+    "Pague em dia: bom pagador consegue prioridade quando a oferta está curta.",
+    "Visite ou ligue para o fornecedor crítico ao menos duas vezes ao ano, não só quando há problema.",
+    "Cuidado com dependência: nenhum fornecedor deveria passar de 50% das compras de item crítico."
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "slug": "implementar-erp",
+  "titulo": "Implementar ERP",
+  "area": "tecnologia",
+  "subdivisoes": ["Implementar ERP"],
+  "resumo": "Roteiro para escolher e implantar um sistema de gestão (ERP) sem estourar prazo nem orçamento: processos, requisitos, comparação de fornecedores, migração de dados e virada. Pensado para pequena empresa brasileira.",
+  "como_usar": [
+    "Responda o diagnóstico para saber se o problema é falta de sistema ou falta de processo.",
+    "Desenhe seus processos atuais na aba Processos atuais antes de falar com qualquer fornecedor.",
+    "Liste requisitos na aba Requisitos do ERP e use-a para pedir propostas comparáveis.",
+    "Compare fornecedores na aba Comparação de fornecedores e peça demonstração com seus casos reais.",
+    "Siga o plano de implantação, com dados migrados e equipe treinada antes da virada."
+  ],
+  "diagnostico": [
+    "Você usa várias planilhas e sistemas que não conversam entre si?",
+    "Você emite nota fiscal (NF-e, NFS-e, NFC-e) e precisa de integração fiscal?",
+    "Seu estoque não bate com o que está no papel ou na planilha?",
+    "Você demora para saber o resultado financeiro do mês?",
+    "Há retrabalho: digitar o mesmo pedido em mais de um lugar?",
+    "Você tem mais de uma loja, unidade ou depósito?",
+    "O contador reclama de arquivos e informações que chegam bagunçados?",
+    "Os processos da empresa estão claros e escritos, ou dependem da cabeça de uma pessoa?",
+    "Você tem alguém na equipe que possa ser o responsável pela implantação?"
+  ],
+  "plano": [
+    {"etapa": "Semana 1", "acao": "Mapear processos atuais: vendas, compras, estoque, financeiro, fiscal; anotar onde há retrabalho", "responsavel": "Dono + equipe", "prazo_dias": 7},
+    {"etapa": "Semana 2", "acao": "Definir requisitos essenciais e desejáveis; falar com o contador sobre necessidades fiscais", "responsavel": "Dono + contador", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Pedir proposta de 3 fornecedores (ex.: Bling, Omie, Tiny, Conta Azul, Totvs, Senior, Sankhya) com a mesma lista", "responsavel": "Dono", "prazo_dias": 21},
+    {"etapa": "Semana 4", "acao": "Assistir demonstrações usando seus casos reais e conversar com clientes do fornecedor", "responsavel": "Dono + equipe", "prazo_dias": 28},
+    {"etapa": "Semana 5", "acao": "Escolher, revisar contrato (escopo, suporte, prazo, saída e exportação de dados) e assinar", "responsavel": "Dono", "prazo_dias": 35},
+    {"etapa": "Semana 6", "acao": "Limpar e organizar dados: clientes, fornecedores, produtos, saldos de estoque", "responsavel": "Equipe", "prazo_dias": 42},
+    {"etapa": "Semana 7", "acao": "Configurar sistema, cadastros, impostos e certificado digital com apoio do contador", "responsavel": "Fornecedor + contador", "prazo_dias": 49},
+    {"etapa": "Semana 8", "acao": "Rodar em paralelo: lançar no sistema e na planilha por 2 semanas", "responsavel": "Equipe", "prazo_dias": 63},
+    {"etapa": "Semana 9", "acao": "Treinar a equipe por área e definir regras de uso", "responsavel": "Fornecedor + dono", "prazo_dias": 70},
+    {"etapa": "Dia 75", "acao": "Virada: desligar planilhas antigas e usar somente o sistema", "responsavel": "Dono", "prazo_dias": 75},
+    {"etapa": "Dia 90", "acao": "Revisar resultados, pendências e confirmar com o contador que a escrituração fiscal está correta", "responsavel": "Dono + contador", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Arrumar o processo antes do sistema", "como": "Escreva em passos como entra um pedido, como sai a nota, como se baixa estoque e como se recebe.", "cuidado": "Comprar sistema para resolver desorganização; ele só automatiza o que já está definido."},
+    {"passo": "Listar requisitos", "como": "Separe essenciais (nota fiscal, estoque, financeiro) de desejáveis (CRM, ecommerce, multiempresa).", "cuidado": "Pagar por módulos que não vai usar."},
+    {"passo": "Pedir propostas comparáveis", "como": "Envie a mesma lista a todos e peça valor de implantação, mensalidade, usuários, suporte e treinamento por escrito.", "cuidado": "Comparar proposta com itens diferentes."},
+    {"passo": "Testar com casos reais", "como": "Peça para o fornecedor demonstrar: venda com NF, devolução, compra, conta a pagar, conciliação.", "cuidado": "Aprovar após uma demonstração genérica."},
+    {"passo": "Checar o contrato", "como": "Verifique prazo de fidelidade, reajuste, quem é dono dos dados, exportação em caso de saída e suporte incluído.", "cuidado": "Cláusulas que cobram para você retirar seus próprios dados."},
+    {"passo": "Migrar dados com cuidado", "como": "Exporte para planilha, limpe duplicados, confira amostra de 20 itens antes de importar tudo.", "cuidado": "Importar estoque errado e perder confiança no sistema."},
+    {"passo": "Rodar em paralelo", "como": "Por 1 a 2 semanas, lance no novo e no antigo e compare os totais.", "cuidado": "Virar de uma vez em semana de pico."},
+    {"passo": "Treinar por função", "como": "Cada pessoa treina o que vai fazer; anote dúvidas e crie um guia curto.", "cuidado": "Treinamento só com o dono; a equipe resiste."},
+    {"passo": "Acompanhar depois da virada", "como": "Reunião semanal nas primeiras 4 semanas para resolver problemas e ajustar cadastros.", "cuidado": "Considerar o projeto encerrado na assinatura do contrato."}
+  ],
+  "abas": [
+    {
+      "nome": "Processos atuais",
+      "descricao": "Mapa dos processos como funcionam hoje e onde dói.",
+      "colunas": [
+        {"nome": "Processo", "tipo": "texto"},
+        {"nome": "Como é feito hoje", "tipo": "texto"},
+        {"nome": "Problema", "tipo": "texto"},
+        {"nome": "Responsável", "tipo": "texto"},
+        {"nome": "Prioridade", "tipo": "lista", "opcoes": ["Alta", "Média", "Baixa"]}
+      ],
+      "exemplos": [
+        ["Emissão de nota", "Digitada no site da prefeitura", "Demora e erra o cliente", "Financeiro", "Alta"],
+        ["Controle de estoque", "Planilha atualizada no fim do dia", "Saldo diferente do real", "Estoquista", "Alta"],
+        ["Contas a pagar", "Caderno e lembretes no celular", "Atrasos e multa", "Dono", "Média"]
+      ]
+    },
+    {
+      "nome": "Requisitos do ERP",
+      "descricao": "Lista de funções para usar nas propostas.",
+      "colunas": [
+        {"nome": "Função", "tipo": "texto"},
+        {"nome": "Prioridade", "tipo": "lista", "opcoes": ["Essencial", "Desejável", "Futuro"]},
+        {"nome": "Setor", "tipo": "texto"},
+        {"nome": "Observação", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["Emitir NF-e e NFS-e", "Essencial", "Fiscal", "Confirmar com contador"],
+        ["Controle de estoque com código de barras", "Essencial", "Estoque", ""],
+        ["Integração com loja virtual", "Desejável", "Vendas", ""]
+      ]
+    },
+    {
+      "nome": "Comparação de fornecedores",
+      "descricao": "Compare propostas lado a lado.",
+      "colunas": [
+        {"nome": "Fornecedor", "tipo": "texto"},
+        {"nome": "Implantação", "tipo": "moeda"},
+        {"nome": "Mensalidade", "tipo": "moeda"},
+        {"nome": "Fidelidade (meses)", "tipo": "numero"},
+        {"nome": "Suporte incluso", "tipo": "lista", "opcoes": ["Sim", "Parcial", "Não"]},
+        {"nome": "Nota fiscal nativa", "tipo": "lista", "opcoes": ["Sim", "Não", "A confirmar"]}
+      ],
+      "exemplos": [
+        ["Fornecedor A", 0.0, 0.0, 12, "Parcial", "A confirmar"],
+        ["Fornecedor B", 0.0, 0.0, 0, "Sim", "Sim"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Para empresas pequenas, ERPs em nuvem de assinatura costumam ser mais simples de implantar que os sistemas grandes.",
+    "Não confie em valores de memória; peça proposta atualizada e escrita.",
+    "Peça referências de clientes do mesmo ramo e converse com eles.",
+    "Tenha uma pessoa interna responsável pela implantação, com tempo reservado.",
+    "Sempre mantenha cópia de seus dados exportados fora do sistema."
+  ]
+}

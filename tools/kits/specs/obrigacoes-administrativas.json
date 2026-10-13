@@ -1,0 +1,88 @@
+{
+  "slug": "obrigacoes-administrativas",
+  "titulo": "Obrigações administrativas",
+  "area": "administrativo",
+  "subdivisoes": ["Obrigações administrativas"],
+  "resumo": "Mapeia as obrigações recorrentes da empresa (impostos, declarações, renovações, taxas, certidões) num calendário com responsável e lembrete. Ao final nada vence sem você saber e ninguém é pego de surpresa por multa.",
+  "como_usar": [
+    "Peça ao contador a lista de obrigações do seu regime e preencha a aba Calendário de obrigações.",
+    "Inclua também licenças, certidões, seguros e contratos que renovam.",
+    "Defina um responsável e uma data de lembrete antes de cada vencimento.",
+    "Reveja o calendário toda segunda-feira por 5 minutos.",
+    "Marque cada obrigação como concluída guardando o comprovante.",
+    "Atualize a lista quando mudar o regime, a atividade ou a legislação."
+  ],
+  "diagnostico": [
+    "Você sabe de cabeça todas as obrigações e datas que sua empresa tem no ano?",
+    "Já pagou multa ou juros por esquecer um vencimento?",
+    "Existe uma lista única com obrigações, datas e responsável?",
+    "Seu contador lhe envia aviso antes dos vencimentos?",
+    "Você acompanha a validade de alvará, licenças e certidões?",
+    "A empresa tem pendências com a prefeitura, estado ou Receita que você desconhece?",
+    "Você guarda o comprovante de cada guia paga ou declaração enviada?",
+    "Existe alguém para cumprir as obrigações se o responsável faltar?",
+    "A procuração ou o certificado digital estão válidos e acessíveis ao contador?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Pedir ao contador a lista de obrigações mensais, trimestrais e anuais do seu regime tributário.", "responsavel": "Dono", "prazo_dias": 2},
+    {"etapa": "Semana 1", "acao": "Listar renovações fora da contabilidade: alvará, bombeiros, vigilância sanitária, licença ambiental, seguros, domínio, certificado digital.", "responsavel": "Administrativo", "prazo_dias": 7},
+    {"etapa": "Semana 1", "acao": "Consultar certidões negativas da empresa (federal, estadual, municipal, FGTS e trabalhista) para saber a situação atual.", "responsavel": "Administrativo", "prazo_dias": 10},
+    {"etapa": "Semana 2", "acao": "Preencher o calendário com data de vencimento, responsável e valor estimado de cada obrigação.", "responsavel": "Administrativo", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Configurar lembretes na agenda (7 dias e 1 dia antes) com e-mail para o responsável e o reserva.", "responsavel": "Administrativo", "prazo_dias": 21},
+    {"etapa": "Semana 4", "acao": "Separar o dinheiro das obrigações: criar reserva mensal para impostos e taxas anuais.", "responsavel": "Dono", "prazo_dias": 28},
+    {"etapa": "Semana 5", "acao": "Combinar com o contador o fluxo: quando ele envia guias, em que prazo você aprova e paga.", "responsavel": "Dono", "prazo_dias": 35},
+    {"etapa": "Semana 6", "acao": "Regularizar pendências encontradas nas certidões, negociando parcelamento quando necessário.", "responsavel": "Dono", "prazo_dias": 45},
+    {"etapa": "Semana 8", "acao": "Definir a rotina semanal de conferência e a pasta de comprovantes por ano.", "responsavel": "Administrativo", "prazo_dias": 60},
+    {"etapa": "Dia 90", "acao": "Revisar o calendário completo com o contador e confirmar se nenhuma obrigação ficou de fora.", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Levantar a obrigação", "como": "Anote o nome, o órgão responsável, a periodicidade e quem executa (você, contador ou sistema).", "cuidado": "Supor que o contador cuida de tudo, incluindo alvarás e licenças."},
+    {"passo": "Definir data e antecedência", "como": "Registre a data limite e um lembrete 7 dias antes para dar tempo de reunir dinheiro e documentos.", "cuidado": "Marcar só a data final sem lembrete."},
+    {"passo": "Designar responsável e reserva", "como": "Um responsável principal e um substituto para cada obrigação.", "cuidado": "Responsável único sem ninguém para cobrir."},
+    {"passo": "Reunir documentos", "como": "Separe notas, folha, extratos e dados pedidos com antecedência e envie ao contador.", "cuidado": "Enviar informações incompletas na véspera."},
+    {"passo": "Conferir a guia", "como": "Confira valor, competência e CNPJ da guia recebida; compare com o mês anterior.", "cuidado": "Pagar sem notar valor muito diferente do habitual."},
+    {"passo": "Pagar e comprovar", "como": "Pague pelo banco, salve o comprovante na pasta do mês e marque como concluída no calendário.", "cuidado": "Pagar e não guardar o comprovante."},
+    {"passo": "Revisar mensalmente", "como": "No fim do mês, veja o que vem nos próximos 60 dias e ajuste responsáveis.", "cuidado": "Deixar a lista desatualizada após mudança de regime ou atividade."}
+  ],
+  "abas": [
+    {
+      "nome": "Calendário de obrigações",
+      "descricao": "Todas as obrigações com data, responsável e situação.",
+      "colunas": [
+        {"nome": "Obrigação", "tipo": "texto"},
+        {"nome": "Órgão", "tipo": "texto"},
+        {"nome": "Periodicidade", "tipo": "lista", "opcoes": ["Mensal", "Trimestral", "Anual", "Eventual"]},
+        {"nome": "Vencimento", "tipo": "data"},
+        {"nome": "Valor estimado", "tipo": "moeda"},
+        {"nome": "Responsável", "tipo": "texto"},
+        {"nome": "Status", "tipo": "lista", "opcoes": ["Pendente", "Em andamento", "Concluída", "Atrasada"]}
+      ],
+      "exemplos": [
+        ["Guia mensal de impostos do regime", "Receita Federal", "Mensal", "+9", 1450.0, "Contador", "Pendente"],
+        ["Renovação do alvará", "Prefeitura", "Anual", "+60", 380.0, "Administrativo", "Pendente"],
+        ["Certificado digital", "Autoridade certificadora", "Anual", "+120", 220.0, "Dono", "Pendente"]
+      ]
+    },
+    {
+      "nome": "Comprovantes",
+      "descricao": "Registro das obrigações cumpridas e onde está o comprovante.",
+      "colunas": [
+        {"nome": "Obrigação", "tipo": "texto"},
+        {"nome": "Data de cumprimento", "tipo": "data"},
+        {"nome": "Valor pago", "tipo": "moeda"},
+        {"nome": "Local do comprovante", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["Guia mensal do mês anterior", "-12", 1390.0, "03 Fiscal/2026/09"],
+        ["Taxa de licença", "-40", 150.0, "08 Licenças/2026"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Lembrete só funciona se for para duas pessoas: o responsável e o substituto.",
+    "Pergunte ao contador, uma vez por ano, 'o que mudou para a minha empresa?'.",
+    "As obrigações dependem do regime, da atividade e da cidade; sempre confirme sua lista com o contador.",
+    "Crie uma conta ou reserva separada para impostos, assim o dinheiro não é gasto antes do vencimento.",
+    "Guias pagas com atraso geram juros e multa; pagar no dia seguinte já custa mais do que um lembrete."
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "slug": "analise-de-resultados",
+  "titulo": "Análise de resultados",
+  "area": "gestao",
+  "subdivisoes": ["Análise de resultados"],
+  "resumo": "Um roteiro mensal para entender por que o resultado foi bom ou ruim, comparando previsto e realizado e transformando a conclusão em ação. Ao final você sai de cada fechamento com 3 decisões claras.",
+  "como_usar": [
+    "Até o 5º dia útil, preencha a aba 'Previsto x realizado' com receitas e despesas do mês.",
+    "Na aba 'Por que desviou', escreva a causa de cada diferença relevante (acima de 10%).",
+    "Anote na aba 'Decisões do mês' no máximo 3 ações, com dono e prazo.",
+    "No mês seguinte, comece conferindo se as decisões foram cumpridas.",
+    "Ao fim do trimestre, releia os meses e veja os padrões que se repetem."
+  ],
+  "diagnostico": [
+    "Você fecha o mês com uma visão de lucro, e não apenas com o saldo do banco?",
+    "Compara o resultado com o que havia previsto?",
+    "Sabe explicar por que o resultado do último mês foi diferente do anterior?",
+    "Sabe quais produtos ou serviços dão mais lucro, e não só mais venda?",
+    "Descobre desvios de custo só meses depois?",
+    "Após analisar os números, você costuma sair com ações definidas?",
+    "Separa gastos fixos de variáveis na hora de analisar?",
+    "Você registra o que aprendeu para não repetir o mesmo erro?"
+  ],
+  "plano": [
+    {"etapa": "Dia 2", "acao": "Montar o demonstrativo simples do último mês: receita, custos variáveis, despesas fixas e lucro", "responsavel": "Dono", "prazo_dias": 2},
+    {"etapa": "Semana 1", "acao": "Lançar também os 2 meses anteriores para ter comparação", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 1", "acao": "Calcular margem de contribuição por produto/serviço principal", "responsavel": "Dono", "prazo_dias": 10},
+    {"etapa": "Semana 2", "acao": "Registrar as metas previstas do mês seguinte para poder comparar", "responsavel": "Dono", "prazo_dias": 14},
+    {"etapa": "Semana 4", "acao": "Fazer a primeira análise completa de desvios e escrever as causas", "responsavel": "Dono", "prazo_dias": 30},
+    {"etapa": "Mês 2", "acao": "Cumprir as 3 decisões do mês anterior e medir o efeito", "responsavel": "Dono e responsáveis", "prazo_dias": 45},
+    {"etapa": "Mês 2", "acao": "Segunda análise mensal; identificar o que se repetiu", "responsavel": "Dono", "prazo_dias": 60},
+    {"etapa": "Mês 3", "acao": "Análise trimestral: tendência, produtos campeões, custos que cresceram", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Feche os números", "como": "Concilie vendas e despesas com o extrato bancário para garantir que está tudo lançado.", "cuidado": "Analisar com lançamentos faltando leva a conclusões erradas."},
+    {"passo": "Monte o demonstrativo", "como": "Receita menos custos variáveis dá margem; menos despesas fixas dá lucro.", "cuidado": "Misturar retirada do dono com despesa da empresa."},
+    {"passo": "Compare", "como": "Veja o realizado contra o previsto e contra o mês anterior, em valor e em porcentagem.", "cuidado": "Comparar um mês forte com um fraco sem considerar a sazonalidade."},
+    {"passo": "Investigue desvios grandes", "como": "Para cada diferença acima de 10%, pergunte 'o que mudou?': preço, volume, custo ou mix.", "cuidado": "Aceitar explicações vagas como 'foi o mercado'."},
+    {"passo": "Separe causa de sintoma", "como": "Se vendeu menos, descubra se vieram menos clientes ou se cada um comprou menos.", "cuidado": "Agir no sintoma sem tratar a causa."},
+    {"passo": "Decida", "como": "Escolha até 3 ações, com responsável e prazo, e registre.", "cuidado": "Sair da análise com 15 ideias e nenhuma executada."}
+  ],
+  "abas": [
+    {
+      "nome": "Previsto x realizado",
+      "descricao": "Compara o planejado com o que aconteceu em cada linha do resultado.",
+      "colunas": [
+        {"nome": "Linha", "tipo": "texto"},
+        {"nome": "Previsto", "tipo": "moeda"},
+        {"nome": "Realizado", "tipo": "moeda"},
+        {"nome": "Mês anterior", "tipo": "moeda"}
+      ],
+      "exemplos": [
+        ["Receita de vendas", 40000.0, 36500.0, 38200.0],
+        ["Custos variáveis (insumos, comissões)", 16000.0, 15400.0, 15800.0],
+        ["Despesas fixas", 14000.0, 15100.0, 14200.0]
+      ]
+    },
+    {
+      "nome": "Por que desviou",
+      "descricao": "Explica as causas dos desvios relevantes.",
+      "colunas": [
+        {"nome": "Linha", "tipo": "texto"},
+        {"nome": "Tipo de causa", "tipo": "lista", "opcoes": ["Preço", "Volume", "Custo", "Mix de produtos", "Evento pontual", "Erro de previsão"]},
+        {"nome": "Explicação", "tipo": "texto"},
+        {"nome": "Se repete?", "tipo": "lista", "opcoes": ["Sim", "Não", "Não sei"]}
+      ],
+      "exemplos": [
+        ["Receita de vendas", "Volume", "Dois clientes grandes atrasaram pedidos", "Não sei"],
+        ["Despesas fixas", "Custo", "Reajuste do aluguel e da energia", "Sim"]
+      ]
+    },
+    {
+      "nome": "Decisões do mês",
+      "descricao": "Ações que saem da análise, com dono e prazo.",
+      "colunas": [
+        {"nome": "Decisão", "tipo": "texto"},
+        {"nome": "Responsável", "tipo": "texto"},
+        {"nome": "Prazo", "tipo": "data"},
+        {"nome": "Impacto esperado", "tipo": "moeda"},
+        {"nome": "Status", "tipo": "lista", "opcoes": ["A fazer", "Em andamento", "Feita"]}
+      ],
+      "exemplos": [
+        ["Renegociar contrato de energia/internet", "Dono", "+15", 400.0, "A fazer"],
+        ["Ligar para clientes que não compraram no mês", "Responsável A", "+7", 2500.0, "Em andamento"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Lucro não é saldo do banco: contas a pagar e estoque distorcem a sensação.",
+    "Priorize os desvios de maior valor em reais, não de maior percentual.",
+    "Guarde as análises dos meses; os padrões aparecem no terceiro mês.",
+    "Se mudou algo na operação (preço, equipe), marque a data para ligar causa e efeito."
+  ]
+}

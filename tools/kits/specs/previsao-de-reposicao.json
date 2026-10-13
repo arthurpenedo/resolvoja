@@ -1,0 +1,88 @@
+{
+  "slug": "previsao-de-reposicao",
+  "titulo": "Previsão de reposição",
+  "area": "estoque",
+  "subdivisoes": ["Previsão de reposição"],
+  "resumo": "Calcule por produto quando o estoque vai acabar e quando é a hora de fazer o pedido, considerando o prazo do fornecedor. Ao final você terá um calendário de reposição para comprar na hora certa, sem faltar nem sobrar.",
+  "como_usar": [
+    "Preencha na aba 'Produtos' o estoque atual, a venda média diária e o prazo de entrega.",
+    "A planilha calcula quantos dias o estoque dura e a data prevista de término.",
+    "A data do pedido é a data de término menos o prazo de entrega menos a folga de segurança.",
+    "Na aba 'Calendário de pedidos', agrupe os pedidos por fornecedor e por dia de compra.",
+    "Atualize o estoque e a venda semanalmente para a previsão não ficar velha."
+  ],
+  "diagnostico": [
+    "Você sabe por quantos dias o estoque de cada produto vai durar?",
+    "Compra quando falta ou quando está para faltar, com tempo de chegar?",
+    "Considera o prazo de entrega do fornecedor ao decidir a data do pedido?",
+    "Os pedidos são feitos em dias fixos ou aleatórios?",
+    "Você desconta os pedidos que já estão a caminho?",
+    "Revisa a venda média quando há mudança de estação ou promoção?",
+    "Faz muitos pedidos pequenos e urgentes com frete caro?",
+    "Tem uma lista do que precisa ser pedido nesta semana?",
+    "Compra para uma data forte com antecedência suficiente?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Listar os produtos principais e contar o estoque atual", "responsavel": "Estoquista", "prazo_dias": 3},
+    {"etapa": "Semana 1", "acao": "Calcular a venda média diária e anotar o prazo de entrega real de cada fornecedor", "responsavel": "Comprador", "prazo_dias": 7},
+    {"etapa": "Semana 1", "acao": "Definir os dias de segurança de cada produto", "responsavel": "Dono", "prazo_dias": 10},
+    {"etapa": "Semana 2", "acao": "Preencher a aba Produtos e obter a data de término e do próximo pedido de cada item", "responsavel": "Comprador", "prazo_dias": 14},
+    {"etapa": "Semana 2", "acao": "Definir os dias de compra por fornecedor e agrupar os pedidos", "responsavel": "Comprador", "prazo_dias": 16},
+    {"etapa": "Semana 3", "acao": "Fazer os pedidos pelo calendário, descontando o que já está a caminho", "responsavel": "Comprador", "prazo_dias": 21},
+    {"etapa": "Mês 2", "acao": "Comparar a data prevista de término com a data real e corrigir a venda média", "responsavel": "Comprador", "prazo_dias": 45},
+    {"etapa": "Mês 3", "acao": "Incluir ajustes de sazonalidade e datas fortes na previsão de reposição", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Atualizar o estoque", "como": "Use o saldo do sistema conferido por contagem nos itens principais.", "cuidado": "Saldo errado leva a datas erradas."},
+    {"passo": "Calcular a duração", "como": "Dias de estoque = estoque atual / venda média por dia.", "cuidado": "Ajuste a venda se houver promoção ou sazonalidade à frente."},
+    {"passo": "Achar a data de término", "como": "Data de hoje + dias de estoque.", "cuidado": "Considere apenas os dias em que a loja abre se a venda média for por dia útil."},
+    {"passo": "Calcular a data do pedido", "como": "Data de término - prazo de entrega - dias de segurança.", "cuidado": "Usar prazo prometido em vez do real."},
+    {"passo": "Calcular a quantidade", "como": "Venda por dia x dias de cobertura desejados - estoque atual - pedidos a caminho.", "cuidado": "Arredonde para múltiplos de embalagem do fornecedor."},
+    {"passo": "Agrupar por fornecedor", "como": "Reúna os itens do mesmo fornecedor que precisam pedir nos próximos 7 dias.", "cuidado": "Agrupar demais atrasa itens urgentes."},
+    {"passo": "Fazer e acompanhar o pedido", "como": "Envie o pedido e anote a data prevista de chegada; cobre um dia antes.", "cuidado": "Se o pedido atrasa, a previsão precisa ser refeita."},
+    {"passo": "Aprender com os desvios", "como": "Compare quando o estoque acabou de fato com a data prevista e ajuste a venda média.", "cuidado": "Ignorar desvios repetidos significa que o modelo está errado."}
+  ],
+  "abas": [
+    {
+      "nome": "Produtos",
+      "descricao": "Dados por produto para prever término e data de pedido.",
+      "colunas": [
+        {"nome": "Produto", "tipo": "texto"},
+        {"nome": "Estoque atual", "tipo": "numero"},
+        {"nome": "Venda média por dia", "tipo": "numero"},
+        {"nome": "Prazo de entrega (dias)", "tipo": "numero"},
+        {"nome": "Dias de segurança", "tipo": "numero"},
+        {"nome": "Pedidos a caminho", "tipo": "numero"}
+      ],
+      "exemplos": [
+        ["Produto A", 80, 8, 5, 5, 0],
+        ["Produto B", 40, 2, 10, 4, 30],
+        ["Produto C", 15, 1, 7, 3, 0]
+      ]
+    },
+    {
+      "nome": "Calendário de pedidos",
+      "descricao": "Lista de pedidos a fazer, por data e fornecedor.",
+      "colunas": [
+        {"nome": "Data do pedido", "tipo": "data"},
+        {"nome": "Fornecedor", "tipo": "texto"},
+        {"nome": "Produto", "tipo": "texto"},
+        {"nome": "Quantidade a pedir", "tipo": "numero"},
+        {"nome": "Chegada prevista", "tipo": "data"},
+        {"nome": "Status", "tipo": "lista", "opcoes": ["A fazer", "Pedido enviado", "Recebido", "Atrasado"]}
+      ],
+      "exemplos": [
+        ["0", "Fornecedor A", "Produto A", 240, "+5", "A fazer"],
+        ["+4", "Fornecedor C", "Produto C", 30, "+11", "A fazer"],
+        ["-6", "Fornecedor B", "Produto B", 60, "+4", "Pedido enviado"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Reponha em dia fixo por fornecedor; isso cria rotina e reduz o frete.",
+    "Uma conta rápida: se o estoque dura menos que o prazo de entrega mais a folga, o pedido já está atrasado.",
+    "Antes de datas fortes, antecipe o pedido pelo prazo do fornecedor mais uma semana de folga.",
+    "Revise a venda média dos itens campeões a cada 2 semanas e dos demais a cada mês.",
+    "Se o sistema permitir, configure um alerta automático para estoque abaixo do ponto de pedido."
+  ]
+}

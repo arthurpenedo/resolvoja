@@ -1,0 +1,85 @@
+{
+  "slug": "emissao-de-notas",
+  "titulo": "Emissão de notas",
+  "area": "contabil",
+  "subdivisoes": ["Emissão de notas"],
+  "resumo": "Crie uma rotina para emitir, conferir e arquivar notas fiscais sem esquecer vendas nem errar dados. Você terá um registro de notas e um passo a passo para cancelamentos e correções.",
+  "como_usar": [
+    "Responda o diagnóstico para ver onde a emissão falha.",
+    "Cadastre cada venda na aba Registro de notas assim que for emitida.",
+    "Use a aba Vendas sem nota para achar vendas pendentes de emissão.",
+    "Siga o procedimento antes de emitir qualquer nota.",
+    "No fim do mês, confira se o total das notas bate com o faturamento."
+  ],
+  "diagnostico": [
+    "Você já fez uma venda e esqueceu de emitir a nota?",
+    "Cada nota é emitida no momento da venda ou depois, em lote?",
+    "Os dados do cliente (CNPJ/CPF, endereço) são conferidos antes de emitir?",
+    "Você sabe qual tipo de nota emitir para cada venda (produto, serviço)?",
+    "Já precisou cancelar ou corrigir uma nota fora do prazo?",
+    "Tem um sistema emissor ou emite direto no site da prefeitura/Sefaz?",
+    "O total de notas do mês bate com o faturamento no banco?",
+    "As notas ficam guardadas em arquivo digital (XML e PDF)?",
+    "Mais de uma pessoa emite notas sem padrão definido?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Confirmar com o contador quais tipos de nota sua empresa deve emitir e em qual sistema", "responsavel": "Dono", "prazo_dias": 3},
+    {"etapa": "Semana 1", "acao": "Garantir certificado digital válido e acesso ao emissor; anotar a data de vencimento do certificado", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 1", "acao": "Cadastrar produtos e serviços no emissor com descrição padrão", "responsavel": "Administrativo", "prazo_dias": 10},
+    {"etapa": "Semana 2", "acao": "Definir regra: nota emitida no mesmo dia da venda ou do recebimento", "responsavel": "Dono", "prazo_dias": 14},
+    {"etapa": "Semana 2", "acao": "Começar a preencher o Registro de notas a cada emissão", "responsavel": "Administrativo", "prazo_dias": 14},
+    {"etapa": "Semana 4", "acao": "Fazer a primeira conferência: vendas do mês versus notas emitidas", "responsavel": "Administrativo", "prazo_dias": 30},
+    {"etapa": "Mês 2", "acao": "Criar checklist de conferência de dados do cliente e fixar na bancada", "responsavel": "Administrativo", "prazo_dias": 45},
+    {"etapa": "Mês 2", "acao": "Registrar todos os cancelamentos e correções do período e a causa de cada um", "responsavel": "Administrativo", "prazo_dias": 60},
+    {"etapa": "Mês 3", "acao": "Validar com o contador regras de cancelamento, prazos e tributação de cada tipo de nota", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Confirmar a venda", "como": "Verifique produto/serviço, valor, forma de pagamento e dados do cliente.", "cuidado": "Emitir antes de fechar o pedido gera cancelamentos."},
+    {"passo": "Conferir o cadastro do cliente", "como": "Confira CNPJ/CPF, nome e endereço no cadastro oficial ou documento.", "cuidado": "Erro de CNPJ não pode ser corrigido com carta de correção em alguns casos."},
+    {"passo": "Escolher o tipo de nota", "como": "Produto usa nota de mercadoria; serviço usa nota de serviço. Em dúvida, pergunte ao contador.", "cuidado": "Emitir o tipo errado pode gerar tributação indevida."},
+    {"passo": "Emitir e baixar", "como": "Emita e salve o XML e o PDF na pasta do mês.", "cuidado": "Perder o XML dificulta a contabilidade."},
+    {"passo": "Enviar ao cliente", "como": "Envie o PDF e o XML por e-mail e registre o envio.", "cuidado": "Não envie só print da tela."},
+    {"passo": "Registrar na planilha", "como": "Anote número, data, cliente e valor no Registro de notas.", "cuidado": "Deixar para registrar no fim do mês."},
+    {"passo": "Cancelar ou corrigir", "como": "Se houver erro, consulte o prazo de cancelamento do seu emissor e fale com o contador antes.", "cuidado": "Nota paga em banco não deve ser simplesmente cancelada sem orientação."}
+  ],
+  "abas": [
+    {
+      "nome": "Registro de notas",
+      "descricao": "Todas as notas emitidas, com status e envio ao cliente.",
+      "colunas": [
+        {"nome": "Número da nota", "tipo": "texto"},
+        {"nome": "Data de emissão", "tipo": "data"},
+        {"nome": "Cliente", "tipo": "texto"},
+        {"nome": "Valor", "tipo": "moeda"},
+        {"nome": "Tipo", "tipo": "lista", "opcoes": ["Produto", "Serviço"]},
+        {"nome": "Status", "tipo": "lista", "opcoes": ["Emitida", "Cancelada", "Corrigida"]}
+      ],
+      "exemplos": [
+        ["1021", "-5", "Cliente A", 1200.0, "Serviço", "Emitida"],
+        ["1022", "-3", "Cliente B", 450.0, "Produto", "Emitida"],
+        ["1023", "-2", "Cliente C", 980.0, "Serviço", "Cancelada"]
+      ]
+    },
+    {
+      "nome": "Vendas sem nota",
+      "descricao": "Vendas realizadas que ainda não tiveram nota emitida.",
+      "colunas": [
+        {"nome": "Data da venda", "tipo": "data"},
+        {"nome": "Cliente", "tipo": "texto"},
+        {"nome": "Valor", "tipo": "moeda"},
+        {"nome": "Motivo da pendência", "tipo": "texto"},
+        {"nome": "Prazo para emitir", "tipo": "data"}
+      ],
+      "exemplos": [
+        ["-2", "Cliente D", 600.0, "Aguardando CNPJ do cliente", "+1"],
+        ["-1", "Cliente E", 350.0, "Pagamento parcial", "+2"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Emitir a nota no ato da venda é o hábito que mais evita problemas.",
+    "Anote o vencimento do certificado digital no calendário com 30 dias de antecedência.",
+    "Uma nota por venda; não junte vendas diferentes para facilitar.",
+    "Prazos e regras de cancelamento variam por tipo de nota e cidade; confirme com o contador."
+  ]
+}

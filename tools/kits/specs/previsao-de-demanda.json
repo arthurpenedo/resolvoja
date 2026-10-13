@@ -1,0 +1,101 @@
+{
+  "slug": "previsao-de-demanda",
+  "titulo": "Previsão de demanda",
+  "area": "estoque",
+  "subdivisoes": ["Previsão de demanda"],
+  "resumo": "Aprenda a estimar quanto cada produto vai vender nas próximas semanas usando seu histórico, sazonalidade e datas especiais. Ao final você terá uma planilha de vendas por mês e uma previsão simples para comprar na medida certa.",
+  "como_usar": [
+    "Liste seus 20 produtos que mais vendem na aba 'Histórico de vendas' (um registro por produto e mês).",
+    "Preencha as vendas dos últimos 12 meses; se não tiver tanto, use o que tiver, mas no mínimo 3 meses.",
+    "Anote na aba 'Eventos e sazonalidade' as datas que mexem nas vendas (Dia das Mães, Black Friday, férias, chuvas, pagamento).",
+    "Na aba 'Previsão', coloque a média dos últimos meses e o ajuste esperado em % para o próximo mês.",
+    "Compare a previsão com o que de fato vendeu e corrija o ajuste a cada mês."
+  ],
+  "diagnostico": [
+    "Você compra mercadoria olhando só 'no olhômetro' ou pela última compra?",
+    "Já ficou sem um produto campeão de vendas em alguma data importante?",
+    "Já encalhou mercadoria porque comprou demais para uma data que vendeu menos?",
+    "Você registra as vendas por produto, e não só o total do mês?",
+    "Sabe quais meses do ano são seus mais fortes e seus mais fracos?",
+    "Você considera promoções passadas ao olhar o histórico (venda em promoção não é venda normal)?",
+    "Compara o que previu com o que vendeu depois?",
+    "Sabe qual percentual de crescimento ou queda sua loja teve em relação ao ano passado?",
+    "Seus fornecedores avisam prazo de entrega, e você considera isso ao prever?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Exportar do sistema ou caderno as vendas dos últimos 12 meses dos 20 produtos principais", "responsavel": "Dono", "prazo_dias": 3},
+    {"etapa": "Semana 1", "acao": "Preencher a aba de histórico e marcar meses com promoção ou falta de produto", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 2", "acao": "Listar eventos e sazonalidade do seu segmento e o impacto percentual aproximado", "responsavel": "Dono", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Calcular a média móvel de 3 meses de cada produto e ajustar pelo evento do mês", "responsavel": "Dono", "prazo_dias": 21},
+    {"etapa": "Semana 4", "acao": "Usar a previsão para fazer o pedido de compra do próximo mês", "responsavel": "Comprador", "prazo_dias": 30},
+    {"etapa": "Mês 2", "acao": "Comparar previsto x vendido e anotar o erro percentual por produto", "responsavel": "Dono", "prazo_dias": 45},
+    {"etapa": "Mês 2", "acao": "Ajustar os produtos com erro acima de 30% (rever ajuste ou separar por canal de venda)", "responsavel": "Dono", "prazo_dias": 55},
+    {"etapa": "Mês 3", "acao": "Estender a previsão para os 50 produtos mais vendidos", "responsavel": "Comprador", "prazo_dias": 75},
+    {"etapa": "Mês 3", "acao": "Montar o calendário de compras do ano com base nos picos identificados", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Reunir o histórico", "como": "Pegue vendas mensais por produto, em unidades (não em reais), dos últimos 12 meses.", "cuidado": "Usar valor em reais mistura aumento de preço com aumento de venda."},
+    {"passo": "Limpar o histórico", "como": "Marque meses com falta de produto, promoção forte ou loja fechada e use uma média normal no lugar.", "cuidado": "Mês sem estoque parece mês de baixa demanda, mas na verdade você perdeu venda."},
+    {"passo": "Calcular a média base", "como": "Faça a média das vendas dos últimos 3 meses de cada produto.", "cuidado": "Não use só o último mês, ele pode ser atípico."},
+    {"passo": "Aplicar o ajuste sazonal", "como": "Compare o mesmo mês do ano passado com a média daquele período e transforme em percentual (ex.: dezembro vendeu 40% acima).", "cuidado": "Não aplique o mesmo percentual a todos os produtos; só os sensíveis à data."},
+    {"passo": "Considerar tendência", "como": "Se as vendas vêm crescendo 5% ao mês, some isso à previsão.", "cuidado": "Tendência não dura para sempre; revise a cada trimestre."},
+    {"passo": "Somar eventos próprios", "como": "Adicione ações previstas: campanha, novo cliente grande, abertura de canal.", "cuidado": "Evite contar o mesmo aumento duas vezes (sazonal e campanha)."},
+    {"passo": "Converter em compra", "como": "Previsão menos estoque atual mais estoque de segurança igual ao que comprar.", "cuidado": "Esquecer pedidos já feitos e ainda não entregues."},
+    {"passo": "Medir o erro", "como": "No fim do mês, calcule (vendido - previsto) / previsto por produto.", "cuidado": "Não ignore o erro; é ele que deixa a próxima previsão melhor."}
+  ],
+  "abas": [
+    {
+      "nome": "Histórico de vendas",
+      "descricao": "Vendas mensais em unidades por produto, base de toda a previsão.",
+      "colunas": [
+        {"nome": "Produto", "tipo": "texto"},
+        {"nome": "Mês de referência", "tipo": "data"},
+        {"nome": "Unidades vendidas", "tipo": "numero"},
+        {"nome": "Preço médio", "tipo": "moeda"},
+        {"nome": "Mês atípico?", "tipo": "lista", "opcoes": ["Não", "Promoção", "Faltou produto", "Loja fechada"]}
+      ],
+      "exemplos": [
+        ["Produto A", "-90", 120, 25.0, "Não"],
+        ["Produto A", "-60", 95, 25.0, "Faltou produto"],
+        ["Produto B", "-30", 210, 12.5, "Promoção"]
+      ]
+    },
+    {
+      "nome": "Eventos e sazonalidade",
+      "descricao": "Datas e fatores que aumentam ou reduzem as vendas.",
+      "colunas": [
+        {"nome": "Evento", "tipo": "texto"},
+        {"nome": "Data de início", "tipo": "data"},
+        {"nome": "Efeito esperado (%)", "tipo": "numero"},
+        {"nome": "Produtos afetados", "tipo": "texto"},
+        {"nome": "Fonte do dado", "tipo": "lista", "opcoes": ["Ano passado", "Estimativa", "Fornecedor", "Concorrência"]}
+      ],
+      "exemplos": [
+        ["Dia das Mães", "+30", 40, "Presentes e kits", "Ano passado"],
+        ["Black Friday", "+45", 60, "Todos", "Estimativa"]
+      ]
+    },
+    {
+      "nome": "Previsão",
+      "descricao": "Previsão do próximo mês e comparação com o realizado.",
+      "colunas": [
+        {"nome": "Produto", "tipo": "texto"},
+        {"nome": "Média dos últimos 3 meses", "tipo": "numero"},
+        {"nome": "Ajuste previsto (%)", "tipo": "numero"},
+        {"nome": "Previsão do mês", "tipo": "numero"},
+        {"nome": "Vendido de fato", "tipo": "numero"}
+      ],
+      "exemplos": [
+        ["Produto A", 110, 10, 121, 118],
+        ["Produto B", 180, -5, 171, 160]
+      ]
+    }
+  ],
+  "dicas": [
+    "Prefira prever em grupos (categorias) quando o produto vende pouco; produtos de 2 vendas por mês são imprevisíveis.",
+    "Peça ao vendedor da loja uma opinião: ele sabe de clientes que vão comprar e de obras e eventos locais.",
+    "Anote cada falta de produto: venda perdida é a informação que mais falta no histórico.",
+    "Reveja a previsão a cada 15 dias nos produtos de giro rápido.",
+    "Nunca compre 100% da previsão para itens de alto valor e baixa certeza; compre uma parte e complete depois."
+  ]
+}

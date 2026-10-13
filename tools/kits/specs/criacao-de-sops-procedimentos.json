@@ -1,0 +1,81 @@
+{
+  "slug": "criacao-de-sops-procedimentos",
+  "titulo": "Criação de SOPs/procedimentos",
+  "area": "operacoes",
+  "subdivisoes": ["Criação de SOPs/procedimentos"],
+  "resumo": "Ensina a escrever procedimentos operacionais (SOPs) curtos e fáceis de seguir, com modelo pronto e controle de versões. Ao final, o conhecimento sai da cabeça das pessoas e vira manual vivo da empresa.",
+  "como_usar": [
+    "Liste na aba 'Biblioteca de SOPs' os procedimentos que precisam existir, começando pelos que só uma pessoa sabe fazer.",
+    "Copie o modelo da aba 'Modelo de SOP' para cada procedimento novo.",
+    "Escreva gravando a tela ou o celular enquanto a pessoa executa; depois transcreva em passos.",
+    "Peça para alguém que nunca fez seguir o texto; onde errar, o texto precisa melhorar.",
+    "Registre a versão e a data na biblioteca e revise a cada 6 meses."
+  ],
+  "diagnostico": [
+    "Existe algum processo que só uma pessoa da empresa sabe executar?",
+    "Quando alguém sai de férias, tarefas ficam paradas ou dão errado?",
+    "Os procedimentos estão escritos em um único lugar acessível a todos?",
+    "Alguém que nunca fez a tarefa consegue executá-la só lendo o procedimento?",
+    "Os procedimentos escritos têm data e responsável pela atualização?",
+    "A integração de um novo funcionário usa material escrito e não só explicação oral?",
+    "Existe um procedimento para o que fazer quando algo dá errado?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Listar os procedimentos críticos e identificar quem é o único que sabe cada um.", "responsavel": "Dono", "prazo_dias": 3},
+    {"etapa": "Semana 1", "acao": "Definir onde os SOPs ficarão (pasta compartilhada ou impresso) e padronizar o modelo.", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 2", "acao": "Gravar a execução do SOP mais crítico (vídeo de celular) com a pessoa que domina.", "responsavel": "Executor", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Escrever o SOP 1 a partir da gravação, com no máximo uma página.", "responsavel": "Dono ou assistente", "prazo_dias": 21},
+    {"etapa": "Semana 4", "acao": "Testar o SOP 1 com uma pessoa que nunca executou a tarefa e corrigir as falhas.", "responsavel": "Líder", "prazo_dias": 30},
+    {"etapa": "Semana 6", "acao": "Escrever mais 3 SOPs seguindo o mesmo ciclo.", "responsavel": "Equipe", "prazo_dias": 45},
+    {"etapa": "Semana 10", "acao": "Incluir os SOPs na integração de novos funcionários e checar leitura.", "responsavel": "Líder", "prazo_dias": 70},
+    {"etapa": "Semana 12", "acao": "Definir dono e data de revisão semestral para cada SOP na biblioteca.", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Defina objetivo e escopo", "como": "Escreva em uma frase para que serve o procedimento e quando ele se aplica.", "cuidado": "Um SOP que tenta cobrir tudo não cobre nada."},
+    {"passo": "Registre a execução real", "como": "Grave vídeo curto ou tire prints enquanto a tarefa é feita, falando em voz alta.", "cuidado": "Não escreva de memória; você esquece passos 'óbvios'."},
+    {"passo": "Escreva em passos numerados", "como": "Um verbo por passo, frases curtas, com o nome exato de botões, locais e materiais.", "cuidado": "Evite 'verificar tudo'; diga o que verificar."},
+    {"passo": "Inclua exceções", "como": "Acrescente uma seção 'se der errado' com o que fazer e quem chamar.", "cuidado": "Sem plano para exceção, a pessoa improvisa."},
+    {"passo": "Teste com novato", "como": "Peça a alguém sem experiência para executar só com o texto, sem ajuda.", "cuidado": "Não ajude durante o teste; anote cada dúvida."},
+    {"passo": "Publique e controle versão", "como": "Salve com nome padrão, número de versão, data e responsável; apague cópias antigas.", "cuidado": "Versões antigas circulando geram erro."}
+  ],
+  "abas": [
+    {
+      "nome": "Biblioteca de SOPs",
+      "descricao": "Índice de todos os procedimentos com versão, dono e próxima revisão.",
+      "colunas": [
+        {"nome": "Procedimento", "tipo": "texto"},
+        {"nome": "Setor", "tipo": "texto"},
+        {"nome": "Responsável", "tipo": "texto"},
+        {"nome": "Versão", "tipo": "texto"},
+        {"nome": "Situação", "tipo": "lista", "opcoes": ["A escrever", "Em teste", "Publicado", "Em revisão"]},
+        {"nome": "Próxima revisão", "tipo": "data"}
+      ],
+      "exemplos": [
+        ["Abertura da loja", "Atendimento", "Pessoa A", "v1.0", "Publicado", "+120"],
+        ["Emissão de nota fiscal", "Administrativo", "Pessoa B", "v0.2", "Em teste", "+20"],
+        ["Fechamento de caixa", "Financeiro", "Dono", "-", "A escrever", "+10"]
+      ]
+    },
+    {
+      "nome": "Modelo de SOP",
+      "descricao": "Estrutura para copiar e preencher a cada novo procedimento.",
+      "colunas": [
+        {"nome": "Seção", "tipo": "texto"},
+        {"nome": "O que escrever", "tipo": "texto"},
+        {"nome": "Exemplo", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["Objetivo", "Uma frase com o resultado esperado", "Fechar o caixa sem diferença acima de R$ 5"],
+        ["Materiais necessários", "Lista do que é preciso ter em mãos", "Maquininha, relatório do dia, envelope de depósito"],
+        ["Passos", "Numerados, um verbo por passo", "1. Imprimir o relatório de vendas do dia"],
+        ["Se der errado", "Problema comum e o que fazer", "Diferença acima de R$ 5: contar de novo e avisar o dono"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Procedimento bom cabe em uma página; se passar, divida em dois.",
+    "Use prints e fotos com setas; ninguém lê parágrafo longo durante a tarefa.",
+    "Comece pelos procedimentos de risco: dinheiro, segurança e atendimento ao cliente.",
+    "Peça para o autor do SOP não ser quem o testa."
+  ]
+}

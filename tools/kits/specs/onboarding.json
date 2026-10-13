@@ -1,0 +1,82 @@
+{
+  "slug": "onboarding",
+  "titulo": "Onboarding",
+  "area": "pessoas",
+  "subdivisoes": ["Onboarding"],
+  "resumo": "Um roteiro de integração dos primeiros 90 dias para o novo funcionário chegar preparado, entender o trabalho e render mais rápido. Você ganha checklists prontos e reduz a chance de a pessoa pedir demissão cedo.",
+  "como_usar": [
+    "Antes do primeiro dia, preencha a aba 'Checklist pré-chegada' com documentos, equipamentos e acessos.",
+    "No primeiro dia, siga o roteiro da aba 'Plano dos 90 dias' e apresente a equipe e as regras da casa.",
+    "Defina um 'padrinho' (colega experiente) para tirar dúvidas nas primeiras semanas.",
+    "Faça reuniões curtas de acompanhamento no 7º, 30º, 60º e 90º dia e registre combinados.",
+    "Ao final dos 90 dias, avalie juntos o que funcionou e confirme a efetivação."
+  ],
+  "diagnostico": [
+    "O novo funcionário sabe exatamente o que fará no primeiro dia?",
+    "O local de trabalho, os acessos e os equipamentos estão prontos antes de ele chegar?",
+    "A equipe foi avisada que alguém novo está chegando?",
+    "Existe um colega responsável por acompanhar o iniciante?",
+    "Você apresenta a missão, as regras e o jeito de trabalhar da empresa de forma resumida?",
+    "As metas dos primeiros 30, 60 e 90 dias estão escritas?",
+    "Há conversas de acompanhamento marcadas no calendário?",
+    "Você pede opinião do novato sobre a experiência de entrada?",
+    "Alguém já saiu nos primeiros 3 meses por não se adaptar ou por falta de orientação?"
+  ],
+  "plano": [
+    {"etapa": "Antes do início", "acao": "Confirmar com o contador o envio dos documentos de admissão e exame admissional dentro dos prazos.", "responsavel": "Assistente administrativo", "prazo_dias": 2},
+    {"etapa": "Antes do início", "acao": "Preparar posto de trabalho, uniforme, acessos a sistemas, e-mail e grupo de WhatsApp da equipe.", "responsavel": "Gerente", "prazo_dias": 3},
+    {"etapa": "Dia 1", "acao": "Receber a pessoa, mostrar o espaço, apresentar a equipe, entregar o guia de boas-vindas e o plano da semana.", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 1", "acao": "Designar o padrinho e acompanhar a execução das primeiras tarefas com o passo a passo de cada uma.", "responsavel": "Gerente", "prazo_dias": 7},
+    {"etapa": "Dia 7", "acao": "Primeira conversa de acompanhamento: dúvidas, dificuldades, ajustes.", "responsavel": "Dono", "prazo_dias": 14},
+    {"etapa": "Dia 30", "acao": "Revisar metas do primeiro mês e combinar as do segundo.", "responsavel": "Gerente", "prazo_dias": 30},
+    {"etapa": "Dia 60", "acao": "Avaliar autonomia nas tarefas e oferecer treinamento onde houver lacuna.", "responsavel": "Gerente", "prazo_dias": 60},
+    {"etapa": "Dia 90", "acao": "Conversa final de integração e decisão sobre a efetivação, atenta aos prazos do contrato de experiência.", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Preparar a chegada", "como": "Confira documentos, uniforme, acessos e local de trabalho um dia antes.", "cuidado": "Receber a pessoa e não ter mesa, senha ou tarefa pronta."},
+    {"passo": "Recepção no primeiro dia", "como": "Reserve 30 minutos para conversar sobre a empresa, as regras e o plano da semana.", "cuidado": "Entregar a pessoa direto ao trabalho sem explicar nada."},
+    {"passo": "Apresentar a equipe", "como": "Apresente cada colega dizendo o que faz e quando procurá-lo.", "cuidado": "Apresentar só de passagem, sem contexto."},
+    {"passo": "Ensinar com passo a passo", "como": "Use os procedimentos escritos ou mostre fazendo, depois peça que a pessoa faça enquanto você observa.", "cuidado": "Esperar que aprenda sozinha só olhando."},
+    {"passo": "Acompanhar com conversas curtas", "como": "Marque 15 a 20 minutos no 7º, 30º, 60º e 90º dia para ouvir e orientar.", "cuidado": "Só conversar quando há problema."},
+    {"passo": "Coletar feedback", "como": "Pergunte o que ajudou e o que faltou na entrada e melhore o roteiro.", "cuidado": "Não registrar o que aprendeu e repetir os mesmos erros."}
+  ],
+  "abas": [
+    {
+      "nome": "Checklist pré-chegada",
+      "descricao": "O que deve estar pronto antes do primeiro dia.",
+      "colunas": [
+        {"nome": "Item", "tipo": "texto"},
+        {"nome": "Responsável", "tipo": "texto"},
+        {"nome": "Prazo", "tipo": "data"},
+        {"nome": "Situação", "tipo": "lista", "opcoes": ["Pendente", "Em andamento", "Concluído"]}
+      ],
+      "exemplos": [
+        ["Exame admissional agendado", "Assistente administrativo", "+2", "Em andamento"],
+        ["Uniforme e crachá separados", "Gerente", "+3", "Pendente"],
+        ["Acesso ao sistema criado", "Gerente", "+3", "Pendente"]
+      ]
+    },
+    {
+      "nome": "Plano dos 90 dias",
+      "descricao": "Metas e conversas de acompanhamento por período.",
+      "colunas": [
+        {"nome": "Funcionário", "tipo": "texto"},
+        {"nome": "Marco", "tipo": "lista", "opcoes": ["Dia 1", "Dia 7", "Dia 30", "Dia 60", "Dia 90"]},
+        {"nome": "Meta ou combinado", "tipo": "texto"},
+        {"nome": "Data", "tipo": "data"},
+        {"nome": "Situação", "tipo": "lista", "opcoes": ["Pendente", "Feito", "Ajustar"]}
+      ],
+      "exemplos": [
+        ["Funcionário A", "Dia 7", "Dominar abertura do caixa", "+7", "Pendente"],
+        ["Funcionário A", "Dia 30", "Atender sozinho em horário calmo", "+30", "Pendente"]
+      ]
+    }
+  ],
+  "dicas": [
+    "O contrato de experiência tem prazo máximo; marque a data de avaliação com antecedência.",
+    "Um 'padrinho' bem escolhido resolve metade das dúvidas e liberta seu tempo.",
+    "No primeiro dia, uma tarefa pequena concluída dá confiança ao novato.",
+    "Escreva as regras importantes (horário, atrasos, uso do celular, uniforme) em uma folha; evita mal-entendido.",
+    "Pergunte no 30º dia: \"o que eu poderia ter explicado melhor?\""
+  ]
+}

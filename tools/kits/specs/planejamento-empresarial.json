@@ -1,0 +1,84 @@
+{
+  "slug": "planejamento-empresarial",
+  "titulo": "Planejamento empresarial",
+  "area": "gestao",
+  "subdivisoes": ["Planejamento empresarial"],
+  "resumo": "Um plano anual enxuto de uma página com metas, orçamento por mês e responsáveis. Ao final você sabe aonde quer chegar no ano, quanto vai gastar e o que fazer a cada trimestre.",
+  "como_usar": [
+    "Preencha a aba 'Visão do ano' com onde a empresa está hoje e onde quer chegar em 12 meses.",
+    "Liste as frentes do negócio (vendas, produção, finanças, pessoas) na aba 'Frentes e metas' com uma meta mensurável para cada.",
+    "Distribua o orçamento previsto mês a mês na aba 'Orçamento mensal'.",
+    "Marque uma reunião de 1 hora por mês, sempre no mesmo dia, para comparar previsto x realizado.",
+    "A cada trimestre, revise as metas: mantenha, ajuste ou abandone, e registre o motivo."
+  ],
+  "diagnostico": [
+    "Você sabe dizer, sem consultar nada, quanto quer faturar nos próximos 12 meses?",
+    "Existe um documento (mesmo simples) com as metas da empresa para este ano?",
+    "Você faz previsão de gastos mês a mês antes de o mês começar?",
+    "Seus funcionários ou sócios sabem quais são as prioridades do ano?",
+    "Você já deixou de investir em algo importante por falta de caixa que poderia ter sido previsto?",
+    "Há um dia fixo no mês para revisar os números da empresa?",
+    "Você sabe quais meses do ano são os mais fracos e os mais fortes em vendas?",
+    "Cada meta tem uma pessoa responsável pelo resultado?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Anotar faturamento, custos e lucro dos últimos 12 meses (ou dos meses que tiver)", "responsavel": "Dono", "prazo_dias": 2},
+    {"etapa": "Semana 1", "acao": "Definir a visão do ano: faturamento alvo, lucro alvo e uma frase do que muda no negócio", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 2", "acao": "Listar de 3 a 5 frentes do negócio e uma meta mensurável para cada", "responsavel": "Dono e sócio", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Montar o orçamento mensal com a sazonalidade real (meses fortes e fracos)", "responsavel": "Dono", "prazo_dias": 21},
+    {"etapa": "Semana 4", "acao": "Atribuir um responsável e uma data para cada meta", "responsavel": "Dono", "prazo_dias": 28},
+    {"etapa": "Semana 5", "acao": "Apresentar o plano à equipe em uma reunião de 30 minutos", "responsavel": "Dono", "prazo_dias": 35},
+    {"etapa": "Mês 2", "acao": "Primeira revisão mensal: comparar previsto x realizado e anotar desvios", "responsavel": "Dono", "prazo_dias": 60},
+    {"etapa": "Mês 3", "acao": "Revisão trimestral: ajustar metas e reorçar o próximo trimestre", "responsavel": "Dono e responsáveis", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Levante o ponto de partida", "como": "Some faturamento, custos fixos, custos variáveis e lucro do último ano. Use extrato bancário se não houver planilha.", "cuidado": "Não use números 'de cabeça'; o plano inteiro herda o erro."},
+    {"passo": "Escolha o alvo do ano", "como": "Defina faturamento e lucro desejados, partindo do histórico mais um crescimento realista (ex.: 10% a 25%).", "cuidado": "Metas muito acima do histórico sem nova estratégia viram frustração."},
+    {"passo": "Quebre em frentes", "como": "Para cada frente (vendas, operação, finanças, pessoas) escreva uma meta com número e prazo.", "cuidado": "Mais de 5 frentes dispersa a atenção; priorize."},
+    {"passo": "Monte o orçamento", "como": "Preencha receita prevista e despesas por mês, considerando datas sazonais e pagamentos anuais (impostos, seguros).", "cuidado": "Esquecer despesas anuais que pesam num único mês."},
+    {"passo": "Defina responsáveis", "como": "Cada meta precisa de um nome, não de um departamento.", "cuidado": "Meta de 'todo mundo' é meta de ninguém."},
+    {"passo": "Acompanhe todo mês", "como": "Na reunião mensal, preencha o realizado e escreva em uma frase por que desviou.", "cuidado": "Pular a reunião quando o mês foi corrido: é justamente quando mais precisa."}
+  ],
+  "abas": [
+    {
+      "nome": "Frentes e metas",
+      "descricao": "Metas do ano por frente do negócio, com responsável e prazo.",
+      "colunas": [
+        {"nome": "Frente", "tipo": "texto"},
+        {"nome": "Meta do ano", "tipo": "texto"},
+        {"nome": "Valor alvo", "tipo": "numero"},
+        {"nome": "Responsável", "tipo": "texto"},
+        {"nome": "Prazo", "tipo": "data"},
+        {"nome": "Status", "tipo": "lista", "opcoes": ["Não iniciada", "Em andamento", "Concluída", "Abandonada"]}
+      ],
+      "exemplos": [
+        ["Vendas", "Aumentar número de clientes ativos", 120, "Responsável A", "+300", "Em andamento"],
+        ["Finanças", "Reduzir despesas fixas em percentual", 10, "Dono", "+180", "Não iniciada"],
+        ["Pessoas", "Treinar a equipe no atendimento (horas)", 24, "Gerente B", "+120", "Não iniciada"]
+      ]
+    },
+    {
+      "nome": "Orçamento mensal",
+      "descricao": "Receita e despesas previstas e realizadas por mês.",
+      "colunas": [
+        {"nome": "Mês", "tipo": "texto"},
+        {"nome": "Receita prevista", "tipo": "moeda"},
+        {"nome": "Despesa prevista", "tipo": "moeda"},
+        {"nome": "Receita realizada", "tipo": "moeda"},
+        {"nome": "Despesa realizada", "tipo": "moeda"},
+        {"nome": "Observação", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["Janeiro", 28000.0, 21000.0, 26500.0, 22300.0, "Mês fraco após festas"],
+        ["Fevereiro", 30000.0, 22000.0, 0.0, 0.0, "Carnaval reduz movimento"],
+        ["Março", 35000.0, 23000.0, 0.0, 0.0, "Pagar seguro anual"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Um plano de uma página que você usa vale mais que um de 30 páginas na gaveta.",
+    "Faça três cenários simples de receita: pessimista, realista e otimista, e programe gastos com base no realista.",
+    "Reserve no orçamento um valor para imprevistos (5% a 10% da despesa).",
+    "Anote as premissas ('vou contratar 1 pessoa em junho') para saber por que o plano mudou."
+  ]
+}

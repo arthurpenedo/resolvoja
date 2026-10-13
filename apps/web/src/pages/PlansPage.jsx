@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import Reveal from '@/components/Reveal';
 import AuroraBackground from '@/components/AuroraBackground';
 import PlansList from '@/components/PlansList.jsx';
-import ConsultoriaCard from '@/components/ConsultoriaCard.jsx';
+import { AvulsaCard, ConsultoriaDestaque, SeletorPeriodo } from '@/components/PricingCards.jsx';
+import { useEcommerceSubscriptionsPlans } from '@/hooks/useEcommerceSubscriptionsPlans';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 
@@ -14,10 +15,14 @@ const faqs = [
 ];
 
 export default function PlansPage() {
+    const [periodo, setPeriodo] = useState('Mensal');
+    const { plans } = useEcommerceSubscriptionsPlans();
+    const temAnual = plans.some((plan) => (plan.variants ?? []).some((v) => v.title === 'Anual'));
+
     return (
         <div className="min-h-screen bg-[hsl(var(--background))] text-foreground">
             <Helmet>
-                <title>Planos e preços — Resolvo Já</title>
+                <title>Planos e preços · Resolvo Já</title>
                 <meta name="description" content="Assine o Resolvo Já e libere soluções ilimitadas geradas por IA para gestão, operações, fiscal, tecnologia, estoque e RH da sua pequena empresa." />
             </Helmet>
             <SiteHeader />
@@ -28,25 +33,28 @@ export default function PlansPage() {
                     <Reveal>
                         <header className="max-w-2xl">
                             <h1 className="font-display text-4xl font-semibold tracking-tight sm:text-5xl">
-                                Assine e resolva <span className="text-gradient-aurora">sem limite</span>
+                                Resolva do seu jeito: <span className="text-gradient-aurora">com gente ou com IA</span>
                             </h1>
                             <p className="mt-4 text-[hsl(var(--muted-foreground))]">
-                                Escolha o plano que combina com o ritmo da sua empresa. Cancele quando quiser — ou compre soluções avulsas quando preferir.
+                                Fale direto com um especialista ou resolva na hora com a nossa IA. Sem fidelidade: cancele quando quiser.
                             </p>
                         </header>
                     </Reveal>
 
                     <Reveal delay={0.1}>
                         <div className="mt-12">
-                            <PlansList className="grid gap-6 md:grid-cols-3" />
+                            <ConsultoriaDestaque />
                         </div>
                     </Reveal>
 
                     <Reveal delay={0.15}>
-                        <div className="mt-16">
-                            <h2 className="font-display text-2xl font-semibold mb-2">Prefere conversar com um especialista?</h2>
-                            <p className="text-[hsl(var(--muted-foreground))] mb-6">Sem IA no meio — um especialista te ouve e dá sugestões direto, num papo avulso.</p>
-                            <ConsultoriaCard />
+                        <div className="mt-20">
+                            <h2 className="font-display text-2xl font-semibold">Prefere resolver na hora com IA?</h2>
+                            <p className="mt-2 mb-6 text-[hsl(var(--muted-foreground))]">Descreva seu problema, veja a prévia e escolha como continuar.</p>
+                            <SeletorPeriodo periodo={periodo} onChange={setPeriodo} temAnual={temAnual} />
+                            <div className="mt-8">
+                                <PlansList className="grid gap-6 md:grid-cols-3" periodo={periodo} antes={<AvulsaCard />} />
+                            </div>
                         </div>
                     </Reveal>
 

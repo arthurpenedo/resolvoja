@@ -1,0 +1,101 @@
+{
+  "slug": "comparacao-de-fornecedores",
+  "titulo": "Comparação de fornecedores",
+  "area": "estoque",
+  "subdivisoes": ["Comparação de fornecedores"],
+  "resumo": "Avalie seus fornecedores com critérios objetivos (preço, prazo, qualidade, atendimento e pagamento) e dê uma nota a cada um. Ao final você saberá quem merece mais compras, quem precisa melhorar e onde buscar alternativas.",
+  "como_usar": [
+    "Defina os critérios e o peso de cada um na aba 'Critérios' (some 100%).",
+    "Registre ocorrências de cada fornecedor (atrasos, defeitos, divergências) na aba 'Ocorrências'.",
+    "Dê notas de 1 a 5 em cada critério na aba 'Avaliação'.",
+    "A planilha calcula a nota final; classifique em A, B ou C.",
+    "Reavalie a cada trimestre e use o resultado para distribuir os pedidos e negociar."
+  ],
+  "diagnostico": [
+    "Você escolhe fornecedores por costume ou amizade, sem avaliar?",
+    "Sabe quantas vezes cada fornecedor atrasou nos últimos 3 meses?",
+    "Registra defeitos, quebras e divergências de entrega?",
+    "Compara o preço total (frete e prazo) entre fornecedores?",
+    "Tem mais de uma opção para os itens principais?",
+    "Sabe quem resolve problemas rápido e quem some?",
+    "Já parou de comprar de alguém sem registrar o motivo?",
+    "Depende de um único fornecedor para mais de 50% das compras?",
+    "Fornecedores conhecem suas notas e o que precisam melhorar?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Listar os fornecedores ativos e o quanto comprou de cada um nos últimos 6 meses", "responsavel": "Dono", "prazo_dias": 3},
+    {"etapa": "Semana 1", "acao": "Definir os critérios e pesos (ex.: preço 30, prazo 25, qualidade 25, atendimento 10, pagamento 10)", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 2", "acao": "Levantar o histórico de atrasos e problemas de cada fornecedor", "responsavel": "Estoquista", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Dar as notas e classificar os fornecedores em A, B e C", "responsavel": "Dono", "prazo_dias": 21},
+    {"etapa": "Semana 4", "acao": "Conversar com os fornecedores C sobre o que precisam corrigir, com prazo", "responsavel": "Comprador", "prazo_dias": 30},
+    {"etapa": "Mês 2", "acao": "Buscar alternativas para os itens que dependem de um único fornecedor", "responsavel": "Comprador", "prazo_dias": 50},
+    {"etapa": "Mês 2", "acao": "Redistribuir parte dos pedidos conforme as notas", "responsavel": "Comprador", "prazo_dias": 60},
+    {"etapa": "Mês 3", "acao": "Reavaliar todos os fornecedores e atualizar a classificação", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Escolher critérios", "como": "Use poucos critérios que importam para você: preço, prazo, qualidade, atendimento e pagamento.", "cuidado": "Muitos critérios tornam a avaliação difícil de manter."},
+    {"passo": "Dar pesos", "como": "Defina quanto cada critério vale, somando 100%.", "cuidado": "Se tudo é prioridade, nada é; escolha."},
+    {"passo": "Coletar fatos", "como": "Conte atrasos, itens com defeito, divergências de nota e tempo de resposta.", "cuidado": "Nota baseada em impressão pessoal vira briga."},
+    {"passo": "Pontuar", "como": "Dê notas de 1 a 5 por critério com regra clara (ex.: prazo 5 = nenhum atraso).", "cuidado": "Mudar a régua entre fornecedores."},
+    {"passo": "Calcular a nota final", "como": "Multiplique cada nota pelo peso e some.", "cuidado": "Conferir se os pesos somam 100%."},
+    {"passo": "Classificar", "como": "A (nota acima de 4), B (3 a 4) e C (abaixo de 3).", "cuidado": "Fornecedor A com preço pouco competitivo ainda pode ser renegociado."},
+    {"passo": "Agir", "como": "Aumente pedidos aos A, peça plano de melhoria aos B e C e busque substituto para o C que não melhorar.", "cuidado": "Cortar um fornecedor sem ter alternativa pode causar ruptura."},
+    {"passo": "Devolver a avaliação", "como": "Mostre ao fornecedor sua nota e o que ele precisa melhorar.", "cuidado": "Feedback vago não muda nada."}
+  ],
+  "abas": [
+    {
+      "nome": "Critérios",
+      "descricao": "Critérios de avaliação e peso de cada um.",
+      "colunas": [
+        {"nome": "Critério", "tipo": "texto"},
+        {"nome": "Peso (%)", "tipo": "numero"},
+        {"nome": "Como medir", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["Preço", 30, "Custo total comparado com a média do mercado"],
+        ["Prazo de entrega", 25, "Percentual de pedidos entregues no prazo"],
+        ["Qualidade", 25, "Percentual de itens sem defeito"],
+        ["Atendimento", 10, "Tempo de resposta e resolução"]
+      ]
+    },
+    {
+      "nome": "Avaliação",
+      "descricao": "Notas de 1 a 5 de cada fornecedor por critério.",
+      "colunas": [
+        {"nome": "Fornecedor", "tipo": "texto"},
+        {"nome": "Preço", "tipo": "numero"},
+        {"nome": "Prazo", "tipo": "numero"},
+        {"nome": "Qualidade", "tipo": "numero"},
+        {"nome": "Atendimento", "tipo": "numero"},
+        {"nome": "Pagamento", "tipo": "numero"}
+      ],
+      "exemplos": [
+        ["Fornecedor A", 4, 5, 4, 5, 3],
+        ["Fornecedor B", 5, 2, 3, 2, 4],
+        ["Fornecedor C", 3, 4, 5, 4, 4]
+      ]
+    },
+    {
+      "nome": "Ocorrências",
+      "descricao": "Fatos que sustentam as notas.",
+      "colunas": [
+        {"nome": "Data", "tipo": "data"},
+        {"nome": "Fornecedor", "tipo": "texto"},
+        {"nome": "Tipo", "tipo": "lista", "opcoes": ["Atraso", "Item com defeito", "Quantidade errada", "Preço diferente do combinado", "Elogio"]},
+        {"nome": "Impacto em R$", "tipo": "moeda"},
+        {"nome": "Resolvido?", "tipo": "lista", "opcoes": ["Sim", "Não", "Parcial"]}
+      ],
+      "exemplos": [
+        ["-8", "Fornecedor B", "Atraso", 350.0, "Não"],
+        ["-20", "Fornecedor A", "Quantidade errada", 80.0, "Sim"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Anote as ocorrências na hora; em 3 meses você não lembra mais.",
+    "Nunca dependa de um fornecedor para mais de 50% de um item crítico.",
+    "Um fornecedor um pouco mais caro, que cumpre o prazo, pode custar menos que o mais barato que atrasa.",
+    "Mostre aos fornecedores boas notas: eles tendem a priorizar os clientes que reconhecem o trabalho.",
+    "Verifique a regularidade cadastral (CNPJ ativo) de novos fornecedores antes de comprar."
+  ]
+}

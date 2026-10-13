@@ -1,0 +1,89 @@
+{
+  "slug": "contratos",
+  "titulo": "Contratos",
+  "area": "administrativo",
+  "subdivisoes": ["Contratos"],
+  "resumo": "Organiza como você prepara, revisa e fecha contratos com clientes e fornecedores, com um checklist de cláusulas essenciais e um modelo de controle. Não substitui advogado: serve para você chegar à revisão jurídica com tudo claro e padronizado.",
+  "como_usar": [
+    "Responda o diagnóstico para ver quais contratos sua empresa faz hoje sem documento ou com documento fraco.",
+    "Use a aba Checklist de cláusulas para montar qualquer contrato novo, marcando o que está definido.",
+    "Siga o procedimento de negociação, revisão e assinatura sempre na mesma ordem.",
+    "Registre cada contrato fechado na aba Registro de contratos.",
+    "Leve o rascunho e o checklist preenchidos ao advogado para revisão final.",
+    "Este material orienta e organiza; não garante validade jurídica."
+  ],
+  "diagnostico": [
+    "Você já fechou serviço ou venda relevante só por WhatsApp ou 'de boca'?",
+    "Cada contrato seu é feito do zero, copiado de outro ou baixado da internet sem revisão?",
+    "Os contratos descrevem claramente o que será entregue, prazo e preço?",
+    "Está escrito o que acontece em caso de atraso, cancelamento ou não pagamento?",
+    "Há cláusula sobre multa, rescisão e como encerrar o contrato?",
+    "Um advogado já revisou seus modelos de contrato?",
+    "Você guarda a versão assinada por todas as partes?",
+    "Os dados das partes (CNPJ/CPF, endereço, representante) são conferidos antes de assinar?",
+    "Já teve cliente ou fornecedor discordando do que foi combinado?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Listar todos os tipos de contrato que a empresa faz (prestação de serviço, venda, parceria, aluguel, fornecimento).", "responsavel": "Dono", "prazo_dias": 1},
+    {"etapa": "Semana 1", "acao": "Reunir os contratos atuais e identificar quais combinados estão sem documento escrito.", "responsavel": "Administrativo", "prazo_dias": 7},
+    {"etapa": "Semana 1", "acao": "Preencher o checklist de cláusulas para o tipo de contrato mais usado.", "responsavel": "Dono", "prazo_dias": 10},
+    {"etapa": "Semana 2", "acao": "Montar o modelo-base desse contrato com campos em branco (partes, objeto, valor, prazo).", "responsavel": "Dono", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Levar o modelo ao advogado para revisão, com o checklist e as dúvidas listadas.", "responsavel": "Dono", "prazo_dias": 21},
+    {"etapa": "Semana 4", "acao": "Definir o fluxo interno: quem redige, quem aprova, quem assina e onde se guarda.", "responsavel": "Dono", "prazo_dias": 28},
+    {"etapa": "Semana 5", "acao": "Regularizar os 3 combinados mais importantes que estão só verbais, formalizando em contrato.", "responsavel": "Dono", "prazo_dias": 35},
+    {"etapa": "Semana 6", "acao": "Configurar assinatura eletrônica (ferramenta com registro de autenticação) para fechar à distância.", "responsavel": "Administrativo", "prazo_dias": 45},
+    {"etapa": "Semana 8", "acao": "Criar modelos para os demais tipos de contrato, repetindo o ciclo checklist, modelo e revisão.", "responsavel": "Dono", "prazo_dias": 60},
+    {"etapa": "Dia 90", "acao": "Validar todos os modelos finais com advogado e arquivar as versões aprovadas.", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Alinhar o combinado", "como": "Antes de redigir, escreva em 5 linhas: o que será entregue, preço, prazo, forma de pagamento e quem faz o quê.", "cuidado": "Redigir sem ter alinhado o preço e o escopo com a outra parte."},
+    {"passo": "Identificar as partes", "como": "Conferir razão social, CNPJ/CPF, endereço e quem tem poder de assinar (contrato social ou procuração).", "cuidado": "Assinar com alguém sem poder de representar a empresa."},
+    {"passo": "Descrever o objeto", "como": "Detalhe o serviço ou produto, quantidade, padrão de qualidade e o que NÃO está incluído.", "cuidado": "Descrição vaga como 'serviços de marketing' sem especificar entregas."},
+    {"passo": "Definir valores e pagamento", "como": "Indique valor, vencimento, forma, juros/multa por atraso e reajuste, se houver.", "cuidado": "Esquecer o que acontece se o pagamento atrasar."},
+    {"passo": "Definir prazo e rescisão", "como": "Escreva vigência, renovação, aviso prévio para encerrar e multas, de forma equilibrada.", "cuidado": "Contrato sem saída clara ou renovação automática escondida."},
+    {"passo": "Incluir proteção de dados e sigilo", "como": "Se houver troca de dados pessoais ou informações sigilosas, inclua cláusula simples de confidencialidade e uso de dados.", "cuidado": "Copiar cláusula complexa sem entender."},
+    {"passo": "Revisar e assinar", "como": "Envie o rascunho por escrito, ajuste, peça revisão do advogado nos contratos de maior valor e colha assinaturas com data.", "cuidado": "Assinar com campos em branco ou versão diferente da combinada."},
+    {"passo": "Arquivar e registrar", "como": "Salve o PDF assinado, registre no controle com data de início, fim e valor.", "cuidado": "Guardar só a versão sem assinatura."}
+  ],
+  "abas": [
+    {
+      "nome": "Checklist de cláusulas",
+      "descricao": "Itens que todo contrato simples deve cobrir antes de ir ao advogado.",
+      "colunas": [
+        {"nome": "Item", "tipo": "texto"},
+        {"nome": "O que definir", "tipo": "texto"},
+        {"nome": "Status", "tipo": "lista", "opcoes": ["Definido", "Pendente", "Não se aplica"]},
+        {"nome": "Observação", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["Partes e representantes", "Razão social, CNPJ, endereço, quem assina", "Definido", "Conferir contrato social"],
+        ["Objeto e entregas", "O que será feito, padrão e exclusões", "Pendente", "Falta detalhar exclusões"],
+        ["Pagamento e atraso", "Valor, vencimento, multa e juros", "Pendente", "Combinar com o cliente"],
+        ["Rescisão e prazo", "Vigência, aviso prévio, multa", "Definido", "Aviso de 30 dias"]
+      ]
+    },
+    {
+      "nome": "Contratos em negociação",
+      "descricao": "Acompanha rascunhos até a assinatura.",
+      "colunas": [
+        {"nome": "Contrato", "tipo": "texto"},
+        {"nome": "Parte", "tipo": "texto"},
+        {"nome": "Valor", "tipo": "moeda"},
+        {"nome": "Etapa", "tipo": "lista", "opcoes": ["Rascunho", "Com a outra parte", "Revisão jurídica", "Aguardando assinatura", "Assinado"]},
+        {"nome": "Prazo para fechar", "tipo": "data"}
+      ],
+      "exemplos": [
+        ["Prestação de serviço mensal", "Cliente A", 2500.0, "Com a outra parte", "+7"],
+        ["Fornecimento de embalagens", "Fornecedor B", 4800.0, "Revisão jurídica", "+12"],
+        ["Parceria de indicação", "Parceiro C", 0.0, "Rascunho", "+20"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Contrato bom é o que um leigo entende; evite palavras que nem você sabe explicar.",
+    "Registre por escrito toda mudança de escopo ou preço, mesmo que por e-mail, e anexe ao contrato.",
+    "Nos contratos de maior valor ou risco, vale pagar uma revisão pontual do advogado: sai mais barato que um litígio.",
+    "Modelos baixados da internet servem como ponto de partida, nunca como versão final.",
+    "Este kit organiza e orienta; o texto final e sua validade jurídica devem ser conferidos por advogado."
+  ]
+}

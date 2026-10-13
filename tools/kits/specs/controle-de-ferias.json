@@ -1,0 +1,86 @@
+{
+  "slug": "controle-de-ferias",
+  "titulo": "Controle de férias",
+  "area": "pessoas",
+  "subdivisoes": ["Controle de férias"],
+  "resumo": "Controla o período aquisitivo e o prazo para conceder férias de cada funcionário, evitando férias vencidas e reduzindo o risco de multas, sem deixar a operação descoberta. Você termina com um calendário de férias planejado e alertas de vencimento.",
+  "como_usar": [
+    "Na aba 'Períodos aquisitivos', informe a data de admissão de cada funcionário; a planilha calcula o início e o fim de cada período.",
+    "Veja o prazo limite para conceder as férias de cada período, com folga de segurança.",
+    "Planeje na aba 'Programação de férias' as datas combinadas com cada pessoa, evitando sobreposição em funções críticas.",
+    "Avise o funcionário por escrito com a antecedência que a legislação e seu contador orientarem.",
+    "Registre as férias gozadas e envie as datas ao contador para cálculo e pagamento no prazo."
+  ],
+  "diagnostico": [
+    "Você sabe a data em que cada funcionário completa 12 meses de trabalho (período aquisitivo)?",
+    "Há alguém com férias vencidas ou prestes a vencer sem programação?",
+    "As férias são programadas antecipadamente, com combinado entre empresa e funcionário?",
+    "A empresa avisa o funcionário por escrito sobre o início das férias?",
+    "O contador recebe as datas com antecedência para calcular o pagamento?",
+    "Você controla quantos funcionários de cada função saem de férias ao mesmo tempo?",
+    "Sabe como funciona o fracionamento das férias em períodos?",
+    "Existe um responsável por cuidar do calendário de férias?",
+    "Alguém já trabalhou durante as férias ou foi chamado de volta sem planejamento?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Listar todos os funcionários com data de admissão e últimas férias gozadas.", "responsavel": "Assistente administrativo", "prazo_dias": 1},
+    {"etapa": "Semana 1", "acao": "Calcular o período aquisitivo e o prazo limite para conceder as férias de cada um, e identificar vencidas ou próximas de vencer.", "responsavel": "Assistente administrativo", "prazo_dias": 5},
+    {"etapa": "Semana 1", "acao": "Consultar o contador sobre regras de fracionamento, abono pecuniário, prazos de aviso e de pagamento aplicáveis à sua empresa.", "responsavel": "Dono", "prazo_dias": 10},
+    {"etapa": "Semana 2", "acao": "Conversar com cada funcionário sobre preferência de datas e registrar o combinado.", "responsavel": "Gerente", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Montar o calendário anual de férias evitando que toda a equipe de uma função saia ao mesmo tempo.", "responsavel": "Gerente", "prazo_dias": 21},
+    {"etapa": "Mês 1", "acao": "Enviar aviso de férias por escrito, com data de início e fim, e colher ciência.", "responsavel": "Assistente administrativo", "prazo_dias": 30},
+    {"etapa": "Mês 1", "acao": "Enviar as datas ao contador com antecedência para cálculo, recibo e pagamento.", "responsavel": "Assistente administrativo", "prazo_dias": 35},
+    {"etapa": "Mês 3", "acao": "Revisar o controle trimestral e antecipar os próximos períodos que vão vencer.", "responsavel": "Gerente", "prazo_dias": 90},
+    {"etapa": "Mês 3", "acao": "Consolidar o procedimento de férias e validar com contador/advogado trabalhista.", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Calcular o período aquisitivo", "como": "A cada 12 meses de trabalho, a pessoa adquire o direito a férias; some 12 meses à admissão para achar o início do próximo período.", "cuidado": "Contar pela data errada ou esquecer períodos acumulados."},
+    {"passo": "Identificar o prazo para conceder", "como": "Depois de completar o período aquisitivo, a empresa tem um prazo para conceder as férias; anote a data limite e antecipe.", "cuidado": "Deixar para a última hora e ter que pagar em dobro por atraso, segundo orientação geral; confirme com o contador."},
+    {"passo": "Combinar as datas", "como": "Converse com o funcionário e alinhe com as necessidades da empresa; a decisão final de época cabe ao empregador, conforme regra geral.", "cuidado": "Impor datas sem diálogo."},
+    {"passo": "Avisar por escrito", "como": "Entregue o aviso com antecedência e peça assinatura de ciência.", "cuidado": "Avisar só por conversa ou WhatsApp sem registro."},
+    {"passo": "Acionar o contador", "como": "Envie a data de início e o tipo (30 dias, fracionadas, com abono) para cálculo e pagamento no prazo.", "cuidado": "Atrasar o envio e o pagamento."},
+    {"passo": "Registrar o retorno", "como": "Marque a data de retorno, atualize a planilha e programe o próximo período.", "cuidado": "Esquecer de atualizar e perder o controle do próximo vencimento."}
+  ],
+  "abas": [
+    {
+      "nome": "Períodos aquisitivos",
+      "descricao": "Controle do período aquisitivo e do prazo para conceder as férias.",
+      "colunas": [
+        {"nome": "Funcionário", "tipo": "texto"},
+        {"nome": "Admissão", "tipo": "data"},
+        {"nome": "Início do período", "tipo": "data"},
+        {"nome": "Fim do período", "tipo": "data"},
+        {"nome": "Prazo limite para conceder", "tipo": "data"},
+        {"nome": "Situação", "tipo": "lista", "opcoes": ["Em aquisição", "A programar", "Programada", "Gozada", "Vencida - atenção"]}
+      ],
+      "exemplos": [
+        ["Funcionário A", "-300", "-300", "+65", "+430", "Em aquisição"],
+        ["Funcionário B", "-500", "-135", "+230", "+595", "A programar"],
+        ["Funcionário C", "-900", "-540", "-175", "+190", "Programada"]
+      ]
+    },
+    {
+      "nome": "Programação de férias",
+      "descricao": "Datas combinadas de cada funcionário e cobertura da função.",
+      "colunas": [
+        {"nome": "Funcionário", "tipo": "texto"},
+        {"nome": "Função", "tipo": "texto"},
+        {"nome": "Início das férias", "tipo": "data"},
+        {"nome": "Dias", "tipo": "numero"},
+        {"nome": "Quem cobre", "tipo": "texto"},
+        {"nome": "Aviso entregue", "tipo": "lista", "opcoes": ["Sim", "Não"]}
+      ],
+      "exemplos": [
+        ["Funcionário C", "Caixa", "+45", 30, "Funcionário B", "Sim"],
+        ["Funcionário B", "Atendente", "+120", 15, "Funcionário A", "Não"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Programe as férias com meses de antecedência e evite deixar tudo para o vencimento.",
+    "Evite que duas pessoas da mesma função saiam juntas; ensine um colega a cobrir.",
+    "Esta planilha organiza prazos, mas regras de fracionamento, abono, aviso e pagamento devem ser conferidas com o contador.",
+    "Guarde avisos e recibos assinados de férias por segurança.",
+    "Informe a equipe com antecedência sobre períodos de pico em que férias são mais difíceis."
+  ]
+}

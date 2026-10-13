@@ -1,0 +1,83 @@
+{
+  "slug": "organizacao-de-tarefas",
+  "titulo": "Organização de tarefas",
+  "area": "gestao",
+  "subdivisoes": ["Organização de tarefas"],
+  "resumo": "Um quadro de tarefas (a fazer, fazendo, feito) com rotinas fixas e prioridades claras para o dono e a equipe. Ao final ninguém depende de lembrança ou recado verbal para saber o que fazer.",
+  "como_usar": [
+    "Esvazie a cabeça: anote todas as tarefas pendentes na aba 'Quadro de tarefas'.",
+    "Classifique cada tarefa por prioridade e defina responsável e prazo.",
+    "Registre as tarefas que se repetem na aba 'Rotinas' com a frequência.",
+    "Revise o quadro todo dia no início do expediente (5 minutos).",
+    "Limite o 'em andamento' a 3 tarefas por pessoa."
+  ],
+  "diagnostico": [
+    "Você guarda tarefas importantes na memória ou em papéis soltos?",
+    "A equipe pede recado várias vezes sobre o que fazer?",
+    "Tarefas esquecidas viram problema com cliente ou fornecedor?",
+    "Você começa muitas tarefas e termina poucas?",
+    "Sabe, agora, quais são as 3 tarefas mais importantes da semana?",
+    "Tarefas rotineiras (conferir estoque, cobrar, postar) dependem de lembrança?",
+    "Tarefas urgentes consomem o dia e as importantes ficam para depois?",
+    "Existe um lugar único e visível para consultar as tarefas da equipe?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Fazer um 'despejo mental': listar todas as tarefas pendentes", "responsavel": "Dono", "prazo_dias": 1},
+    {"etapa": "Dia 2", "acao": "Classificar cada tarefa por urgência e importância (matriz de Eisenhower)", "responsavel": "Dono", "prazo_dias": 2},
+    {"etapa": "Dia 3", "acao": "Definir responsável e prazo para cada tarefa", "responsavel": "Dono", "prazo_dias": 3},
+    {"etapa": "Semana 1", "acao": "Montar o quadro (planilha, Trello ou quadro branco) com 3 colunas", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 1", "acao": "Listar as rotinas diárias, semanais e mensais e a frequência", "responsavel": "Dono e equipe", "prazo_dias": 10},
+    {"etapa": "Semana 2", "acao": "Apresentar o quadro à equipe e definir a regra do limite de 3 tarefas em andamento", "responsavel": "Dono", "prazo_dias": 14},
+    {"etapa": "Semana 4", "acao": "Reunião de balanço: o que travou, o que é desperdício", "responsavel": "Dono e equipe", "prazo_dias": 28},
+    {"etapa": "Mês 2", "acao": "Delegar tarefas rotineiras que ainda estão com o dono", "responsavel": "Dono", "prazo_dias": 60},
+    {"etapa": "Mês 3", "acao": "Documentar as rotinas que funcionaram em checklists", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Capture tudo", "como": "Anote cada tarefa no mesmo lugar assim que surgir, inclusive as pequenas.", "cuidado": "Anotar em vários lugares (celular, papel, WhatsApp) e perder o controle."},
+    {"passo": "Escreva tarefas acionáveis", "como": "Comece com verbo e deixe claro o resultado (ex.: 'Enviar orçamento ao Cliente B').", "cuidado": "Tarefas vagas como 'ver o financeiro'."},
+    {"passo": "Classifique", "como": "Urgente e importante: fazer hoje. Importante e não urgente: agendar. Urgente e não importante: delegar. Nem um nem outro: eliminar.", "cuidado": "Tratar tudo como urgente."},
+    {"passo": "Atribua dono e prazo", "como": "Cada tarefa com um responsável e data.", "cuidado": "Tarefa sem data nunca acontece."},
+    {"passo": "Limite o que está em andamento", "como": "No máximo 3 tarefas por pessoa ao mesmo tempo.", "cuidado": "Multitarefa que atrasa tudo."},
+    {"passo": "Revise diariamente", "como": "No começo do dia: veja o quadro, escolha as 3 prioridades.", "cuidado": "Só abrir o quadro quando já está atrasado."}
+  ],
+  "abas": [
+    {
+      "nome": "Quadro de tarefas",
+      "descricao": "Todas as tarefas pendentes com prioridade, dono, prazo e status.",
+      "colunas": [
+        {"nome": "Tarefa", "tipo": "texto"},
+        {"nome": "Prioridade", "tipo": "lista", "opcoes": ["Urgente e importante", "Importante", "Delegar", "Eliminar"]},
+        {"nome": "Responsável", "tipo": "texto"},
+        {"nome": "Prazo", "tipo": "data"},
+        {"nome": "Status", "tipo": "lista", "opcoes": ["A fazer", "Fazendo", "Feito", "Aguardando terceiros"]}
+      ],
+      "exemplos": [
+        ["Enviar orçamento ao Cliente B", "Urgente e importante", "Dono", "+1", "Fazendo"],
+        ["Renegociar prazo com Fornecedor A", "Importante", "Dono", "+10", "A fazer"],
+        ["Atualizar cardápio nas redes", "Delegar", "Responsável A", "+3", "A fazer"]
+      ]
+    },
+    {
+      "nome": "Rotinas",
+      "descricao": "Tarefas que se repetem, com frequência e responsável.",
+      "colunas": [
+        {"nome": "Rotina", "tipo": "texto"},
+        {"nome": "Frequência", "tipo": "lista", "opcoes": ["Diária", "Semanal", "Quinzenal", "Mensal"]},
+        {"nome": "Dia ou horário", "tipo": "texto"},
+        {"nome": "Responsável", "tipo": "texto"},
+        {"nome": "Tempo estimado (min)", "tipo": "numero"}
+      ],
+      "exemplos": [
+        ["Conferir o caixa do dia", "Diária", "Fechamento", "Responsável A", 15],
+        ["Cobrar clientes em atraso", "Semanal", "Segunda de manhã", "Dono", 40],
+        ["Conferir estoque mínimo", "Semanal", "Sexta", "Responsável B", 30]
+      ]
+    }
+  ],
+  "dicas": [
+    "Anote uma tarefa assim que ela surgir; confiar na memória gera estresse e esquecimento.",
+    "Se uma tarefa leva menos de 2 minutos, faça na hora.",
+    "Escolha no início do dia as 3 tarefas que, se feitas, tornam o dia produtivo.",
+    "Reserve blocos sem interrupção para tarefas importantes."
+  ]
+}

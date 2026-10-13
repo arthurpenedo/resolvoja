@@ -1,3 +1,4 @@
+import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -11,7 +12,7 @@ import { fileURLToPath } from 'node:url';
  */
 export const KITS_DIR = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../kits');
 
-export const KITS = {
+const MANUAL_KITS = {
 	'controle-de-estoque': {
 		title: 'Kit de Arranque · Controle de Estoque',
 		subdivisions: ['Controle de estoque', 'Gestão de estoque'],
@@ -25,6 +26,20 @@ export const KITS = {
 		subdivisions: ['Controle de vencimentos'],
 	},
 };
+
+/**
+ * Kits gerados a partir das especificações em `tools/kits/specs/` por `tools/kits/gerar_kits_genericos.py`,
+ * que grava o índice em `apps/api/kits/indice.json`. Os kits feitos à mão acima têm prioridade.
+ */
+function loadGeneratedKits() {
+	try {
+		return JSON.parse(fs.readFileSync(path.join(KITS_DIR, 'indice.json'), 'utf8'));
+	} catch {
+		return {};
+	}
+}
+
+export const KITS = { ...loadGeneratedKits(), ...MANUAL_KITS };
 
 /**
  * @param {string | null | undefined} subdivision

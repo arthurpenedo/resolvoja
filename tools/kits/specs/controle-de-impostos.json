@@ -1,0 +1,84 @@
+{
+  "slug": "controle-de-impostos",
+  "titulo": "Controle de impostos",
+  "area": "contabil",
+  "subdivisoes": ["Controle de impostos"],
+  "resumo": "Acompanhe cada imposto pago, a pagar e atrasado em uma planilha simples. Ao final, você saberá quanto cada tributo pesa no faturamento e não perderá mais vencimentos.",
+  "como_usar": [
+    "Liste na aba Guias de impostos todos os tributos que sua empresa paga.",
+    "A cada guia recebida do contador, registre valor e vencimento.",
+    "Marque como paga e salve o comprovante assim que pagar.",
+    "Use a aba Resumo mensal para ver o peso dos impostos sobre o faturamento.",
+    "Revise a cada mês antes de falar com o contador."
+  ],
+  "diagnostico": [
+    "Você recebe as guias com antecedência suficiente para pagar?",
+    "Sabe o valor total de impostos pagos no último mês?",
+    "Já pagou guia atrasada com juros e multa?",
+    "Guarda o comprovante de cada pagamento?",
+    "Sabe qual percentual do seu faturamento vai para impostos?",
+    "Tem dívidas parceladas com a Receita, Estado ou Prefeitura?",
+    "Confere se o valor da guia é compatível com o faturamento do mês?",
+    "Sabe consultar pendências da empresa nos portais oficiais?",
+    "Alguém além de você acompanha os vencimentos?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Pedir ao contador a lista de todos os tributos da empresa (federais, estaduais, municipais)", "responsavel": "Dono", "prazo_dias": 3},
+    {"etapa": "Semana 1", "acao": "Cadastrar os tributos na planilha com dia de vencimento habitual", "responsavel": "Administrativo", "prazo_dias": 7},
+    {"etapa": "Semana 1", "acao": "Combinar com o contador que as guias cheguem pelo menos 5 dias antes do vencimento", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 2", "acao": "Consultar nos portais oficiais se há pendências ou dívidas em aberto", "responsavel": "Administrativo", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Ativar débito automático ou lembretes de pagamento para cada guia", "responsavel": "Administrativo", "prazo_dias": 21},
+    {"etapa": "Mês 2", "acao": "Registrar os 3 últimos meses de impostos para ter histórico", "responsavel": "Administrativo", "prazo_dias": 45},
+    {"etapa": "Mês 2", "acao": "Calcular o percentual de imposto sobre o faturamento mês a mês", "responsavel": "Dono", "prazo_dias": 60},
+    {"etapa": "Mês 3", "acao": "Investigar com o contador qualquer mês em que o percentual saiu muito diferente da média", "responsavel": "Dono", "prazo_dias": 80},
+    {"etapa": "Mês 3", "acao": "Validar com o contador as guias, os valores pagos e o plano de quitação de eventuais dívidas", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Receber a guia", "como": "Registre imposto, competência, valor e vencimento assim que a guia chegar.", "cuidado": "Não deixe a guia só no e-mail."},
+    {"passo": "Conferir o valor", "como": "Compare com o faturamento do mês e com o mês anterior para ver se faz sentido.", "cuidado": "Pagar sem olhar pode perpetuar erro de cálculo."},
+    {"passo": "Agendar o pagamento", "como": "Agende no banco para o dia útil anterior ao vencimento.", "cuidado": "Vencimento em fim de semana ou feriado pode mudar a regra; confirme."},
+    {"passo": "Pagar e guardar comprovante", "como": "Salve o comprovante na pasta do mês e marque 'Paga' na planilha.", "cuidado": "Sem comprovante, fica difícil provar o pagamento."},
+    {"passo": "Tratar atraso", "como": "Se atrasar, peça ao contador a guia atualizada com multa e juros; não pague o valor original.", "cuidado": "Pagar valor errado deixa a dívida em aberto."},
+    {"passo": "Fechar o mês", "como": "Some os impostos do mês e calcule o percentual sobre o faturamento.", "cuidado": "Ignorar tributos sobre a folha na soma."}
+  ],
+  "abas": [
+    {
+      "nome": "Guias de impostos",
+      "descricao": "Controle de cada guia: vencimento, valor e situação.",
+      "colunas": [
+        {"nome": "Imposto", "tipo": "texto"},
+        {"nome": "Competência", "tipo": "texto"},
+        {"nome": "Vencimento", "tipo": "data"},
+        {"nome": "Valor", "tipo": "moeda"},
+        {"nome": "Data de pagamento", "tipo": "data"},
+        {"nome": "Status", "tipo": "lista", "opcoes": ["A pagar", "Paga", "Atrasada", "Parcelada"]}
+      ],
+      "exemplos": [
+        ["Imposto mensal unificado", "Mês anterior", "+8", 1450.0, "0", "A pagar"],
+        ["Contribuição sobre folha", "Mês anterior", "+6", 980.0, "0", "A pagar"],
+        ["Imposto municipal", "Mês anterior", "-10", 320.0, "-11", "Paga"]
+      ]
+    },
+    {
+      "nome": "Resumo mensal",
+      "descricao": "Total de impostos pagos e peso sobre o faturamento.",
+      "colunas": [
+        {"nome": "Mês", "tipo": "texto"},
+        {"nome": "Faturamento", "tipo": "moeda"},
+        {"nome": "Total de impostos", "tipo": "moeda"},
+        {"nome": "Observações", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["Janeiro", 42000.0, 3800.0, "Normal"],
+        ["Fevereiro", 38000.0, 3500.0, "Normal"],
+        ["Março", 51000.0, 5200.0, "Pico de vendas"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Débito automático ajuda, mas confira sempre se o valor debitado é o da guia correta.",
+    "Nunca pague guia de e-mail ou boleto suspeito; confirme com o contador.",
+    "Guarde comprovantes de impostos por anos; confirme o prazo exato com o contador.",
+    "Dívida pequena parada vira dívida grande com juros: resolva cedo."
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "slug": "criar-banco-de-dados",
+  "titulo": "Criar banco de dados",
+  "area": "tecnologia",
+  "subdivisoes": ["Criar banco de dados"],
+  "resumo": "Guia para organizar os dados da sua empresa em um banco bem estruturado, seja planilha, ferramenta no-code ou banco de dados de verdade. Inclui modelagem simples, dicionário de dados e escolha da ferramenta certa.",
+  "como_usar": [
+    "Responda o diagnóstico para decidir entre planilha, ferramenta no-code ou banco de dados.",
+    "Liste o que você precisa guardar na aba Entidades e campos (clientes, produtos, pedidos...).",
+    "Defina as relações entre as informações na aba Relações entre tabelas.",
+    "Escolha a ferramenta na aba Comparação de ferramentas.",
+    "Crie, importe dados limpos, teste e defina quem pode ver e alterar."
+  ],
+  "diagnostico": [
+    "Você guarda a mesma informação em várias planilhas?",
+    "Os dados já têm erros de digitação, nomes repetidos ou formatos misturados?",
+    "Mais de uma pessoa precisa editar os dados ao mesmo tempo?",
+    "Sua planilha ficou lenta ou com mais de alguns milhares de linhas?",
+    "Você precisa relacionar informações (cliente → pedidos → pagamentos)?",
+    "Há dados pessoais ou sensíveis que exigem controle de acesso?",
+    "Você precisa que o banco alimente um site, app ou dashboard?",
+    "Existe alguém para cuidar do banco e fazer backup?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Listar as perguntas que o banco precisa responder (ex.: quanto cada cliente comprou no ano?)", "responsavel": "Dono", "prazo_dias": 2},
+    {"etapa": "Semana 1", "acao": "Listar entidades (cliente, produto, pedido) e campos de cada uma", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 1", "acao": "Decidir o que é identificador único de cada registro (código, CPF/CNPJ, e-mail)", "responsavel": "Dono", "prazo_dias": 8},
+    {"etapa": "Semana 2", "acao": "Desenhar as relações entre tabelas no papel ou na aba de relações", "responsavel": "Dono ou técnico", "prazo_dias": 14},
+    {"etapa": "Semana 2", "acao": "Escolher ferramenta: planilha estruturada, Airtable, Notion, NocoDB, Google Sheets com Apps Script, ou banco SQL (PostgreSQL, MySQL)", "responsavel": "Dono", "prazo_dias": 18},
+    {"etapa": "Semana 3", "acao": "Limpar dados existentes: duplicados, datas, telefones, maiúsculas", "responsavel": "Equipe", "prazo_dias": 24},
+    {"etapa": "Semana 3", "acao": "Criar a estrutura e importar uma amostra", "responsavel": "Dono ou técnico", "prazo_dias": 28},
+    {"etapa": "Semana 4", "acao": "Testar consultas e relatórios básicos; ajustar campos", "responsavel": "Dono", "prazo_dias": 35},
+    {"etapa": "Semana 5", "acao": "Definir permissões: quem vê, quem edita, quem apaga", "responsavel": "Dono", "prazo_dias": 40},
+    {"etapa": "Semana 6", "acao": "Configurar backup automático e testar restauração", "responsavel": "Técnico", "prazo_dias": 45},
+    {"etapa": "Dia 60", "acao": "Importar todo o histórico e passar a usar só o novo banco", "responsavel": "Equipe", "prazo_dias": 60},
+    {"etapa": "Dia 75", "acao": "Validar com advogado o tratamento dos dados pessoais armazenados (LGPD)", "responsavel": "Dono + advogado", "prazo_dias": 75}
+  ],
+  "procedimento": [
+    {"passo": "Começar pelas perguntas", "como": "Escreva 5 perguntas que o banco deve responder; elas definem quais campos são necessários.", "cuidado": "Guardar tudo o que for possível; dados inúteis viram bagunça e risco."},
+    {"passo": "Separar por assunto", "como": "Uma tabela por assunto: Clientes, Produtos, Pedidos, Itens do pedido. Cada uma com um código único.", "cuidado": "Misturar cliente e pedido numa só tabela e repetir o nome do cliente em cada linha."},
+    {"passo": "Padronizar campos", "como": "Defina formato de data (dd/mm/aaaa), telefone com DDD, listas fixas para status e categorias.", "cuidado": "Campos de texto livre onde deveria haver lista; 'SP', 'sp' e 'São Paulo' viram três valores."},
+    {"passo": "Relacionar tabelas", "como": "Em Pedidos guarde o código do cliente, não o nome. Assim, mudar o nome em um lugar atualiza tudo.", "cuidado": "Copiar o nome do cliente em vez de usar o código."},
+    {"passo": "Escolher a ferramenta", "como": "Até alguns milhares de linhas e poucos usuários, planilha ou Airtable/Notion bastam. Muitas relações, volume ou integração com sistema pedem SQL.", "cuidado": "Escolher banco complexo sem ter quem o mantenha."},
+    {"passo": "Importar com limpeza", "como": "Importe primeiro 50 linhas, confira, só então o resto. Guarde o arquivo original intacto.", "cuidado": "Importar dados sujos e depois tentar consertar."},
+    {"passo": "Controlar acesso", "como": "Dê a cada pessoa só o necessário; quem só consulta não edita. Remova acessos de quem saiu.", "cuidado": "Compartilhar uma senha única com todos."},
+    {"passo": "Fazer backup e testar", "como": "Backup automático diário/semanal e restauração testada uma vez por trimestre.", "cuidado": "Ter backup que nunca foi restaurado."}
+  ],
+  "abas": [
+    {
+      "nome": "Entidades e campos",
+      "descricao": "Dicionário de dados: cada campo, seu tipo e regra.",
+      "colunas": [
+        {"nome": "Tabela", "tipo": "texto"},
+        {"nome": "Campo", "tipo": "texto"},
+        {"nome": "Tipo", "tipo": "lista", "opcoes": ["Texto", "Número", "Data", "Moeda", "Lista", "Sim/Não"]},
+        {"nome": "Obrigatório", "tipo": "lista", "opcoes": ["Sim", "Não"]},
+        {"nome": "Regra ou exemplo", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["Clientes", "Código", "Texto", "Sim", "C0001, único"],
+        ["Clientes", "Telefone", "Texto", "Sim", "(11) 99999-0000"],
+        ["Pedidos", "Data do pedido", "Data", "Sim", "dd/mm/aaaa"],
+        ["Pedidos", "Status", "Lista", "Sim", "Novo, Pago, Entregue, Cancelado"]
+      ]
+    },
+    {
+      "nome": "Relações entre tabelas",
+      "descricao": "Como as tabelas se ligam entre si.",
+      "colunas": [
+        {"nome": "Tabela A", "tipo": "texto"},
+        {"nome": "Tabela B", "tipo": "texto"},
+        {"nome": "Tipo de relação", "tipo": "lista", "opcoes": ["Um para muitos", "Muitos para muitos", "Um para um"]},
+        {"nome": "Campo de ligação", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["Clientes", "Pedidos", "Um para muitos", "Código do cliente"],
+        ["Pedidos", "Produtos", "Muitos para muitos", "Itens do pedido"]
+      ]
+    },
+    {
+      "nome": "Comparação de ferramentas",
+      "descricao": "Ferramentas candidatas e seus limites.",
+      "colunas": [
+        {"nome": "Ferramenta", "tipo": "texto"},
+        {"nome": "Indicada para", "tipo": "texto"},
+        {"nome": "Custo mensal", "tipo": "moeda"},
+        {"nome": "Exige técnico", "tipo": "lista", "opcoes": ["Sim", "Não", "Às vezes"]},
+        {"nome": "Backup embutido", "tipo": "lista", "opcoes": ["Sim", "Não", "A confirmar"]}
+      ],
+      "exemplos": [
+        ["Planilha Google/Excel", "Poucos dados, 1 a 3 pessoas", 0.0, "Não", "A confirmar"],
+        ["Airtable/Notion/NocoDB", "Várias tabelas relacionadas", 0.0, "Não", "A confirmar"],
+        ["PostgreSQL ou MySQL", "Grande volume ou integração com sistemas", 0.0, "Sim", "Não"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Uma planilha bem organizada (uma linha por registro, cabeçalho único, sem células mescladas) já é um banco de dados simples.",
+    "Nunca apague o dado original ao limpar; trabalhe em uma cópia.",
+    "Evite guardar CPF, saúde ou outros dados sensíveis sem necessidade real.",
+    "Use listas de opções sempre que possível para evitar variações de escrita.",
+    "Confira preços e limites de plano direto no site da ferramenta antes de contratar."
+  ]
+}

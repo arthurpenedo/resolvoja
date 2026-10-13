@@ -1,0 +1,98 @@
+{
+  "slug": "treinamento",
+  "titulo": "Treinamento",
+  "area": "pessoas",
+  "subdivisoes": ["Treinamento"],
+  "resumo": "Um plano simples para descobrir o que cada pessoa precisa aprender, treinar com baixo custo e medir se funcionou. Você termina com um calendário de treinamentos e um registro de quem aprendeu o quê.",
+  "como_usar": [
+    "Na aba 'Necessidades de treinamento', liste as falhas ou habilidades que faltam em cada função.",
+    "Escolha o formato mais barato que resolve: mentoria interna, vídeo, curso gratuito, demonstração prática.",
+    "Agende na aba 'Calendário de treinos' com data, responsável e carga horária.",
+    "Depois de cada treino, aplique uma verificação prática e registre o resultado.",
+    "Repita o ciclo a cada trimestre, priorizando o que mais afeta vendas, qualidade ou segurança."
+  ],
+  "diagnostico": [
+    "Você sabe quais habilidades faltam hoje em cada função?",
+    "Os erros que se repetem na sua empresa têm um treinamento associado?",
+    "Existe alguém na equipe que domina uma tarefa e poderia ensinar os outros?",
+    "Os treinamentos acontecem em horário de trabalho e com tempo reservado?",
+    "Você verifica na prática se a pessoa aprendeu, e não só se participou?",
+    "Registra quem fez qual treinamento e quando?",
+    "Treinamentos obrigatórios de segurança do seu setor estão em dia (ex.: manipulação de alimentos, NR aplicáveis)?",
+    "Usa conteúdos gratuitos de SEBRAE, SENAI, SENAC, Fundação Bradesco ou YouTube?",
+    "Os funcionários podem pedir treinamentos que querem fazer?"
+  ],
+  "plano": [
+    {"etapa": "Semana 1", "acao": "Levantar com cada líder as 3 principais dificuldades da equipe e transformar em necessidades de treinamento.", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 1", "acao": "Verificar quais treinamentos obrigatórios do seu ramo estão pendentes e quais certificados vencem.", "responsavel": "Assistente administrativo", "prazo_dias": 7},
+    {"etapa": "Semana 2", "acao": "Pesquisar opções gratuitas ou baratas (SEBRAE, SENAC, SENAI, plataformas de cursos) e escolher uma por necessidade.", "responsavel": "Assistente administrativo", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Montar o calendário do trimestre, reservando 1 a 2 horas por semana para treinos em horário de trabalho.", "responsavel": "Gerente", "prazo_dias": 21},
+    {"etapa": "Mês 1", "acao": "Realizar os primeiros treinos práticos, com demonstração e prática supervisionada.", "responsavel": "Gerente", "prazo_dias": 30},
+    {"etapa": "Mês 1", "acao": "Aplicar verificação prática (observar a tarefa sendo feita) e registrar resultado.", "responsavel": "Gerente", "prazo_dias": 40},
+    {"etapa": "Mês 2", "acao": "Escolher instrutores internos e transformar os treinos mais pedidos em roteiros reutilizáveis.", "responsavel": "Dono", "prazo_dias": 60},
+    {"etapa": "Mês 3", "acao": "Medir o efeito (menos erros, mais vendas, menos retrabalho) e planejar o próximo trimestre.", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Identificar a lacuna", "como": "Observe erros repetidos, reclamações de clientes e pedidos da equipe.", "cuidado": "Treinar tudo para todos sem saber o problema real."},
+    {"passo": "Definir o objetivo", "como": "Escreva em uma frase o que a pessoa deve saber fazer ao final (ex.: emitir uma nota sem erro).", "cuidado": "Objetivo vago como \"melhorar o atendimento\"."},
+    {"passo": "Escolher o formato", "como": "Prefira mostrar, fazer junto e deixar a pessoa fazer sozinha, nessa ordem.", "cuidado": "Reunião longa só com explicação falada."},
+    {"passo": "Executar em horário de trabalho", "como": "Agende, avise com antecedência e proteja o tempo do treino.", "cuidado": "Cancelar o treino toda vez que o movimento aumenta."},
+    {"passo": "Verificar na prática", "como": "Peça que a pessoa execute a tarefa e confira com uma lista curta.", "cuidado": "Confundir presença com aprendizado."},
+    {"passo": "Registrar e reforçar", "como": "Anote na planilha, e retome o ponto em 30 dias com um lembrete rápido.", "cuidado": "Esquecer o assunto e ver o erro voltar."}
+  ],
+  "abas": [
+    {
+      "nome": "Necessidades de treinamento",
+      "descricao": "Lista de lacunas por função e prioridade.",
+      "colunas": [
+        {"nome": "Função", "tipo": "texto"},
+        {"nome": "Lacuna identificada", "tipo": "texto"},
+        {"nome": "Prioridade", "tipo": "lista", "opcoes": ["Alta", "Média", "Baixa"]},
+        {"nome": "Formato sugerido", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["Caixa", "Erros no fechamento do caixa", "Alta", "Demonstração prática com o gerente"],
+        ["Atendimento", "Pouca confiança para lidar com reclamação", "Média", "Simulação de situações em dupla"],
+        ["Cozinha", "Higiene e manipulação de alimentos", "Alta", "Curso gratuito + checklist"]
+      ]
+    },
+    {
+      "nome": "Calendário de treinos",
+      "descricao": "Agenda dos treinamentos com responsável e carga horária.",
+      "colunas": [
+        {"nome": "Treinamento", "tipo": "texto"},
+        {"nome": "Instrutor", "tipo": "texto"},
+        {"nome": "Data", "tipo": "data"},
+        {"nome": "Horas", "tipo": "numero"},
+        {"nome": "Custo", "tipo": "moeda"},
+        {"nome": "Situação", "tipo": "lista", "opcoes": ["Agendado", "Realizado", "Reagendar"]}
+      ],
+      "exemplos": [
+        ["Fechamento de caixa", "Gerente", "+5", 2, 0.0, "Agendado"],
+        ["Atendimento a reclamações", "Dono", "+12", 1.5, 0.0, "Agendado"],
+        ["Manipulação de alimentos", "Curso externo", "-10", 8, 120.0, "Realizado"]
+      ]
+    },
+    {
+      "nome": "Registro de participação",
+      "descricao": "Histórico de quem fez cada treinamento e o resultado da verificação.",
+      "colunas": [
+        {"nome": "Funcionário", "tipo": "texto"},
+        {"nome": "Treinamento", "tipo": "texto"},
+        {"nome": "Data", "tipo": "data"},
+        {"nome": "Resultado prático", "tipo": "lista", "opcoes": ["Aprovado", "Precisa reforço"]}
+      ],
+      "exemplos": [
+        ["Funcionário A", "Manipulação de alimentos", "-10", "Aprovado"],
+        ["Funcionário B", "Manipulação de alimentos", "-10", "Precisa reforço"]
+      ]
+    }
+  ],
+  "dicas": [
+    "O melhor instrutor muitas vezes está dentro de casa: o colega que faz a tarefa bem.",
+    "Treinamentos curtos e frequentes (20 a 30 minutos) funcionam melhor que um dia inteiro por ano.",
+    "Guarde certificados e listas de presença de treinamentos obrigatórios; podem ser pedidos em fiscalização.",
+    "Pergunte à equipe o que ela gostaria de aprender; isso aumenta o engajamento.",
+    "Meça o resultado no negócio: menos erro, menos devolução, mais venda."
+  ]
+}

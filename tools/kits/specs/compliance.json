@@ -1,0 +1,89 @@
+{
+  "slug": "compliance",
+  "titulo": "Compliance",
+  "area": "administrativo",
+  "subdivisoes": ["Compliance"],
+  "resumo": "Monta um programa de conformidade enxuto para pequena empresa: mapa de riscos, regras de conduta, canal de denúncia e rotina de verificação. Orienta e organiza; não substitui assessoria jurídica.",
+  "como_usar": [
+    "Responda o diagnóstico para ver em quais áreas a empresa está mais exposta (fiscal, trabalhista, consumidor, ética).",
+    "Preencha a Matriz de riscos com probabilidade, impacto e dono de cada risco.",
+    "Defina o código de conduta curto e o canal de denúncia seguindo o plano.",
+    "Use o Registro de verificações para rodar o checklist mensal.",
+    "Trate cada ocorrência com o procedimento padrão e registre.",
+    "Valide pontos legais com advogado e contador; este kit não é parecer jurídico."
+  ],
+  "diagnostico": [
+    "Você sabe quais leis e regras se aplicam à sua atividade (consumidor, sanitárias, trabalhistas, ambientais)?",
+    "A empresa tem alvarás e licenças exigidos válidos?",
+    "Existe um código de conduta ou regras escritas de comportamento e ética?",
+    "Funcionários sabem a quem recorrer para relatar um problema ou irregularidade?",
+    "Você recebe presentes, comissões ou paga a terceiros sem registro claro?",
+    "Todos os funcionários estão registrados e com documentos em dia?",
+    "Os contratos com fornecedores e clientes são formalizados e arquivados?",
+    "Há política para conflito de interesses (ex.: contratar parentes como fornecedores)?",
+    "Alguém na empresa acompanha mudanças de regras do seu setor?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Listar as leis e regras que afetam sua atividade com ajuda do contador, sindicato ou associação do setor.", "responsavel": "Dono", "prazo_dias": 3},
+    {"etapa": "Semana 1", "acao": "Montar a lista de licenças, alvarás e registros obrigatórios e conferir a validade de cada um.", "responsavel": "Administrativo", "prazo_dias": 7},
+    {"etapa": "Semana 2", "acao": "Preencher a matriz de riscos: o que pode dar errado, quão provável, qual o impacto e quem cuida.", "responsavel": "Dono", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Escrever um código de conduta de 1 página: respeito, honestidade, presentes, conflito de interesses, uso de dados.", "responsavel": "Dono", "prazo_dias": 21},
+    {"etapa": "Semana 4", "acao": "Criar o canal de denúncia/sugestão (e-mail dedicado ou formulário) com garantia de não retaliação.", "responsavel": "Dono", "prazo_dias": 28},
+    {"etapa": "Semana 5", "acao": "Apresentar o código à equipe em reunião curta e colher assinatura de ciência.", "responsavel": "Dono", "prazo_dias": 35},
+    {"etapa": "Semana 6", "acao": "Definir regras de pagamentos, presentes e doações: limites, aprovação e registro.", "responsavel": "Dono", "prazo_dias": 45},
+    {"etapa": "Semana 8", "acao": "Aplicar o checklist de verificação mensal pela primeira vez e anotar falhas.", "responsavel": "Administrativo", "prazo_dias": 60},
+    {"etapa": "Semana 10", "acao": "Corrigir as falhas encontradas, começando pelas de maior impacto, e registrar as ações.", "responsavel": "Dono", "prazo_dias": 75},
+    {"etapa": "Dia 90", "acao": "Validar com advogado e contador o código de conduta, a matriz de riscos e as regras adotadas.", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Identificar o risco", "como": "Pense por área (fiscal, trabalhista, clientes, fornecedores, dados, segurança) e anote o que poderia gerar multa, processo ou perda de reputação.", "cuidado": "Achar que 'nunca aconteceu' significa que não há risco."},
+    {"passo": "Avaliar", "como": "Dê nota de 1 a 5 para probabilidade e para impacto; multiplique para priorizar.", "cuidado": "Tratar todos os riscos como iguais."},
+    {"passo": "Definir controle", "como": "Para cada risco alto, defina uma ação simples: checklist, aprovação, treinamento ou documento.", "cuidado": "Controles complicados que ninguém usa."},
+    {"passo": "Comunicar as regras", "como": "Apresente código de conduta e políticas à equipe e a novos contratados no primeiro dia.", "cuidado": "Entregar documento sem explicar."},
+    {"passo": "Receber relatos", "como": "Canal aberto, resposta em até 5 dias úteis, relato tratado com sigilo e sem retaliação.", "cuidado": "Reagir mal ao primeiro relato; ninguém mais fala."},
+    {"passo": "Investigar e agir", "como": "Registre fatos, ouça os envolvidos, decida e documente a medida adotada.", "cuidado": "Agir por impulso sem registrar nem ouvir os dois lados."},
+    {"passo": "Verificar todo mês", "como": "Rode o checklist de 20 minutos e atualize a matriz de riscos trimestralmente.", "cuidado": "Parar de verificar depois do primeiro mês."}
+  ],
+  "abas": [
+    {
+      "nome": "Matriz de riscos",
+      "descricao": "Principais riscos, avaliação e controles.",
+      "colunas": [
+        {"nome": "Risco", "tipo": "texto"},
+        {"nome": "Área", "tipo": "lista", "opcoes": ["Fiscal", "Trabalhista", "Clientes", "Fornecedores", "Dados", "Ética", "Segurança"]},
+        {"nome": "Probabilidade (1-5)", "tipo": "numero"},
+        {"nome": "Impacto (1-5)", "tipo": "numero"},
+        {"nome": "Controle", "tipo": "texto"},
+        {"nome": "Responsável", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["Alvará vencido", "Fiscal", 3, 5, "Calendário com alerta de 60 dias", "Administrativo"],
+        ["Funcionário sem registro correto", "Trabalhista", 2, 5, "Checklist de admissão", "Dono"],
+        ["Pagamento a fornecedor sem contrato", "Fornecedores", 4, 3, "Contrato padrão obrigatório", "Dono"]
+      ]
+    },
+    {
+      "nome": "Registro de verificações",
+      "descricao": "Checklist mensal de conformidade e resultados.",
+      "colunas": [
+        {"nome": "Item verificado", "tipo": "texto"},
+        {"nome": "Data", "tipo": "data"},
+        {"nome": "Resultado", "tipo": "lista", "opcoes": ["Conforme", "Atenção", "Não conforme"]},
+        {"nome": "Ação necessária", "tipo": "texto"},
+        {"nome": "Prazo", "tipo": "data"}
+      ],
+      "exemplos": [
+        ["Licenças e alvarás válidos", "-2", "Conforme", "Nenhuma", "0"],
+        ["Contratos assinados dos novos fornecedores", "-2", "Atenção", "Cobrar assinatura do Fornecedor B", "+7"],
+        ["Código de conduta assinado por todos", "-2", "Não conforme", "Colher 2 assinaturas faltantes", "+10"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Compliance de pequena empresa é simples: regras claras, registros e um canal para reportar problemas.",
+    "O exemplo do dono vale mais que qualquer documento; cumpra as próprias regras.",
+    "Documente toda decisão relevante: quem decidiu, quando e por quê.",
+    "Associações do seu setor costumam ter guias gratuitos de regras e boas práticas.",
+    "As exigências legais mudam; peça ao contador e ao advogado um alerta anual das mudanças que afetam você."
+  ]
+}

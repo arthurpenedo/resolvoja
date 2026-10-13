@@ -1,0 +1,87 @@
+{
+  "slug": "politicas-internas",
+  "titulo": "Políticas internas",
+  "area": "administrativo",
+  "subdivisoes": ["Políticas internas"],
+  "resumo": "Cria as políticas internas básicas da empresa (horário, uso de equipamentos, despesas, reembolso, internet e redes sociais, home office) em linguagem simples, com controle de ciência da equipe. Ao final todos sabem as regras e você para de repetir as mesmas conversas.",
+  "como_usar": [
+    "Use o diagnóstico para escolher quais regras fazem mais falta hoje.",
+    "Escreva cada política em uma página, seguindo a estrutura do procedimento.",
+    "Valide pontos trabalhistas com contador ou advogado antes de publicar.",
+    "Colete a ciência de cada funcionário na aba Controle de ciência.",
+    "Registre exceções e mudanças no Histórico de revisões.",
+    "Revise as políticas uma vez por ano ou quando algo relevante mudar."
+  ],
+  "diagnostico": [
+    "Existem regras que você cobra da equipe mas nunca escreveu?",
+    "Funcionários já discordaram de você sobre horário, faltas, atrasos ou uso do celular?",
+    "Há regra clara de quando e como pedir reembolso de despesas?",
+    "A equipe sabe quem aprova compras, viagens e despesas fora do comum?",
+    "Existe orientação sobre uso da internet, e-mail, redes sociais e equipamentos da empresa?",
+    "Regras sobre home office ou trabalho remoto estão combinadas por escrito?",
+    "Novos contratados recebem as regras no primeiro dia?",
+    "Uma pessoa saindo de férias ou da empresa sabe o que deve entregar?",
+    "As regras são iguais para todos, incluindo você?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Listar as regras que você cobra hoje e os conflitos mais comuns com a equipe.", "responsavel": "Dono", "prazo_dias": 2},
+    {"etapa": "Semana 1", "acao": "Priorizar as 5 políticas mais urgentes (ex.: jornada e atrasos, despesas e reembolso, uso de equipamentos, comunicação e redes sociais, segurança da informação).", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 2", "acao": "Escrever a primeira política em uma página: objetivo, quem vale, regras, exceções e consequências.", "responsavel": "Dono", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Escrever a segunda e a terceira políticas e pedir que 1 ou 2 funcionários leiam e comentem.", "responsavel": "Administrativo", "prazo_dias": 21},
+    {"etapa": "Semana 4", "acao": "Ajustar com base nos comentários e escrever a quarta e quinta.", "responsavel": "Dono", "prazo_dias": 28},
+    {"etapa": "Semana 5", "acao": "Definir limites de aprovação de despesas e formulário simples de reembolso.", "responsavel": "Dono", "prazo_dias": 35},
+    {"etapa": "Semana 6", "acao": "Apresentar as políticas à equipe em reunião curta, explicando o motivo de cada regra.", "responsavel": "Dono", "prazo_dias": 45},
+    {"etapa": "Semana 7", "acao": "Colher a ciência assinada de cada funcionário e arquivar na pasta de RH.", "responsavel": "Administrativo", "prazo_dias": 50},
+    {"etapa": "Semana 9", "acao": "Incluir as políticas no kit de boas-vindas de novos contratados.", "responsavel": "Administrativo", "prazo_dias": 65},
+    {"etapa": "Dia 90", "acao": "Rever pontos trabalhistas (jornada, descontos, home office, monitoramento) com contador ou advogado e ajustar.", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Definir o objetivo", "como": "Em uma frase, diga por que a regra existe (ex.: garantir que gastos tenham comprovante e aprovação).", "cuidado": "Regra sem motivo parece perseguição."},
+    {"passo": "Dizer a quem se aplica", "como": "Indique se vale para todos, para um setor ou apenas para algum cargo.", "cuidado": "Regras diferentes para pessoas na mesma função."},
+    {"passo": "Escrever as regras", "como": "Use frases curtas e exemplos: 'Despesas até R$ 200 o gerente aprova; acima disso, o dono'.", "cuidado": "Textos longos e juridiquês que ninguém lê."},
+    {"passo": "Prever exceções", "como": "Diga quem pode autorizar exceções e como pedir.", "cuidado": "Abrir exceção verbal sem registro."},
+    {"passo": "Definir consequências", "como": "Descreva o que acontece em caso de descumprimento, de forma proporcional e em linha com a lei trabalhista.", "cuidado": "Penalidades como desconto de salário sem base legal; consulte o contador."},
+    {"passo": "Comunicar e colher ciência", "como": "Explique em reunião, entregue por escrito e peça assinatura de que leu e entendeu.", "cuidado": "Mandar arquivo no grupo e supor que todos leram."},
+    {"passo": "Revisar", "como": "Anote mudanças no histórico com data e avise a equipe de cada alteração.", "cuidado": "Mudar a regra sem avisar."}
+  ],
+  "abas": [
+    {
+      "nome": "Lista de políticas",
+      "descricao": "Políticas existentes, responsável e data de revisão.",
+      "colunas": [
+        {"nome": "Política", "tipo": "texto"},
+        {"nome": "Assunto", "tipo": "lista", "opcoes": ["Jornada e presença", "Despesas e reembolso", "Equipamentos", "Internet e redes sociais", "Home office", "Segurança da informação", "Conduta"]},
+        {"nome": "Responsável", "tipo": "texto"},
+        {"nome": "Última revisão", "tipo": "data"},
+        {"nome": "Próxima revisão", "tipo": "data"},
+        {"nome": "Status", "tipo": "lista", "opcoes": ["Rascunho", "Em validação", "Publicada", "Desatualizada"]}
+      ],
+      "exemplos": [
+        ["Política de reembolso de despesas", "Despesas e reembolso", "Dono", "-15", "+350", "Publicada"],
+        ["Política de uso de equipamentos", "Equipamentos", "Administrativo", "-5", "+360", "Em validação"],
+        ["Política de home office", "Home office", "Dono", "0", "+180", "Rascunho"]
+      ]
+    },
+    {
+      "nome": "Controle de ciência",
+      "descricao": "Quem leu e assinou cada política.",
+      "colunas": [
+        {"nome": "Funcionário", "tipo": "texto"},
+        {"nome": "Política", "tipo": "texto"},
+        {"nome": "Data da ciência", "tipo": "data"},
+        {"nome": "Assinatura arquivada", "tipo": "lista", "opcoes": ["Sim", "Não"]}
+      ],
+      "exemplos": [
+        ["Funcionário A", "Política de reembolso de despesas", "-10", "Sim"],
+        ["Funcionário B", "Política de reembolso de despesas", "-10", "Não"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Política curta e usada vale mais que manual de 30 páginas que ninguém abre.",
+    "Pergunte à equipe que regras falta saber; eles ajudam a escrever e a cumprir.",
+    "Regras sobre jornada, descontos, monitoramento e home office têm limites legais; valide com o contador ou advogado.",
+    "Cumpra suas próprias políticas; exceções para o dono minam a regra.",
+    "Guarde a versão assinada na pasta de RH de cada funcionário."
+  ]
+}

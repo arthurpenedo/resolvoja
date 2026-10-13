@@ -1,0 +1,560 @@
+{
+ "adequacao-a-legislacao": {
+  "title": "Kit de Arranque · Adequação à legislação",
+  "subdivisions": [
+   "Adequação à legislação"
+  ]
+ },
+ "analise-de-concorrentes": {
+  "title": "Kit de Arranque · Análise de concorrentes",
+  "subdivisions": [
+   "Análise de concorrentes"
+  ]
+ },
+ "analise-de-mercado": {
+  "title": "Kit de Arranque · Análise de mercado",
+  "subdivisions": [
+   "Análise de mercado"
+  ]
+ },
+ "analise-de-resultados": {
+  "title": "Kit de Arranque · Análise de resultados",
+  "subdivisions": [
+   "Análise de resultados"
+  ]
+ },
+ "analise-swot": {
+  "title": "Kit de Arranque · Análise SWOT",
+  "subdivisions": [
+   "Análise SWOT"
+  ]
+ },
+ "automatizacao-de-processos": {
+  "title": "Kit de Arranque · Automatização de processos",
+  "subdivisions": [
+   "Automatização de processos"
+  ]
+ },
+ "avaliacao-de-desempenho": {
+  "title": "Kit de Arranque · Avaliação de desempenho",
+  "subdivisions": [
+   "Avaliação de desempenho"
+  ]
+ },
+ "backup": {
+  "title": "Kit de Arranque · Backup",
+  "subdivisions": [
+   "Backup"
+  ]
+ },
+ "bi": {
+  "title": "Kit de Arranque · BI",
+  "subdivisions": [
+   "BI"
+  ]
+ },
+ "clima-organizacional": {
+  "title": "Kit de Arranque · Clima organizacional",
+  "subdivisions": [
+   "Clima organizacional"
+  ]
+ },
+ "comparacao-de-fornecedores": {
+  "title": "Kit de Arranque · Comparação de fornecedores",
+  "subdivisions": [
+   "Comparação de fornecedores"
+  ]
+ },
+ "compliance": {
+  "title": "Kit de Arranque · Compliance",
+  "subdivisions": [
+   "Compliance"
+  ]
+ },
+ "compras": {
+  "title": "Kit de Arranque · Compras",
+  "subdivisions": [
+   "Compras"
+  ]
+ },
+ "comunicacao-interna": {
+  "title": "Kit de Arranque · Comunicação interna",
+  "subdivisions": [
+   "Comunicação interna"
+  ]
+ },
+ "contratos": {
+  "title": "Kit de Arranque · Contratos",
+  "subdivisions": [
+   "Contratos"
+  ]
+ },
+ "controle-de-documentos-fiscais": {
+  "title": "Kit de Arranque · Controle de documentos fiscais",
+  "subdivisions": [
+   "Controle de documentos fiscais"
+  ]
+ },
+ "controle-de-ferias": {
+  "title": "Kit de Arranque · Controle de férias",
+  "subdivisions": [
+   "Controle de férias"
+  ]
+ },
+ "controle-de-impostos": {
+  "title": "Kit de Arranque · Controle de impostos",
+  "subdivisions": [
+   "Controle de impostos"
+  ]
+ },
+ "controle-de-producao": {
+  "title": "Kit de Arranque · Controle de produção",
+  "subdivisions": [
+   "Controle de produção"
+  ]
+ },
+ "controle-de-qualidade": {
+  "title": "Kit de Arranque · Controle de qualidade",
+  "subdivisions": [
+   "Controle de qualidade"
+  ]
+ },
+ "controle-de-validade": {
+  "title": "Kit de Arranque · Controle de validade",
+  "subdivisions": [
+   "Controle de validade"
+  ]
+ },
+ "cotacao-com-fornecedores": {
+  "title": "Kit de Arranque · Cotação com fornecedores",
+  "subdivisions": [
+   "Cotação com fornecedores"
+  ]
+ },
+ "criacao-de-sops-procedimentos": {
+  "title": "Kit de Arranque · Criação de SOPs/procedimentos",
+  "subdivisions": [
+   "Criação de SOPs/procedimentos"
+  ]
+ },
+ "criar-banco-de-dados": {
+  "title": "Kit de Arranque · Criar banco de dados",
+  "subdivisions": [
+   "Criar banco de dados"
+  ]
+ },
+ "criar-landing-page": {
+  "title": "Kit de Arranque · Criar landing page",
+  "subdivisions": [
+   "Criar landing page"
+  ]
+ },
+ "criar-loja-virtual": {
+  "title": "Kit de Arranque · Criar loja virtual",
+  "subdivisions": [
+   "Criar loja virtual"
+  ]
+ },
+ "criar-site": {
+  "title": "Kit de Arranque · Criar site",
+  "subdivisions": [
+   "Criar site"
+  ]
+ },
+ "dashboard-gerencial": {
+  "title": "Kit de Arranque · Dashboard gerencial",
+  "subdivisions": [
+   "Dashboard gerencial"
+  ]
+ },
+ "dashboards": {
+  "title": "Kit de Arranque · Dashboards",
+  "subdivisions": [
+   "Dashboards"
+  ]
+ },
+ "definicao-de-cargos": {
+  "title": "Kit de Arranque · Definição de cargos",
+  "subdivisions": [
+   "Definição de cargos"
+  ]
+ },
+ "definicao-de-metas": {
+  "title": "Kit de Arranque · Definição de metas",
+  "subdivisions": [
+   "Definição de metas"
+  ]
+ },
+ "descricao-de-vagas": {
+  "title": "Kit de Arranque · Descrição de vagas",
+  "subdivisions": [
+   "Descrição de vagas"
+  ]
+ },
+ "digitalizar-processos": {
+  "title": "Kit de Arranque · Digitalizar processos",
+  "subdivisions": [
+   "Digitalizar processos"
+  ]
+ },
+ "emissao-de-documentos": {
+  "title": "Kit de Arranque · Emissão de documentos",
+  "subdivisions": [
+   "Emissão de documentos"
+  ]
+ },
+ "emissao-de-notas": {
+  "title": "Kit de Arranque · Emissão de notas",
+  "subdivisions": [
+   "Emissão de notas"
+  ]
+ },
+ "entregas": {
+  "title": "Kit de Arranque · Entregas",
+  "subdivisions": [
+   "Entregas"
+  ]
+ },
+ "escalas": {
+  "title": "Kit de Arranque · Escalas",
+  "subdivisions": [
+   "Escalas"
+  ]
+ },
+ "estoque-maximo": {
+  "title": "Kit de Arranque · Estoque máximo",
+  "subdivisions": [
+   "Estoque máximo"
+  ]
+ },
+ "estoque-minimo": {
+  "title": "Kit de Arranque · Estoque mínimo",
+  "subdivisions": [
+   "Estoque mínimo"
+  ]
+ },
+ "expansao-do-negocio": {
+  "title": "Kit de Arranque · Expansão do negócio",
+  "subdivisions": [
+   "Expansão do negócio"
+  ]
+ },
+ "gestao-de-contratos": {
+  "title": "Kit de Arranque · Gestão de contratos",
+  "subdivisions": [
+   "Gestão de contratos"
+  ]
+ },
+ "gestao-de-fornecedores": {
+  "title": "Kit de Arranque · Gestão de fornecedores",
+  "subdivisions": [
+   "Gestão de fornecedores"
+  ]
+ },
+ "gestao-de-funcionarios": {
+  "title": "Kit de Arranque · Gestão de funcionários",
+  "subdivisions": [
+   "Gestão de funcionários"
+  ]
+ },
+ "gestao-de-notas-fiscais": {
+  "title": "Kit de Arranque · Gestão de notas fiscais",
+  "subdivisions": [
+   "Gestão de notas fiscais"
+  ]
+ },
+ "gestao-de-projetos": {
+  "title": "Kit de Arranque · Gestão de projetos",
+  "subdivisions": [
+   "Gestão de projetos"
+  ]
+ },
+ "gestao-do-tempo": {
+  "title": "Kit de Arranque · Gestão do tempo",
+  "subdivisions": [
+   "Gestão do tempo"
+  ]
+ },
+ "implementar-crm": {
+  "title": "Kit de Arranque · Implementar CRM",
+  "subdivisions": [
+   "Implementar CRM"
+  ]
+ },
+ "implementar-erp": {
+  "title": "Kit de Arranque · Implementar ERP",
+  "subdivisions": [
+   "Implementar ERP"
+  ]
+ },
+ "indicadores-de-desempenho": {
+  "title": "Kit de Arranque · Indicadores de desempenho",
+  "subdivisions": [
+   "Indicadores de desempenho"
+  ]
+ },
+ "integracao-de-pagamentos": {
+  "title": "Kit de Arranque · Integração de pagamentos",
+  "subdivisions": [
+   "Integração de pagamentos"
+  ]
+ },
+ "integracao-marketplaces": {
+  "title": "Kit de Arranque · Integração marketplaces",
+  "subdivisions": [
+   "Integração marketplaces"
+  ]
+ },
+ "integracao-whatsapp-sistemas": {
+  "title": "Kit de Arranque · Integração WhatsApp + sistemas",
+  "subdivisions": [
+   "Integração WhatsApp + sistemas"
+  ]
+ },
+ "integrar-sistemas": {
+  "title": "Kit de Arranque · Integrar sistemas",
+  "subdivisions": [
+   "Integrar sistemas"
+  ]
+ },
+ "inventario": {
+  "title": "Kit de Arranque · Inventário",
+  "subdivisions": [
+   "Inventário"
+  ]
+ },
+ "kpis": {
+  "title": "Kit de Arranque · KPIs",
+  "subdivisions": [
+   "KPIs"
+  ]
+ },
+ "lgpd": {
+  "title": "Kit de Arranque · LGPD",
+  "subdivisions": [
+   "LGPD"
+  ]
+ },
+ "logistica": {
+  "title": "Kit de Arranque · Logística",
+  "subdivisions": [
+   "Logística"
+  ]
+ },
+ "negociacao": {
+  "title": "Kit de Arranque · Negociação",
+  "subdivisions": [
+   "Negociação"
+  ]
+ },
+ "obrigacoes-administrativas": {
+  "title": "Kit de Arranque · Obrigações administrativas",
+  "subdivisions": [
+   "Obrigações administrativas"
+  ]
+ },
+ "obrigacoes-fiscais": {
+  "title": "Kit de Arranque · Obrigações fiscais",
+  "subdivisions": [
+   "Obrigações fiscais"
+  ]
+ },
+ "onboarding": {
+  "title": "Kit de Arranque · Onboarding",
+  "subdivisions": [
+   "Onboarding"
+  ]
+ },
+ "organizacao-de-arquivos": {
+  "title": "Kit de Arranque · Organização de arquivos",
+  "subdivisions": [
+   "Organização de arquivos"
+  ]
+ },
+ "organizacao-de-processos": {
+  "title": "Kit de Arranque · Organização de processos",
+  "subdivisions": [
+   "Organização de processos"
+  ]
+ },
+ "organizacao-de-tarefas": {
+  "title": "Kit de Arranque · Organização de tarefas",
+  "subdivisions": [
+   "Organização de tarefas"
+  ]
+ },
+ "organizacao-documental": {
+  "title": "Kit de Arranque · Organização documental",
+  "subdivisions": [
+   "Organização documental"
+  ]
+ },
+ "organizacao-fiscal": {
+  "title": "Kit de Arranque · Organização fiscal",
+  "subdivisions": [
+   "Organização fiscal"
+  ]
+ },
+ "organizacao-interna": {
+  "title": "Kit de Arranque · Organização interna",
+  "subdivisions": [
+   "Organização interna"
+  ]
+ },
+ "organizacao-para-contador": {
+  "title": "Kit de Arranque · Organização para contador",
+  "subdivisions": [
+   "Organização para contador"
+  ]
+ },
+ "organizacao-societaria": {
+  "title": "Kit de Arranque · Organização societária",
+  "subdivisions": [
+   "Organização societária"
+  ]
+ },
+ "padronizacao-de-tarefas": {
+  "title": "Kit de Arranque · Padronização de tarefas",
+  "subdivisions": [
+   "Padronização de tarefas"
+  ]
+ },
+ "planejamento-empresarial": {
+  "title": "Kit de Arranque · Planejamento empresarial",
+  "subdivisions": [
+   "Planejamento empresarial"
+  ]
+ },
+ "planejamento-estrategico": {
+  "title": "Kit de Arranque · Planejamento estratégico",
+  "subdivisions": [
+   "Planejamento estratégico"
+  ]
+ },
+ "planejamento-tributario": {
+  "title": "Kit de Arranque · Planejamento tributário",
+  "subdivisions": [
+   "Planejamento tributário"
+  ]
+ },
+ "plano-de-acao": {
+  "title": "Kit de Arranque · Plano de ação",
+  "subdivisions": [
+   "Plano de ação"
+  ]
+ },
+ "plano-de-carreira": {
+  "title": "Kit de Arranque · Plano de carreira",
+  "subdivisions": [
+   "Plano de carreira"
+  ]
+ },
+ "politicas-internas": {
+  "title": "Kit de Arranque · Políticas internas",
+  "subdivisions": [
+   "Políticas internas"
+  ]
+ },
+ "previsao-de-demanda": {
+  "title": "Kit de Arranque · Previsão de demanda",
+  "subdivisions": [
+   "Previsão de demanda"
+  ]
+ },
+ "previsao-de-reposicao": {
+  "title": "Kit de Arranque · Previsão de reposição",
+  "subdivisions": [
+   "Previsão de reposição"
+  ]
+ },
+ "processos-internos": {
+  "title": "Kit de Arranque · Processos internos",
+  "subdivisions": [
+   "Processos internos"
+  ]
+ },
+ "produtos-parados": {
+  "title": "Kit de Arranque · Produtos parados",
+  "subdivisions": [
+   "Produtos parados"
+  ]
+ },
+ "recrutamento": {
+  "title": "Kit de Arranque · Recrutamento",
+  "subdivisions": [
+   "Recrutamento"
+  ]
+ },
+ "reducao-de-erros": {
+  "title": "Kit de Arranque · Redução de erros",
+  "subdivisions": [
+   "Redução de erros"
+  ]
+ },
+ "reducao-de-retrabalho": {
+  "title": "Kit de Arranque · Redução de retrabalho",
+  "subdivisions": [
+   "Redução de retrabalho"
+  ]
+ },
+ "reforma-tributaria": {
+  "title": "Kit de Arranque · Reforma tributária",
+  "subdivisions": [
+   "Reforma tributária"
+  ]
+ },
+ "regime-tributario": {
+  "title": "Kit de Arranque · Regime tributário",
+  "subdivisions": [
+   "Regime tributário"
+  ]
+ },
+ "retencao-de-talentos": {
+  "title": "Kit de Arranque · Retenção de talentos",
+  "subdivisions": [
+   "Retenção de talentos"
+  ]
+ },
+ "ruptura-de-estoque": {
+  "title": "Kit de Arranque · Ruptura de estoque",
+  "subdivisions": [
+   "Ruptura de estoque"
+  ]
+ },
+ "seguranca-da-informacao": {
+  "title": "Kit de Arranque · Segurança da informação",
+  "subdivisions": [
+   "Segurança da informação"
+  ]
+ },
+ "selecao": {
+  "title": "Kit de Arranque · Seleção",
+  "subdivisions": [
+   "Seleção"
+  ]
+ },
+ "simulacao-tributaria": {
+  "title": "Kit de Arranque · Simulação tributária",
+  "subdivisions": [
+   "Simulação tributária"
+  ]
+ },
+ "tomada-de-decisao": {
+  "title": "Kit de Arranque · Tomada de decisão",
+  "subdivisions": [
+   "Tomada de decisão"
+  ]
+ },
+ "treinamento": {
+  "title": "Kit de Arranque · Treinamento",
+  "subdivisions": [
+   "Treinamento"
+  ]
+ },
+ "triagem-de-curriculos": {
+  "title": "Kit de Arranque · Triagem de currículos",
+  "subdivisions": [
+   "Triagem de currículos"
+  ]
+ }
+}

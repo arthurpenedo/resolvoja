@@ -1,0 +1,86 @@
+{
+  "slug": "processos-internos",
+  "titulo": "Processos internos",
+  "area": "administrativo",
+  "subdivisoes": ["Processos internos"],
+  "resumo": "Ajuda a mapear, escrever e melhorar os processos administrativos da empresa (compras, pagamentos, atendimento de pedidos, admissão) para funcionarem sem depender de uma pessoa. Ao final você terá os 5 principais processos documentados em passo a passo.",
+  "como_usar": [
+    "Use o diagnóstico para escolher os processos que mais dão retrabalho ou erro.",
+    "Para cada processo, preencha a aba Mapa de processos com responsável, frequência e problema.",
+    "Escreva o passo a passo conforme o procedimento, de forma que um novato execute sozinho.",
+    "Teste com alguém que nunca fez e ajuste onde ele travar.",
+    "Registre melhorias e problemas na aba Melhorias.",
+    "Revise cada processo a cada 6 meses."
+  ],
+  "diagnostico": [
+    "Existem tarefas que só uma pessoa sabe fazer na empresa?",
+    "O mesmo erro (cobrança duplicada, pedido esquecido, documento faltando) se repete?",
+    "Você precisa estar presente para aprovar coisas simples?",
+    "Há tarefas feitas de maneiras diferentes por pessoas diferentes?",
+    "Novos funcionários demoram semanas para aprender o básico?",
+    "Existe alguma tarefa que ninguém sabe a quem pertence?",
+    "As tarefas recorrentes têm passo a passo escrito?",
+    "Você sabe quanto tempo leva cada processo principal?",
+    "As informações passam por mensagens soltas em vez de um lugar organizado?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Listar todos os processos recorrentes da empresa (compras, pagamentos, emissão de notas, atendimento, admissão, fechamento do mês).", "responsavel": "Dono", "prazo_dias": 2},
+    {"etapa": "Semana 1", "acao": "Priorizar os 5 processos com mais erro, atraso ou dependência de uma pessoa.", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 2", "acao": "Observar e anotar como cada processo prioritário acontece de fato, com quem executa.", "responsavel": "Administrativo", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Escrever o passo a passo do primeiro processo, com responsável, prazo e documento usado em cada etapa.", "responsavel": "Administrativo", "prazo_dias": 21},
+    {"etapa": "Semana 4", "acao": "Testar o primeiro processo com alguém que nunca o fez e corrigir o texto onde a pessoa travou.", "responsavel": "Administrativo", "prazo_dias": 28},
+    {"etapa": "Semana 6", "acao": "Documentar e testar o segundo e terceiro processos.", "responsavel": "Administrativo", "prazo_dias": 45},
+    {"etapa": "Semana 8", "acao": "Documentar o quarto e quinto processos e definir limites de aprovação (valor que o funcionário aprova sozinho).", "responsavel": "Dono", "prazo_dias": 60},
+    {"etapa": "Semana 10", "acao": "Treinar a equipe com os documentos e guardar tudo numa pasta única de Processos.", "responsavel": "Dono", "prazo_dias": 75},
+    {"etapa": "Dia 90", "acao": "Medir o resultado: erros, tempo gasto e tarefas que não dependem mais de você; ajustar.", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Nomear o processo", "como": "Dê um nome claro e defina onde ele começa e termina (ex.: 'Compra de material: do pedido ao pagamento').", "cuidado": "Processo grande demais; divida em partes."},
+    {"passo": "Definir o responsável", "como": "Uma pessoa é dona de cada processo, mesmo que várias participem.", "cuidado": "Atribuir ao 'time' sem nome."},
+    {"passo": "Listar as etapas", "como": "Escreva as etapas em ordem, com verbo no início (Solicitar, Conferir, Aprovar, Pagar).", "cuidado": "Pular etapas 'óbvias' que só você conhece."},
+    {"passo": "Definir regras e limites", "como": "Indique prazos, valores que exigem aprovação e documentos obrigatórios.", "cuidado": "Aprovar tudo pessoalmente."},
+    {"passo": "Incluir o que fazer se der errado", "como": "Anote as 2 ou 3 exceções mais comuns e a quem recorrer.", "cuidado": "Não prever exceções; todos ligam para você."},
+    {"passo": "Testar com um novato", "como": "Peça que alguém siga só o texto; onde ele perguntar, o texto precisa melhorar.", "cuidado": "Testar com quem já domina o assunto."},
+    {"passo": "Publicar e revisar", "como": "Guarde na pasta Processos, avise a equipe e revise a cada 6 meses ou a cada erro grave.", "cuidado": "Guardar o documento e nunca mais abrir."}
+  ],
+  "abas": [
+    {
+      "nome": "Mapa de processos",
+      "descricao": "Lista dos processos, quem cuida e como estão.",
+      "colunas": [
+        {"nome": "Processo", "tipo": "texto"},
+        {"nome": "Responsável", "tipo": "texto"},
+        {"nome": "Frequência", "tipo": "lista", "opcoes": ["Diária", "Semanal", "Mensal", "Eventual"]},
+        {"nome": "Problema principal", "tipo": "texto"},
+        {"nome": "Situação", "tipo": "lista", "opcoes": ["Sem documento", "Em elaboração", "Documentado", "Em revisão"]}
+      ],
+      "exemplos": [
+        ["Pagamento de fornecedores", "Administrativo", "Semanal", "Atrasos e pagamentos duplicados", "Em elaboração"],
+        ["Admissão de funcionário", "Dono", "Eventual", "Documentos faltando", "Sem documento"],
+        ["Fechamento do mês", "Administrativo", "Mensal", "Notas chegam tarde ao contador", "Documentado"]
+      ]
+    },
+    {
+      "nome": "Melhorias",
+      "descricao": "Ideias e problemas encontrados nos processos.",
+      "colunas": [
+        {"nome": "Processo", "tipo": "texto"},
+        {"nome": "Melhoria proposta", "tipo": "texto"},
+        {"nome": "Quem sugeriu", "tipo": "texto"},
+        {"nome": "Prazo", "tipo": "data"},
+        {"nome": "Status", "tipo": "lista", "opcoes": ["Ideia", "Aprovada", "Em andamento", "Concluída"]}
+      ],
+      "exemplos": [
+        ["Pagamento de fornecedores", "Pagar sempre às terças e quintas", "Administrativo", "+10", "Aprovada"],
+        ["Fechamento do mês", "Checklist de documentos até dia 3", "Dono", "+20", "Ideia"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Comece por processos pequenos e que causam dor real; um processo bem escrito vale mais que dez pela metade.",
+    "Use listas curtas e verbos de ação; ninguém lê parágrafo longo na correria.",
+    "Quem executa o processo deve participar da escrita; ele sabe os atalhos e armadilhas.",
+    "Defina um valor até o qual a equipe decide sem precisar de você.",
+    "Foto ou vídeo curto de tela ajuda mais que texto para processos em sistemas."
+  ]
+}

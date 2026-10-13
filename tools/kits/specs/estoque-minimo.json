@@ -1,0 +1,84 @@
+{
+  "slug": "estoque-minimo",
+  "titulo": "Estoque mínimo",
+  "area": "estoque",
+  "subdivisoes": ["Estoque mínimo"],
+  "resumo": "Defina para cada produto o nível mínimo que dispara a compra, considerando venda diária, prazo do fornecedor e uma folga de segurança. Ao final você terá uma tabela de ponto de pedido que avisa quando reabastecer antes de faltar.",
+  "como_usar": [
+    "Liste seus produtos na aba 'Parâmetros' com venda média por dia e prazo de entrega do fornecedor.",
+    "Defina os dias de segurança conforme a importância do item (A, B ou C).",
+    "O estoque mínimo é: venda por dia x (prazo de entrega + dias de segurança). A planilha calcula isso.",
+    "Na aba 'Conferência', registre o estoque atual toda semana e veja quais itens estão abaixo do mínimo.",
+    "Compre os itens sinalizados e atualize o mínimo quando a venda ou o prazo mudarem."
+  ],
+  "diagnostico": [
+    "Você já ficou sem um produto que vende todo dia?",
+    "Você sabe quantos dias seu fornecedor leva para entregar cada item?",
+    "O seu 'mínimo' atual é um número chutado, igual para todos os produtos?",
+    "Você classifica produtos por importância (os que mais faturam e os que menos)?",
+    "Alguém confere o estoque com frequência definida, e não só quando percebe a falta?",
+    "Seu fornecedor já atrasou e você não tinha folga?",
+    "Você revisa os mínimos pelo menos a cada 3 meses?",
+    "Você sabe a venda média diária dos seus 10 principais itens?",
+    "Já comprou às pressas, pagando mais caro, por falta de aviso?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Listar os produtos e anotar o prazo real de entrega de cada fornecedor", "responsavel": "Dono", "prazo_dias": 2},
+    {"etapa": "Semana 1", "acao": "Calcular a venda média diária dos últimos 90 dias de cada produto", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 1", "acao": "Classificar em A (maior faturamento), B e C e definir dias de segurança: A=7, B=4, C=2", "responsavel": "Dono", "prazo_dias": 10},
+    {"etapa": "Semana 2", "acao": "Preencher a aba Parâmetros e obter o estoque mínimo de cada item", "responsavel": "Dono", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Contar o estoque físico dos itens A e comparar com o mínimo calculado", "responsavel": "Estoquista", "prazo_dias": 21},
+    {"etapa": "Semana 4", "acao": "Fazer o primeiro pedido guiado pela lista de itens abaixo do mínimo", "responsavel": "Comprador", "prazo_dias": 30},
+    {"etapa": "Mês 2", "acao": "Definir rotina semanal de conferência (ex.: toda segunda-feira)", "responsavel": "Estoquista", "prazo_dias": 45},
+    {"etapa": "Mês 3", "acao": "Revisar os mínimos conforme vendas e atrasos reais dos fornecedores", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Medir a venda por dia", "como": "Some as unidades vendidas em 90 dias e divida por 90 (ou pelos dias em que a loja abriu).", "cuidado": "Não use mês de promoção como se fosse mês normal."},
+    {"passo": "Anotar o prazo de entrega", "como": "Conte os dias entre o pedido e a mercadoria na prateleira, não a data prometida.", "cuidado": "Prazo prometido costuma ser menor que o real."},
+    {"passo": "Escolher a folga", "como": "Defina dias extras de venda: mais para itens que não podem faltar, menos para os de baixa importância.", "cuidado": "Folga grande demais vira dinheiro parado."},
+    {"passo": "Calcular o mínimo", "como": "Mínimo = venda por dia x (prazo + folga). Arredonde para cima.", "cuidado": "Item com compra em múltiplos (caixa fechada) precisa ser arredondado para a caixa."},
+    {"passo": "Etiquetar ou sinalizar", "como": "Marque a linha do mínimo na prateleira ou coloque uma etiqueta 'pedir' na unidade do mínimo.", "cuidado": "Sem sinal visual o mínimo vira só um número em planilha."},
+    {"passo": "Conferir periodicamente", "como": "Toda semana compare o estoque atual com o mínimo e gere a lista de compras.", "cuidado": "Descontar pedidos já feitos para não comprar em dobro."},
+    {"passo": "Revisar", "como": "A cada trimestre recalcule com os novos dados de venda e prazo.", "cuidado": "Mínimo antigo em item que mudou de giro gera falta ou sobra."}
+  ],
+  "abas": [
+    {
+      "nome": "Parâmetros",
+      "descricao": "Dados que calculam o estoque mínimo por produto.",
+      "colunas": [
+        {"nome": "Produto", "tipo": "texto"},
+        {"nome": "Classe", "tipo": "lista", "opcoes": ["A", "B", "C"]},
+        {"nome": "Venda média por dia", "tipo": "numero"},
+        {"nome": "Prazo de entrega (dias)", "tipo": "numero"},
+        {"nome": "Dias de segurança", "tipo": "numero"}
+      ],
+      "exemplos": [
+        ["Produto A", "A", 8, 5, 7],
+        ["Produto B", "B", 3, 7, 4],
+        ["Produto C", "C", 1, 10, 2]
+      ]
+    },
+    {
+      "nome": "Conferência semanal",
+      "descricao": "Compara estoque atual com o mínimo e mostra o que pedir.",
+      "colunas": [
+        {"nome": "Data da conferência", "tipo": "data"},
+        {"nome": "Produto", "tipo": "texto"},
+        {"nome": "Estoque atual", "tipo": "numero"},
+        {"nome": "Já pedido e a chegar", "tipo": "numero"},
+        {"nome": "Ação", "tipo": "lista", "opcoes": ["OK", "Pedir", "Urgente"]}
+      ],
+      "exemplos": [
+        ["0", "Produto A", 40, 0, "Pedir"],
+        ["0", "Produto B", 30, 0, "OK"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Comece pelos 20% de itens que dão 80% do faturamento; o resto pode esperar.",
+    "Se um fornecedor atrasa com frequência, aumente a folga só dos itens dele.",
+    "Em produtos sazonais, aumente o mínimo antes da data forte e reduza depois.",
+    "Registre toda falta de produto: se faltou, o mínimo estava baixo.",
+    "Estoque mínimo não é meta de estoque; é o gatilho para comprar."
+  ]
+}

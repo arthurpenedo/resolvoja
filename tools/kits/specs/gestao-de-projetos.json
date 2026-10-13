@@ -1,0 +1,99 @@
+{
+  "slug": "gestao-de-projetos",
+  "titulo": "Gestão de projetos",
+  "area": "gestao",
+  "subdivisoes": ["Gestão de projetos"],
+  "resumo": "Um modelo simples para planejar e acompanhar projetos (reforma, lançamento, sistema novo, evento) com escopo, cronograma, orçamento e riscos. Ao final seus projetos terminam no prazo e dentro do custo, ou você sabe antes por que não vão terminar.",
+  "como_usar": [
+    "Preencha a ficha do projeto na aba 'Ficha do projeto': objetivo, resultado esperado, prazo e orçamento.",
+    "Quebre o projeto em entregas e tarefas na aba 'Cronograma'.",
+    "Liste o que pode dar errado e o plano B na aba 'Riscos'.",
+    "Faça uma reunião de acompanhamento semanal de 15 minutos.",
+    "Ao final, registre lições aprendidas para os próximos projetos."
+  ],
+  "diagnostico": [
+    "Seus projetos costumam atrasar ou custar mais do que o previsto?",
+    "Cada projeto tem objetivo e resultado esperado escritos?",
+    "Você sabe o que está dentro e o que está fora do projeto (escopo)?",
+    "Cada tarefa tem responsável e data?",
+    "Você acompanha o custo real contra o orçamento durante o projeto?",
+    "Pensa nos riscos antes de começar?",
+    "Há alguém que decide quando surgem mudanças no meio do caminho?",
+    "Após terminar um projeto, você registra o que aprendeu?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Escrever objetivo, resultado esperado, prazo final e orçamento máximo", "responsavel": "Dono", "prazo_dias": 1},
+    {"etapa": "Dia 3", "acao": "Definir o escopo: o que está incluído e o que fica de fora", "responsavel": "Dono", "prazo_dias": 3},
+    {"etapa": "Semana 1", "acao": "Quebrar o projeto em entregas e tarefas de no máximo 1 semana", "responsavel": "Dono e responsável", "prazo_dias": 7},
+    {"etapa": "Semana 1", "acao": "Estimar duração e custo de cada tarefa e somar com 15% de margem", "responsavel": "Responsável do projeto", "prazo_dias": 10},
+    {"etapa": "Semana 2", "acao": "Listar riscos principais e definir plano B para cada um", "responsavel": "Dono e responsável", "prazo_dias": 14},
+    {"etapa": "Semana 2", "acao": "Ter reunião de início com todos os envolvidos para alinhar papéis", "responsavel": "Dono", "prazo_dias": 15},
+    {"etapa": "Semana 4", "acao": "Primeira medição: % concluído x % de tempo e custo usados", "responsavel": "Responsável do projeto", "prazo_dias": 30},
+    {"etapa": "Mês 2", "acao": "Reavaliar prazo e orçamento; decidir cortes de escopo se necessário", "responsavel": "Dono", "prazo_dias": 60},
+    {"etapa": "Mês 3", "acao": "Encerrar: entrega formal, balanço de resultado e lições aprendidas", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Defina o 'pronto'", "como": "Escreva como saberá que o projeto acabou (ex.: loja reformada, inaugurada e com alvará).", "cuidado": "Projeto sem critério de término nunca acaba."},
+    {"passo": "Trave o escopo", "como": "Liste o que está dentro e o que não está; qualquer pedido novo passa por você.", "cuidado": "Aceitar pequenos extras sem ajustar prazo e custo."},
+    {"passo": "Quebre em tarefas pequenas", "como": "Divida até que cada tarefa possa ser feita por uma pessoa em até uma semana.", "cuidado": "Tarefas gigantes escondem atraso."},
+    {"passo": "Ordene dependências", "como": "Marque o que só pode começar depois de outra tarefa e destaque o caminho mais longo.", "cuidado": "Começar tudo ao mesmo tempo sem checar dependências."},
+    {"passo": "Estime com folga", "como": "Some 15% a 25% de tempo e dinheiro como reserva; projetos quase sempre custam mais.", "cuidado": "Usar a estimativa mais otimista."},
+    {"passo": "Acompanhe semanalmente", "como": "Revise tarefas feitas, atrasadas e gastos reais. Atue nos atrasos na mesma semana.", "cuidado": "Descobrir o atraso só no prazo final."},
+    {"passo": "Encerre e aprenda", "como": "Registre o que funcionou, o que falhou e o que fará diferente.", "cuidado": "Pular direto para o próximo projeto sem registrar lições."}
+  ],
+  "abas": [
+    {
+      "nome": "Ficha do projeto",
+      "descricao": "Resumo do projeto: objetivo, escopo, prazo e orçamento.",
+      "colunas": [
+        {"nome": "Item", "tipo": "texto"},
+        {"nome": "Descrição", "tipo": "texto"},
+        {"nome": "Valor ou data", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["Objetivo", "Reformar o salão para aumentar capacidade", "Aumentar de 20 para 30 lugares"],
+        ["Prazo final", "Inauguração do novo espaço", "Em 90 dias"],
+        ["Orçamento máximo", "Obra, móveis e licenças", "R$ 40.000"],
+        ["Fora do escopo", "Troca de fachada e fogão industrial", "Segunda fase"]
+      ]
+    },
+    {
+      "nome": "Cronograma",
+      "descricao": "Tarefas do projeto com dono, datas, custo e status.",
+      "colunas": [
+        {"nome": "Tarefa", "tipo": "texto"},
+        {"nome": "Responsável", "tipo": "texto"},
+        {"nome": "Início", "tipo": "data"},
+        {"nome": "Fim", "tipo": "data"},
+        {"nome": "Custo estimado", "tipo": "moeda"},
+        {"nome": "Status", "tipo": "lista", "opcoes": ["Não iniciada", "Em andamento", "Concluída", "Atrasada"]}
+      ],
+      "exemplos": [
+        ["Pedir 3 orçamentos de obra", "Dono", "0", "+7", 0.0, "Em andamento"],
+        ["Contratar empreiteiro e assinar contrato", "Dono", "+8", "+12", 500.0, "Não iniciada"],
+        ["Executar a obra civil", "Empreiteiro A", "+15", "+55", 22000.0, "Não iniciada"]
+      ]
+    },
+    {
+      "nome": "Riscos",
+      "descricao": "O que pode dar errado, probabilidade, impacto e plano B.",
+      "colunas": [
+        {"nome": "Risco", "tipo": "texto"},
+        {"nome": "Probabilidade", "tipo": "lista", "opcoes": ["Baixa", "Média", "Alta"]},
+        {"nome": "Impacto", "tipo": "lista", "opcoes": ["Baixo", "Médio", "Alto"]},
+        {"nome": "Plano B", "tipo": "texto"},
+        {"nome": "Responsável", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["Atraso na entrega dos móveis", "Média", "Alto", "Pedir com antecedência e ter fornecedor reserva", "Dono"],
+        ["Custo de material subir", "Alta", "Médio", "Comprar material principal logo no início", "Responsável A"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Menos projetos ao mesmo tempo terminam mais rápido do que muitos em paralelo.",
+    "Peça orçamento por escrito e com prazo; guarde tudo no mesmo lugar.",
+    "Um único responsável pelo projeto evita o 'achei que era você'.",
+    "Comunique mudanças de prazo assim que souber, não no dia."
+  ]
+}

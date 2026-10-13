@@ -1,0 +1,90 @@
+{
+  "slug": "gestao-de-contratos",
+  "titulo": "Gestão de contratos",
+  "area": "administrativo",
+  "subdivisoes": ["Gestão de contratos"],
+  "resumo": "Centraliza todos os contratos ativos da empresa num painel com valores, vigência, reajuste e renovação, para você nunca perder um prazo de cancelamento nem pagar reajuste sem perceber. Ao final você sabe quanto a empresa gasta e recebe por contrato.",
+  "como_usar": [
+    "Reúna todos os contratos (clientes, fornecedores, aluguel, software, seguros) e liste-os na aba Painel de contratos.",
+    "Preencha vigência, valor, data de reajuste e prazo para avisar o cancelamento.",
+    "Configure alertas na agenda 60 e 30 dias antes de cada vencimento ou reajuste.",
+    "Use a aba Ocorrências para registrar atrasos, descumprimentos e conversas importantes.",
+    "Faça a revisão trimestral para renegociar ou cancelar o que não vale mais a pena.",
+    "Dúvidas sobre cláusulas e rescisão: valide com advogado."
+  ],
+  "diagnostico": [
+    "Você tem uma lista única de todos os contratos ativos da empresa?",
+    "Sabe a data de vencimento e de reajuste de cada um?",
+    "Já foi surpreendido por renovação automática de contrato que não queria?",
+    "Conhece o prazo de aviso necessário para cancelar cada contrato?",
+    "Sabe quanto a empresa paga por mês em contratos recorrentes (software, aluguel, serviços)?",
+    "Os contratos assinados estão numa pasta central, em PDF?",
+    "Alguém além de você sabe onde estão e o que dizem?",
+    "Você cobra e acompanha o cumprimento do que os fornecedores prometeram?",
+    "Faz revisão periódica para renegociar valores ou trocar de fornecedor?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Listar todos os contratos que vêm à mente e todos os débitos recorrentes do extrato bancário e do cartão.", "responsavel": "Administrativo", "prazo_dias": 3},
+    {"etapa": "Semana 1", "acao": "Localizar o documento de cada contrato; para os que não existem por escrito, anotar os termos combinados.", "responsavel": "Administrativo", "prazo_dias": 7},
+    {"etapa": "Semana 2", "acao": "Preencher o painel com partes, objeto, valor, início, fim, renovação, índice de reajuste e aviso de cancelamento.", "responsavel": "Administrativo", "prazo_dias": 14},
+    {"etapa": "Semana 2", "acao": "Salvar os PDFs assinados na pasta 02 Contratos, organizados por Clientes, Fornecedores e Outros.", "responsavel": "Administrativo", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Criar alertas na agenda 60 e 30 dias antes de cada vencimento, reajuste e prazo de cancelamento.", "responsavel": "Administrativo", "prazo_dias": 21},
+    {"etapa": "Semana 4", "acao": "Identificar contratos em que a empresa não usa o serviço, está pagando acima do mercado ou sem documento.", "responsavel": "Dono", "prazo_dias": 28},
+    {"etapa": "Semana 6", "acao": "Renegociar ou cancelar os 3 contratos de pior custo-benefício, respeitando os avisos previstos.", "responsavel": "Dono", "prazo_dias": 45},
+    {"etapa": "Semana 8", "acao": "Regularizar os acordos verbais, formalizando em contrato ou aditivo.", "responsavel": "Dono", "prazo_dias": 60},
+    {"etapa": "Semana 10", "acao": "Definir quem acompanha cada contrato e a rotina de revisão trimestral.", "responsavel": "Dono", "prazo_dias": 75},
+    {"etapa": "Dia 90", "acao": "Validar com advogado os contratos de maior valor ou risco (rescisão, multas, renovação automática) antes de renegociar.", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Cadastrar o contrato", "como": "Registre tipo, parte, objeto, valor, início, fim, renovação e responsável no painel assim que for assinado.", "cuidado": "Cadastrar só os contratos maiores e esquecer os pequenos recorrentes."},
+    {"passo": "Anotar as datas críticas", "como": "Marque data de término, reajuste e último dia para avisar cancelamento ou não renovação.", "cuidado": "Marcar só o término e perder o prazo do aviso."},
+    {"passo": "Criar alertas", "como": "Programe lembretes com 60 e 30 dias de antecedência para o responsável e um reserva.", "cuidado": "Confiar na memória."},
+    {"passo": "Acompanhar o cumprimento", "como": "Compare o que foi prometido com o entregue ou pago e registre desvios na aba de ocorrências.", "cuidado": "Deixar descumprimentos sem registro; depois fica difícil provar."},
+    {"passo": "Revisar valores e reajustes", "como": "Antes de cada reajuste, confira o índice previsto em contrato e compare com o mercado.", "cuidado": "Aceitar reajuste maior que o previsto."},
+    {"passo": "Renovar, renegociar ou encerrar", "como": "Com 60 dias de antecedência, decida e comunique por escrito dentro do prazo do contrato.", "cuidado": "Cancelar por mensagem informal sem confirmação escrita."},
+    {"passo": "Arquivar o encerrado", "como": "Mova para pasta Encerrados com data de término e mantenha pelo prazo de guarda definido com o contador.", "cuidado": "Apagar contrato encerrado cedo demais."}
+  ],
+  "abas": [
+    {
+      "nome": "Painel de contratos",
+      "descricao": "Todos os contratos ativos, prazos e valores.",
+      "colunas": [
+        {"nome": "Contrato", "tipo": "texto"},
+        {"nome": "Tipo", "tipo": "lista", "opcoes": ["Cliente", "Fornecedor", "Aluguel", "Software/Assinatura", "Seguro", "Outro"]},
+        {"nome": "Valor mensal", "tipo": "moeda"},
+        {"nome": "Início", "tipo": "data"},
+        {"nome": "Término", "tipo": "data"},
+        {"nome": "Último dia para avisar", "tipo": "data"},
+        {"nome": "Renovação automática", "tipo": "lista", "opcoes": ["Sim", "Não"]},
+        {"nome": "Responsável", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["Aluguel da sede", "Aluguel", 3500.0, "-330", "+400", "+310", "Sim", "Dono"],
+        ["Sistema de gestão", "Software/Assinatura", 199.0, "-120", "+245", "+215", "Sim", "Administrativo"],
+        ["Prestação de serviço Cliente A", "Cliente", 2800.0, "-60", "+120", "+90", "Não", "Dono"]
+      ]
+    },
+    {
+      "nome": "Ocorrências",
+      "descricao": "Atrasos, descumprimentos e comunicações importantes por contrato.",
+      "colunas": [
+        {"nome": "Data", "tipo": "data"},
+        {"nome": "Contrato", "tipo": "texto"},
+        {"nome": "O que aconteceu", "tipo": "texto"},
+        {"nome": "Providência", "tipo": "texto"},
+        {"nome": "Status", "tipo": "lista", "opcoes": ["Aberta", "Em negociação", "Resolvida"]}
+      ],
+      "exemplos": [
+        ["-6", "Sistema de gestão", "Cobrança acima do valor contratado", "Solicitado estorno por e-mail", "Em negociação"],
+        ["-18", "Aluguel da sede", "Reajuste informado fora do prazo", "Conferir índice previsto", "Aberta"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Procure no extrato por débitos recorrentes: quase toda empresa descobre assinaturas esquecidas.",
+    "Registre sempre por escrito o aviso de cancelamento e peça confirmação de recebimento.",
+    "Negocie reajustes antes da data, não depois; fornecedores aceitam mais quando há tempo.",
+    "Multas, rescisão e renovação automática têm regras próprias; confirme com advogado antes de cancelar contratos de alto valor.",
+    "Faça a revisão trimestral de 30 minutos: o que usamos, quanto custa e se ainda vale a pena."
+  ]
+}

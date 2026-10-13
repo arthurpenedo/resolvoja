@@ -1,0 +1,104 @@
+{
+  "slug": "compras",
+  "titulo": "Compras",
+  "area": "estoque",
+  "subdivisoes": ["Compras"],
+  "resumo": "Organize o processo de compras da pequena empresa: da necessidade ao pedido, recebimento e pagamento, com controle de preço e prazo. Ao final você terá pedidos padronizados, menos compras por impulso e histórico de preço para negociar.",
+  "como_usar": [
+    "Registre as necessidades de compra na aba 'Solicitações' (quem pediu, o que e quanto).",
+    "Aprove ou corte os itens e gere os pedidos na aba 'Pedidos de compra'.",
+    "Ao receber, confira a mercadoria com o pedido e a nota na aba 'Recebimento'.",
+    "Registre o preço pago para formar o histórico e comparar com compras anteriores.",
+    "Revise mensalmente o gasto por fornecedor e por categoria."
+  ],
+  "diagnostico": [
+    "Você compra só quando percebe que acabou, sem lista nem calendário?",
+    "Existe alguém que pode pedir mercadoria sem avisar ou aprovação?",
+    "Você guarda o histórico do preço pago em cada compra?",
+    "Confere a mercadoria recebida com o pedido e a nota?",
+    "Compra sempre do mesmo fornecedor, sem cotar outros?",
+    "Você sabe quanto gastou com compras no último mês e por categoria?",
+    "Já comprou item em duplicidade ou pagou algo que não chegou?",
+    "Tem prazo de pagamento negociado ou paga à vista por hábito?",
+    "O dinheiro para as compras do mês está previsto no fluxo de caixa?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Listar todos os fornecedores atuais com contato, prazo de entrega e condição de pagamento", "responsavel": "Dono", "prazo_dias": 3},
+    {"etapa": "Semana 1", "acao": "Definir quem pode solicitar e quem aprova compras; fixar um limite de valor para o comprador", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 1", "acao": "Criar o modelo de pedido de compra e a aba de solicitações", "responsavel": "Comprador", "prazo_dias": 10},
+    {"etapa": "Semana 2", "acao": "Definir dias fixos de compra por fornecedor (ex.: terça e sexta)", "responsavel": "Comprador", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Começar a conferir recebimentos com pedido e nota fiscal", "responsavel": "Estoquista", "prazo_dias": 21},
+    {"etapa": "Semana 4", "acao": "Registrar preços pagos e criar a tabela de histórico dos 30 principais itens", "responsavel": "Comprador", "prazo_dias": 30},
+    {"etapa": "Mês 2", "acao": "Cotar com pelo menos 2 fornecedores os itens que mais pesam no gasto", "responsavel": "Comprador", "prazo_dias": 45},
+    {"etapa": "Mês 2", "acao": "Negociar prazo de pagamento alinhado ao seu fluxo de caixa", "responsavel": "Dono", "prazo_dias": 60},
+    {"etapa": "Mês 3", "acao": "Revisar gastos por fornecedor e categoria e conferir a regra fiscal de compras com o contador", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Levantar a necessidade", "como": "Reúna as solicitações e compare com estoque atual, mínimo e pedidos a caminho.", "cuidado": "Comprar sem olhar o que já foi pedido duplica o estoque."},
+    {"passo": "Aprovar", "como": "O dono aprova ou corta, e define o limite que o comprador pode aprovar sozinho.", "cuidado": "Compra sem aprovação costuma ser a maior fonte de desperdício."},
+    {"passo": "Escolher o fornecedor", "como": "Use o fornecedor com melhor preço e prazo para o item; em compra grande, cote com outros.", "cuidado": "Escolher só pelo menor preço sem ver frete e prazo."},
+    {"passo": "Emitir o pedido", "como": "Registre item, quantidade, preço combinado, prazo de entrega e forma de pagamento por escrito (e-mail ou WhatsApp).", "cuidado": "Combinar por telefone sem registro gera discussão depois."},
+    {"passo": "Acompanhar a entrega", "como": "Marque a data prevista e cobre o fornecedor um dia antes.", "cuidado": "Descobrir o atraso só quando o produto acaba."},
+    {"passo": "Conferir o recebimento", "como": "Compare itens, quantidades, validade e preço com o pedido e a nota; anote divergências.", "cuidado": "Aceitar sem conferir faz você perder a chance de reclamar."},
+    {"passo": "Lançar e pagar", "como": "Dê entrada no estoque, guarde a nota e programe o pagamento no vencimento.", "cuidado": "Pagar fatura sem conferir se a mercadoria chegou completa."},
+    {"passo": "Avaliar o fornecedor", "como": "Anote atrasos, erros e qualidade para usar na próxima negociação.", "cuidado": "Sem registro a memória favorece o fornecedor."}
+  ],
+  "abas": [
+    {
+      "nome": "Solicitações",
+      "descricao": "Pedidos internos de compra aguardando aprovação.",
+      "colunas": [
+        {"nome": "Data", "tipo": "data"},
+        {"nome": "Item", "tipo": "texto"},
+        {"nome": "Quantidade", "tipo": "numero"},
+        {"nome": "Solicitante", "tipo": "texto"},
+        {"nome": "Urgência", "tipo": "lista", "opcoes": ["Baixa", "Média", "Alta"]},
+        {"nome": "Status", "tipo": "lista", "opcoes": ["Pendente", "Aprovada", "Recusada", "Comprada"]}
+      ],
+      "exemplos": [
+        ["-1", "Produto A", 100, "Pessoa 1", "Alta", "Aprovada"],
+        ["0", "Produto B", 20, "Pessoa 2", "Baixa", "Pendente"]
+      ]
+    },
+    {
+      "nome": "Pedidos de compra",
+      "descricao": "Pedidos emitidos aos fornecedores e seu andamento.",
+      "colunas": [
+        {"nome": "Data do pedido", "tipo": "data"},
+        {"nome": "Fornecedor", "tipo": "texto"},
+        {"nome": "Item", "tipo": "texto"},
+        {"nome": "Quantidade", "tipo": "numero"},
+        {"nome": "Preço unitário", "tipo": "moeda"},
+        {"nome": "Entrega prevista", "tipo": "data"},
+        {"nome": "Status", "tipo": "lista", "opcoes": ["Enviado", "Confirmado", "Entregue", "Atrasado", "Cancelado"]}
+      ],
+      "exemplos": [
+        ["-3", "Fornecedor A", "Produto A", 100, 12.5, "+2", "Confirmado"],
+        ["-10", "Fornecedor B", "Produto C", 30, 48.0, "-2", "Atrasado"]
+      ]
+    },
+    {
+      "nome": "Histórico de preços",
+      "descricao": "Preços pagos por item para comparar e negociar.",
+      "colunas": [
+        {"nome": "Item", "tipo": "texto"},
+        {"nome": "Fornecedor", "tipo": "texto"},
+        {"nome": "Data da compra", "tipo": "data"},
+        {"nome": "Preço unitário", "tipo": "moeda"},
+        {"nome": "Prazo de pagamento (dias)", "tipo": "numero"}
+      ],
+      "exemplos": [
+        ["Produto A", "Fornecedor A", "-60", 11.8, 28],
+        ["Produto A", "Fornecedor A", "-3", 12.5, 28],
+        ["Produto A", "Fornecedor C", "-20", 12.1, 21]
+      ]
+    }
+  ],
+  "dicas": [
+    "Concentre as compras em dias fixos: reduz frete e permite negociar melhor.",
+    "Separe quem compra de quem recebe e de quem paga, sempre que o tamanho da empresa permitir.",
+    "Todo aumento de preço acima de 5% merece uma conversa e uma nova cotação.",
+    "Compre pelo custo final: preço, frete, impostos e prazo de pagamento.",
+    "Peça nota fiscal em todas as compras e confirme com o contador o aproveitamento de créditos fiscais do seu regime."
+  ]
+}

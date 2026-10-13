@@ -1,0 +1,84 @@
+{
+  "slug": "simulacao-tributaria",
+  "titulo": "Simulação tributária",
+  "area": "contabil",
+  "subdivisoes": ["Simulação tributária"],
+  "resumo": "Simule quanto de imposto sua empresa pagaria em diferentes cenários de faturamento, preço e regime, usando percentuais de exemplo que você troca pelos confirmados pelo contador. Os números aqui são ilustrativos.",
+  "como_usar": [
+    "Preencha a aba Cenários com faturamento e custos de cada situação que quer testar.",
+    "Troque o percentual de exemplo pelo que o contador confirmar para o seu caso.",
+    "Compare o resultado líquido de cada cenário.",
+    "Use a aba Preço e margem para ver quanto sobra de cada venda depois dos impostos.",
+    "Leve as simulações ao contador antes de tomar qualquer decisão."
+  ],
+  "diagnostico": [
+    "Você sabe quanto de cada venda vira imposto?",
+    "Já decidiu preço sem considerar os impostos?",
+    "Pensa em contratar ou expandir e quer saber o efeito nos impostos?",
+    "Sabe como seu imposto muda se o faturamento subir 20%?",
+    "Já simulou o efeito de um grande contrato ou venda?",
+    "Sabe se está perto de mudar de faixa de tributação?",
+    "Compara o lucro líquido, e não só o faturamento, entre cenários?",
+    "Costuma confiar em 'regras de bolso' de imposto sem confirmar?",
+    "Tem as despesas do ano separadas por tipo para fazer a conta?"
+  ],
+  "plano": [
+    {"etapa": "Semana 1", "acao": "Levantar faturamento, custos e imposto pago dos últimos 12 meses", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 1", "acao": "Pedir ao contador o percentual efetivo de imposto da empresa e como ele muda por faixa", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 2", "acao": "Montar três cenários na aba Cenários: conservador, atual e otimista", "responsavel": "Administrativo", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Calcular o preço de venda ideal considerando impostos e margem desejada na aba Preço e margem", "responsavel": "Administrativo", "prazo_dias": 21},
+    {"etapa": "Semana 4", "acao": "Simular um grande contrato ou venda extra e ver o efeito nos impostos", "responsavel": "Dono", "prazo_dias": 30},
+    {"etapa": "Mês 2", "acao": "Simular contratação de um funcionário e o efeito no custo total e nos impostos", "responsavel": "Dono", "prazo_dias": 45},
+    {"etapa": "Mês 2", "acao": "Comparar o resultado das simulações com o que de fato ocorreu e ajustar os percentuais", "responsavel": "Administrativo", "prazo_dias": 60},
+    {"etapa": "Mês 3", "acao": "Repetir a simulação com os dados dos últimos 3 meses reais", "responsavel": "Administrativo", "prazo_dias": 80},
+    {"etapa": "Mês 3", "acao": "Validar com o contador as simulações e os percentuais usados antes de decidir", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Definir o objetivo", "como": "Escreva a pergunta: 'E se eu faturar X?', 'E se eu subir o preço?', 'E se eu contratar?'.", "cuidado": "Simular sem pergunta clara vira só planilha bonita."},
+    {"passo": "Reunir dados reais", "como": "Use faturamento e custos reais como ponto de partida.", "cuidado": "Dados 'de cabeça' distorcem tudo."},
+    {"passo": "Usar percentuais confirmados", "como": "Substitua os percentuais de exemplo da planilha pelos informados pelo contador.", "cuidado": "Os percentuais de exemplo não são os da sua empresa."},
+    {"passo": "Calcular o imposto", "como": "Multiplique o faturamento do cenário pelo percentual e subtraia custos para ver o resultado líquido.", "cuidado": "Alíquota pode mudar conforme o faturamento acumulado; consulte o contador."},
+    {"passo": "Comparar cenários", "como": "Veja qual cenário deixa mais lucro líquido, não só mais faturamento.", "cuidado": "Mais faturamento nem sempre significa mais lucro."},
+    {"passo": "Registrar premissas", "como": "Anote ao lado de cada cenário as premissas usadas e a data.", "cuidado": "Sem premissas, você esquece de onde veio o número."}
+  ],
+  "abas": [
+    {
+      "nome": "Cenários",
+      "descricao": "Compara resultado líquido em diferentes faturamentos, com percentuais de exemplo a conferir.",
+      "colunas": [
+        {"nome": "Cenário", "tipo": "texto"},
+        {"nome": "Faturamento mensal", "tipo": "moeda"},
+        {"nome": "Percentual de imposto (exemplo %)", "tipo": "numero"},
+        {"nome": "Imposto estimado", "tipo": "moeda"},
+        {"nome": "Custos", "tipo": "moeda"},
+        {"nome": "Resultado líquido", "tipo": "moeda"}
+      ],
+      "exemplos": [
+        ["Conservador", 30000.0, 8, 2400.0, 21000.0, 6600.0],
+        ["Atual", 40000.0, 9, 3600.0, 27000.0, 9400.0],
+        ["Otimista", 55000.0, 11, 6050.0, 36000.0, 12950.0]
+      ]
+    },
+    {
+      "nome": "Preço e margem",
+      "descricao": "Calcula o que sobra de um produto depois de custo e imposto (percentual de exemplo).",
+      "colunas": [
+        {"nome": "Produto/serviço", "tipo": "texto"},
+        {"nome": "Preço de venda", "tipo": "moeda"},
+        {"nome": "Custo direto", "tipo": "moeda"},
+        {"nome": "Percentual de imposto (exemplo %)", "tipo": "numero"},
+        {"nome": "Sobra por unidade", "tipo": "moeda"}
+      ],
+      "exemplos": [
+        ["Produto A", 100.0, 50.0, 9, 41.0],
+        ["Serviço B", 300.0, 120.0, 9, 153.0]
+      ]
+    }
+  ],
+  "dicas": [
+    "Os percentuais da planilha são exemplos; peça ao contador o seu percentual efetivo.",
+    "Simule sempre pelo menos três cenários: pior, normal e melhor.",
+    "Considere não só imposto sobre faturamento, mas também encargos sobre a folha.",
+    "Refaça a simulação quando o faturamento mudar de patamar ou a legislação mudar."
+  ]
+}

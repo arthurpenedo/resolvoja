@@ -1,0 +1,99 @@
+{
+  "slug": "cotacao-com-fornecedores",
+  "titulo": "Cotação com fornecedores",
+  "area": "estoque",
+  "subdivisoes": ["Cotação com fornecedores"],
+  "resumo": "Peça cotações padronizadas a 3 fornecedores e compare as respostas em uma tabela única. Ao final você terá o melhor custo total e um processo rápido para repetir sempre que comprar.",
+  "como_usar": [
+    "Liste os itens e quantidades a cotar na aba 'Pedido de cotação' e envie a mesma lista a todos os fornecedores.",
+    "Anote cada resposta na aba 'Respostas', incluindo preço, frete, prazo de entrega e condição de pagamento.",
+    "Na aba 'Comparativo', veja o custo total de cada fornecedor.",
+    "Escolha pelo custo total e pela confiança, e não apenas pelo menor preço unitário.",
+    "Registre a decisão e o motivo para a próxima cotação."
+  ],
+  "diagnostico": [
+    "Você cota com mais de um fornecedor antes de comprar itens importantes?",
+    "Passa a mesma lista e especificação para todos, para comparar de igual para igual?",
+    "Considera frete, prazo de pagamento e impostos na comparação?",
+    "Guarda as cotações por escrito (e-mail ou WhatsApp)?",
+    "Sabe até quando vale cada cotação?",
+    "Cota apenas quando o preço aumenta, e não regularmente?",
+    "Tem pelo menos três fornecedores alternativos para os itens principais?",
+    "Usa a cotação para negociar com o fornecedor atual?",
+    "Compara itens de mesma qualidade e marca equivalente?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Escolher os 10 itens de maior gasto para cotar primeiro", "responsavel": "Comprador", "prazo_dias": 2},
+    {"etapa": "Semana 1", "acao": "Montar a lista de fornecedores (atuais e novos) e confirmar o contato de cada um", "responsavel": "Comprador", "prazo_dias": 7},
+    {"etapa": "Semana 1", "acao": "Padronizar o pedido de cotação com item, especificação, quantidade, local e data de entrega", "responsavel": "Comprador", "prazo_dias": 7},
+    {"etapa": "Semana 2", "acao": "Enviar o pedido a pelo menos 3 fornecedores com prazo de resposta de 2 dias", "responsavel": "Comprador", "prazo_dias": 14},
+    {"etapa": "Semana 2", "acao": "Registrar respostas e calcular o custo total de cada fornecedor", "responsavel": "Comprador", "prazo_dias": 16},
+    {"etapa": "Semana 3", "acao": "Usar a melhor proposta para negociar com o fornecedor preferido", "responsavel": "Dono", "prazo_dias": 21},
+    {"etapa": "Semana 4", "acao": "Fechar o pedido e arquivar a cotação com a data de validade", "responsavel": "Comprador", "prazo_dias": 30},
+    {"etapa": "Mês 3", "acao": "Repetir a rodada de cotações a cada trimestre ou quando o preço subir mais de 5%", "responsavel": "Comprador", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Definir exatamente o que comprar", "como": "Escreva a marca, a medida, a quantidade e as condições; se aceitar similar, diga.", "cuidado": "Especificação solta faz cada fornecedor cotar um produto diferente."},
+    {"passo": "Escolher quem cotar", "como": "Chame o fornecedor atual, um concorrente conhecido e um novo.", "cuidado": "Cotar só com quem sempre ganha vira formalidade."},
+    {"passo": "Enviar a mesma solicitação", "como": "Use o mesmo texto por e-mail ou WhatsApp com prazo de resposta.", "cuidado": "Informações diferentes para cada um tornam a comparação injusta."},
+    {"passo": "Registrar as respostas", "como": "Anote preço unitário, frete, impostos, prazo de entrega, pagamento e validade da proposta.", "cuidado": "Esquecer o frete e o prazo de pagamento."},
+    {"passo": "Calcular o custo total", "como": "Preço x quantidade + frete; depois considere o prazo de pagamento como vantagem.", "cuidado": "Preço unitário baixo com frete alto pode sair mais caro."},
+    {"passo": "Avaliar além do preço", "como": "Considere histórico de entrega, qualidade e facilidade de troca.", "cuidado": "O mais barato que atrasa pode custar uma venda perdida."},
+    {"passo": "Negociar e fechar", "como": "Mostre a proposta concorrente e peça melhoria de preço ou prazo; feche por escrito.", "cuidado": "Não revele dados do concorrente que possam quebrar confiança; basta o valor."}
+  ],
+  "abas": [
+    {
+      "nome": "Pedido de cotação",
+      "descricao": "Itens e condições enviados igualmente a todos.",
+      "colunas": [
+        {"nome": "Item", "tipo": "texto"},
+        {"nome": "Especificação", "tipo": "texto"},
+        {"nome": "Quantidade", "tipo": "numero"},
+        {"nome": "Data de entrega desejada", "tipo": "data"},
+        {"nome": "Aceita similar?", "tipo": "lista", "opcoes": ["Sim", "Não"]}
+      ],
+      "exemplos": [
+        ["Produto A", "Caixa com 12 unidades, marca X", 20, "+15", "Não"],
+        ["Produto B", "Pacote 1 kg", 50, "+15", "Sim"]
+      ]
+    },
+    {
+      "nome": "Respostas",
+      "descricao": "Cada resposta recebida dos fornecedores.",
+      "colunas": [
+        {"nome": "Fornecedor", "tipo": "texto"},
+        {"nome": "Item", "tipo": "texto"},
+        {"nome": "Preço unitário", "tipo": "moeda"},
+        {"nome": "Frete total", "tipo": "moeda"},
+        {"nome": "Prazo de entrega (dias)", "tipo": "numero"},
+        {"nome": "Pagamento (dias)", "tipo": "numero"},
+        {"nome": "Proposta válida até", "tipo": "data"}
+      ],
+      "exemplos": [
+        ["Fornecedor A", "Produto A", 34.5, 40.0, 5, 28, "+7"],
+        ["Fornecedor B", "Produto A", 33.0, 90.0, 10, 14, "+5"],
+        ["Fornecedor C", "Produto A", 35.2, 0.0, 3, 30, "+10"]
+      ]
+    },
+    {
+      "nome": "Comparativo",
+      "descricao": "Decisão final e motivo.",
+      "colunas": [
+        {"nome": "Item", "tipo": "texto"},
+        {"nome": "Fornecedor escolhido", "tipo": "texto"},
+        {"nome": "Custo total", "tipo": "moeda"},
+        {"nome": "Motivo", "tipo": "lista", "opcoes": ["Menor custo total", "Melhor prazo", "Melhor qualidade", "Melhor pagamento"]}
+      ],
+      "exemplos": [
+        ["Produto A", "Fornecedor C", 704.0, "Melhor pagamento"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Informe aos fornecedores que você está cotando; isso já traz melhores preços.",
+    "Guarde todas as cotações por escrito; vale como prova do preço combinado.",
+    "Cotar só os itens de maior valor economiza tempo e captura a maior parte do ganho.",
+    "Peça preço para diferentes quantidades (ex.: 20, 50 e 100) e veja onde o desconto compensa.",
+    "Atualize a cotação antes de repetir um pedido grande, pois preços mudam."
+  ]
+}

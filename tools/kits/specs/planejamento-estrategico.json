@@ -1,0 +1,95 @@
+{
+  "slug": "planejamento-estrategico",
+  "titulo": "Planejamento estratégico",
+  "area": "gestao",
+  "subdivisoes": ["Planejamento estratégico"],
+  "resumo": "Um plano estratégico de 1 a 3 anos para pequenas empresas: propósito, diferencial, escolhas do que fazer e do que não fazer, e iniciativas priorizadas. Ao final você tem direção clara e um mapa de prioridades.",
+  "como_usar": [
+    "Reserve meio dia sem interrupções com sócios ou pessoas-chave.",
+    "Preencha a aba 'Direção' com missão, visão e diferencial da empresa.",
+    "Na aba 'Escolhas estratégicas', defina onde vai focar e o que vai deixar de fazer.",
+    "Transforme as escolhas em iniciativas na aba 'Iniciativas' e priorize.",
+    "Revise a estratégia a cada trimestre em reunião de 1 a 2 horas."
+  ],
+  "diagnostico": [
+    "Você consegue explicar em uma frase por que um cliente deveria escolher você em vez do concorrente?",
+    "Sabe qual é o cliente ideal que mais dá lucro?",
+    "Já disse 'não' a algum tipo de cliente ou serviço para manter o foco?",
+    "A empresa tem um rumo para os próximos 3 anos, e não apenas para o próximo mês?",
+    "Você e seus sócios concordam sobre aonde querem chegar?",
+    "Sua equipe consegue dizer qual é a prioridade número 1 da empresa?",
+    "Você sente que está sempre apagando incêndio e sem tempo para pensar no futuro?",
+    "Algum investimento recente foi feito sem relação com um objetivo claro?"
+  ],
+  "plano": [
+    {"etapa": "Dia 2", "acao": "Agendar o encontro de estratégia (meio dia) e juntar dados: faturamento, clientes, concorrentes", "responsavel": "Dono", "prazo_dias": 2},
+    {"etapa": "Semana 1", "acao": "Definir missão, visão para 3 anos e valores em frases curtas", "responsavel": "Dono e sócios", "prazo_dias": 7},
+    {"etapa": "Semana 1", "acao": "Definir o cliente ideal e o diferencial competitivo", "responsavel": "Dono e sócios", "prazo_dias": 10},
+    {"etapa": "Semana 2", "acao": "Fazer a análise SWOT (forças, fraquezas, oportunidades e ameaças) como base", "responsavel": "Dono e sócios", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Escolher de 3 a 5 prioridades estratégicas e listar o que NÃO será feito", "responsavel": "Dono e sócios", "prazo_dias": 21},
+    {"etapa": "Semana 4", "acao": "Transformar cada prioridade em iniciativas com responsável, prazo e custo", "responsavel": "Dono", "prazo_dias": 30},
+    {"etapa": "Semana 6", "acao": "Apresentar o plano à equipe e distribuir responsabilidades", "responsavel": "Dono", "prazo_dias": 42},
+    {"etapa": "Mês 3", "acao": "Primeira revisão trimestral: o que andou, o que travou, o que mudou no mercado", "responsavel": "Dono e sócios", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Defina para onde vai", "como": "Escreva a visão em uma frase com número e prazo (ex.: 'ser a referência do bairro, faturando R$ 1 milhão em 3 anos').", "cuidado": "Frases genéricas como 'ser excelente' não orientam decisões."},
+    {"passo": "Escolha o cliente", "como": "Descreva quem mais compra, paga bem e traz indicações; priorize esse perfil.", "cuidado": "Tentar atender todo mundo dilui o diferencial."},
+    {"passo": "Defina o diferencial", "como": "Complete: 'somos a melhor opção para [cliente] que precisa de [necessidade] porque [prova]'.", "cuidado": "Escolher diferencial que o concorrente também afirma."},
+    {"passo": "Olhe para fora e para dentro", "como": "Liste forças e fraquezas internas e oportunidades e ameaças externas.", "cuidado": "Listar só coisas boas ou só problemas."},
+    {"passo": "Escolha e renuncie", "como": "Estratégia é decidir o que não fazer. Liste 3 coisas que a empresa para de fazer.", "cuidado": "Plano que diz sim a tudo não é estratégia."},
+    {"passo": "Desdobre em iniciativas", "como": "Cada prioridade vira de 2 a 4 projetos com dono, prazo e orçamento.", "cuidado": "Ficar no discurso sem virar tarefa."},
+    {"passo": "Revise", "como": "Tenha reunião trimestral fixa e ajuste o plano com base em fatos.", "cuidado": "Tratar o plano como imutável diante de mudanças reais."}
+  ],
+  "abas": [
+    {
+      "nome": "Direção",
+      "descricao": "Missão, visão, cliente ideal e diferencial em frases curtas.",
+      "colunas": [
+        {"nome": "Item", "tipo": "texto"},
+        {"nome": "Resposta da empresa", "tipo": "texto"},
+        {"nome": "Revisado em", "tipo": "data"}
+      ],
+      "exemplos": [
+        ["Missão (para que existimos)", "Facilitar a rotina de famílias do bairro com comida caseira de qualidade", "0"],
+        ["Visão em 3 anos", "Ser referência na região, com 2 unidades e R$ 90 mil de faturamento mensal", "0"],
+        ["Diferencial", "Entrega no mesmo dia com ingredientes frescos e atendimento humano", "0"]
+      ]
+    },
+    {
+      "nome": "Escolhas estratégicas",
+      "descricao": "Onde focar e o que deixar de fazer.",
+      "colunas": [
+        {"nome": "Escolha", "tipo": "texto"},
+        {"nome": "Tipo", "tipo": "lista", "opcoes": ["Vamos focar", "Vamos parar", "Vamos testar"]},
+        {"nome": "Motivo", "tipo": "texto"},
+        {"nome": "Impacto esperado", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["Atender mais empresas com contrato mensal", "Vamos focar", "Receita previsível e margem maior", "Reduzir dependência de vendas avulsas"],
+        ["Aceitar pedidos pequenos com entrega urgente", "Vamos parar", "Consomem tempo e dão prejuízo", "Liberar equipe para clientes principais"]
+      ]
+    },
+    {
+      "nome": "Iniciativas",
+      "descricao": "Projetos que executam a estratégia, priorizados.",
+      "colunas": [
+        {"nome": "Iniciativa", "tipo": "texto"},
+        {"nome": "Prioridade", "tipo": "lista", "opcoes": ["Alta", "Média", "Baixa"]},
+        {"nome": "Responsável", "tipo": "texto"},
+        {"nome": "Custo estimado", "tipo": "moeda"},
+        {"nome": "Prazo", "tipo": "data"},
+        {"nome": "Status", "tipo": "lista", "opcoes": ["Planejada", "Em andamento", "Concluída", "Pausada"]}
+      ],
+      "exemplos": [
+        ["Criar pacote mensal para empresas", "Alta", "Dono", 1500.0, "+45", "Planejada"],
+        ["Padronizar o atendimento por WhatsApp", "Média", "Responsável A", 300.0, "+30", "Em andamento"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Comece enxuto: uma página de estratégia que a equipe lembra vale mais que um livro.",
+    "Use o plano como filtro para novas oportunidades: 'isso nos leva à visão?'.",
+    "Convide uma pessoa de confiança de fora para questionar as premissas.",
+    "Estratégia sem orçamento é desejo; reserve dinheiro e tempo para as iniciativas."
+  ]
+}

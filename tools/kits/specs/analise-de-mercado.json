@@ -1,0 +1,97 @@
+{
+  "slug": "analise-de-mercado",
+  "titulo": "Análise de mercado",
+  "area": "gestao",
+  "subdivisoes": ["Análise de mercado"],
+  "resumo": "Um roteiro para entender o tamanho do seu mercado, quem são os clientes, o que eles querem e para onde o setor caminha, usando fontes gratuitas. Ao final você sabe onde há demanda e qual fatia pode conquistar.",
+  "como_usar": [
+    "Defina na aba 'Mercado-alvo' a região, o perfil de cliente e o produto que vai analisar.",
+    "Estime o tamanho do mercado na aba 'Tamanho do mercado' com dados públicos.",
+    "Colete a opinião de clientes reais na aba 'Pesquisa com clientes'.",
+    "Registre tendências e mudanças do setor, anotando a fonte.",
+    "Conclua com 3 decisões: onde focar, o que oferecer e como chegar até esse cliente."
+  ],
+  "diagnostico": [
+    "Você sabe quantas pessoas ou empresas da sua região poderiam comprar de você?",
+    "Conhece o perfil do cliente ideal (idade, renda, hábitos, dores)?",
+    "Já perguntou diretamente aos clientes o que eles gostariam que existisse?",
+    "Acompanha tendências do seu setor (associações, notícias, redes)?",
+    "Sabe qual fatia do mercado você ocupa hoje?",
+    "Sabe qual é a época do ano em que a demanda sobe e cai?",
+    "Já testou uma oferta antes de investir pesado nela?",
+    "Usa dados (IBGE, Sebrae, Google Trends) para apoiar decisões?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Definir o mercado-alvo: região, perfil do cliente e produto", "responsavel": "Dono", "prazo_dias": 1},
+    {"etapa": "Dia 3", "acao": "Buscar dados públicos: IBGE (população e renda), Sebrae, associações do setor", "responsavel": "Dono", "prazo_dias": 3},
+    {"etapa": "Semana 1", "acao": "Estimar o tamanho do mercado em número de clientes e valor por ano", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 1", "acao": "Usar Google Trends e buscas para ver interesse por tema ao longo do ano", "responsavel": "Dono", "prazo_dias": 8},
+    {"etapa": "Semana 2", "acao": "Entrevistar 10 clientes ou potenciais clientes com 5 perguntas fixas", "responsavel": "Dono", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Consolidar respostas e achar padrões de dor, preço aceito e canal preferido", "responsavel": "Dono", "prazo_dias": 21},
+    {"etapa": "Semana 4", "acao": "Definir o segmento prioritário e a oferta adaptada a ele", "responsavel": "Dono", "prazo_dias": 30},
+    {"etapa": "Mês 2", "acao": "Fazer um teste pequeno de oferta (campanha, promoção ou lote piloto)", "responsavel": "Dono", "prazo_dias": 60},
+    {"etapa": "Mês 3", "acao": "Medir resultado do teste e decidir se amplia, ajusta ou descarta", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Delimite o mercado", "como": "Defina onde (bairro, cidade, online), quem (perfil) e o quê (tipo de produto). Mercados menores e bem definidos são mais fáceis de dominar.", "cuidado": "Dizer que o mercado é 'todo mundo'."},
+    {"passo": "Estime o tamanho", "como": "Número de potenciais clientes × quanto cada um gasta por ano. Ex.: 8.000 famílias × R$ 600/ano = R$ 4,8 milhões.", "cuidado": "Achar que você vai capturar o mercado todo; estime uma fatia realista (1% a 5%)."},
+    {"passo": "Conheça o cliente", "como": "Descreva o cliente ideal: quem é, onde está, o que valoriza, o que o incomoda e quanto paga.", "cuidado": "Basear-se na sua opinião, e não em conversas reais."},
+    {"passo": "Converse com clientes", "como": "Faça perguntas abertas: o que mais incomoda hoje? como resolve? quanto pagaria? onde busca?", "cuidado": "Perguntas que induzem à resposta que você quer ouvir."},
+    {"passo": "Observe tendências", "como": "Siga associações, feiras, notícias e Google Trends; anote o que cresce e o que cai.", "cuidado": "Seguir modismos sem demanda real na sua região."},
+    {"passo": "Teste pequeno", "como": "Antes de investir, venda para poucos clientes e meça interesse real em pagar.", "cuidado": "Confundir 'achei legal' com 'vou comprar'."}
+  ],
+  "abas": [
+    {
+      "nome": "Mercado-alvo",
+      "descricao": "Definição do mercado e do cliente ideal.",
+      "colunas": [
+        {"nome": "Item", "tipo": "texto"},
+        {"nome": "Definição", "tipo": "texto"},
+        {"nome": "Fonte ou evidência", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["Região", "Zona sul da cidade e bairros vizinhos", "Mapa de entregas"],
+        ["Cliente ideal", "Famílias com renda de 4 a 8 salários mínimos que trabalham fora", "Perfil dos 20 melhores clientes"],
+        ["Necessidade principal", "Refeição prática durante a semana", "Entrevistas"]
+      ]
+    },
+    {
+      "nome": "Tamanho do mercado",
+      "descricao": "Cálculo do mercado potencial e da fatia realista.",
+      "colunas": [
+        {"nome": "Segmento", "tipo": "texto"},
+        {"nome": "Nº de clientes potenciais", "tipo": "numero"},
+        {"nome": "Gasto anual por cliente", "tipo": "moeda"},
+        {"nome": "Fatia que quero (%)", "tipo": "numero"},
+        {"nome": "Fonte do dado", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["Famílias do bairro", 8000, 600.0, 3, "IBGE e estimativa própria"],
+        ["Pequenas empresas da região", 350, 2400.0, 5, "Prefeitura e associação comercial"]
+      ]
+    },
+    {
+      "nome": "Pesquisa com clientes",
+      "descricao": "Respostas das conversas com clientes e potenciais clientes.",
+      "colunas": [
+        {"nome": "Data", "tipo": "data"},
+        {"nome": "Cliente", "tipo": "texto"},
+        {"nome": "Maior dor hoje", "tipo": "texto"},
+        {"nome": "Quanto pagaria", "tipo": "moeda"},
+        {"nome": "Canal preferido", "tipo": "lista", "opcoes": ["WhatsApp", "Instagram", "Loja física", "Site", "Indicação"]},
+        {"nome": "Perfil", "tipo": "lista", "opcoes": ["Atual", "Antigo", "Potencial"]}
+      ],
+      "exemplos": [
+        ["-5", "Cliente A", "Falta de tempo para cozinhar", 35.0, "WhatsApp", "Atual"],
+        ["-4", "Cliente B", "Preço alto dos concorrentes", 28.0, "Instagram", "Potencial"],
+        ["-3", "Cliente C", "Demora na entrega", 32.0, "WhatsApp", "Antigo"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Fontes gratuitas úteis: IBGE Cidades, Sebrae, Google Trends, Google Maps e associações do setor.",
+    "Dez conversas boas com clientes valem mais que um relatório genérico de 100 páginas.",
+    "Anote sempre a fonte e a data de cada dado.",
+    "Ofereça um brinde pequeno para quem responder sua pesquisa."
+  ]
+}

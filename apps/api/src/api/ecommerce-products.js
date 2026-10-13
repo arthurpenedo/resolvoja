@@ -65,6 +65,8 @@ export async function createOneTimeCheckoutSession({ userId, priceId, successUrl
 
 	const session = await stripeClient.checkout.sessions.create({
 		mode: 'payment',
+		// campo "Adicionar código promocional" no checkout do Stripe (cupons criados no painel do Stripe)
+		allow_promotion_codes: true,
 		customer: customerId,
 		line_items: [{ price: priceId, quantity: 1 }],
 		success_url: successUrl,

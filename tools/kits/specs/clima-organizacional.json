@@ -1,0 +1,244 @@
+{
+  "slug": "clima-organizacional",
+  "titulo": "Clima organizacional",
+  "area": "pessoas",
+  "subdivisoes": [
+    "Clima organizacional"
+  ],
+  "resumo": "Uma pesquisa de clima anônima e curta, com plano de ação para os pontos mais fracos. Você termina sabendo como a equipe se sente de verdade e com 3 melhorias definidas e acompanhadas.",
+  "como_usar": [
+    "Escolha de 10 a 12 afirmações na aba 'Perguntas da pesquisa' e aplique de forma anônima (formulário online ou urna).",
+    "Registre as respostas na aba 'Resultados' e calcule a média de cada tema.",
+    "Escolha os 3 temas com menor nota e converse com a equipe sobre o que causa o problema.",
+    "Monte o plano de ação na aba 'Plano de ação' com responsável, prazo e indicador.",
+    "Apresente os resultados e as ações à equipe e repita a pesquisa em 6 meses."
+  ],
+  "diagnostico": [
+    "Você sabe como a equipe se sente em relação ao trabalho, à chefia e à empresa?",
+    "Há conflitos recorrentes entre pessoas ou setores?",
+    "As pessoas se sentem seguras para dar opinião ou discordar?",
+    "Existe tratamento desigual percebido (favoritismo)?",
+    "A carga de trabalho é considerada justa?",
+    "A equipe se sente reconhecida?",
+    "Há queixas frequentes de cansaço, desânimo ou faltas?",
+    "Você já fez alguma pesquisa de clima e agiu sobre os resultados?",
+    "A equipe confia que críticas feitas não terão represália?"
+  ],
+  "plano": [
+    {
+      "etapa": "Semana 1",
+      "acao": "Definir o objetivo da pesquisa e comunicar à equipe que será anônima e para melhorar o ambiente.",
+      "responsavel": "Dono",
+      "prazo_dias": 5
+    },
+    {
+      "etapa": "Semana 1",
+      "acao": "Montar o questionário com 10 a 12 afirmações em escala de 1 a 5 e uma pergunta aberta.",
+      "responsavel": "Dono",
+      "prazo_dias": 7
+    },
+    {
+      "etapa": "Semana 2",
+      "acao": "Aplicar a pesquisa de forma anônima (formulário online ou urna lacrada) em até 5 dias.",
+      "responsavel": "Assistente administrativo",
+      "prazo_dias": 14
+    },
+    {
+      "etapa": "Semana 3",
+      "acao": "Tabular as respostas e identificar os 3 temas mais fracos e os 3 mais fortes.",
+      "responsavel": "Assistente administrativo",
+      "prazo_dias": 21
+    },
+    {
+      "etapa": "Semana 3",
+      "acao": "Conversar em pequenos grupos para entender as causas dos temas fracos.",
+      "responsavel": "Gerente",
+      "prazo_dias": 28
+    },
+    {
+      "etapa": "Mês 1",
+      "acao": "Definir 3 ações concretas com responsável, prazo e forma de medir.",
+      "responsavel": "Dono",
+      "prazo_dias": 35
+    },
+    {
+      "etapa": "Mês 2",
+      "acao": "Apresentar à equipe resultado e plano; executar as primeiras ações visíveis.",
+      "responsavel": "Dono",
+      "prazo_dias": 50
+    },
+    {
+      "etapa": "Mês 3",
+      "acao": "Checar o andamento das ações e fazer mini pesquisa de 3 perguntas.",
+      "responsavel": "Gerente",
+      "prazo_dias": 90
+    }
+  ],
+  "procedimento": [
+    {
+      "passo": "Garantir o anonimato",
+      "como": "Use formulário que não identifica o respondente e só mostre resultados de grupos com 5 ou mais pessoas.",
+      "cuidado": "Pedir nome ou usar grupo tão pequeno que identifica quem respondeu."
+    },
+    {
+      "passo": "Escrever perguntas simples",
+      "como": "Use afirmações como \"Meu chefe me trata com respeito\", com escala de discordo totalmente a concordo totalmente.",
+      "cuidado": "Perguntas longas, duplas ou que induzem a resposta."
+    },
+    {
+      "passo": "Aplicar com tempo",
+      "como": "Dê 5 a 7 dias e 10 minutos de tempo de trabalho para responder.",
+      "cuidado": "Aplicar em dia corrido e obter respostas apressadas."
+    },
+    {
+      "passo": "Analisar",
+      "como": "Calcule média por tema e destaque os menores; leia os comentários abertos para achar causas.",
+      "cuidado": "Procurar culpado em vez de entender o problema."
+    },
+    {
+      "passo": "Devolver à equipe",
+      "como": "Mostre o resultado, inclusive o que é ruim, e o que será feito.",
+      "cuidado": "Guardar o resultado sem dar retorno; isso derruba a confiança."
+    },
+    {
+      "passo": "Acompanhar",
+      "como": "Reveja o plano a cada mês e repita a pesquisa em 6 meses.",
+      "cuidado": "Fazer pesquisa uma vez só e esquecer."
+    }
+  ],
+  "abas": [
+    {
+      "nome": "Perguntas da pesquisa",
+      "descricao": "Afirmações a serem avaliadas de 1 a 5 pela equipe.",
+      "colunas": [
+        {
+          "nome": "Afirmação",
+          "tipo": "texto"
+        },
+        {
+          "nome": "Tema",
+          "tipo": "lista",
+          "opcoes": [
+            "Liderança",
+            "Comunicação",
+            "Reconhecimento",
+            "Carga de trabalho",
+            "Relacionamento",
+            "Crescimento",
+            "Condições de trabalho"
+          ]
+        }
+      ],
+      "exemplos": [
+        [
+          "Meu chefe me trata com respeito.",
+          "Liderança"
+        ],
+        [
+          "Sou reconhecido quando faço bem o meu trabalho.",
+          "Reconhecimento"
+        ],
+        [
+          "Tenho as ferramentas e o apoio de que preciso.",
+          "Condições de trabalho"
+        ]
+      ]
+    },
+    {
+      "nome": "Resultados",
+      "descricao": "Média de cada tema e comparação com a pesquisa anterior.",
+      "colunas": [
+        {
+          "nome": "Tema",
+          "tipo": "texto"
+        },
+        {
+          "nome": "Média (1 a 5)",
+          "tipo": "numero"
+        },
+        {
+          "nome": "Respondentes",
+          "tipo": "numero"
+        },
+        {
+          "nome": "Principal comentário",
+          "tipo": "texto"
+        }
+      ],
+      "exemplos": [
+        [
+          "Reconhecimento",
+          2.8,
+          12,
+          "Falta de elogio e retorno"
+        ],
+        [
+          "Comunicação",
+          3.4,
+          12,
+          "Recados chegam tarde"
+        ],
+        [
+          "Relacionamento",
+          4.2,
+          12,
+          "Equipe é unida"
+        ]
+      ]
+    },
+    {
+      "nome": "Ações de clima",
+      "descricao": "Ações para melhorar os temas mais fracos.",
+      "colunas": [
+        {
+          "nome": "Tema",
+          "tipo": "texto"
+        },
+        {
+          "nome": "Ação",
+          "tipo": "texto"
+        },
+        {
+          "nome": "Responsável",
+          "tipo": "texto"
+        },
+        {
+          "nome": "Prazo",
+          "tipo": "data"
+        },
+        {
+          "nome": "Situação",
+          "tipo": "lista",
+          "opcoes": [
+            "A fazer",
+            "Em andamento",
+            "Concluída"
+          ]
+        }
+      ],
+      "exemplos": [
+        [
+          "Reconhecimento",
+          "Destaque do mês com elogio em reunião",
+          "Dono",
+          "+30",
+          "A fazer"
+        ],
+        [
+          "Comunicação",
+          "Criar grupo de avisos oficiais",
+          "Gerente",
+          "+10",
+          "Em andamento"
+        ]
+      ]
+    }
+  ],
+  "dicas": [
+    "O mais importante não é a nota, é o que você faz depois: sem ação, a pesquisa piora o clima.",
+    "Comece com poucas perguntas; 10 a 12 já dão um bom retrato.",
+    "Mostre também o que está bom, para valorizar a equipe.",
+    "Trate o clima como rotina: pergunte em reuniões curtas \"o que podemos melhorar esta semana?\".",
+    "Em caso de assédio ou denúncias sérias nos comentários, procure orientação de advogado trabalhista antes de agir."
+  ]
+}

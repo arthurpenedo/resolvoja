@@ -1,0 +1,87 @@
+{
+  "slug": "inventario",
+  "titulo": "Inventário",
+  "area": "estoque",
+  "subdivisoes": ["Inventário"],
+  "resumo": "Conte o estoque físico de forma organizada, compare com o sistema, investigue as diferenças e ajuste o saldo. Ao final você terá estoque confiável, perdas identificadas e uma rotina de contagem que não para a loja.",
+  "como_usar": [
+    "Escolha entre inventário geral (tudo em um dia) e rotativo (uma parte por semana).",
+    "Imprima ou preencha a aba 'Folha de contagem' por setor, sem mostrar a quantidade do sistema ao contador.",
+    "Faça a contagem em duplas e uma segunda contagem nos itens com divergência.",
+    "Na aba 'Divergências', registre a diferença entre contado e sistema e investigue a causa.",
+    "Ajuste o saldo no sistema com justificativa e aprovação do dono."
+  ],
+  "diagnostico": [
+    "O estoque do sistema bate com o que existe na prateleira?",
+    "Você faz inventário pelo menos uma vez ao ano?",
+    "Existem itens sumidos sem explicação (furto, quebra, erro)?",
+    "Quem conta o estoque é a mesma pessoa que o movimenta?",
+    "Você fecha a loja para contar e perde venda?",
+    "Há mercadoria sem endereço ou espalhada em vários lugares?",
+    "Você registra quebras, perdas e amostras na hora?",
+    "As entradas de compra são conferidas na chegada com a nota?",
+    "Você sabe o valor das perdas do último inventário?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Organizar o espaço: agrupar itens iguais, identificar prateleiras e corredores", "responsavel": "Estoquista", "prazo_dias": 5},
+    {"etapa": "Semana 1", "acao": "Dividir o estoque em setores e escolher o modelo (geral ou rotativo)", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 2", "acao": "Imprimir folhas de contagem por setor e definir as duplas", "responsavel": "Dono", "prazo_dias": 14},
+    {"etapa": "Semana 2", "acao": "Suspender entradas e saídas durante a contagem ou registrar tudo em separado", "responsavel": "Estoquista", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Realizar a primeira contagem e a recontagem das divergências", "responsavel": "Estoquista", "prazo_dias": 21},
+    {"etapa": "Semana 4", "acao": "Investigar causas das divergências relevantes (notas, trocas, quebras)", "responsavel": "Dono", "prazo_dias": 28},
+    {"etapa": "Semana 5", "acao": "Ajustar o sistema com justificativa e guardar a folha assinada", "responsavel": "Dono", "prazo_dias": 35},
+    {"etapa": "Mês 2", "acao": "Começar o inventário rotativo: contar os itens A todo mês", "responsavel": "Estoquista", "prazo_dias": 60},
+    {"etapa": "Mês 3", "acao": "Validar com o contador o tratamento dos ajustes e perdas no balanço", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Preparar a área", "como": "Arrume, separe itens avariados e coloque etiquetas de setor antes de contar.", "cuidado": "Contar bagunça gera contagem errada."},
+    {"passo": "Congelar a movimentação", "como": "Registre as vendas e entradas ocorridas durante a contagem em um papel à parte.", "cuidado": "Uma venda fora da lista distorce a divergência."},
+    {"passo": "Contar às cegas", "como": "O contador anota apenas a quantidade encontrada, sem ver o saldo do sistema.", "cuidado": "Ver o número do sistema induz a 'acertar'."},
+    {"passo": "Fazer dupla checagem", "como": "Uma pessoa conta e outra confere; itens de alto valor são contados duas vezes.", "cuidado": "A mesma pessoa não deve contar e conferir."},
+    {"passo": "Comparar com o sistema", "como": "Calcule a diferença (contado - sistema) em unidades e em reais.", "cuidado": "Diferenças pequenas em itens baratos não valem muito tempo."},
+    {"passo": "Recontar divergências", "como": "Recontar todo item com diferença acima de uma margem (ex.: 5% ou R$ 50).", "cuidado": "Ajustar sem recontar cria novos erros."},
+    {"passo": "Investigar a causa", "como": "Procure notas de entrada ou saída não lançadas, trocas, quebras e produtos no lugar errado.", "cuidado": "Rotular tudo como 'furto' sem conferir esconde o problema de processo."},
+    {"passo": "Ajustar e documentar", "como": "Lance entrada ou saída de ajuste com motivo e assinatura do responsável.", "cuidado": "Ajuste sem registro impede de achar o erro depois."}
+  ],
+  "abas": [
+    {
+      "nome": "Folha de contagem",
+      "descricao": "Planilha impressa para os contadores anotarem o que encontraram.",
+      "colunas": [
+        {"nome": "Setor", "tipo": "texto"},
+        {"nome": "Código ou produto", "tipo": "texto"},
+        {"nome": "Contagem 1", "tipo": "numero"},
+        {"nome": "Contagem 2", "tipo": "numero"},
+        {"nome": "Contador", "tipo": "texto"},
+        {"nome": "Data", "tipo": "data"}
+      ],
+      "exemplos": [
+        ["Prateleira 1", "Produto A", 48, 48, "Pessoa 1", "0"],
+        ["Prateleira 1", "Produto B", 12, 14, "Pessoa 2", "0"]
+      ]
+    },
+    {
+      "nome": "Divergências",
+      "descricao": "Diferenças entre contagem e sistema, com a causa e o ajuste.",
+      "colunas": [
+        {"nome": "Produto", "tipo": "texto"},
+        {"nome": "Saldo do sistema", "tipo": "numero"},
+        {"nome": "Contagem final", "tipo": "numero"},
+        {"nome": "Custo unitário", "tipo": "moeda"},
+        {"nome": "Causa", "tipo": "lista", "opcoes": ["Nota não lançada", "Quebra", "Furto suspeito", "Erro de cadastro", "Local errado", "A investigar"]}
+      ],
+      "exemplos": [
+        ["Produto B", 16, 14, 22.5, "Quebra"],
+        ["Produto C", 30, 30, 8.0, "A investigar"],
+        ["Produto D", 5, 9, 60.0, "Nota não lançada"]
+      ]
+    }
+  ],
+  "dicas": [
+    "O inventário rotativo (contar parte dos itens toda semana) dá menos trabalho e descobre erros mais cedo.",
+    "Priorize itens de alto valor e alto giro, que são onde mais se perde dinheiro.",
+    "Faça o inventário geral após fechar a loja ou em horário de menos movimento.",
+    "Cadastro duplicado ou com unidades diferentes (caixa x unidade) é causa comum de diferença.",
+    "O inventário anual para balanço deve seguir as orientações do seu contador."
+  ]
+}

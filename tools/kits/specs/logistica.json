@@ -1,0 +1,85 @@
+{
+  "slug": "logistica",
+  "titulo": "Logística",
+  "area": "operacoes",
+  "subdivisoes": ["Logística"],
+  "resumo": "Organiza o fluxo físico de mercadorias da expedição ao transporte: embalagem, escolha de transportadora, custo de frete e rotas. Ao final você paga menos de frete e envia com menos avaria.",
+  "como_usar": [
+    "Cadastre na aba 'Transportadoras e fretes' cada opção de envio com custo, prazo e histórico de problemas.",
+    "Registre cada remessa na aba 'Expedicao' com peso, destino e custo.",
+    "Compare custo por quilo e índice de problemas por transportadora a cada mês.",
+    "Padronize tamanhos de caixa e materiais de proteção com base nos itens mais enviados.",
+    "Renegocie ou troque transportadoras com base nos dados e não na impressão."
+  ],
+  "diagnostico": [
+    "Você sabe quanto gasta de frete por mês e quanto isso é do faturamento?",
+    "Compara pelo menos 2 transportadoras ou serviços de envio?",
+    "As embalagens são de tamanhos padronizados em vez de improvisadas?",
+    "Há registro de avarias, extravios e atrasos por transportadora?",
+    "O peso e as medidas dos produtos estão cadastrados para cotar frete?",
+    "O horário de coleta é fixo e a equipe sabe o limite para postagem?",
+    "Você agrupa entregas locais em rotas em vez de sair para cada pedido?",
+    "O cliente recebe código de rastreio automaticamente?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Somar o frete pago nos últimos 3 meses e calcular o percentual sobre vendas.", "responsavel": "Dono", "prazo_dias": 3},
+    {"etapa": "Semana 1", "acao": "Cadastrar peso e dimensões embaladas dos 20 produtos mais enviados.", "responsavel": "Expedição", "prazo_dias": 7},
+    {"etapa": "Semana 2", "acao": "Cotar as mesmas 10 remessas típicas em pelo menos 3 serviços (Correios, transportadoras, plataformas de frete).", "responsavel": "Dono", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Escolher 3 tamanhos padrão de caixa e comprar em maior quantidade com desconto.", "responsavel": "Compras", "prazo_dias": 21},
+    {"etapa": "Semana 4", "acao": "Definir horário de corte e de coleta e comunicar equipe e clientes.", "responsavel": "Dono", "prazo_dias": 28},
+    {"etapa": "Semana 6", "acao": "Começar a registrar remessas, ocorrências e custos na planilha.", "responsavel": "Expedição", "prazo_dias": 42},
+    {"etapa": "Semana 10", "acao": "Analisar custo por quilo, prazo real e avarias; renegociar com a melhor transportadora.", "responsavel": "Dono", "prazo_dias": 70},
+    {"etapa": "Semana 13", "acao": "Revisar o contrato de seguro e as regras de reembolso de avaria com o contador ou corretor.", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Meça o produto embalado", "como": "Pese e meça o item já embalado, pois o frete cobra o maior entre peso real e cubado.", "cuidado": "Caixa grande demais pode dobrar o frete."},
+    {"passo": "Padronize a embalagem", "como": "Defina caixa, enchimento e fita para cada tipo de produto e escreva na bancada.", "cuidado": "Economizar no enchimento sai caro em avaria."},
+    {"passo": "Cote antes de prometer", "como": "Compare ao menos 2 opções por região e escolha por custo e prazo reais.", "cuidado": "Mais barato nem sempre é melhor se atrasa ou avaria."},
+    {"passo": "Poste no horário de corte", "como": "Reúna os pedidos prontos e entregue ou aguarde a coleta em horário fixo.", "cuidado": "Postagens soltas ao longo do dia desperdiçam tempo."},
+    {"passo": "Envie rastreio", "como": "Mande ao cliente o código assim que postar, com prazo previsto.", "cuidado": "Cliente sem informação gera contato e reclamação."},
+    {"passo": "Registre ocorrências", "como": "Anote atrasos, avarias e extravios por transportadora para a negociação.", "cuidado": "Sem prova documentada, você não consegue reembolso."}
+  ],
+  "abas": [
+    {
+      "nome": "Transportadoras e fretes",
+      "descricao": "Comparação de serviços de envio por custo, prazo e confiabilidade.",
+      "colunas": [
+        {"nome": "Transportadora/Serviço", "tipo": "texto"},
+        {"nome": "Região atendida", "tipo": "texto"},
+        {"nome": "Custo médio por kg", "tipo": "moeda"},
+        {"nome": "Prazo médio (dias)", "tipo": "numero"},
+        {"nome": "Ocorrências no mês", "tipo": "numero"},
+        {"nome": "Situação", "tipo": "lista", "opcoes": ["Principal", "Reserva", "Em teste", "Descartada"]}
+      ],
+      "exemplos": [
+        ["Transportadora A", "Sudeste", 6.8, 3, 1, "Principal"],
+        ["Serviço B (Correios)", "Todo o Brasil", 9.5, 5, 2, "Reserva"],
+        ["Transportadora C", "Sul", 7.2, 4, 0, "Em teste"]
+      ]
+    },
+    {
+      "nome": "Expedicao",
+      "descricao": "Registro de cada remessa enviada, com custo e ocorrência.",
+      "colunas": [
+        {"nome": "Data de envio", "tipo": "data"},
+        {"nome": "Pedido", "tipo": "texto"},
+        {"nome": "Destino (cidade/UF)", "tipo": "texto"},
+        {"nome": "Peso (kg)", "tipo": "numero"},
+        {"nome": "Transportadora", "tipo": "texto"},
+        {"nome": "Custo do frete", "tipo": "moeda"},
+        {"nome": "Ocorrência", "tipo": "lista", "opcoes": ["Nenhuma", "Atraso", "Avaria", "Extravio", "Devolução"]}
+      ],
+      "exemplos": [
+        ["-4", "Pedido 101", "Campinas/SP", 2.5, "Transportadora A", 18.4, "Nenhuma"],
+        ["-3", "Pedido 102", "Curitiba/PR", 4.0, "Serviço B (Correios)", 36.9, "Atraso"],
+        ["-1", "Pedido 103", "Belo Horizonte/MG", 1.2, "Transportadora A", 14.0, "Nenhuma"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Frete é custo que você pode negociar quando passa de certo volume mensal; leve seus números.",
+    "Padronizar 3 caixas reduz estoque de embalagem e tempo de decisão.",
+    "Fotografe o pacote fechado antes de postar: prova em caso de avaria.",
+    "Quando o frete pesa no preço, considere frete grátis acima de um valor mínimo de pedido."
+  ]
+}

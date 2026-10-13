@@ -1,0 +1,95 @@
+{
+  "slug": "gestao-do-tempo",
+  "titulo": "Gestão do tempo",
+  "area": "gestao",
+  "subdivisoes": ["Gestão do tempo"],
+  "resumo": "Um método para descobrir onde seu tempo realmente vai e reservar horas protegidas para o que dá resultado. Ao final você tem uma semana-modelo e menos horas perdidas com interrupções e tarefas de baixo valor.",
+  "como_usar": [
+    "Durante 5 dias, registre na aba 'Diário de tempo' o que fez em blocos de 30 minutos.",
+    "Classifique cada bloco como Gera dinheiro, Mantém a empresa, ou Desperdício.",
+    "Monte na aba 'Semana-modelo' os blocos protegidos para o que importa.",
+    "Defina na aba 'Regras de interrupção' como lidar com WhatsApp, ligações e pedidos de última hora.",
+    "Revise todo domingo à noite: planeje a semana seguinte em 15 minutos."
+  ],
+  "diagnostico": [
+    "No fim do dia, você sente que trabalhou muito mas não fez o que era importante?",
+    "Responde mensagens de WhatsApp o dia todo, interrompendo o que estava fazendo?",
+    "Faz tarefas que poderiam ser feitas por outra pessoa?",
+    "Sabe quanto tempo por semana gasta com reuniões, deslocamentos e burocracia?",
+    "Tem horários fixos para atividades de crescimento (vendas, parcerias, planejamento)?",
+    "Costuma trabalhar à noite ou nos fins de semana para colocar o trabalho em dia?",
+    "Diz 'sim' a quase todos os pedidos que chegam?",
+    "Planeja a semana antes de ela começar?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Começar o diário de tempo: anotar atividades a cada 30 minutos por 5 dias", "responsavel": "Dono", "prazo_dias": 1},
+    {"etapa": "Semana 1", "acao": "Classificar os blocos: gera dinheiro, mantém, desperdício", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 1", "acao": "Listar as 5 maiores perdas de tempo e o que causa cada uma", "responsavel": "Dono", "prazo_dias": 8},
+    {"etapa": "Semana 2", "acao": "Definir 2 a 3 blocos semanais protegidos (vendas, planejamento, finanças)", "responsavel": "Dono", "prazo_dias": 14},
+    {"etapa": "Semana 2", "acao": "Criar regras de interrupção: horários para responder mensagens e atender ligações", "responsavel": "Dono", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Escolher 3 tarefas para delegar ou eliminar e treinar quem vai assumir", "responsavel": "Dono", "prazo_dias": 21},
+    {"etapa": "Semana 4", "acao": "Seguir a semana-modelo por 2 semanas e anotar o que não coube", "responsavel": "Dono", "prazo_dias": 30},
+    {"etapa": "Mês 2", "acao": "Medir quantas horas por semana foram recuperadas e reinvestir em crescimento", "responsavel": "Dono", "prazo_dias": 60},
+    {"etapa": "Mês 3", "acao": "Repetir o diário por 3 dias para checar se voltou a vazar tempo", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Registre sem julgar", "como": "Anote o que fez de verdade em blocos de 30 minutos, mesmo o que parece bobagem.", "cuidado": "Registrar no fim do dia de memória e esquecer metade."},
+    {"passo": "Classifique os blocos", "como": "Marque cada bloco: G (gera dinheiro), M (mantém a empresa) ou D (desperdício).", "cuidado": "Marcar tudo como 'M' por conveniência."},
+    {"passo": "Calcule o valor da sua hora", "como": "Divida o quanto você quer ganhar por mês pelas horas trabalhadas; não faça o que custa menos que isso se outra pessoa pode.", "cuidado": "Achar que fazer tudo sozinho 'sai mais barato'."},
+    {"passo": "Bloqueie horários", "como": "Reserve blocos de 90 minutos no calendário para atividades que geram resultado, de preferência de manhã.", "cuidado": "Deixar os blocos serem cancelados por urgências pequenas."},
+    {"passo": "Agrupe tarefas parecidas", "como": "Responda mensagens em 3 horários do dia; pague contas em um único dia da semana.", "cuidado": "Verificar mensagens a cada 5 minutos."},
+    {"passo": "Aprenda a dizer não", "como": "Responda 'posso ver na quinta' em vez de 'sim' automático; recuse reuniões sem pauta.", "cuidado": "Aceitar tudo por medo de perder oportunidade."}
+  ],
+  "abas": [
+    {
+      "nome": "Diário de tempo",
+      "descricao": "Registro das atividades do dia em blocos, com classificação.",
+      "colunas": [
+        {"nome": "Data", "tipo": "data"},
+        {"nome": "Horário", "tipo": "texto"},
+        {"nome": "Atividade", "tipo": "texto"},
+        {"nome": "Classe", "tipo": "lista", "opcoes": ["Gera dinheiro", "Mantém a empresa", "Desperdício"]},
+        {"nome": "Minutos", "tipo": "numero"}
+      ],
+      "exemplos": [
+        ["-2", "08:00", "Atendimento de clientes e propostas", "Gera dinheiro", 120],
+        ["-2", "10:00", "Responder WhatsApp solto e conversas paralelas", "Desperdício", 90],
+        ["-2", "14:00", "Conferir pagamentos e pagar contas", "Mantém a empresa", 60]
+      ]
+    },
+    {
+      "nome": "Semana-modelo",
+      "descricao": "Blocos fixos da semana ideal, protegidos na agenda.",
+      "colunas": [
+        {"nome": "Dia", "tipo": "lista", "opcoes": ["Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"]},
+        {"nome": "Horário", "tipo": "texto"},
+        {"nome": "Bloco", "tipo": "texto"},
+        {"nome": "Pode ser interrompido?", "tipo": "lista", "opcoes": ["Não", "Só emergência", "Sim"]}
+      ],
+      "exemplos": [
+        ["Segunda", "08:00 - 09:30", "Planejar a semana e revisar números", "Não"],
+        ["Terça", "09:00 - 11:00", "Prospecção e contato com clientes", "Só emergência"],
+        ["Sexta", "15:00 - 16:00", "Finanças: contas a pagar e receber", "Só emergência"]
+      ]
+    },
+    {
+      "nome": "Regras de interrupção",
+      "descricao": "Combinados sobre mensagens, ligações e pedidos de última hora.",
+      "colunas": [
+        {"nome": "Canal ou situação", "tipo": "texto"},
+        {"nome": "Regra", "tipo": "texto"},
+        {"nome": "Horário de resposta", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["WhatsApp de clientes", "Resposta automática informando prazo; atendimento em ondas", "11:00, 15:00 e 17:30"],
+        ["Pedido urgente de equipe", "Só é urgente se afetar cliente ou caixa hoje", "Imediato se atender critério"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Faça a tarefa mais difícil no seu melhor horário de energia, não no que sobrou.",
+    "Desligue as notificações do celular durante os blocos protegidos.",
+    "Se o diário mostrar mais de 30% de desperdício, comece cortando só a maior fonte.",
+    "Peça para quem trabalha com você respeitar seus blocos; isso funciona quando é combinado."
+  ]
+}

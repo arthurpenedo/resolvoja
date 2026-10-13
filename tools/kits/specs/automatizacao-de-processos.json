@@ -1,0 +1,81 @@
+{
+  "slug": "automatizacao-de-processos",
+  "titulo": "Automatização de processos",
+  "area": "operacoes",
+  "subdivisoes": ["Automatização de processos"],
+  "resumo": "Ajuda a descobrir quais tarefas repetitivas valem ser automatizadas, calcular o ganho e começar com ferramentas simples e baratas. Ao final você terá uma lista priorizada por economia de horas.",
+  "como_usar": [
+    "Por uma semana, cada pessoa anota na aba 'Tarefas repetitivas' o que faz mais de uma vez por dia ou semana.",
+    "Preencha o tempo de cada tarefa e a frequência; a planilha calcula as horas por mês.",
+    "Use a aba 'Candidatas a automacao' para escolher as 2 de maior ganho e menor dificuldade.",
+    "Teste a automação em pequeno, com ferramenta gratuita ou barata, antes de assinar algo caro.",
+    "Meça as horas economizadas após 30 dias e decida a próxima."
+  ],
+  "diagnostico": [
+    "Alguém copia dados de um lugar para outro (planilha, WhatsApp, sistema) todos os dias?",
+    "Você manda as mesmas mensagens ou e-mails várias vezes por semana?",
+    "Relatórios são montados à mão em planilha todo mês?",
+    "Cobranças, lembretes ou confirmações dependem de alguém lembrar?",
+    "Você já tem as tarefas descritas passo a passo (condição para automatizar)?",
+    "Seus sistemas (loja, financeiro, agenda) permitem integração ou exportação de dados?",
+    "Há tarefas que ocupam horas de uma pessoa cara em trabalho simples?"
+  ],
+  "plano": [
+    {"etapa": "Semana 1", "acao": "Cada pessoa registra durante 5 dias as tarefas repetitivas, com tempo gasto.", "responsavel": "Equipe", "prazo_dias": 7},
+    {"etapa": "Semana 2", "acao": "Consolidar a lista e calcular horas por mês de cada tarefa.", "responsavel": "Dono", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Pontuar facilidade e escolher as 2 tarefas de maior ganho.", "responsavel": "Dono", "prazo_dias": 21},
+    {"etapa": "Semana 4", "acao": "Padronizar o passo a passo manual das 2 tarefas (só se for claro dá para automatizar).", "responsavel": "Executor", "prazo_dias": 28},
+    {"etapa": "Semana 5", "acao": "Montar a automação 1 com ferramenta simples (modelos de mensagem, formulário, regras do próprio sistema, Zapier/Make/n8n).", "responsavel": "Dono ou parceiro técnico", "prazo_dias": 40},
+    {"etapa": "Semana 7", "acao": "Rodar em paralelo com o manual por 1 semana comparando resultados.", "responsavel": "Executor", "prazo_dias": 50},
+    {"etapa": "Semana 10", "acao": "Medir horas economizadas e erros; desligar o processo manual.", "responsavel": "Dono", "prazo_dias": 70},
+    {"etapa": "Semana 13", "acao": "Implantar a automação 2 e revisar a lista para a próxima rodada.", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Escolha pelo ganho", "como": "Multiplique tempo por frequência e ordene; a maior economia vem de tarefas diárias curtas.", "cuidado": "Não automatize pelo brilho da ferramenta."},
+    {"passo": "Escreva o passo a passo manual", "como": "Documente cada clique e decisão da tarefa atual.", "cuidado": "Automatizar processo bagunçado só acelera a bagunça."},
+    {"passo": "Escolha a ferramenta mais simples", "como": "Veja primeiro recursos nativos: respostas rápidas, agendamento, regras de e-mail, formulários, planilha com script.", "cuidado": "Ferramenta cara para tarefa pequena não se paga."},
+    {"passo": "Configure e teste com dados falsos", "como": "Rode 5 casos de teste, incluindo um com informação faltando.", "cuidado": "Teste em dados reais pode mandar mensagem errada a cliente."},
+    {"passo": "Rode em paralelo", "como": "Mantenha o manual por 1 semana e compare resultados.", "cuidado": "Desligar o manual cedo demais esconde falhas."},
+    {"passo": "Defina quem monitora", "como": "Nomeie uma pessoa que verifica a automação semanalmente e sabe o que fazer se quebrar.", "cuidado": "Automação sem dono quebra em silêncio."}
+  ],
+  "abas": [
+    {
+      "nome": "Tarefas repetitivas",
+      "descricao": "Registro das tarefas manuais repetidas e do tempo que consomem.",
+      "colunas": [
+        {"nome": "Tarefa", "tipo": "texto"},
+        {"nome": "Quem faz", "tipo": "texto"},
+        {"nome": "Minutos por vez", "tipo": "numero"},
+        {"nome": "Vezes por mês", "tipo": "numero"},
+        {"nome": "Ferramenta usada hoje", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["Enviar confirmação de pedido", "Pessoa A", 4, 120, "WhatsApp"],
+        ["Lançar vendas na planilha", "Pessoa B", 10, 22, "Planilha"],
+        ["Lembrar clientes de pagamento", "Dono", 15, 8, "WhatsApp"]
+      ]
+    },
+    {
+      "nome": "Candidatas a automacao",
+      "descricao": "Avaliação e acompanhamento das tarefas escolhidas para automatizar.",
+      "colunas": [
+        {"nome": "Tarefa", "tipo": "texto"},
+        {"nome": "Horas economizadas por mês", "tipo": "numero"},
+        {"nome": "Dificuldade", "tipo": "lista", "opcoes": ["Fácil", "Média", "Difícil"]},
+        {"nome": "Custo mensal da ferramenta", "tipo": "moeda"},
+        {"nome": "Início do teste", "tipo": "data"},
+        {"nome": "Situação", "tipo": "lista", "opcoes": ["Ideia", "Em teste", "Ativa", "Descartada"]}
+      ],
+      "exemplos": [
+        ["Confirmação automática de pedido", 8, "Fácil", 0.0, "+7", "Em teste"],
+        ["Lembrete de cobrança", 2, "Média", 49.0, "+30", "Ideia"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Regra de bolso: se a tarefa leva mais de 2 horas por mês e segue sempre o mesmo roteiro, vale pensar em automatizar.",
+    "Comece com o que o sistema que você já paga oferece antes de contratar outro.",
+    "Mantenha sempre uma mensagem final com opção de falar com humano em automações de atendimento.",
+    "Guarde o passo a passo manual; você vai precisar dele se a automação cair."
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "slug": "criar-landing-page",
+  "titulo": "Criar landing page",
+  "area": "tecnologia",
+  "subdivisoes": ["Criar landing page"],
+  "resumo": "Roteiro para criar uma página de captura ou venda com uma única ação, do briefing da oferta ao lançamento e medição. Você sai com a estrutura, os textos-guia e o checklist para publicar e testar.",
+  "como_usar": [
+    "Responda o diagnóstico para confirmar que sua oferta está clara o bastante para virar uma página.",
+    "Preencha a aba Oferta e público antes de escolher qualquer ferramenta.",
+    "Use a aba Estrutura da página para planejar cada bloco, do título ao botão final.",
+    "Compare ferramentas na aba Comparação de ferramentas e escolha uma.",
+    "Siga o plano, publique e use a aba Testes e resultados para melhorar a conversão."
+  ],
+  "diagnostico": [
+    "Você consegue explicar sua oferta em uma frase sem usar termos técnicos?",
+    "Existe uma única ação que a página deve gerar (cadastro, compra, WhatsApp)?",
+    "Você sabe de onde virá o tráfego (anúncio, Instagram, e-mail, indicação)?",
+    "Você tem prova social (depoimentos, números, fotos de antes e depois)?",
+    "Você tem um preço, bônus ou prazo claro para a oferta?",
+    "Sabe o que fará com os contatos captados (e-mail, WhatsApp, CRM)?",
+    "Tem o pixel/tag das plataformas de anúncio instalado ou sabe como instalar?",
+    "Você já usou a mesma página para muitos assuntos diferentes?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Definir a oferta, o público e a ação única da página", "responsavel": "Dono", "prazo_dias": 2},
+    {"etapa": "Dia 3", "acao": "Escrever título, subtítulo, 3 benefícios, objeções e chamada final", "responsavel": "Dono", "prazo_dias": 5},
+    {"etapa": "Semana 1", "acao": "Reunir imagens, depoimentos autorizados e garantia (se houver)", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 1", "acao": "Comparar ferramentas e escolher uma (veja aba de comparação)", "responsavel": "Dono", "prazo_dias": 8},
+    {"etapa": "Semana 2", "acao": "Montar a página com formulário ou botão de WhatsApp", "responsavel": "Dono ou freelancer", "prazo_dias": 14},
+    {"etapa": "Semana 2", "acao": "Conectar formulário ao e-mail/WhatsApp/CRM e testar o fluxo completo", "responsavel": "Dono", "prazo_dias": 16},
+    {"etapa": "Semana 2", "acao": "Instalar Google Analytics e pixel das redes onde você vai anunciar", "responsavel": "Dono", "prazo_dias": 18},
+    {"etapa": "Semana 3", "acao": "Passar pelo checklist de lançamento e publicar", "responsavel": "Dono", "prazo_dias": 21},
+    {"etapa": "Semana 4", "acao": "Rodar tráfego pequeno e medir taxa de conversão", "responsavel": "Dono", "prazo_dias": 30},
+    {"etapa": "Dia 45", "acao": "Mudar um item por vez (título, imagem, botão) e comparar resultados", "responsavel": "Dono", "prazo_dias": 45},
+    {"etapa": "Dia 60", "acao": "Incluir política de privacidade e consentimento; validar com advogado a coleta de dados (LGPD)", "responsavel": "Dono + advogado", "prazo_dias": 60}
+  ],
+  "procedimento": [
+    {"passo": "Uma página, uma oferta", "como": "Cada landing page serve a uma oferta e a um público; sem menu para outras páginas.", "cuidado": "Colocar menu e links que levam a visitante para longe do botão principal."},
+    {"passo": "Título claro", "como": "Diga o resultado para o cliente e para quem é (ex.: 'Planilha para controlar o caixa da sua loja em 10 minutos').", "cuidado": "Título bonito e vago que não diz o que a pessoa ganha."},
+    {"passo": "Benefícios e como funciona", "como": "Liste 3 a 5 benefícios e 3 passos simples de como a pessoa recebe.", "cuidado": "Enumerar características técnicas em vez de resultados."},
+    {"passo": "Prova social", "como": "Use depoimentos reais com nome e foto autorizados, números e logos de clientes.", "cuidado": "Inventar depoimentos; é enganoso e pode gerar problemas."},
+    {"passo": "Formulário curto", "como": "Peça só o essencial: nome e WhatsApp ou e-mail. Cada campo a mais reduz o envio.", "cuidado": "Pedir CPF, endereço e dados que você não usa."},
+    {"passo": "Botão com verbo", "como": "Texto como 'Quero receber o orçamento' em cor contrastante, repetido no meio e no fim da página.", "cuidado": "Botão escrito apenas 'Enviar'."},
+    {"passo": "Velocidade e celular", "como": "Comprima imagens, teste no celular com 4G e deixe o botão visível sem rolar muito.", "cuidado": "Vídeo ou imagem pesada que faz a página demorar mais de 3 segundos."},
+    {"passo": "Medir e testar", "como": "Calcule conversão = envios ÷ visitas. Mude um elemento por vez e registre na aba de testes.", "cuidado": "Mudar tudo ao mesmo tempo e não saber o que funcionou."},
+    {"passo": "Responder rápido", "como": "Combine um prazo máximo (ex.: 15 minutos em horário comercial) para responder cada contato.", "cuidado": "Gastar com tráfego e demorar horas para atender."}
+  ],
+  "abas": [
+    {
+      "nome": "Oferta e público",
+      "descricao": "Base de mensagem da página.",
+      "colunas": [
+        {"nome": "Item", "tipo": "texto"},
+        {"nome": "Definição", "tipo": "texto"},
+        {"nome": "Status", "tipo": "lista", "opcoes": ["Pendente", "Definido", "Aprovado"]}
+      ],
+      "exemplos": [
+        ["Oferta", "Consulta gratuita de 20 minutos sobre organização financeira", "Definido"],
+        ["Público", "Donos de pequenos comércios com faturamento até R$ 30 mil/mês", "Definido"],
+        ["Ação única", "Preencher nome e WhatsApp", "Pendente"]
+      ]
+    },
+    {
+      "nome": "Estrutura da página",
+      "descricao": "Blocos da landing page, na ordem em que aparecem.",
+      "colunas": [
+        {"nome": "Bloco", "tipo": "texto"},
+        {"nome": "Conteúdo", "tipo": "texto"},
+        {"nome": "Responsável", "tipo": "texto"},
+        {"nome": "Pronto?", "tipo": "lista", "opcoes": ["Sim", "Não", "Em andamento"]}
+      ],
+      "exemplos": [
+        ["Título + subtítulo", "Resultado prometido e para quem", "Dono", "Em andamento"],
+        ["Benefícios", "3 a 5 itens curtos com ícone", "Dono", "Não"],
+        ["Depoimentos", "2 depoimentos com nome e foto", "Dono", "Não"],
+        ["Chamada final", "Botão + garantia", "Dono", "Não"]
+      ]
+    },
+    {
+      "nome": "Testes e resultados",
+      "descricao": "Registre o que mudou e o efeito na conversão.",
+      "colunas": [
+        {"nome": "Data", "tipo": "data"},
+        {"nome": "O que mudou", "tipo": "texto"},
+        {"nome": "Visitas", "tipo": "numero"},
+        {"nome": "Contatos gerados", "tipo": "numero"},
+        {"nome": "Observação", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["-14", "Versão inicial", 200, 8, "Base de comparação"],
+        ["-7", "Título trocado para focar no resultado", 210, 14, "Melhorou"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Ferramentas comuns no Brasil: Wix, Hostinger Builder, WordPress com Elementor, Systeme.io, Carrd e Lovable/Framer. Compare o que está incluso no plano antes de assinar.",
+    "Não precisa de muito tráfego para testar: 100 a 200 visitas já mostram se a página tem problema grave.",
+    "Mantenha o botão de WhatsApp com mensagem pré-preenchida identificando a origem (ex.: 'Vim pela página X').",
+    "Um domínio próprio dá mais confiança do que o endereço gratuito da ferramenta.",
+    "Cuidado com promessas de resultado garantido; use apenas o que você consegue comprovar."
+  ]
+}

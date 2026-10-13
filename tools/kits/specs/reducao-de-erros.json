@@ -1,0 +1,82 @@
+{
+  "slug": "reducao-de-erros",
+  "titulo": "Redução de erros",
+  "area": "operacoes",
+  "subdivisoes": ["Redução de erros"],
+  "resumo": "Cria um registro de erros por tipo e gravidade e aplica barreiras simples (conferência dupla, trava, checklist) nos pontos onde mais se erra. Ao final a empresa erra menos e sabe onde ainda erra.",
+  "como_usar": [
+    "Registre cada erro na aba 'Registro de erros' com tipo, gravidade e momento em que foi detectado.",
+    "Toda semana olhe os erros graves e frequentes e escolha um para atacar.",
+    "Para o erro escolhido, defina na aba 'Barreiras' uma proteção que impeça ou detecte o erro cedo.",
+    "Implante a barreira e conte as ocorrências nas 4 semanas seguintes.",
+    "Mantenha as barreiras que funcionam e retire as que só atrapalham."
+  ],
+  "diagnostico": [
+    "Os erros da empresa são anotados em algum lugar além da memória?",
+    "O cliente costuma ser o primeiro a descobrir um erro?",
+    "Dados importantes (preço, endereço, quantidade) são digitados à mão mais de uma vez?",
+    "Há tarefas críticas que ninguém confere antes de seguirem adiante?",
+    "Os mesmos tipos de erro se repetem nos últimos 3 meses?",
+    "Pessoas trabalham com pressa, interrupções ou sobrecarga nas horas de pico?",
+    "Existem erros que já custaram dinheiro, cliente ou segurança e não geraram mudança?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Criar a planilha de erros e combinar com a equipe que registrar é obrigatório e sem punição.", "responsavel": "Dono", "prazo_dias": 2},
+    {"etapa": "Semana 2", "acao": "Listar os erros dos últimos 3 meses que você lembra e lançar no registro.", "responsavel": "Dono e líderes", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Classificar por tipo e gravidade e escolher o erro de maior impacto.", "responsavel": "Dono", "prazo_dias": 21},
+    {"etapa": "Semana 4", "acao": "Definir uma barreira para esse erro: conferência dupla, lista de itens obrigatórios ou trava no sistema.", "responsavel": "Líder", "prazo_dias": 30},
+    {"etapa": "Semana 5", "acao": "Implantar a barreira e treinar a equipe em 15 minutos.", "responsavel": "Líder", "prazo_dias": 35},
+    {"etapa": "Semana 9", "acao": "Contar erros do tipo e comparar com o mês anterior.", "responsavel": "Dono", "prazo_dias": 60},
+    {"etapa": "Semana 10", "acao": "Escolher o próximo erro e repetir o ciclo.", "responsavel": "Dono", "prazo_dias": 70},
+    {"etapa": "Semana 13", "acao": "Fazer reunião de 20 minutos para revisar quais barreiras ficam, mudam ou saem.", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Classifique o erro", "como": "Marque tipo (digitação, esquecimento, comunicação, execução) e gravidade (leve, médio, grave).", "cuidado": "Tratar todos os erros como iguais dispersa a energia."},
+    {"passo": "Descubra onde nasceu", "como": "Volte etapa por etapa até a primeira onde o erro poderia ter sido evitado.", "cuidado": "O erro aparece no fim, mas quase sempre nasce no começo."},
+    {"passo": "Prefira evitar a detectar", "como": "Reduza digitação manual, use listas de escolha, números pré-preenchidos e campos obrigatórios.", "cuidado": "Confiar em 'prestar mais atenção' não funciona."},
+    {"passo": "Acrescente conferência onde o risco é alto", "como": "Em itens críticos, outra pessoa confere com uma lista curta antes de seguir.", "cuidado": "Conferência em tudo vira rotina automática e deixa de funcionar."},
+    {"passo": "Reduza pressa e interrupção", "como": "Defina horário sem interrupções para tarefas críticas e limite o volume por pessoa.", "cuidado": "Cobrar rapidez e zero erro ao mesmo tempo é contradição."},
+    {"passo": "Meça e ajuste", "como": "Conte os erros do tipo por 4 semanas; se não caíram, troque a barreira.", "cuidado": "Barreira que não reduz erro é só burocracia."}
+  ],
+  "abas": [
+    {
+      "nome": "Registro de erros",
+      "descricao": "Lista de erros ocorridos com tipo, gravidade e custo.",
+      "colunas": [
+        {"nome": "Data", "tipo": "data"},
+        {"nome": "Descrição do erro", "tipo": "texto"},
+        {"nome": "Tipo", "tipo": "lista", "opcoes": ["Digitação", "Esquecimento", "Comunicação", "Execução", "Sistema"]},
+        {"nome": "Gravidade", "tipo": "lista", "opcoes": ["Leve", "Média", "Grave"]},
+        {"nome": "Detectado por", "tipo": "lista", "opcoes": ["Equipe", "Cliente", "Conferência"]},
+        {"nome": "Custo estimado", "tipo": "moeda"}
+      ],
+      "exemplos": [
+        ["-5", "Preço errado no orçamento", "Digitação", "Média", "Cliente", 120.0],
+        ["-3", "Esqueceram de incluir brinde", "Esquecimento", "Leve", "Equipe", 15.0],
+        ["-1", "Produto enviado para endereço antigo", "Comunicação", "Grave", "Cliente", 230.0]
+      ]
+    },
+    {
+      "nome": "Barreiras",
+      "descricao": "Proteções criadas contra cada erro e o resultado delas.",
+      "colunas": [
+        {"nome": "Erro combatido", "tipo": "texto"},
+        {"nome": "Barreira", "tipo": "texto"},
+        {"nome": "Responsável", "tipo": "texto"},
+        {"nome": "Início", "tipo": "data"},
+        {"nome": "Erros antes (mês)", "tipo": "numero"},
+        {"nome": "Erros depois (mês)", "tipo": "numero"}
+      ],
+      "exemplos": [
+        ["Preço errado no orçamento", "Tabela de preços única com lista suspensa", "Pessoa A", "-10", 6, 1],
+        ["Endereço antigo", "Reconfirmar endereço antes de despachar", "Pessoa B", "+3", 3, 0]
+      ]
+    }
+  ],
+  "dicas": [
+    "Elogie quem relata erro; punir faz o erro sumir do registro e voltar escondido.",
+    "Reduzir digitação manual elimina boa parte dos erros: copie e cole dados do cadastro em vez de redigitar.",
+    "Faça a conferência com uma pessoa diferente da que executou.",
+    "Erros que o cliente descobre valem prioridade máxima."
+  ]
+}

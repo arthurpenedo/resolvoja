@@ -1,0 +1,96 @@
+{
+  "slug": "avaliacao-de-desempenho",
+  "titulo": "Avaliação de desempenho",
+  "area": "pessoas",
+  "subdivisoes": ["Avaliação de desempenho"],
+  "resumo": "Um modelo simples de avaliação por metas e comportamentos, com conversa de feedback e plano de melhoria. Você termina com avaliações justas, registradas e que ajudam a pessoa a evoluir.",
+  "como_usar": [
+    "Defina na aba 'Metas e critérios' de 3 a 6 itens por função, que sejam observáveis e mensuráveis.",
+    "Peça que o funcionário se autoavalie na aba 'Avaliação' antes da conversa.",
+    "O gestor preenche a sua avaliação com exemplos concretos do período.",
+    "Faça a conversa de feedback em privado, comparando as duas visões e combinando metas.",
+    "Registre o plano de melhoria na aba 'Plano de desenvolvimento' e revise em 60 a 90 dias."
+  ],
+  "diagnostico": [
+    "Cada funcionário sabe o que se espera dele e como será medido?",
+    "Você avalia com base em fatos e exemplos, e não só em impressão recente?",
+    "Existe uma conversa de feedback agendada com cada pessoa pelo menos 2 vezes ao ano?",
+    "A pessoa tem chance de dar sua visão antes da decisão?",
+    "As avaliações ficam registradas por escrito?",
+    "Bom desempenho gera reconhecimento (elogio, bônus, promoção)?",
+    "Desempenho abaixo do esperado vira um plano de melhoria com prazo?",
+    "Os mesmos critérios valem para pessoas da mesma função?",
+    "Você evita que simpatia pessoal pese mais que resultado?"
+  ],
+  "plano": [
+    {"etapa": "Semana 1", "acao": "Definir os critérios de avaliação por função (resultados e comportamentos como pontualidade, trabalho em equipe, qualidade).", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 2", "acao": "Apresentar os critérios à equipe em reunião explicando objetivo: desenvolvimento e não punição.", "responsavel": "Dono", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Passar a planilha de autoavaliação e coletar as respostas.", "responsavel": "Assistente administrativo", "prazo_dias": 21},
+    {"etapa": "Mês 1", "acao": "Preencher a avaliação do gestor, com um exemplo concreto por nota atribuída.", "responsavel": "Gerente", "prazo_dias": 30},
+    {"etapa": "Mês 1", "acao": "Realizar conversas individuais de 30 a 40 minutos, em privado.", "responsavel": "Gerente", "prazo_dias": 40},
+    {"etapa": "Mês 1", "acao": "Combinar metas e plano de desenvolvimento com data de revisão.", "responsavel": "Gerente", "prazo_dias": 45},
+    {"etapa": "Mês 2", "acao": "Aplicar reconhecimentos e ajustes decididos (elogio formal, treinamento, mudança de tarefas).", "responsavel": "Dono", "prazo_dias": 60},
+    {"etapa": "Mês 3", "acao": "Revisar o progresso dos planos de melhoria e repetir o ciclo no semestre seguinte.", "responsavel": "Gerente", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Definir critérios claros", "como": "Escolha itens que você consegue observar, como \"entrega no prazo\" ou \"cliente elogia o atendimento\".", "cuidado": "Critérios subjetivos como \"atitude\" sem exemplo do que significa."},
+    {"passo": "Coletar fatos", "como": "Durante o período anote exemplos positivos e negativos com data.", "cuidado": "Avaliar só pelo último mês."},
+    {"passo": "Pedir autoavaliação", "como": "Envie o formulário com antecedência para a pessoa refletir.", "cuidado": "Surpreender com notas que nunca foram comentadas antes."},
+    {"passo": "Atribuir notas", "como": "Use escala de 1 a 5 com definição para cada nível e escreva o motivo.", "cuidado": "Dar nota média a todos para evitar conflito."},
+    {"passo": "Conduzir a conversa", "como": "Comece pelo que foi bem, depois os pontos de melhoria com exemplos, e ouça a pessoa.", "cuidado": "Fazer a conversa em público ou apressado."},
+    {"passo": "Fechar o plano", "como": "Escreva 2 a 3 ações, prazo e como será medido, e entregue cópia ao funcionário.", "cuidado": "Não acompanhar e transformar a avaliação em formalidade."}
+  ],
+  "abas": [
+    {
+      "nome": "Metas e critérios",
+      "descricao": "O que será avaliado em cada função.",
+      "colunas": [
+        {"nome": "Função", "tipo": "texto"},
+        {"nome": "Critério", "tipo": "texto"},
+        {"nome": "Como medir", "tipo": "texto"},
+        {"nome": "Peso", "tipo": "numero"}
+      ],
+      "exemplos": [
+        ["Vendedor", "Meta de vendas do mês", "Valor vendido versus meta", 3],
+        ["Vendedor", "Atendimento ao cliente", "Pesquisa rápida e observação", 2],
+        ["Auxiliar", "Pontualidade e assiduidade", "Registro de ponto", 1]
+      ]
+    },
+    {
+      "nome": "Avaliação",
+      "descricao": "Notas e exemplos por funcionário no período.",
+      "colunas": [
+        {"nome": "Funcionário", "tipo": "texto"},
+        {"nome": "Critério", "tipo": "texto"},
+        {"nome": "Autoavaliação (1 a 5)", "tipo": "numero"},
+        {"nome": "Nota do gestor (1 a 5)", "tipo": "numero"},
+        {"nome": "Exemplo concreto", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["Funcionário A", "Atendimento ao cliente", 4, 3, "Duas reclamações de demora no mês"],
+        ["Funcionário A", "Meta de vendas do mês", 4, 5, "Superou a meta em 12%"]
+      ]
+    },
+    {
+      "nome": "Plano de desenvolvimento",
+      "descricao": "Ações combinadas na conversa de feedback.",
+      "colunas": [
+        {"nome": "Funcionário", "tipo": "texto"},
+        {"nome": "Ação combinada", "tipo": "texto"},
+        {"nome": "Prazo", "tipo": "data"},
+        {"nome": "Situação", "tipo": "lista", "opcoes": ["A fazer", "Em andamento", "Concluído"]}
+      ],
+      "exemplos": [
+        ["Funcionário A", "Treinar atendimento de reclamações", "+30", "A fazer"],
+        ["Funcionário B", "Assumir o controle do estoque semanal", "+45", "Em andamento"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Feedback frequente e curto vale mais que avaliação anual longa.",
+    "Elogie em público e corrija em particular.",
+    "Critério igual para a mesma função: compare resultados, não pessoas.",
+    "Decisões importantes (desligamento, promoção) devem estar apoiadas em registros por escrito.",
+    "Se o resultado é ruim, pergunte primeiro se a pessoa tem o que precisa para fazer bem: ferramenta, treino, clareza."
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "slug": "descricao-de-vagas",
+  "titulo": "Descrição de vagas",
+  "area": "pessoas",
+  "subdivisoes": ["Descrição de vagas"],
+  "resumo": "Modelo e passo a passo para escrever anúncios de vaga claros, atraentes e sem exigências desnecessárias. Ao final você tem textos prontos que atraem candidatos adequados e reduzem currículos fora do perfil.",
+  "como_usar": [
+    "Preencha a aba 'Ficha da vaga' com as informações essenciais antes de escrever o texto.",
+    "Liste as tarefas reais do dia a dia na aba 'Tarefas e requisitos', separando o que é obrigatório do que é desejável.",
+    "Monte o anúncio seguindo a ordem: título, sobre a empresa, tarefas, requisitos, benefícios, como se candidatar.",
+    "Revise com a checklist da aba 'Revisão do anúncio' e peça a alguém da equipe para ler.",
+    "Publique e, depois de uma semana, ajuste o texto se os currículos vierem fora do perfil."
+  ],
+  "diagnostico": [
+    "Seus anúncios dizem claramente quais tarefas a pessoa fará no dia a dia?",
+    "Você informa salário ou faixa salarial, ou ao menos os benefícios?",
+    "Você separa requisitos obrigatórios dos desejáveis?",
+    "O título da vaga é o nome que os candidatos realmente procuram (ex.: \"Auxiliar de cozinha\")?",
+    "Você informa local, horário e tipo de contrato (CLT, estágio, temporário)?",
+    "O anúncio explica como se candidatar e até quando?",
+    "Você evita exigências que não têm a ver com o trabalho (idade, aparência, sexo, estado civil)?",
+    "Recebe muitos currículos que nada têm a ver com a vaga?",
+    "Alguém de fora lê o anúncio e entende a vaga sem perguntar nada?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Conversar com quem faz hoje a função e anotar as 5 a 8 tarefas mais frequentes.", "responsavel": "Dono", "prazo_dias": 1},
+    {"etapa": "Dia 2", "acao": "Preencher a ficha da vaga: título, local, horário, contrato, faixa salarial e benefícios.", "responsavel": "Dono", "prazo_dias": 2},
+    {"etapa": "Dia 3", "acao": "Separar requisitos obrigatórios (no máximo 5) dos desejáveis.", "responsavel": "Dono", "prazo_dias": 3},
+    {"etapa": "Semana 1", "acao": "Escrever o anúncio com linguagem simples e tom humano, sem jargão.", "responsavel": "Assistente administrativo", "prazo_dias": 5},
+    {"etapa": "Semana 1", "acao": "Revisar com a checklist e retirar qualquer exigência discriminatória ou sem relação com o trabalho.", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 2", "acao": "Publicar nos canais escolhidos e monitorar quantos candidatos chegam e quantos são do perfil.", "responsavel": "Assistente administrativo", "prazo_dias": 14},
+    {"etapa": "Mês 1", "acao": "Ajustar o texto conforme os resultados e salvar o modelo final numa pasta de modelos de vagas.", "responsavel": "Dono", "prazo_dias": 30},
+    {"etapa": "Mês 2", "acao": "Criar descrições para todos os cargos recorrentes da empresa, para reaproveitar nas próximas contratações.", "responsavel": "Dono", "prazo_dias": 60}
+  ],
+  "procedimento": [
+    {"passo": "Escolher o título", "como": "Use o nome de mercado do cargo e, se couber, a cidade ou o setor.", "cuidado": "Títulos inventados (\"Ninja de vendas\") que ninguém pesquisa."},
+    {"passo": "Apresentar a empresa", "como": "Em 2 a 3 linhas diga o que a empresa faz, onde fica e o tamanho da equipe.", "cuidado": "Texto longo sobre a história da empresa antes de falar da vaga."},
+    {"passo": "Listar as tarefas", "como": "Escreva de 5 a 8 verbos de ação: atender, conferir estoque, emitir nota, etc.", "cuidado": "Lista vaga como \"auxiliar nas rotinas administrativas\"."},
+    {"passo": "Definir requisitos", "como": "Separe \"obrigatório\" (escolaridade mínima real, habilidade essencial) de \"diferencial\".", "cuidado": "Exigir experiência de anos para função de entrada."},
+    {"passo": "Informar condições", "como": "Coloque horário, dias, local, benefícios (vale-transporte, refeição) e faixa salarial.", "cuidado": "Escrever \"salário a combinar\" quando já existe uma faixa definida."},
+    {"passo": "Explicar a candidatura", "como": "Diga exatamente como enviar currículo, para quem e até quando.", "cuidado": "Pedir dados sensíveis (CPF, RG, foto) já na primeira etapa."}
+  ],
+  "abas": [
+    {
+      "nome": "Ficha da vaga",
+      "descricao": "Dados essenciais de cada vaga antes de escrever o anúncio.",
+      "colunas": [
+        {"nome": "Título da vaga", "tipo": "texto"},
+        {"nome": "Local", "tipo": "texto"},
+        {"nome": "Horário", "tipo": "texto"},
+        {"nome": "Salário (base)", "tipo": "moeda"},
+        {"nome": "Contrato", "tipo": "lista", "opcoes": ["CLT", "Estágio", "Temporário", "Aprendiz", "Prestador (PJ)"]}
+      ],
+      "exemplos": [
+        ["Auxiliar de cozinha", "Centro, loja 1", "Seg a sáb, 10h às 18h", 1650.0, "CLT"],
+        ["Estagiário(a) administrativo", "Matriz", "6h por dia", 900.0, "Estágio"]
+      ]
+    },
+    {
+      "nome": "Tarefas e requisitos",
+      "descricao": "Separa o que a vaga exige do que seria um diferencial.",
+      "colunas": [
+        {"nome": "Vaga", "tipo": "texto"},
+        {"nome": "Item", "tipo": "texto"},
+        {"nome": "Tipo", "tipo": "lista", "opcoes": ["Tarefa", "Requisito obrigatório", "Desejável"]}
+      ],
+      "exemplos": [
+        ["Auxiliar de cozinha", "Higienizar e cortar ingredientes", "Tarefa"],
+        ["Auxiliar de cozinha", "Disponibilidade nos finais de semana", "Requisito obrigatório"],
+        ["Auxiliar de cozinha", "Curso de manipulação de alimentos", "Desejável"]
+      ]
+    },
+    {
+      "nome": "Revisão do anúncio",
+      "descricao": "Checklist para conferir cada anúncio antes de publicar.",
+      "colunas": [
+        {"nome": "Vaga", "tipo": "texto"},
+        {"nome": "Item revisado", "tipo": "texto"},
+        {"nome": "Situação", "tipo": "lista", "opcoes": ["Ok", "Ajustar"]},
+        {"nome": "Data", "tipo": "data"}
+      ],
+      "exemplos": [
+        ["Auxiliar de cozinha", "Faixa salarial informada", "Ok", "0"],
+        ["Auxiliar de cozinha", "Sem exigência discriminatória", "Ajustar", "0"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Anúncios com faixa salarial recebem candidatos mais alinhados e economizam seu tempo.",
+    "Use \"profissional\" ou o cargo no feminino e masculino, e não restrinja por sexo, idade ou aparência, salvo exceção legal comprovada.",
+    "Conte uma coisa boa e verdadeira sobre trabalhar aí: ambiente, horário, aprendizado.",
+    "Não peça \"boa aparência\"; descreva o comportamento esperado, como pontualidade e atendimento educado.",
+    "Guarde cada anúncio como modelo: na próxima vaga igual você só atualiza as datas."
+  ]
+}

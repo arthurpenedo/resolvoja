@@ -1,0 +1,105 @@
+{
+  "slug": "lgpd",
+  "titulo": "LGPD",
+  "area": "administrativo",
+  "subdivisoes": ["LGPD"],
+  "resumo": "Ajuda a mapear que dados pessoais sua empresa coleta, para que usa, onde guarda e quem acessa, e a montar o básico de adequação à Lei Geral de Proteção de Dados. Orienta e organiza; não garante conformidade jurídica.",
+  "como_usar": [
+    "Responda o diagnóstico para ver os pontos mais frágeis no tratamento de dados.",
+    "Preencha o Inventário de dados com cada tipo de dado pessoal que você coleta.",
+    "Defina a base legal e o prazo de guarda de cada dado com ajuda do advogado.",
+    "Use o Registro de solicitações para atender pedidos de titulares (acesso, correção, exclusão).",
+    "Siga o procedimento em caso de incidente de segurança.",
+    "Este material orienta; a adequação final deve ser validada por advogado."
+  ],
+  "diagnostico": [
+    "Você sabe quais dados pessoais de clientes, funcionários e fornecedores a empresa guarda?",
+    "Coleta mais dados do que realmente precisa (CPF, endereço, data de nascimento) em cadastros?",
+    "Os dados ficam em planilhas, WhatsApp ou e-mail sem proteção por senha?",
+    "Existe aviso de privacidade no site, formulários e atendimento explicando o uso dos dados?",
+    "Você coleta dados de crianças ou dados sensíveis (saúde, religião, biometria)?",
+    "Os computadores e celulares com dados têm senha, atualização e backup?",
+    "Seus fornecedores que acessam dados (contador, sistema, marketing) têm contrato com cláusula de proteção?",
+    "Há alguém definido para responder pedidos de titulares de dados?",
+    "Você sabe o que fazer se houver vazamento ou perda de dados?",
+    "Dados de clientes antigos são apagados depois de não serem mais necessários?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Definir quem será o responsável por dados na empresa (pode ser o dono) e um e-mail para contato de titulares.", "responsavel": "Dono", "prazo_dias": 2},
+    {"etapa": "Semana 1", "acao": "Mapear todos os lugares onde há dados pessoais: sistemas, planilhas, papéis, WhatsApp, e-mail, câmeras, nuvem.", "responsavel": "Administrativo", "prazo_dias": 7},
+    {"etapa": "Semana 2", "acao": "Preencher o inventário de dados: tipo, origem, finalidade, quem acessa, onde fica e por quanto tempo.", "responsavel": "Administrativo", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Eliminar a coleta desnecessária: remover campos de cadastro e dados que a empresa não usa.", "responsavel": "Dono", "prazo_dias": 21},
+    {"etapa": "Semana 4", "acao": "Reforçar o básico de segurança: senhas fortes, verificação em duas etapas, bloqueio de tela, backup e acesso por necessidade.", "responsavel": "Dono", "prazo_dias": 28},
+    {"etapa": "Semana 5", "acao": "Escrever o aviso de privacidade em linguagem simples e publicar em site, formulários e balcão.", "responsavel": "Dono", "prazo_dias": 35},
+    {"etapa": "Semana 6", "acao": "Incluir cláusula de proteção de dados nos contratos com fornecedores que acessam dados pessoais.", "responsavel": "Dono", "prazo_dias": 45},
+    {"etapa": "Semana 8", "acao": "Treinar a equipe: regras de uso de dados, o que não pode ser enviado por WhatsApp pessoal, como reconhecer incidentes.", "responsavel": "Dono", "prazo_dias": 60},
+    {"etapa": "Semana 10", "acao": "Criar o fluxo de atendimento a pedidos de titulares e o plano de resposta a incidentes.", "responsavel": "Administrativo", "prazo_dias": 75},
+    {"etapa": "Dia 90", "acao": "Validar inventário, aviso de privacidade, bases legais e plano de incidentes com advogado especializado antes de considerá-los finais.", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Identificar o dado", "como": "Pergunte: isto identifica uma pessoa (nome, CPF, telefone, e-mail, foto, endereço)? Se sim, é dado pessoal.", "cuidado": "Achar que só sistema de TI conta; papel e WhatsApp também."},
+    {"passo": "Definir a finalidade", "como": "Para cada dado, escreva para que ele é usado (vender, emitir nota, contratar, cobrar).", "cuidado": "Guardar dados 'por via das dúvidas'."},
+    {"passo": "Escolher a base legal", "como": "Identifique a justificativa para tratar o dado (contrato, obrigação legal, consentimento, legítimo interesse) com ajuda do advogado.", "cuidado": "Pedir consentimento para tudo quando existe outra base mais adequada."},
+    {"passo": "Proteger", "como": "Limite o acesso a quem precisa, use senha e backup, não envie dados completos em grupos de mensagem.", "cuidado": "Compartilhar planilha com todos os dados e link aberto."},
+    {"passo": "Atender titulares", "como": "Quando alguém pedir acesso, correção ou exclusão, confirme a identidade, responda em prazo curto e registre.", "cuidado": "Ignorar o pedido ou apagar sem conferir obrigação de guarda."},
+    {"passo": "Responder a incidente", "como": "Se perder ou vazar dados: contenha (troque senhas, bloqueie acesso), registre o que houve, avalie o risco e procure o advogado para decidir sobre comunicações obrigatórias.", "cuidado": "Esconder o incidente ou demorar a agir."},
+    {"passo": "Apagar no prazo", "como": "Defina prazo de guarda por tipo de dado e apague ou anonimize o que passou do prazo.", "cuidado": "Apagar dado que a lei obriga a guardar (ex.: fiscais e trabalhistas)."}
+  ],
+  "abas": [
+    {
+      "nome": "Inventário de dados",
+      "descricao": "Mapa de todos os dados pessoais tratados pela empresa.",
+      "colunas": [
+        {"nome": "Dado pessoal", "tipo": "texto"},
+        {"nome": "De quem", "tipo": "lista", "opcoes": ["Cliente", "Funcionário", "Fornecedor", "Candidato", "Visitante do site"]},
+        {"nome": "Finalidade", "tipo": "texto"},
+        {"nome": "Onde fica", "tipo": "texto"},
+        {"nome": "Quem acessa", "tipo": "texto"},
+        {"nome": "Guardar por (anos)", "tipo": "numero"},
+        {"nome": "Sensível", "tipo": "lista", "opcoes": ["Sim", "Não"]}
+      ],
+      "exemplos": [
+        ["Nome, CPF, e-mail e telefone", "Cliente", "Emitir nota e entrar em contato", "Sistema de vendas", "Vendas e financeiro", 5, "Não"],
+        ["Atestados médicos", "Funcionário", "Cumprir obrigação trabalhista", "Pasta RH restrita", "Dono e RH", 5, "Sim"],
+        ["Currículos", "Candidato", "Processo seletivo", "E-mail do RH", "RH", 1, "Não"]
+      ]
+    },
+    {
+      "nome": "Solicitações de titulares",
+      "descricao": "Pedidos de acesso, correção ou exclusão de dados.",
+      "colunas": [
+        {"nome": "Data do pedido", "tipo": "data"},
+        {"nome": "Solicitante", "tipo": "texto"},
+        {"nome": "Tipo", "tipo": "lista", "opcoes": ["Acesso", "Correção", "Exclusão", "Portabilidade", "Revogar consentimento"]},
+        {"nome": "Prazo de resposta", "tipo": "data"},
+        {"nome": "Status", "tipo": "lista", "opcoes": ["Recebido", "Em análise", "Respondido", "Negado com justificativa"]}
+      ],
+      "exemplos": [
+        ["-4", "Cliente A", "Exclusão", "+11", "Em análise"],
+        ["-9", "Cliente B", "Correção", "+6", "Respondido"]
+      ]
+    },
+    {
+      "nome": "Incidentes",
+      "descricao": "Registro de perdas, vazamentos ou acessos indevidos.",
+      "colunas": [
+        {"nome": "Data", "tipo": "data"},
+        {"nome": "O que aconteceu", "tipo": "texto"},
+        {"nome": "Dados envolvidos", "tipo": "texto"},
+        {"nome": "Ação tomada", "tipo": "texto"},
+        {"nome": "Gravidade", "tipo": "lista", "opcoes": ["Baixa", "Média", "Alta"]}
+      ],
+      "exemplos": [
+        ["-30", "Notebook roubado", "Planilha de clientes", "Troca de senhas e bloqueio remoto", "Alta"],
+        ["-12", "E-mail enviado ao destinatário errado", "Nome e telefone de 1 cliente", "Pedido de exclusão ao destinatário", "Baixa"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Quanto menos dado você coleta, menos você precisa proteger: colete o mínimo.",
+    "Não use WhatsApp pessoal para guardar cadastros de clientes; use o do negócio e organize.",
+    "A LGPD vale para pequenas empresas também; as bases legais e a comunicação de incidentes exigem orientação de advogado.",
+    "Fornecedores como contador, sistema de vendas e marketing também tratam dados em seu nome; registre-os.",
+    "Um aviso de privacidade simples e honesto é melhor que um texto copiado que não corresponde à sua prática."
+  ]
+}

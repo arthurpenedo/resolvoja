@@ -1,0 +1,100 @@
+{
+  "slug": "definicao-de-metas",
+  "titulo": "Definição de metas",
+  "area": "gestao",
+  "subdivisoes": ["Definição de metas"],
+  "resumo": "Um método para transformar desejos vagos ('vender mais') em metas com número, prazo e responsável. Ao final você tem metas claras, quebradas por mês e acompanhadas semanalmente.",
+  "como_usar": [
+    "Escreva na aba 'Rascunho de metas' tudo que você quer melhorar, sem filtro.",
+    "Transforme cada item em meta com número, prazo e dono usando o passo a passo do procedimento.",
+    "Escolha no máximo 3 metas principais para o trimestre e registre na aba 'Metas oficiais'.",
+    "Quebre cada meta em marcos mensais na aba 'Marcos'.",
+    "Toda segunda-feira, atualize o realizado em 10 minutos."
+  ],
+  "diagnostico": [
+    "Suas metas atuais têm um número que permite dizer 'bati' ou 'não bati'?",
+    "Cada meta tem uma data final definida?",
+    "Você tem mais de 5 metas ao mesmo tempo?",
+    "A equipe sabe exatamente qual é a meta do mês?",
+    "Você revisa o progresso das metas toda semana?",
+    "Já definiu metas que dependiam de coisas fora do seu controle (ex.: 'o dólar cair')?",
+    "As metas anteriores foram consultadas antes de definir as novas?",
+    "Há alguma recompensa ou reconhecimento quando a meta é batida?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Fazer o rascunho: listar tudo que quer melhorar no negócio", "responsavel": "Dono", "prazo_dias": 1},
+    {"etapa": "Dia 3", "acao": "Medir o ponto de partida de cada item (valor atual)", "responsavel": "Dono", "prazo_dias": 3},
+    {"etapa": "Semana 1", "acao": "Reescrever cada item no formato 'de X para Y até DATA'", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 2", "acao": "Priorizar: escolher até 3 metas do trimestre", "responsavel": "Dono e sócio", "prazo_dias": 14},
+    {"etapa": "Semana 2", "acao": "Definir o responsável e a ação principal de cada meta", "responsavel": "Dono", "prazo_dias": 15},
+    {"etapa": "Semana 3", "acao": "Quebrar cada meta em marcos mensais e semanais", "responsavel": "Responsáveis", "prazo_dias": 21},
+    {"etapa": "Semana 4", "acao": "Comunicar as metas à equipe e afixar em local visível", "responsavel": "Dono", "prazo_dias": 28},
+    {"etapa": "Mês 2", "acao": "Primeira revisão: o ritmo está no caminho? Ajustar ações, não a meta", "responsavel": "Dono", "prazo_dias": 60},
+    {"etapa": "Mês 3", "acao": "Fechar o trimestre: registrar resultado e aprendizado, e definir as próximas", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Escreva o desejo", "como": "Anote em uma frase o que quer, por exemplo 'ganhar mais com o serviço X'.", "cuidado": "Não pule direto para números sem saber o que realmente importa."},
+    {"passo": "Meça de onde parte", "como": "Descubra o valor atual (faturamento do serviço, número de clientes, etc.).", "cuidado": "Meta sem ponto de partida não mostra progresso."},
+    {"passo": "Escreva no formato De-Para-Quando", "como": "Ex.: 'Passar de 40 para 60 clientes recorrentes até 31/12'.", "cuidado": "Evitar verbos vagos como 'melhorar' e 'aumentar' sem número."},
+    {"passo": "Teste se é possível", "como": "Pergunte: com os recursos atuais e o histórico, isso é desafiador mas alcançável? Se não, reduza ou aumente prazo.", "cuidado": "Meta impossível desmotiva; meta fácil demais não muda nada."},
+    {"passo": "Escolha o dono", "como": "Uma pessoa responde pelo resultado e reporta toda semana.", "cuidado": "Dois donos para a mesma meta quase sempre significa nenhum."},
+    {"passo": "Quebre em marcos", "como": "Divida o valor final em marcos mensais e a ação semanal que os produz.", "cuidado": "Deixar tudo para o último mês."},
+    {"passo": "Acompanhe semanalmente", "como": "Atualize o realizado e marque a situação (no ritmo, atrasada, em risco).", "cuidado": "Acompanhar só no fim do prazo, quando já não dá para agir."}
+  ],
+  "abas": [
+    {
+      "nome": "Metas oficiais",
+      "descricao": "Metas do trimestre no formato De-Para-Quando, com dono e situação.",
+      "colunas": [
+        {"nome": "Meta", "tipo": "texto"},
+        {"nome": "Valor inicial", "tipo": "numero"},
+        {"nome": "Valor alvo", "tipo": "numero"},
+        {"nome": "Valor atual", "tipo": "numero"},
+        {"nome": "Prazo", "tipo": "data"},
+        {"nome": "Responsável", "tipo": "texto"},
+        {"nome": "Situação", "tipo": "lista", "opcoes": ["No ritmo", "Atrasada", "Em risco", "Batida"]}
+      ],
+      "exemplos": [
+        ["Clientes recorrentes", 40, 60, 47, "+70", "Responsável A", "No ritmo"],
+        ["Orçamentos enviados por semana", 8, 15, 9, "+50", "Vendedor B", "Atrasada"],
+        ["Taxa de recompra (%)", 20, 30, 21, "+85", "Dono", "Em risco"]
+      ]
+    },
+    {
+      "nome": "Marcos",
+      "descricao": "Marcos mensais de cada meta e a ação semanal que os sustenta.",
+      "colunas": [
+        {"nome": "Meta", "tipo": "texto"},
+        {"nome": "Marco", "tipo": "texto"},
+        {"nome": "Data do marco", "tipo": "data"},
+        {"nome": "Valor esperado", "tipo": "numero"},
+        {"nome": "Ação da semana", "tipo": "texto"},
+        {"nome": "Feito", "tipo": "lista", "opcoes": ["Sim", "Não", "Parcial"]}
+      ],
+      "exemplos": [
+        ["Clientes recorrentes", "Mês 1", "+30", 46, "Ligar para 10 clientes antigos", "Sim"],
+        ["Clientes recorrentes", "Mês 2", "+60", 53, "Oferecer plano mensal", "Não"]
+      ]
+    },
+    {
+      "nome": "Rascunho de metas",
+      "descricao": "Lista livre de desejos antes de virarem metas.",
+      "colunas": [
+        {"nome": "Desejo", "tipo": "texto"},
+        {"nome": "Por que importa", "tipo": "texto"},
+        {"nome": "Impacto", "tipo": "lista", "opcoes": ["Alto", "Médio", "Baixo"]},
+        {"nome": "Esforço", "tipo": "lista", "opcoes": ["Alto", "Médio", "Baixo"]}
+      ],
+      "exemplos": [
+        ["Vender mais pelo WhatsApp", "É onde os clientes já estão", "Alto", "Baixo"],
+        ["Abrir segunda unidade", "Crescer faturamento", "Alto", "Alto"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Meta boa passa no teste: alguém de fora consegue olhar o número e dizer se foi batida?",
+    "Prefira metas de resultado (clientes, vendas) acompanhadas de metas de ação (ligações, visitas), pois a ação você controla.",
+    "Divulgue a meta do mês na parede ou no grupo da equipe.",
+    "Quando bater uma meta, comemore: isso reforça o hábito."
+  ]
+}

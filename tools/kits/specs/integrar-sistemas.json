@@ -1,0 +1,103 @@
+{
+  "slug": "integrar-sistemas",
+  "titulo": "Integrar sistemas",
+  "area": "tecnologia",
+  "subdivisoes": ["Integrar sistemas"],
+  "resumo": "Planejamento para ligar os programas que sua empresa já usa (vendas, financeiro, estoque, site, planilhas) e acabar com a digitação dupla. Você sai com o inventário, o mapa de dados e a escolha da forma de integração.",
+  "como_usar": [
+    "Responda o diagnóstico para encontrar onde o mesmo dado é digitado mais de uma vez.",
+    "Liste todos os sistemas na aba Inventário de sistemas, com o que cada um tem de API ou integração.",
+    "Descreva cada fluxo desejado na aba Mapa de integrações (de onde vem, para onde vai, quando).",
+    "Escolha o método na aba Opções de integração: nativa, Zapier/Make/n8n, planilha ou sob medida.",
+    "Teste com poucos registros, monitore erros e só depois ligue para tudo."
+  ],
+  "diagnostico": [
+    "Você digita o mesmo dado (cliente, pedido, produto) em mais de um sistema?",
+    "Você exporta planilha de um sistema para importar em outro toda semana?",
+    "Sua equipe erra preços, estoque ou dados por causa de cópia manual?",
+    "Você sabe quais sistemas oferecem integração nativa ou API?",
+    "Há algum sistema antigo sem integração nenhuma?",
+    "Alguém sabe configurar e cuidar das integrações quando quebram?",
+    "Você sabe quanto tempo por semana perde com retrabalho de digitação?",
+    "Existem dados sensíveis (clientes, financeiro) trafegando entre sistemas?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Listar todos os sistemas e planilhas usados, com responsável e dados que guardam", "responsavel": "Dono", "prazo_dias": 3},
+    {"etapa": "Semana 1", "acao": "Medir tempo gasto por semana em digitação e conferência manual", "responsavel": "Equipe", "prazo_dias": 7},
+    {"etapa": "Semana 2", "acao": "Priorizar 1 a 3 fluxos com maior ganho (ex.: venda → financeiro → nota fiscal)", "responsavel": "Dono", "prazo_dias": 14},
+    {"etapa": "Semana 2", "acao": "Verificar se cada sistema tem integração nativa, API, webhook ou exportação automática", "responsavel": "Dono ou técnico", "prazo_dias": 16},
+    {"etapa": "Semana 3", "acao": "Escolher o método (nativa, Zapier, Make, n8n, ou desenvolvimento sob medida) por fluxo", "responsavel": "Dono", "prazo_dias": 21},
+    {"etapa": "Semana 4", "acao": "Montar a integração em ambiente de teste com poucos registros", "responsavel": "Técnico ou Dono", "prazo_dias": 30},
+    {"etapa": "Semana 5", "acao": "Testar casos de erro: dado faltando, cliente duplicado, falha de internet", "responsavel": "Equipe", "prazo_dias": 37},
+    {"etapa": "Semana 6", "acao": "Ligar em produção e acompanhar diariamente na primeira semana", "responsavel": "Dono", "prazo_dias": 45},
+    {"etapa": "Dia 60", "acao": "Configurar alerta de falha e documentar como a integração funciona e quem cuida", "responsavel": "Técnico", "prazo_dias": 60},
+    {"etapa": "Dia 75", "acao": "Revisar com advogado ou responsável de LGPD quais dados pessoais passam entre sistemas", "responsavel": "Dono + advogado", "prazo_dias": 75},
+    {"etapa": "Dia 90", "acao": "Medir economia de tempo e redução de erros; decidir próximo fluxo", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Inventariar sistemas", "como": "Para cada sistema anote nome, uso, quem acessa, plano contratado e se tem API, webhooks ou integrações prontas.", "cuidado": "Esquecer planilhas e WhatsApp que também funcionam como sistema."},
+    {"passo": "Escolher a fonte da verdade", "como": "Para cada dado (cliente, produto, preço), defina em qual sistema ele nasce e os outros apenas recebem.", "cuidado": "Deixar o mesmo dado editável em dois lugares; um sobrescreve o outro."},
+    {"passo": "Desenhar o fluxo", "como": "Escreva: quando acontece X no sistema A, enviar Y para o sistema B, com os campos correspondentes.", "cuidado": "Não mapear campos obrigatórios; a integração falha no meio."},
+    {"passo": "Escolher o método", "como": "Prefira integração nativa; depois ferramentas como Zapier, Make ou n8n; por último, desenvolvimento sob medida.", "cuidado": "Contratar desenvolvimento caro para algo que uma integração pronta resolve."},
+    {"passo": "Testar com poucos dados", "como": "Rode com 5 a 10 registros e compare resultado esperado com o obtido.", "cuidado": "Ligar direto na base inteira."},
+    {"passo": "Tratar erros", "como": "Defina o que acontece quando falha: novo envio, aviso por e-mail ou WhatsApp para o responsável.", "cuidado": "Integração que falha em silêncio por semanas."},
+    {"passo": "Proteger acesso", "como": "Use chaves de API separadas por integração e guarde em gerenciador de senhas; remova acesso quando a pessoa sair.", "cuidado": "Usar a senha pessoal do dono dentro da integração."},
+    {"passo": "Documentar", "como": "Registre em uma página: o que liga com o quê, onde está configurado, quem cuida, como reiniciar.", "cuidado": "Só uma pessoa saber como funciona."}
+  ],
+  "abas": [
+    {
+      "nome": "Inventário de sistemas",
+      "descricao": "Lista de tudo que guarda dados na empresa.",
+      "colunas": [
+        {"nome": "Sistema", "tipo": "texto"},
+        {"nome": "Para que serve", "tipo": "texto"},
+        {"nome": "Responsável", "tipo": "texto"},
+        {"nome": "Tem API ou integração", "tipo": "lista", "opcoes": ["Sim", "Não", "A confirmar"]},
+        {"nome": "Custo mensal", "tipo": "moeda"}
+      ],
+      "exemplos": [
+        ["Sistema de vendas A", "Registrar pedidos", "Vendedor", "Sim", 0.0],
+        ["Planilha de estoque", "Controle de saldo", "Estoquista", "Não", 0.0],
+        ["Sistema financeiro B", "Contas a pagar e receber", "Financeiro", "A confirmar", 0.0]
+      ]
+    },
+    {
+      "nome": "Mapa de integrações",
+      "descricao": "Cada fluxo desejado entre dois sistemas.",
+      "colunas": [
+        {"nome": "Origem", "tipo": "texto"},
+        {"nome": "Destino", "tipo": "texto"},
+        {"nome": "Dado enviado", "tipo": "texto"},
+        {"nome": "Gatilho", "tipo": "texto"},
+        {"nome": "Método", "tipo": "lista", "opcoes": ["Nativa", "Zapier/Make/n8n", "Planilha", "Sob medida"]},
+        {"nome": "Status", "tipo": "lista", "opcoes": ["Planejado", "Em teste", "Ativo"]}
+      ],
+      "exemplos": [
+        ["Sistema de vendas A", "Sistema financeiro B", "Pedido pago", "Pedido aprovado", "Nativa", "Planejado"],
+        ["Formulário do site", "Planilha de leads", "Dados do contato", "Novo envio", "Zapier/Make/n8n", "Em teste"]
+      ]
+    },
+    {
+      "nome": "Opções de integração",
+      "descricao": "Compare métodos antes de contratar.",
+      "colunas": [
+        {"nome": "Opção", "tipo": "texto"},
+        {"nome": "Custo estimado", "tipo": "moeda"},
+        {"nome": "Prazo (dias)", "tipo": "numero"},
+        {"nome": "Quem mantém", "tipo": "texto"},
+        {"nome": "Risco", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["Integração nativa do sistema", 0.0, 3, "Próprio fornecedor", "Limitada aos campos oferecidos"],
+        ["Make/Zapier/n8n", 0.0, 7, "Dono ou técnico", "Custo cresce com o volume"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Comece pelo fluxo que mais consome tempo; um bom ganho convence a equipe.",
+    "Peça orçamento de desenvolvimento com escopo, prazo, documentação e garantia por escrito.",
+    "Desconfie de quem diz que 'integra com tudo' sem mostrar como.",
+    "Mantenha plano B manual para quando a integração falhar.",
+    "Revise as integrações sempre que trocar de sistema ou de plano."
+  ]
+}

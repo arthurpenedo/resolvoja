@@ -1,0 +1,88 @@
+{
+  "slug": "emissao-de-documentos",
+  "titulo": "Emissão de documentos",
+  "area": "administrativo",
+  "subdivisoes": ["Emissão de documentos"],
+  "resumo": "Padroniza a emissão dos documentos do dia a dia (orçamentos, propostas, recibos, declarações, ordens de serviço) com modelos e numeração. Ao final você emite qualquer documento em poucos minutos e com aparência profissional.",
+  "como_usar": [
+    "Liste no diagnóstico quais documentos você emite e quais ainda faz do zero.",
+    "Crie um modelo para cada tipo seguindo o plano, começando pelos mais usados.",
+    "Siga o procedimento de emissão para numerar, conferir, enviar e arquivar.",
+    "Registre cada documento emitido na aba Registro de emissões.",
+    "Use a aba Modelos para saber qual modelo usar e quem aprova.",
+    "Revise os modelos a cada 6 meses."
+  ],
+  "diagnostico": [
+    "Você refaz orçamentos ou propostas do zero a cada cliente?",
+    "Seus documentos têm numeração sequencial para você localizá-los depois?",
+    "Os recibos que você emite trazem data, valor, forma de pagamento e identificação das partes?",
+    "Documentos saem com logo, dados da empresa e contato sempre corretos?",
+    "Já enviou documento com erro de nome, valor ou CNPJ?",
+    "Alguém além de você confere antes do envio?",
+    "Você guarda cópia de tudo o que emitiu?",
+    "Existe validade nos orçamentos e propostas?",
+    "Você sabe quais documentos exigem emissão por sistema oficial (como nota fiscal)?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Listar todos os documentos emitidos pela empresa (orçamento, proposta, recibo, declaração, OS, carta de cobrança).", "responsavel": "Administrativo", "prazo_dias": 1},
+    {"etapa": "Semana 1", "acao": "Definir a identidade padrão: logo, dados da empresa (razão social, CNPJ, endereço, contato) e rodapé.", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 1", "acao": "Criar o modelo de orçamento/proposta com validade, condições de pagamento e prazo de entrega.", "responsavel": "Administrativo", "prazo_dias": 10},
+    {"etapa": "Semana 2", "acao": "Criar o modelo de recibo com campos obrigatórios (pagador, valor, referência, data, assinatura).", "responsavel": "Administrativo", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Criar modelos de declaração, ordem de serviço e carta de cobrança.", "responsavel": "Administrativo", "prazo_dias": 21},
+    {"etapa": "Semana 3", "acao": "Definir a regra de numeração (ex.: ORC-2026-001) e criar a aba de registro.", "responsavel": "Administrativo", "prazo_dias": 21},
+    {"etapa": "Semana 4", "acao": "Gerar todos os modelos em PDF preenchível ou planilha/Word com campos destacados e guardar numa pasta Modelos.", "responsavel": "Administrativo", "prazo_dias": 28},
+    {"etapa": "Semana 5", "acao": "Definir quem confere e aprova cada tipo de documento antes do envio.", "responsavel": "Dono", "prazo_dias": 35},
+    {"etapa": "Semana 6", "acao": "Testar os modelos com 5 emissões reais e ajustar o que atrapalhou.", "responsavel": "Administrativo", "prazo_dias": 45},
+    {"etapa": "Dia 90", "acao": "Revisar o registro, conferir lacunas na numeração e validar com o contador os documentos de natureza fiscal.", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Escolher o modelo", "como": "Abra o modelo do tipo certo na pasta Modelos e salve uma cópia nova, nunca edite o original.", "cuidado": "Sobrescrever o modelo e perder o padrão."},
+    {"passo": "Numerar", "como": "Pegue o próximo número do registro e escreva no documento e na aba de registro.", "cuidado": "Pular ou repetir numeração."},
+    {"passo": "Preencher dados", "como": "Preencha cliente, CNPJ/CPF, descrição, valores e datas copiando do cadastro, sem digitar de memória.", "cuidado": "Erro no CNPJ/CPF ou no valor."},
+    {"passo": "Conferir", "como": "Releia valores, somas, nomes e datas; outra pessoa confere os documentos de maior valor.", "cuidado": "Enviar logo após preencher, sem revisar."},
+    {"passo": "Definir validade", "como": "Orçamentos e propostas devem informar prazo de validade (ex.: 15 dias).", "cuidado": "Orçamento sem validade vincula o preço indefinidamente."},
+    {"passo": "Enviar em PDF", "como": "Converta para PDF, use nome padrão e envie por e-mail ou WhatsApp com mensagem curta.", "cuidado": "Mandar arquivo editável."},
+    {"passo": "Registrar e arquivar", "como": "Salve em pasta do cliente e marque data de envio e status no registro.", "cuidado": "Não acompanhar se o cliente respondeu."}
+  ],
+  "abas": [
+    {
+      "nome": "Registro de emissões",
+      "descricao": "Controle numerado de tudo o que foi emitido.",
+      "colunas": [
+        {"nome": "Número", "tipo": "texto"},
+        {"nome": "Tipo", "tipo": "lista", "opcoes": ["Orçamento", "Proposta", "Recibo", "Declaração", "Ordem de serviço", "Carta de cobrança"]},
+        {"nome": "Cliente", "tipo": "texto"},
+        {"nome": "Valor", "tipo": "moeda"},
+        {"nome": "Data de emissão", "tipo": "data"},
+        {"nome": "Status", "tipo": "lista", "opcoes": ["Enviado", "Aprovado", "Recusado", "Expirado", "Pago"]}
+      ],
+      "exemplos": [
+        ["ORC-2026-014", "Orçamento", "Cliente A", 1850.0, "-3", "Enviado"],
+        ["REC-2026-031", "Recibo", "Cliente B", 600.0, "-1", "Pago"],
+        ["OS-2026-009", "Ordem de serviço", "Cliente C", 980.0, "0", "Aprovado"]
+      ]
+    },
+    {
+      "nome": "Modelos",
+      "descricao": "Catálogo de modelos, finalidade e responsável.",
+      "colunas": [
+        {"nome": "Modelo", "tipo": "texto"},
+        {"nome": "Para que serve", "tipo": "texto"},
+        {"nome": "Local do arquivo", "tipo": "texto"},
+        {"nome": "Quem aprova", "tipo": "texto"},
+        {"nome": "Última revisão", "tipo": "data"}
+      ],
+      "exemplos": [
+        ["Orçamento padrão", "Preço e condições para novos clientes", "Modelos/orcamento.docx", "Dono", "-60"],
+        ["Recibo", "Comprovar recebimentos sem nota", "Modelos/recibo.docx", "Administrativo", "-90"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Um recibo comprova pagamento, mas não substitui a nota fiscal quando ela for exigida; confirme com seu contador.",
+    "Guarde os modelos num único lugar e proteja com permissão de somente leitura.",
+    "Use texto de mensagem padrão para acompanhar o envio; economiza tempo e passa profissionalismo.",
+    "Fixe a validade do orçamento: preços mudam e você não deve ficar preso a ele.",
+    "Se emitir muitos documentos, uma planilha com preenchimento automático dos dados do cliente já resolve."
+  ]
+}

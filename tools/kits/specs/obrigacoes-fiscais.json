@@ -1,0 +1,85 @@
+{
+  "slug": "obrigacoes-fiscais",
+  "titulo": "Obrigações fiscais",
+  "area": "contabil",
+  "subdivisoes": ["Obrigações fiscais"],
+  "resumo": "Tenha um calendário único com todas as entregas e declarações da empresa, quem cuida de cada uma e o que precisa ser enviado ao contador. Acabe com os sustos de prazo vencido.",
+  "como_usar": [
+    "Peça ao contador a lista de obrigações da sua empresa e cadastre na aba Calendário de obrigações.",
+    "Defina um responsável e um prazo interno de entrega de documentos para cada uma.",
+    "Atualize o status toda semana.",
+    "Use a aba Documentos necessários para saber o que reunir antes de cada entrega.",
+    "Siga o procedimento para tratar uma obrigação atrasada."
+  ],
+  "diagnostico": [
+    "Você sabe quais declarações e entregas sua empresa precisa fazer no ano?",
+    "Tem as datas de entrega anotadas em um só lugar?",
+    "Seu contador avisa os prazos com antecedência?",
+    "Já recebeu multa por atraso em declaração?",
+    "Sabe quais documentos seu contador precisa de você para cada entrega?",
+    "A empresa tem pendências no CNPJ ou nos portais fiscais?",
+    "Os sócios entregam a declaração de imposto de renda pessoal em dia?",
+    "Alguém confere se o contador de fato entregou a declaração e guarda o recibo?",
+    "Você sabe o que acontece se a empresa ficar sem movimento?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Pedir ao contador por escrito a lista de obrigações principais e acessórias da empresa", "responsavel": "Dono", "prazo_dias": 3},
+    {"etapa": "Semana 1", "acao": "Cadastrar todas na aba Calendário de obrigações com prazo oficial e prazo interno", "responsavel": "Administrativo", "prazo_dias": 7},
+    {"etapa": "Semana 1", "acao": "Definir um responsável interno para cada obrigação", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 2", "acao": "Preencher a aba Documentos necessários perguntando ao contador o que ele precisa", "responsavel": "Administrativo", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Configurar alertas no calendário digital 15, 7 e 2 dias antes de cada prazo", "responsavel": "Administrativo", "prazo_dias": 21},
+    {"etapa": "Semana 4", "acao": "Consultar a situação fiscal da empresa nos portais oficiais e anotar pendências", "responsavel": "Administrativo", "prazo_dias": 28},
+    {"etapa": "Mês 2", "acao": "Pedir e arquivar os recibos de entrega das últimas declarações", "responsavel": "Administrativo", "prazo_dias": 45},
+    {"etapa": "Mês 2", "acao": "Verificar se os sócios têm obrigações pessoais ligadas à empresa e combinar com o contador", "responsavel": "Dono", "prazo_dias": 60},
+    {"etapa": "Mês 3", "acao": "Fazer o primeiro ciclo completo e anotar o que atrasou e por quê", "responsavel": "Administrativo", "prazo_dias": 85},
+    {"etapa": "Mês 3", "acao": "Validar com o contador a lista completa de obrigações, os prazos e as penalidades aplicáveis", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Identificar a obrigação", "como": "Anote nome, periodicidade (mensal, anual), órgão e quem entrega.", "cuidado": "Não confunda pagar a guia com entregar a declaração; são coisas diferentes."},
+    {"passo": "Fixar prazo interno", "como": "Defina uma data pelo menos 10 dias antes do prazo oficial para reunir documentos.", "cuidado": "Trabalhar até o último dia deixa sem margem para erro."},
+    {"passo": "Reunir documentos", "como": "Use a aba Documentos necessários e envie ao contador em um pacote único.", "cuidado": "Enviar partes soltas em vários dias gera esquecimentos."},
+    {"passo": "Conferir a entrega", "como": "Peça o recibo ou protocolo e salve na pasta do ano.", "cuidado": "Sem recibo não há prova de que a entrega foi feita."},
+    {"passo": "Tratar atraso", "como": "Se perdeu um prazo, avise o contador imediatamente para regularizar e calcular eventual multa.", "cuidado": "Esconder o atraso aumenta a multa e a pendência."},
+    {"passo": "Revisar o calendário", "como": "No início do ano, atualize prazos e inclua novas obrigações informadas pelo contador.", "cuidado": "Regras mudam; não presuma que o calendário do ano passado vale."}
+  ],
+  "abas": [
+    {
+      "nome": "Calendário de obrigações",
+      "descricao": "Todas as entregas fiscais com prazo, responsável e situação.",
+      "colunas": [
+        {"nome": "Obrigação", "tipo": "texto"},
+        {"nome": "Periodicidade", "tipo": "lista", "opcoes": ["Mensal", "Trimestral", "Anual"]},
+        {"nome": "Prazo oficial", "tipo": "data"},
+        {"nome": "Prazo interno", "tipo": "data"},
+        {"nome": "Responsável", "tipo": "texto"},
+        {"nome": "Status", "tipo": "lista", "opcoes": ["Pendente", "Em andamento", "Entregue", "Atrasada"]}
+      ],
+      "exemplos": [
+        ["Declaração mensal de faturamento", "Mensal", "+15", "+5", "Contador", "Pendente"],
+        ["Declaração anual da empresa", "Anual", "+60", "+40", "Contador", "Em andamento"],
+        ["Declaração de folha de pagamento", "Mensal", "+10", "+3", "Administrativo", "Pendente"]
+      ]
+    },
+    {
+      "nome": "Documentos necessários",
+      "descricao": "Lista do que reunir antes de cada entrega.",
+      "colunas": [
+        {"nome": "Obrigação", "tipo": "texto"},
+        {"nome": "Documento", "tipo": "texto"},
+        {"nome": "Quem fornece", "tipo": "texto"},
+        {"nome": "Recebido", "tipo": "lista", "opcoes": ["Sim", "Não"]}
+      ],
+      "exemplos": [
+        ["Declaração mensal de faturamento", "Notas emitidas do mês", "Administrativo", "Sim"],
+        ["Declaração anual da empresa", "Extratos bancários do ano", "Dono", "Não"],
+        ["Declaração de folha de pagamento", "Lista de funcionários e horas extras", "Administrativo", "Não"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Entregar a declaração sem movimento também é obrigação; pergunte ao contador.",
+    "Peça sempre o recibo de entrega; é a sua prova.",
+    "Combine com o contador um aviso automático de prazos por e-mail.",
+    "As obrigações dependem do regime, da atividade e da cidade; só o contador confirma a lista final."
+  ]
+}

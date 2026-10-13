@@ -1,0 +1,99 @@
+{
+  "slug": "recrutamento",
+  "titulo": "Recrutamento",
+  "area": "pessoas",
+  "subdivisoes": ["Recrutamento"],
+  "resumo": "Organiza como você atrai candidatos para cada vaga, em quais canais divulgar e quanto cada canal custa e rende. Ao final você tem um funil de candidatos controlado e sabe de onde vêm os melhores contratados.",
+  "como_usar": [
+    "Preencha a aba 'Vagas abertas' com cada vaga, o responsável e a data limite para contratar.",
+    "Defina na aba 'Canais de divulgação' onde cada vaga será anunciada e o custo previsto.",
+    "Registre cada candidato que chegar na aba 'Funil de candidatos' com o canal de origem.",
+    "Atualize a etapa de cada candidato toda sexta-feira e responda a todos em até 5 dias.",
+    "Ao fechar a vaga, revise qual canal trouxe mais candidatos qualificados e repita nele."
+  ],
+  "diagnostico": [
+    "Você tem uma descrição escrita e atualizada da vaga antes de divulgar?",
+    "Você sabe de qual canal veio cada pessoa que contratou nos últimos 12 meses?",
+    "Você pede indicação aos seus funcionários atuais quando abre uma vaga?",
+    "Você responde a todos os candidatos, inclusive os que não foram aprovados?",
+    "Existe uma data-limite definida para preencher cada vaga?",
+    "Você anuncia a vaga em mais de um canal (site de vagas, redes sociais, indicação, SINE)?",
+    "Seu perfil no Instagram ou LinkedIn mostra como é trabalhar na sua empresa?",
+    "Você guarda os currículos bons de vagas anteriores para usar de novo?",
+    "Você sabe quanto gasta, em média, para contratar uma pessoa?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Listar todas as vagas abertas e as previstas para os próximos 3 meses, com responsável por cada uma.", "responsavel": "Dono", "prazo_dias": 1},
+    {"etapa": "Semana 1", "acao": "Escrever a descrição de cada vaga (função, requisitos, faixa salarial, local, horário).", "responsavel": "Dono", "prazo_dias": 5},
+    {"etapa": "Semana 1", "acao": "Criar conta/cadastro nos canais gratuitos: SINE, grupos de WhatsApp/Facebook da cidade, LinkedIn, Instagram da empresa.", "responsavel": "Assistente administrativo", "prazo_dias": 7},
+    {"etapa": "Semana 2", "acao": "Divulgar as vagas e avisar a equipe atual sobre o programa de indicação, com um bônus combinado por contratação que passar do período de experiência.", "responsavel": "Dono", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Registrar todos os candidatos no funil e enviar resposta padrão de recebimento.", "responsavel": "Assistente administrativo", "prazo_dias": 21},
+    {"etapa": "Mês 1", "acao": "Medir quantos candidatos cada canal trouxe e quantos chegaram à entrevista; cortar o canal que não rende.", "responsavel": "Dono", "prazo_dias": 30},
+    {"etapa": "Mês 2", "acao": "Montar um banco de talentos com os melhores candidatos não contratados, com autorização deles para contato futuro.", "responsavel": "Assistente administrativo", "prazo_dias": 60},
+    {"etapa": "Mês 3", "acao": "Revisar o custo por contratação e o tempo médio para preencher vagas; ajustar canais e texto dos anúncios.", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Definir a necessidade", "como": "Escreva por que a vaga existe, que problema resolve e até quando precisa ser preenchida.", "cuidado": "Abrir vaga por impulso, sem saber qual tarefa a pessoa vai assumir."},
+    {"passo": "Escrever o anúncio", "como": "Use título claro, 5 a 8 linhas de tarefas, requisitos obrigatórios, benefícios, local e como se candidatar.", "cuidado": "Anúncio genérico que atrai currículos sem relação com a vaga."},
+    {"passo": "Escolher os canais", "como": "Combine pelo menos um canal gratuito, a indicação interna e um canal específico para o perfil da vaga.", "cuidado": "Depender de um único canal."},
+    {"passo": "Receber e registrar", "como": "Anote cada candidato na planilha com data, canal e contato assim que chegar.", "cuidado": "Deixar currículos soltos no e-mail ou WhatsApp, sem controle."},
+    {"passo": "Dar retorno", "como": "Envie mensagem de recebimento no mesmo dia e de resultado até a vaga ser fechada.", "cuidado": "Sumir sem resposta; isso prejudica a imagem da sua empresa na cidade."},
+    {"passo": "Medir e repetir", "como": "Ao fechar a vaga, anote tempo gasto, custo e canal que trouxe o contratado.", "cuidado": "Não registrar o resultado e recomeçar do zero na próxima vaga."}
+  ],
+  "abas": [
+    {
+      "nome": "Vagas abertas",
+      "descricao": "Lista das vagas em andamento com responsável e prazo.",
+      "colunas": [
+        {"nome": "Vaga", "tipo": "texto"},
+        {"nome": "Responsável", "tipo": "texto"},
+        {"nome": "Data de abertura", "tipo": "data"},
+        {"nome": "Prazo para contratar", "tipo": "data"},
+        {"nome": "Status", "tipo": "lista", "opcoes": ["Aberta", "Em entrevistas", "Proposta enviada", "Preenchida", "Cancelada"]}
+      ],
+      "exemplos": [
+        ["Auxiliar de atendimento", "Dono", "-10", "+20", "Em entrevistas"],
+        ["Vendedor(a) externo", "Gerente", "-3", "+30", "Aberta"]
+      ]
+    },
+    {
+      "nome": "Canais de divulgação",
+      "descricao": "Compara custo e resultado de cada canal de captação.",
+      "colunas": [
+        {"nome": "Canal", "tipo": "texto"},
+        {"nome": "Vaga", "tipo": "texto"},
+        {"nome": "Custo", "tipo": "moeda"},
+        {"nome": "Candidatos recebidos", "tipo": "numero"},
+        {"nome": "Candidatos qualificados", "tipo": "numero"}
+      ],
+      "exemplos": [
+        ["SINE", "Auxiliar de atendimento", 0.0, 12, 3],
+        ["Instagram da empresa", "Auxiliar de atendimento", 40.0, 18, 5],
+        ["Indicação de funcionário", "Vendedor(a) externo", 0.0, 4, 3]
+      ]
+    },
+    {
+      "nome": "Funil de candidatos",
+      "descricao": "Acompanha cada candidato do primeiro contato à decisão.",
+      "colunas": [
+        {"nome": "Candidato", "tipo": "texto"},
+        {"nome": "Vaga", "tipo": "texto"},
+        {"nome": "Canal de origem", "tipo": "texto"},
+        {"nome": "Data do contato", "tipo": "data"},
+        {"nome": "Etapa", "tipo": "lista", "opcoes": ["Recebido", "Triagem", "Entrevista", "Teste", "Proposta", "Contratado", "Não seguiu"]}
+      ],
+      "exemplos": [
+        ["Candidato A", "Auxiliar de atendimento", "SINE", "-8", "Entrevista"],
+        ["Candidato B", "Auxiliar de atendimento", "Instagram da empresa", "-6", "Triagem"],
+        ["Candidato C", "Vendedor(a) externo", "Indicação de funcionário", "-2", "Recebido"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Indicação de quem já trabalha com você costuma render os melhores contratados e custa quase nada.",
+    "Informe a faixa salarial no anúncio: você recebe menos currículos fora do orçamento.",
+    "Peça autorização por escrito (pode ser mensagem) antes de guardar dados de candidatos no banco de talentos, conforme a LGPD.",
+    "Mostre o dia a dia da empresa em fotos e vídeos curtos nas redes; isso atrai quem combina com a equipe.",
+    "Responda rápido: bons candidatos recebem outras propostas em poucos dias."
+  ]
+}

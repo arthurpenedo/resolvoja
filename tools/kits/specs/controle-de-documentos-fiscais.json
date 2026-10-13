@@ -1,0 +1,86 @@
+{
+  "slug": "controle-de-documentos-fiscais",
+  "titulo": "Controle de documentos fiscais",
+  "area": "contabil",
+  "subdivisoes": ["Controle de documentos fiscais"],
+  "resumo": "Registre, localize e guarde notas, recibos, guias e contratos com um índice simples e prazos de guarda. Você acha qualquer documento em minutos e evita perder despesas por falta de comprovante.",
+  "como_usar": [
+    "Defina a estrutura de pastas e o padrão de nome dos arquivos.",
+    "Registre cada documento no Índice de documentos assim que ele chegar.",
+    "Use a aba Documentos faltando para cobrar notas de despesas sem comprovante.",
+    "Faça a conferência mensal contra o extrato bancário.",
+    "Antes de descartar qualquer documento, confirme o prazo de guarda com o contador."
+  ],
+  "diagnostico": [
+    "Você consegue encontrar uma nota de 1 ano atrás em poucos minutos?",
+    "Existem notas só em papel térmico que apagam com o tempo?",
+    "Despesas da empresa ficam sem comprovante com frequência?",
+    "Os XMLs das notas são guardados, e não apenas o PDF?",
+    "Há mais de um lugar onde documentos ficam (e-mail, WhatsApp, gaveta)?",
+    "Sabe por quanto tempo deve guardar cada tipo de documento?",
+    "Existe cópia de segurança dos arquivos digitais?",
+    "Se você faltasse uma semana, outra pessoa acharia os documentos?",
+    "Os contratos com clientes e fornecedores estão organizados e assinados?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Definir a estrutura de pastas: Ano > Mês > Entradas, Saídas, Guias, Contratos", "responsavel": "Dono", "prazo_dias": 2},
+    {"etapa": "Semana 1", "acao": "Definir o padrão de nome de arquivo (data_origem_valor) e comunicar à equipe", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 1", "acao": "Perguntar ao contador o prazo de guarda de cada tipo de documento e anotar no Índice", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 2", "acao": "Digitalizar notas e recibos em papel dos últimos 3 meses (principalmente papel térmico)", "responsavel": "Administrativo", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Reunir em uma só pasta documentos espalhados em e-mail e WhatsApp", "responsavel": "Administrativo", "prazo_dias": 21},
+    {"etapa": "Semana 4", "acao": "Ativar backup automático em nuvem e criar cópia mensal em outro local", "responsavel": "Administrativo", "prazo_dias": 28},
+    {"etapa": "Mês 2", "acao": "Fazer a primeira conferência mensal: extrato versus documentos, preenchendo Documentos faltando", "responsavel": "Administrativo", "prazo_dias": 45},
+    {"etapa": "Mês 2", "acao": "Cobrar fornecedores e solicitar segunda via das notas faltantes", "responsavel": "Administrativo", "prazo_dias": 60},
+    {"etapa": "Mês 3", "acao": "Treinar outra pessoa para registrar e achar documentos", "responsavel": "Dono", "prazo_dias": 80},
+    {"etapa": "Mês 3", "acao": "Validar com o contador a estrutura, os prazos de guarda e o que pode ser descartado", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Receber o documento", "como": "Assim que chegar, salve o arquivo na pasta do mês correspondente.", "cuidado": "Deixar para organizar depois acumula e perde."},
+    {"passo": "Nomear corretamente", "como": "Use o padrão combinado: AAAA-MM-DD_origem_valor.", "cuidado": "Nomes aleatórios inutilizam a busca."},
+    {"passo": "Indexar", "como": "Registre no Índice de documentos o tipo, número, valor e local do arquivo.", "cuidado": "Sem índice você depende da memória."},
+    {"passo": "Digitalizar papel", "como": "Fotografe ou escaneie com boa luz, em PDF legível, e guarde o original conforme orientação.", "cuidado": "Papel térmico apaga; digitalize logo."},
+    {"passo": "Conferir mensalmente", "como": "Compare cada despesa do extrato com um documento; liste o que faltar.", "cuidado": "Despesa sem comprovante pode não ser aceita."},
+    {"passo": "Fazer backup", "como": "Mantenha sincronização na nuvem e uma cópia extra mensal.", "cuidado": "Backup só no mesmo computador não é backup."},
+    {"passo": "Descartar com critério", "como": "Só descarte após o prazo de guarda confirmado pelo contador.", "cuidado": "Descartar cedo demais pode gerar problemas em fiscalização."}
+  ],
+  "abas": [
+    {
+      "nome": "Índice de documentos",
+      "descricao": "Lista de todos os documentos fiscais com localização e prazo de guarda.",
+      "colunas": [
+        {"nome": "Tipo", "tipo": "lista", "opcoes": ["Nota de venda", "Nota de compra", "Guia", "Contrato", "Recibo", "Extrato"]},
+        {"nome": "Número/Descrição", "tipo": "texto"},
+        {"nome": "Data", "tipo": "data"},
+        {"nome": "Valor", "tipo": "moeda"},
+        {"nome": "Local do arquivo", "tipo": "texto"},
+        {"nome": "Guardar até", "tipo": "data"}
+      ],
+      "exemplos": [
+        ["Nota de compra", "NF 4521 Fornecedor A", "-12", 1850.0, "Fiscal/2026/Entradas", "+1800"],
+        ["Guia", "Imposto mensal competência anterior", "-6", 1320.0, "Fiscal/2026/Guias", "+1800"],
+        ["Contrato", "Contrato com Cliente B", "-90", 12000.0, "Contratos/Clientes", "+1800"]
+      ]
+    },
+    {
+      "nome": "Documentos faltando",
+      "descricao": "Despesas e movimentos sem comprovante para cobrar.",
+      "colunas": [
+        {"nome": "Data da despesa", "tipo": "data"},
+        {"nome": "Descrição", "tipo": "texto"},
+        {"nome": "Valor", "tipo": "moeda"},
+        {"nome": "Fornecedor", "tipo": "texto"},
+        {"nome": "Status", "tipo": "lista", "opcoes": ["Cobrar", "Solicitado", "Recebido", "Não obtido"]}
+      ],
+      "exemplos": [
+        ["-15", "Compra de material de escritório", 240.0, "Fornecedor C", "Solicitado"],
+        ["-9", "Conserto de equipamento", 600.0, "Fornecedor D", "Cobrar"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Peça nota fiscal sempre com o CNPJ da empresa, na hora da compra.",
+    "Guarde o XML da nota; ele é o documento fiscal original, e o PDF é só uma visualização.",
+    "Cuidado com papel térmico: tire foto ou escaneie no mesmo dia.",
+    "Os prazos de guarda variam por tipo de documento; nunca descarte sem confirmar com o contador."
+  ]
+}

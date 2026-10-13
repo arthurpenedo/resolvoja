@@ -1,0 +1,106 @@
+{
+  "slug": "bi",
+  "titulo": "BI",
+  "area": "tecnologia",
+  "subdivisoes": ["BI"],
+  "resumo": "Roteiro para sair dos relatórios manuais e ter análises de dados (Business Intelligence) confiáveis: perguntas de negócio, base de dados única, modelagem simples, escolha de ferramenta e governança. Para pequena empresa que já passou do painel simples.",
+  "como_usar": [
+    "Responda o diagnóstico para saber se você precisa de BI ou ainda de um painel simples.",
+    "Escreva as perguntas de negócio na aba Perguntas de negócio, em ordem de valor.",
+    "Mapeie as fontes de dados e a qualidade delas na aba Fontes e qualidade.",
+    "Compare ferramentas de BI na aba Comparação de ferramentas, testando com seus dados.",
+    "Construa por etapas: uma pergunta de cada vez, validando com o negócio."
+  ],
+  "diagnostico": [
+    "Você precisa cruzar dados de mais de um sistema (vendas, financeiro, marketing, estoque)?",
+    "Os relatórios dependem de alguém juntar planilhas manualmente?",
+    "Há números diferentes para a mesma pergunta, dependendo de quem calcula?",
+    "Você tem histórico de pelo menos 6 a 12 meses de dados confiáveis?",
+    "Você faz perguntas como 'quais clientes dão mais lucro?' ou 'qual produto encalha?'",
+    "Alguém da equipe sabe usar planilhas avançadas, SQL ou ferramentas de BI?",
+    "Os dados têm padrão (códigos únicos, datas corretas, categorias fixas)?",
+    "Existe orçamento mensal para ferramenta e manutenção do BI?",
+    "Você já tem um dashboard simples e ele não responde mais suas dúvidas?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Listar as 10 perguntas de negócio que, se respondidas, mudariam suas decisões", "responsavel": "Dono", "prazo_dias": 3},
+    {"etapa": "Semana 1", "acao": "Priorizar 3 perguntas por valor e facilidade", "responsavel": "Dono + gestores", "prazo_dias": 7},
+    {"etapa": "Semana 1", "acao": "Mapear as fontes de dados necessárias, quem as mantém e a qualidade", "responsavel": "Dono + equipe", "prazo_dias": 10},
+    {"etapa": "Semana 2", "acao": "Definir dicionário de dados: o que é venda, cliente ativo, margem, ticket médio", "responsavel": "Dono", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Limpar e padronizar os dados na origem (códigos únicos, datas, categorias)", "responsavel": "Equipe", "prazo_dias": 21},
+    {"etapa": "Semana 3", "acao": "Escolher ferramenta (Power BI, Looker Studio, Metabase, Qlik, Tableau) e testar com dados reais", "responsavel": "Dono ou técnico", "prazo_dias": 25},
+    {"etapa": "Semana 4", "acao": "Reunir os dados em uma base central: planilha estruturada, banco de dados ou data warehouse simples", "responsavel": "Técnico", "prazo_dias": 32},
+    {"etapa": "Semana 5", "acao": "Construir o primeiro relatório respondendo à pergunta mais importante", "responsavel": "Técnico ou Dono", "prazo_dias": 40},
+    {"etapa": "Semana 6", "acao": "Validar números com o financeiro e o comercial antes de divulgar", "responsavel": "Dono", "prazo_dias": 45},
+    {"etapa": "Dia 60", "acao": "Automatizar atualização e definir quem vê o quê (permissões)", "responsavel": "Técnico", "prazo_dias": 60},
+    {"etapa": "Dia 75", "acao": "Validar com advogado o uso de dados pessoais nas análises e o acesso por perfil (LGPD)", "responsavel": "Dono + advogado", "prazo_dias": 75},
+    {"etapa": "Dia 90", "acao": "Medir uso real do BI e decisões tomadas; planejar as próximas perguntas", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Começar pelas perguntas", "como": "BI responde perguntas, não mostra tudo. Escreva cada pergunta de forma específica, ex.: 'Quais 20% dos clientes geram 80% da margem?'", "cuidado": "Começar escolhendo a ferramenta e depois procurando o que mostrar."},
+    {"passo": "Padronizar definições", "como": "Escreva em uma página a definição oficial de cada métrica e dimensão (cliente ativo, venda líquida, margem).", "cuidado": "Cada área com sua própria definição de 'venda'."},
+    {"passo": "Consolidar os dados", "como": "Junte as fontes em um só lugar, com chaves em comum (código do cliente, SKU, data). Pode ser uma planilha estruturada, banco ou o próprio modelo do BI.", "cuidado": "Ligar tabelas por nome em texto livre; erros de grafia quebram os cruzamentos."},
+    {"passo": "Garantir qualidade", "como": "Crie checagens: totais batem com o sistema? há duplicados? há datas futuras?", "cuidado": "Tomar decisão com dados que ninguém conferiu."},
+    {"passo": "Modelar simples", "como": "Tabela de fatos (vendas) ligada a tabelas de dimensão (clientes, produtos, datas). Evite modelos complexos no início.", "cuidado": "Misturar tudo em uma tabela gigante e lenta."},
+    {"passo": "Construir e validar", "como": "Monte o relatório e confira com valores que o negócio já conhece (faturamento do mês fechado, estoque contado).", "cuidado": "Divulgar antes de validar; um número errado destrói a confiança."},
+    {"passo": "Definir acessos", "como": "Permissões por perfil: dono vê tudo, vendedor vê só sua carteira, dados pessoais mascarados quando possível.", "cuidado": "Compartilhar o relatório por link aberto."},
+    {"passo": "Manter e evoluir", "como": "Um responsável cuida da atualização, correção e novas perguntas. Revise o uso a cada trimestre.", "cuidado": "Construir e abandonar; BI sem dono vira relatório desatualizado."}
+  ],
+  "abas": [
+    {
+      "nome": "Perguntas de negócio",
+      "descricao": "As perguntas que o BI deve responder, priorizadas.",
+      "colunas": [
+        {"nome": "Pergunta", "tipo": "texto"},
+        {"nome": "Decisão que apoia", "tipo": "texto"},
+        {"nome": "Valor para o negócio", "tipo": "lista", "opcoes": ["Alto", "Médio", "Baixo"]},
+        {"nome": "Dados disponíveis", "tipo": "lista", "opcoes": ["Sim", "Parcial", "Não"]},
+        {"nome": "Prioridade", "tipo": "numero"}
+      ],
+      "exemplos": [
+        ["Quais clientes geram mais margem?", "Onde concentrar atendimento e ofertas", "Alto", "Parcial", 1],
+        ["Quais produtos têm estoque parado há mais de 90 dias?", "Promoções e compras", "Alto", "Sim", 2],
+        ["Qual canal de venda traz clientes mais lucrativos?", "Onde investir em marketing", "Médio", "Parcial", 3]
+      ]
+    },
+    {
+      "nome": "Fontes e qualidade",
+      "descricao": "Avaliação das fontes de dados antes de construir.",
+      "colunas": [
+        {"nome": "Fonte", "tipo": "texto"},
+        {"nome": "Dado principal", "tipo": "texto"},
+        {"nome": "Chave de ligação", "tipo": "texto"},
+        {"nome": "Qualidade", "tipo": "lista", "opcoes": ["Boa", "Regular", "Ruim"]},
+        {"nome": "Problema conhecido", "tipo": "texto"},
+        {"nome": "Responsável", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["Sistema de vendas", "Pedidos e itens", "Código do cliente / SKU", "Boa", "Cliente cadastrado em duplicidade", "Comercial"],
+        ["Planilha de custos", "Custo por produto", "SKU", "Regular", "Custos desatualizados", "Financeiro"],
+        ["Relatório de anúncios", "Gasto e leads por campanha", "Data / campanha", "Regular", "Sem ligação com vendas", "Marketing"]
+      ]
+    },
+    {
+      "nome": "Comparação de ferramentas",
+      "descricao": "Teste com seus dados antes de decidir.",
+      "colunas": [
+        {"nome": "Ferramenta", "tipo": "texto"},
+        {"nome": "Custo mensal", "tipo": "moeda"},
+        {"nome": "Conecta às minhas fontes", "tipo": "lista", "opcoes": ["Sim", "Parcial", "Não", "A testar"]},
+        {"nome": "Facilidade de uso (1 a 5)", "tipo": "numero"},
+        {"nome": "Atualização automática", "tipo": "lista", "opcoes": ["Sim", "Não", "A confirmar"]}
+      ],
+      "exemplos": [
+        ["Ferramenta A", 0.0, "A testar", 3, "A confirmar"],
+        ["Ferramenta B", 0.0, "A testar", 4, "A confirmar"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Se você tem poucos dados e uma fonte só, um painel em planilha pode ser mais eficiente do que BI completo.",
+    "Teste a ferramenta com seus dados reais antes de assinar; demonstrações perfeitas mudam na prática.",
+    "Confirme preços e licenças no site oficial; planos de BI costumam ter cobrança por usuário.",
+    "A parte mais difícil do BI é a qualidade dos dados, não a ferramenta.",
+    "Desconfie de projetos de BI que prometem tudo pronto sem pedir acesso aos seus dados e sem validar com você."
+  ]
+}

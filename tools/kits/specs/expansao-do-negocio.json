@@ -1,0 +1,97 @@
+{
+  "slug": "expansao-do-negocio",
+  "titulo": "Expansão do negócio",
+  "area": "gestao",
+  "subdivisoes": ["Expansão do negócio"],
+  "resumo": "Um roteiro para decidir como e quando crescer (novo produto, novo canal, nova unidade, nova cidade) sem quebrar o caixa. Ao final você sabe se está pronto, qual caminho de expansão escolher e quanto vai precisar investir.",
+  "como_usar": [
+    "Verifique na aba 'Prontidão' se o negócio atual está preparado para crescer.",
+    "Compare os caminhos de expansão na aba 'Opções de expansão'.",
+    "Calcule investimento, ponto de equilíbrio e retorno na aba 'Investimento e retorno'.",
+    "Escolha um caminho e defina um piloto pequeno antes de ir com tudo.",
+    "Defina critérios para ampliar, ajustar ou desistir."
+  ],
+  "diagnostico": [
+    "O negócio atual dá lucro de forma consistente há pelo menos 6 meses?",
+    "Você consegue se afastar uma semana sem a operação parar?",
+    "Seus processos principais estão documentados ou pelo menos combinados?",
+    "Tem caixa de reserva para cobrir 3 meses de despesas?",
+    "Seus clientes atuais compram de novo e indicam a empresa?",
+    "Você conhece a margem de cada produto ou serviço?",
+    "Já identificou uma demanda não atendida (clientes pedindo algo que você não oferece)?",
+    "Sabe quanto precisaria investir e em quanto tempo isso se pagaria?"
+  ],
+  "plano": [
+    {"etapa": "Dia 2", "acao": "Responder a lista de prontidão e identificar o que precisa ser arrumado antes de crescer", "responsavel": "Dono", "prazo_dias": 2},
+    {"etapa": "Semana 1", "acao": "Listar de 3 a 5 caminhos de expansão e descartar os que exigem mais dinheiro do que você tem", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 2", "acao": "Levantar custo de investimento e custo mensal de cada caminho restante", "responsavel": "Dono", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Calcular ponto de equilíbrio e prazo de retorno de cada caminho", "responsavel": "Dono", "prazo_dias": 21},
+    {"etapa": "Semana 4", "acao": "Escolher um caminho e desenhar um piloto de 30 a 60 dias com meta e limite de gasto", "responsavel": "Dono", "prazo_dias": 30},
+    {"etapa": "Semana 5", "acao": "Padronizar processos-chave e treinar quem tocará a operação atual", "responsavel": "Dono e gerente", "prazo_dias": 35},
+    {"etapa": "Mês 2", "acao": "Iniciar o piloto e acompanhar semanalmente", "responsavel": "Dono", "prazo_dias": 50},
+    {"etapa": "Mês 3", "acao": "Avaliar o piloto: ampliar, ajustar ou encerrar, conforme critérios definidos antes", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Cheque a base", "como": "Só expanda quando o negócio atual for lucrativo, previsível e funcionar sem você o tempo todo.", "cuidado": "Crescer para fugir de um problema que continuará existindo, em dobro."},
+    {"passo": "Liste os caminhos", "como": "Mais clientes no mesmo lugar, novo produto, novo canal (online, atacado), nova unidade ou franquia/parceria.", "cuidado": "Escolher o caminho mais empolgante, e não o mais rentável."},
+    {"passo": "Calcule o investimento", "como": "Some custos únicos (reforma, equipamentos, estoque) e custos mensais, mais 6 meses de capital de giro.", "cuidado": "Esquecer o capital de giro até o novo negócio se pagar."},
+    {"passo": "Calcule o ponto de equilíbrio", "como": "Custos fixos mensais ÷ margem de contribuição por venda = vendas necessárias para empatar.", "cuidado": "Premissas de vendas muito otimistas."},
+    {"passo": "Faça um piloto", "como": "Teste com baixo investimento por 30 a 60 dias (um canal, um bairro, um produto) com meta clara.", "cuidado": "Investir tudo antes de ter prova de demanda."},
+    {"passo": "Defina critérios de decisão", "como": "Antes de começar, anote: se atingir X, amplio; se ficar entre X e Y, ajusto; abaixo de Y, encerro.", "cuidado": "Decidir com emoção depois de já ter gasto."},
+    {"passo": "Proteja o negócio principal", "como": "Mantenha o atendimento e a qualidade do que já funciona durante a expansão.", "cuidado": "Perder clientes antigos por estar focado no novo."}
+  ],
+  "abas": [
+    {
+      "nome": "Prontidão",
+      "descricao": "Checklist para saber se o negócio está pronto para crescer.",
+      "colunas": [
+        {"nome": "Critério", "tipo": "texto"},
+        {"nome": "Situação atual", "tipo": "lista", "opcoes": ["Sim", "Em parte", "Não"]},
+        {"nome": "O que falta", "tipo": "texto"},
+        {"nome": "Prazo para resolver", "tipo": "data"}
+      ],
+      "exemplos": [
+        ["Lucro positivo há 6 meses", "Sim", "", "0"],
+        ["Reserva de caixa de 3 meses", "Em parte", "Faltam R$ 15.000", "+120"],
+        ["Processos documentados", "Não", "Fazer checklist de atendimento e produção", "+45"]
+      ]
+    },
+    {
+      "nome": "Opções de expansão",
+      "descricao": "Comparação dos caminhos possíveis de crescimento.",
+      "colunas": [
+        {"nome": "Opção", "tipo": "texto"},
+        {"nome": "Tipo", "tipo": "lista", "opcoes": ["Novo produto", "Novo canal", "Nova unidade", "Nova região", "Parceria", "Novo público"]},
+        {"nome": "Investimento", "tipo": "moeda"},
+        {"nome": "Risco", "tipo": "lista", "opcoes": ["Baixo", "Médio", "Alto"]},
+        {"nome": "Retorno esperado (meses)", "tipo": "numero"}
+      ],
+      "exemplos": [
+        ["Vender por aplicativo de entrega", "Novo canal", 1500.0, "Baixo", 4],
+        ["Abrir segunda unidade", "Nova unidade", 80000.0, "Alto", 28],
+        ["Lançar linha para empresas", "Novo público", 6000.0, "Médio", 10]
+      ]
+    },
+    {
+      "nome": "Investimento e retorno",
+      "descricao": "Contas simples para decidir se a expansão compensa.",
+      "colunas": [
+        {"nome": "Item", "tipo": "texto"},
+        {"nome": "Tipo de custo", "tipo": "lista", "opcoes": ["Único", "Mensal fixo", "Capital de giro"]},
+        {"nome": "Valor", "tipo": "moeda"},
+        {"nome": "Observação", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["Equipamentos", "Único", 12000.0, "Orçar em 3 fornecedores"],
+        ["Aluguel e condomínio", "Mensal fixo", 3500.0, "Contrato de 30 meses"],
+        ["Reserva para os primeiros meses", "Capital de giro", 15000.0, "Cobre 3 meses de despesa"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Crescer devagar com caixa saudável vence crescer rápido com dívida cara.",
+    "Se o piloto não mostrar interesse real de compra, a escala não vai consertar isso.",
+    "Para contratos, empréstimos e questões tributárias de nova unidade ou região, valide com contador e advogado antes de assinar.",
+    "Documente o que funciona na primeira unidade: é o manual da segunda."
+  ]
+}

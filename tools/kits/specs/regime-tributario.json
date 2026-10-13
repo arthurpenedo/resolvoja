@@ -1,0 +1,85 @@
+{
+  "slug": "regime-tributario",
+  "titulo": "Regime tributário",
+  "area": "contabil",
+  "subdivisoes": ["Regime tributário"],
+  "resumo": "Entenda as diferenças entre MEI, Simples Nacional, Lucro Presumido e Lucro Real e compare, com números de exemplo, qual tende a pesar menos no seu caso. Os percentuais são apenas exemplos a conferir com o contador.",
+  "como_usar": [
+    "Responda o diagnóstico para saber se vale revisar seu regime.",
+    "Preencha a aba Dados da empresa com faturamento, custos e folha reais dos últimos 12 meses.",
+    "Na aba Comparativo, substitua os percentuais de exemplo pelos que o contador confirmar.",
+    "Compare o total de imposto estimado em cada regime.",
+    "Leve a comparação ao contador antes de qualquer mudança de regime."
+  ],
+  "diagnostico": [
+    "Você sabe em qual regime sua empresa está hoje e por que foi escolhido?",
+    "Seu regime foi escolhido na abertura e nunca mais foi revisado?",
+    "Seu faturamento mudou bastante no último ano?",
+    "Seus custos com folha de pagamento representam grande parte da receita?",
+    "Você tem muitos custos com compras que geram crédito de imposto?",
+    "Sua margem de lucro é alta ou baixa?",
+    "Você presta serviço, vende produto ou os dois?",
+    "Você está perto do limite de faturamento do seu regime atual?",
+    "Seu contador já apresentou uma comparação entre regimes?"
+  ],
+  "plano": [
+    {"etapa": "Semana 1", "acao": "Levantar faturamento mensal dos últimos 12 meses e preencher a aba Dados da empresa", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 1", "acao": "Anotar custos principais: folha, compras de mercadoria, aluguel, serviços de terceiros", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 2", "acao": "Perguntar ao contador qual a atividade (CNAE) da empresa e quais regimes ela pode adotar", "responsavel": "Dono", "prazo_dias": 14},
+    {"etapa": "Semana 2", "acao": "Conferir os limites de faturamento vigentes de cada regime em fonte oficial", "responsavel": "Administrativo", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Preencher a aba Comparativo com os percentuais que o contador confirmar", "responsavel": "Administrativo", "prazo_dias": 21},
+    {"etapa": "Mês 2", "acao": "Simular dois cenários de faturamento: o atual e um com crescimento de 30%", "responsavel": "Dono", "prazo_dias": 45},
+    {"etapa": "Mês 2", "acao": "Listar vantagens não financeiras: facilidade, obrigações acessórias, créditos para clientes", "responsavel": "Dono", "prazo_dias": 50},
+    {"etapa": "Mês 3", "acao": "Perguntar ao contador o prazo e as regras para trocar de regime", "responsavel": "Dono", "prazo_dias": 75},
+    {"etapa": "Mês 3", "acao": "Validar com o contador a comparação e decidir manter ou mudar de regime", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Reunir os dados", "como": "Junte faturamento, folha e custos dos últimos 12 meses em uma planilha.", "cuidado": "Use valores reais, não estimativas de memória."},
+    {"passo": "Entender cada regime", "como": "Anote em uma linha como cada regime calcula o imposto: sobre faturamento, sobre lucro presumido ou lucro real.", "cuidado": "Não compare só pela alíquota; a base de cálculo muda."},
+    {"passo": "Confirmar percentuais", "como": "Peça ao contador as alíquotas aplicáveis à sua atividade e substitua os exemplos da planilha.", "cuidado": "Os números de exemplo da planilha não valem para o seu caso."},
+    {"passo": "Calcular o total", "como": "Some todos os tributos de cada regime, incluindo os sobre a folha, e compare o valor anual.", "cuidado": "Esquecer encargos sobre folha distorce a conta."},
+    {"passo": "Testar cenários", "como": "Repita a conta com faturamento maior e menor para ver se a escolha se mantém.", "cuidado": "Escolher pelo ano ruim ou pelo ano ótimo isolado."},
+    {"passo": "Avaliar o trabalho extra", "como": "Veja se o regime exige mais controles e se o custo contábil sobe.", "cuidado": "Economia pequena pode ser consumida por honorários maiores."},
+    {"passo": "Decidir com o contador", "como": "Leve o comparativo e registre a decisão e a data da próxima revisão.", "cuidado": "Mudar de regime só é possível em certas épocas; confirme o prazo."}
+  ],
+  "abas": [
+    {
+      "nome": "Dados da empresa",
+      "descricao": "Faturamento e custos mensais usados nas comparações.",
+      "colunas": [
+        {"nome": "Mês", "tipo": "texto"},
+        {"nome": "Faturamento", "tipo": "moeda"},
+        {"nome": "Compras de mercadoria", "tipo": "moeda"},
+        {"nome": "Folha e encargos", "tipo": "moeda"},
+        {"nome": "Outras despesas", "tipo": "moeda"}
+      ],
+      "exemplos": [
+        ["Janeiro", 40000.0, 14000.0, 8000.0, 6000.0],
+        ["Fevereiro", 36000.0, 12500.0, 8000.0, 6000.0],
+        ["Março", 45000.0, 16000.0, 8000.0, 6500.0]
+      ]
+    },
+    {
+      "nome": "Comparativo",
+      "descricao": "Comparação de imposto estimado por regime com percentuais de exemplo a conferir.",
+      "colunas": [
+        {"nome": "Regime", "tipo": "lista", "opcoes": ["MEI", "Simples Nacional", "Lucro Presumido", "Lucro Real"]},
+        {"nome": "Base de cálculo (exemplo)", "tipo": "moeda"},
+        {"nome": "Percentual de exemplo (%)", "tipo": "numero"},
+        {"nome": "Imposto anual estimado", "tipo": "moeda"},
+        {"nome": "Observação", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["Simples Nacional", 480000.0, 8.0, 38400.0, "Percentual de exemplo; confirmar faixa com o contador"],
+        ["Lucro Presumido", 480000.0, 13.0, 62400.0, "Exemplo; inclui vários tributos, conferir"],
+        ["Lucro Real", 96000.0, 25.0, 24000.0, "Exemplo sobre lucro; depende de créditos e despesas"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Nenhum regime é o melhor para todos: depende de margem, folha, atividade e faturamento.",
+    "Empresas com muita folha e margem baixa costumam precisar de análise cuidadosa.",
+    "Cuidado com o limite de faturamento: ultrapassá-lo pode obrigar a mudança de regime.",
+    "Revise o regime pelo menos uma vez por ano, com o contador."
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "slug": "analise-de-concorrentes",
+  "titulo": "Análise de concorrentes",
+  "area": "gestao",
+  "subdivisoes": ["Análise de concorrentes"],
+  "resumo": "Um roteiro para mapear de 3 a 6 concorrentes (preço, oferta, canais, reputação) e achar onde você pode se destacar. Ao final você tem uma tabela comparativa e 3 ações para se diferenciar.",
+  "como_usar": [
+    "Liste na aba 'Concorrentes' quem disputa o mesmo cliente (diretos e indiretos).",
+    "Pesquise cada um e preencha a aba 'Comparativo' com preço, diferenciais e avaliações.",
+    "Anote pontos fortes e fracos de cada um na aba 'Pontos fortes e fracos'.",
+    "Compare com a sua empresa e identifique lacunas de mercado.",
+    "Repita a pesquisa a cada 3 ou 6 meses."
+  ],
+  "diagnostico": [
+    "Você sabe quem são seus 3 principais concorrentes?",
+    "Conhece os preços praticados por eles?",
+    "Já olhou as avaliações (Google, Instagram, Reclame Aqui) para ver o que os clientes elogiam e reclamam?",
+    "Sabe por que os clientes escolhem o concorrente em vez de você?",
+    "Acompanha o que eles publicam nas redes e quais promoções fazem?",
+    "Sabe que canais usam para vender (site, aplicativo, WhatsApp, marketplace)?",
+    "Seu diferencial é claro quando comparado a eles?",
+    "Já considerou concorrentes indiretos (alternativas que resolvem o mesmo problema de outro jeito)?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Listar de 3 a 6 concorrentes: 2 diretos, 2 indiretos e 1 novo no mercado", "responsavel": "Dono", "prazo_dias": 1},
+    {"etapa": "Dia 3", "acao": "Pesquisar site, redes sociais e cardápio/tabela de preços de cada um", "responsavel": "Dono", "prazo_dias": 3},
+    {"etapa": "Semana 1", "acao": "Ler avaliações no Google e redes: anotar 5 elogios e 5 reclamações de cada", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 1", "acao": "Fazer uma 'compra misteriosa' ou pedir orçamento a 2 concorrentes", "responsavel": "Dono ou amigo", "prazo_dias": 10},
+    {"etapa": "Semana 2", "acao": "Montar a tabela comparativa e incluir sua empresa", "responsavel": "Dono", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Identificar lacunas: o que ninguém faz bem e clientes pedem", "responsavel": "Dono", "prazo_dias": 21},
+    {"etapa": "Semana 4", "acao": "Definir 3 ações para se diferenciar (oferta, preço, atendimento ou canal)", "responsavel": "Dono", "prazo_dias": 30},
+    {"etapa": "Mês 2", "acao": "Executar a primeira ação e medir a reação dos clientes", "responsavel": "Dono", "prazo_dias": 60},
+    {"etapa": "Mês 3", "acao": "Atualizar a pesquisa e anotar mudanças nos concorrentes", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Defina quem é concorrente", "como": "É quem disputa o mesmo cliente e o mesmo dinheiro, mesmo que venda algo um pouco diferente.", "cuidado": "Olhar só para empresas idênticas à sua e ignorar alternativas."},
+    {"passo": "Colete informações públicas", "como": "Use sites, Instagram, Google Maps, marketplaces, Reclame Aqui e Biblioteca de Anúncios do Facebook.", "cuidado": "Usar métodos que invadam privacidade ou sejam antiéticos."},
+    {"passo": "Compare preço com contexto", "como": "Anote preço, o que está incluso, condições de pagamento e prazos de entrega.", "cuidado": "Comparar só o preço de tabela e ignorar o valor entregue."},
+    {"passo": "Leia as avaliações", "como": "Reclamações dos clientes deles são oportunidade para você; elogios mostram o padrão a igualar.", "cuidado": "Tomar uma avaliação isolada como regra."},
+    {"passo": "Identifique o espaço livre", "como": "Procure algo que os clientes pedem e ninguém entrega bem (rapidez, garantia, atendimento, nicho).", "cuidado": "Querer ser melhor em tudo ao mesmo tempo."},
+    {"passo": "Defina a resposta", "como": "Escolha onde igualar, onde superar e onde ignorar.", "cuidado": "Entrar em guerra de preços sem margem."}
+  ],
+  "abas": [
+    {
+      "nome": "Concorrentes",
+      "descricao": "Lista dos concorrentes e como encontrá-los.",
+      "colunas": [
+        {"nome": "Concorrente", "tipo": "texto"},
+        {"nome": "Tipo", "tipo": "lista", "opcoes": ["Direto", "Indireto", "Novo no mercado"]},
+        {"nome": "Onde atua", "tipo": "texto"},
+        {"nome": "Tamanho estimado", "tipo": "lista", "opcoes": ["Menor que eu", "Parecido", "Maior que eu"]},
+        {"nome": "Endereço ou @", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["Concorrente A", "Direto", "Mesmo bairro", "Parecido", "@concorrente_a"],
+        ["Concorrente B", "Indireto", "Cidade toda, pelo aplicativo", "Maior que eu", "app de entrega"],
+        ["Concorrente C", "Novo no mercado", "Bairro vizinho", "Menor que eu", "@concorrente_c"]
+      ]
+    },
+    {
+      "nome": "Comparativo",
+      "descricao": "Tabela de preços, canais e reputação.",
+      "colunas": [
+        {"nome": "Concorrente", "tipo": "texto"},
+        {"nome": "Preço do item principal", "tipo": "moeda"},
+        {"nome": "Nota média (Google)", "tipo": "numero"},
+        {"nome": "Canais de venda", "tipo": "texto"},
+        {"nome": "Diferencial declarado", "tipo": "texto"},
+        {"nome": "Data da pesquisa", "tipo": "data"}
+      ],
+      "exemplos": [
+        ["Concorrente A", 59.9, 4, "Loja física e WhatsApp", "Entrega rápida", "0"],
+        ["Concorrente B", 49.9, 3, "Aplicativo", "Frete grátis acima de R$ 40", "0"],
+        ["Minha empresa", 64.9, 5, "Loja física, WhatsApp e Instagram", "Atendimento personalizado", "0"]
+      ]
+    },
+    {
+      "nome": "Pontos fortes e fracos",
+      "descricao": "O que cada concorrente faz bem ou mal e como reagir.",
+      "colunas": [
+        {"nome": "Concorrente", "tipo": "texto"},
+        {"nome": "Ponto forte", "tipo": "texto"},
+        {"nome": "Ponto fraco", "tipo": "texto"},
+        {"nome": "O que fazer a respeito", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["Concorrente A", "Preço baixo e boa localização", "Demora no atendimento por mensagem", "Reforçar resposta em até 10 minutos"],
+        ["Concorrente B", "Alcance no aplicativo", "Muitas reclamações de atraso", "Divulgar pontualidade como diferencial"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Siga as redes dos concorrentes e ative notificações para acompanhar promoções.",
+    "Cliente que reclama do concorrente é cliente em potencial: responda com uma oferta, sem atacar ninguém.",
+    "Nem sempre o mais barato ganha; o cliente também compra confiança e comodidade.",
+    "Registre a data da pesquisa; preços mudam rápido."
+  ]
+}

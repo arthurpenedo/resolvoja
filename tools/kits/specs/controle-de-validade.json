@@ -1,0 +1,100 @@
+{
+  "slug": "controle-de-validade",
+  "titulo": "Controle de validade",
+  "area": "estoque",
+  "subdivisoes": ["Controle de validade"],
+  "resumo": "Registre lotes e datas de vencimento, use a regra PEPS (primeiro que vence, primeiro que sai) e aja antes de o produto vencer. Ao final você terá menos perdas, vitrine organizada e alertas por prazo.",
+  "como_usar": [
+    "Na entrada de cada compra, registre produto, lote, validade e quantidade na aba 'Lotes'.",
+    "Etiquete ou organize a prateleira para que o lote mais antigo fique na frente.",
+    "Toda semana, filtre os lotes que vencem em até 30 dias e escolha uma ação na aba 'Alertas'.",
+    "Retire e registre na aba 'Perdas' qualquer produto vencido, com motivo.",
+    "Analise as perdas por mês para ajustar o tamanho das compras."
+  ],
+  "diagnostico": [
+    "Você já jogou fora produto vencido que poderia ter vendido?",
+    "Registra a validade dos produtos na entrada?",
+    "Os produtos mais velhos ficam na frente da prateleira?",
+    "Alguém confere as datas pelo menos uma vez por semana?",
+    "Você faz promoção antes que o produto venha a vencer?",
+    "Você sabe quanto perdeu por vencimento no último mês?",
+    "Seu fornecedor aceita troca de produto próximo ao vencimento?",
+    "Os lotes são identificados (etiqueta ou nota)?",
+    "Compra em quantidade maior que você vende antes do vencimento?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Conferir agora todos os itens com validade e retirar o que está vencido, registrando a perda", "responsavel": "Estoquista", "prazo_dias": 3},
+    {"etapa": "Semana 1", "acao": "Listar os produtos com validade e os lotes em estoque na aba Lotes", "responsavel": "Estoquista", "prazo_dias": 7},
+    {"etapa": "Semana 1", "acao": "Reorganizar as prateleiras no sistema PEPS: mais antigo na frente", "responsavel": "Estoquista", "prazo_dias": 10},
+    {"etapa": "Semana 2", "acao": "Definir a regra de alerta: 60 dias para item de longa validade, 15 para curta", "responsavel": "Dono", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Combinar com os fornecedores a política de troca de produtos perto do vencimento", "responsavel": "Comprador", "prazo_dias": 21},
+    {"etapa": "Semana 4", "acao": "Criar a rotina semanal de conferência e de promoção dos itens em alerta", "responsavel": "Dono", "prazo_dias": 30},
+    {"etapa": "Mês 2", "acao": "Ajustar o tamanho dos pedidos nos itens com perda repetida", "responsavel": "Comprador", "prazo_dias": 60},
+    {"etapa": "Mês 3", "acao": "Analisar o total de perdas e comparar com o primeiro mês", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Conferir na recebimento", "como": "Veja a validade na chegada e recuse ou renegocie produtos com menos de 2/3 da vida útil, se possível.", "cuidado": "Aceitar produto já perto de vencer ainda na entrada gera perda."},
+    {"passo": "Registrar o lote", "como": "Anote lote e validade e deixe a informação visível (etiqueta com data de vencimento).", "cuidado": "Lote sem registro vira estoque misturado."},
+    {"passo": "Aplicar PEPS", "como": "Coloque o que chegou atrás e o que vence primeiro na frente; avise a equipe para pegar sempre da frente.", "cuidado": "Cliente pega sempre o de trás; reponha a vitrine com frequência."},
+    {"passo": "Marcar alertas por cor", "como": "Use etiquetas de cor por mês de vencimento: verde longe, amarelo 60 dias, vermelho 30 dias.", "cuidado": "A cor só ajuda se for conferida toda semana."},
+    {"passo": "Agir antes de vencer", "como": "Faça promoção, combo, troca com fornecedor ou doação 30 dias antes (ou 15 se curto).", "cuidado": "Esperar a última semana reduz as chances de venda."},
+    {"passo": "Retirar o vencido", "como": "Retire do estoque imediatamente, registre a perda e destine corretamente.", "cuidado": "Produto vencido na prateleira é risco para o cliente e para a loja, principalmente em alimentos e cosméticos."},
+    {"passo": "Analisar perdas", "como": "Some perdas em reais por produto e mês e ajuste as compras.", "cuidado": "Não trate perda como normal; ela mostra compra errada."}
+  ],
+  "abas": [
+    {
+      "nome": "Lotes",
+      "descricao": "Controle dos lotes em estoque com data de validade.",
+      "colunas": [
+        {"nome": "Produto", "tipo": "texto"},
+        {"nome": "Lote", "tipo": "texto"},
+        {"nome": "Quantidade", "tipo": "numero"},
+        {"nome": "Validade", "tipo": "data"},
+        {"nome": "Custo unitário", "tipo": "moeda"},
+        {"nome": "Local", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["Produto A", "L2301", 48, "+20", 6.5, "Prateleira 2"],
+        ["Produto A", "L2305", 96, "+75", 6.5, "Depósito"],
+        ["Produto B", "L88", 20, "+10", 14.0, "Geladeira"]
+      ]
+    },
+    {
+      "nome": "Alertas",
+      "descricao": "Lotes próximos do vencimento e a ação escolhida.",
+      "colunas": [
+        {"nome": "Produto", "tipo": "texto"},
+        {"nome": "Lote", "tipo": "texto"},
+        {"nome": "Validade", "tipo": "data"},
+        {"nome": "Ação", "tipo": "lista", "opcoes": ["Promoção", "Combo", "Trocar com fornecedor", "Doar", "Descartar"]},
+        {"nome": "Status", "tipo": "lista", "opcoes": ["Pendente", "Em andamento", "Resolvido"]}
+      ],
+      "exemplos": [
+        ["Produto B", "L88", "+10", "Promoção", "Em andamento"],
+        ["Produto A", "L2301", "+20", "Combo", "Pendente"]
+      ]
+    },
+    {
+      "nome": "Perdas",
+      "descricao": "Registro de produtos vencidos ou descartados.",
+      "colunas": [
+        {"nome": "Data", "tipo": "data"},
+        {"nome": "Produto", "tipo": "texto"},
+        {"nome": "Quantidade", "tipo": "numero"},
+        {"nome": "Custo unitário", "tipo": "moeda"},
+        {"nome": "Motivo", "tipo": "lista", "opcoes": ["Vencido", "Avariado", "Compra excessiva", "Fornecedor entregou curto"]}
+      ],
+      "exemplos": [
+        ["-5", "Produto C", 6, 9.9, "Vencido"],
+        ["-12", "Produto B", 4, 14.0, "Compra excessiva"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Peça ao fornecedor a validade mínima na entrega (ex.: pelo menos 80% da vida do produto).",
+    "Itens perto do vencimento vendem bem em combos com produtos populares.",
+    "Em alimentos, siga as regras sanitárias do seu município e do fabricante para descarte e armazenagem.",
+    "Doar produtos próximos do vencimento antes da data pode evitar perdas, desde que seguros para consumo e dentro da norma; confirme com a vigilância sanitária.",
+    "Escreva a data de abertura nos produtos que mudam a validade depois de abertos."
+  ]
+}

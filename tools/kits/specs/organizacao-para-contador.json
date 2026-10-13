@@ -1,0 +1,97 @@
+{
+  "slug": "organizacao-para-contador",
+  "titulo": "Organização para contador",
+  "area": "contabil",
+  "subdivisoes": ["Organização para contador"],
+  "resumo": "Entregue ao seu contador tudo o que ele precisa, completo e no prazo, em um pacote mensal padronizado. Menos cobrança, menos retrabalho e menos risco de erro nos impostos.",
+  "como_usar": [
+    "Pergunte ao contador o que ele precisa todo mês e preencha o Checklist mensal.",
+    "Defina o dia de envio e o formato (pasta compartilhada, não fotos soltas).",
+    "Registre cada envio na aba Entregas ao contador.",
+    "Anote dúvidas durante o mês na aba Perguntas para o contador.",
+    "Revise o combinado a cada 3 meses."
+  ],
+  "diagnostico": [
+    "Seu contador precisa cobrar documentos de você todo mês?",
+    "Você manda notas e extratos de formas diferentes (WhatsApp, e-mail, papel)?",
+    "Já houve imposto calculado errado por falta de informação sua?",
+    "Você sabe o que o contador precisa de você a cada mês?",
+    "Há combinado de prazo para envio dos documentos?",
+    "Você anota dúvidas ou deixa para perguntar quando lembra?",
+    "Todas as vendas e despesas têm nota ou comprovante?",
+    "O contador tem acesso ao extrato bancário da empresa?",
+    "Você avisa o contador sobre contratações, demissões e compras grandes?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Conversar com o contador e pedir a lista exata de documentos mensais e o melhor formato", "responsavel": "Dono", "prazo_dias": 3},
+    {"etapa": "Semana 1", "acao": "Montar o Checklist mensal na planilha com data limite interna", "responsavel": "Administrativo", "prazo_dias": 7},
+    {"etapa": "Semana 1", "acao": "Criar a pasta compartilhada com o contador, com subpastas por mês", "responsavel": "Administrativo", "prazo_dias": 7},
+    {"etapa": "Semana 2", "acao": "Definir o dia fixo de envio (ex.: dia 5) e comunicar a equipe", "responsavel": "Dono", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Exportar extratos bancários e de cartão em PDF/OFX e salvar no padrão combinado", "responsavel": "Administrativo", "prazo_dias": 21},
+    {"etapa": "Semana 4", "acao": "Fazer o primeiro envio completo usando o checklist e pedir feedback", "responsavel": "Administrativo", "prazo_dias": 30},
+    {"etapa": "Mês 2", "acao": "Criar rotina de avisos ao contador: admissões, demissões, compras de equipamento, mudanças de endereço", "responsavel": "Dono", "prazo_dias": 45},
+    {"etapa": "Mês 2", "acao": "Marcar reunião trimestral de 30 minutos para revisar números e dúvidas", "responsavel": "Dono", "prazo_dias": 60},
+    {"etapa": "Mês 3", "acao": "Medir quantas vezes o contador precisou cobrar e ajustar o processo", "responsavel": "Administrativo", "prazo_dias": 85},
+    {"etapa": "Mês 3", "acao": "Validar com o contador se o pacote mensal está completo e se falta algum documento", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Reunir vendas", "como": "Junte relatório de vendas e notas emitidas do mês.", "cuidado": "Vendas por maquininha ou PIX sem nota precisam ser informadas."},
+    {"passo": "Reunir despesas", "como": "Junte notas de compra, recibos e contas pagas do mês, nomeadas pelo padrão combinado.", "cuidado": "Recibo sem CNPJ da empresa pode não ser aceito como despesa."},
+    {"passo": "Baixar extratos", "como": "Exporte extrato bancário, de cartão e de maquininha de todas as contas da empresa.", "cuidado": "Esquecer uma conta cria divergência no faturamento."},
+    {"passo": "Informar mudanças", "como": "Liste admissões, demissões, aumentos, novos contratos e compras grandes.", "cuidado": "Contador só sabe o que você conta."},
+    {"passo": "Enviar o pacote", "como": "Coloque tudo na pasta do mês e avise o contador por mensagem curta com resumo.", "cuidado": "Mensagens longas e sem organização geram dúvidas."},
+    {"passo": "Registrar e acompanhar", "como": "Anote a data do envio e responda dúvidas do contador em até 2 dias úteis.", "cuidado": "Demorar a responder atrasa guias e declarações."}
+  ],
+  "abas": [
+    {
+      "nome": "Checklist mensal",
+      "descricao": "Itens que precisam ser enviados ao contador todo mês.",
+      "colunas": [
+        {"nome": "Item", "tipo": "texto"},
+        {"nome": "Responsável", "tipo": "texto"},
+        {"nome": "Data limite interna", "tipo": "data"},
+        {"nome": "Status", "tipo": "lista", "opcoes": ["Pendente", "Pronto", "Enviado"]}
+      ],
+      "exemplos": [
+        ["Notas de vendas emitidas", "Administrativo", "+2", "Pronto"],
+        ["Notas de compras e despesas", "Administrativo", "+3", "Pendente"],
+        ["Extratos bancários e maquininha", "Dono", "+3", "Pendente"],
+        ["Informações de folha e funcionários", "Dono", "+4", "Pendente"]
+      ]
+    },
+    {
+      "nome": "Entregas ao contador",
+      "descricao": "Registro de cada envio mensal.",
+      "colunas": [
+        {"nome": "Competência", "tipo": "texto"},
+        {"nome": "Data de envio", "tipo": "data"},
+        {"nome": "Forma de envio", "tipo": "lista", "opcoes": ["Pasta compartilhada", "E-mail", "Sistema do contador"]},
+        {"nome": "Pendências apontadas", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["Mês passado", "-10", "Pasta compartilhada", "Faltou extrato de cartão"],
+        ["Dois meses atrás", "-40", "E-mail", "Nenhuma"]
+      ]
+    },
+    {
+      "nome": "Perguntas para o contador",
+      "descricao": "Dúvidas acumuladas para levar à próxima conversa.",
+      "colunas": [
+        {"nome": "Dúvida", "tipo": "texto"},
+        {"nome": "Data", "tipo": "data"},
+        {"nome": "Resposta", "tipo": "texto"},
+        {"nome": "Status", "tipo": "lista", "opcoes": ["Aberta", "Respondida"]}
+      ],
+      "exemplos": [
+        ["Posso lançar o conserto do veículo como despesa?", "-5", "", "Aberta"],
+        ["Como registrar o pró-labore dos sócios?", "-15", "Combinado valor fixo mensal", "Respondida"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Pergunte ao contador o formato ideal; cada escritório tem o seu.",
+    "Nunca mande documentos fiscais só por foto de celular; prefira arquivo ou PDF legível.",
+    "Avise o contador antes de decisões grandes, como comprar um veículo ou contratar.",
+    "Um combinado simples de dia e formato reduz muito as cobranças."
+  ]
+}

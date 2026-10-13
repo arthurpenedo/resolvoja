@@ -1,0 +1,83 @@
+{
+  "slug": "controle-de-qualidade",
+  "titulo": "Controle de qualidade",
+  "area": "operacoes",
+  "subdivisoes": ["Controle de qualidade"],
+  "resumo": "Define o que é produto ou serviço aceitável, cria inspeções simples nos pontos certos e registra não conformidades com ação corretiva. Ao final você entrega com padrão estável e reduz devoluções.",
+  "como_usar": [
+    "Na aba 'Criterios de qualidade', escreva o que é aceito e rejeitado para cada produto ou serviço, com medida ou foto.",
+    "Defina em que etapas a inspeção acontece e preencha a aba 'Inspecoes' a cada lote ou entrega.",
+    "Registre cada item reprovado como não conformidade com a causa.",
+    "Toda semana confira as reprovações mais comuns e defina uma ação.",
+    "Compare reclamações e devoluções de clientes mês a mês."
+  ],
+  "diagnostico": [
+    "Existe uma definição escrita do que é um produto/serviço aprovado?",
+    "A inspeção é feita antes de enviar ao cliente?",
+    "Quem inspeciona é alguém diferente de quem produziu?",
+    "Você registra devoluções, reclamações e defeitos com o motivo?",
+    "Insumos recebidos de fornecedores são conferidos na chegada?",
+    "Os mesmos defeitos aparecem repetidamente?",
+    "Quando há defeito, o produto ruim é separado e identificado para não ser vendido?",
+    "O cliente já reclamou de variação entre uma compra e outra?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Reunir as últimas reclamações e devoluções para saber quais defeitos mais incomodam o cliente.", "responsavel": "Dono", "prazo_dias": 3},
+    {"etapa": "Semana 1", "acao": "Escrever os critérios de aprovação dos 3 principais produtos, com medidas e fotos de aprovado e reprovado.", "responsavel": "Dono e responsável técnico", "prazo_dias": 7},
+    {"etapa": "Semana 2", "acao": "Definir os pontos de inspeção: recebimento de insumo, meio do processo e antes da entrega.", "responsavel": "Dono", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Criar um local identificado para itens reprovados e treinar a equipe.", "responsavel": "Líder", "prazo_dias": 21},
+    {"etapa": "Semana 4", "acao": "Iniciar o registro de inspeções e não conformidades.", "responsavel": "Inspetor", "prazo_dias": 28},
+    {"etapa": "Semana 8", "acao": "Analisar os 30 dias de dados e atacar o defeito mais frequente.", "responsavel": "Dono", "prazo_dias": 56},
+    {"etapa": "Semana 10", "acao": "Comunicar fornecedores sobre defeitos de insumo com evidências.", "responsavel": "Compras", "prazo_dias": 70},
+    {"etapa": "Semana 13", "acao": "Revisar critérios, meta de aprovação e incluir os demais produtos.", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Defina o padrão", "como": "Para cada produto liste 3 a 6 características verificáveis (medida, cor, peso, acabamento, prazo).", "cuidado": "Critério vago como 'bem feito' gera discussão."},
+    {"passo": "Mostre exemplos", "como": "Fotografe um item aprovado e os defeitos típicos e deixe à vista no posto.", "cuidado": "Sem referência visual, cada inspetor julga diferente."},
+    {"passo": "Inspecione nos pontos críticos", "como": "Confira na entrada do insumo, após a etapa que mais falha e antes do envio.", "cuidado": "Inspecionar só no final deixa descobrir o problema caro."},
+    {"passo": "Separe o reprovado", "como": "Etiquete e guarde em local próprio até decidir: refazer, descartar ou vender com desconto.", "cuidado": "Defeito misturado ao lote bom chega ao cliente."},
+    {"passo": "Registre a não conformidade", "como": "Anote o defeito, a quantidade, a provável causa e a decisão.", "cuidado": "Sem registro, o defeito se repete."},
+    {"passo": "Aja na causa", "como": "Para o defeito mais frequente, corrija o processo, o insumo ou o treino.", "cuidado": "Só descartar o refugo não impede que volte."}
+  ],
+  "abas": [
+    {
+      "nome": "Criterios de qualidade",
+      "descricao": "Padrão de aprovação de cada produto ou serviço.",
+      "colunas": [
+        {"nome": "Produto/Serviço", "tipo": "texto"},
+        {"nome": "Característica", "tipo": "texto"},
+        {"nome": "Padrão aceito", "tipo": "texto"},
+        {"nome": "Como medir", "tipo": "texto"},
+        {"nome": "Ponto de inspeção", "tipo": "lista", "opcoes": ["Recebimento", "Durante", "Final"]}
+      ],
+      "exemplos": [
+        ["Produto A", "Peso", "500 g com variação de 10 g", "Balança", "Final"],
+        ["Produto A", "Acabamento", "Sem rebarba ou mancha", "Visual comparando com foto", "Final"],
+        ["Insumo X", "Validade", "Mínimo 60 dias", "Conferir embalagem", "Recebimento"]
+      ]
+    },
+    {
+      "nome": "Inspecoes",
+      "descricao": "Resultado de cada inspeção com quantidade aprovada e reprovada.",
+      "colunas": [
+        {"nome": "Data", "tipo": "data"},
+        {"nome": "Lote/Pedido", "tipo": "texto"},
+        {"nome": "Inspecionado", "tipo": "numero"},
+        {"nome": "Reprovado", "tipo": "numero"},
+        {"nome": "Defeito principal", "tipo": "texto"},
+        {"nome": "Decisão", "tipo": "lista", "opcoes": ["Refazer", "Descartar", "Vender com desconto", "Devolver ao fornecedor", "Nenhuma"]}
+      ],
+      "exemplos": [
+        ["-3", "Lote 001", 100, 4, "Acabamento", "Refazer"],
+        ["-1", "Lote 002", 100, 1, "Peso fora", "Descartar"],
+        ["0", "Insumo X", 30, 0, "", "Nenhuma"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Para lotes grandes, inspecione uma amostra definida (por exemplo, 10 unidades) em vez de olhar tudo.",
+    "Não deixe o produtor ser o único inspetor; um olhar novo vê o que o hábito esconde.",
+    "Reclamação de cliente é dado: registre e cruze com o lote.",
+    "Meta realista: comece medindo; reduza a reprovação aos poucos."
+  ]
+}

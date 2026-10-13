@@ -1,0 +1,96 @@
+{
+  "slug": "definicao-de-cargos",
+  "titulo": "Definição de cargos",
+  "area": "pessoas",
+  "subdivisoes": ["Definição de cargos"],
+  "resumo": "Descreve cada cargo da empresa com missão, responsabilidades, requisitos e quem responde a quem. Você termina com um organograma simples e fichas de cargo que acabam com o \"isso não é minha função\".",
+  "como_usar": [
+    "Liste na aba 'Cargos' todos os cargos existentes e a quem cada um se reporta.",
+    "Para cada cargo, preencha a aba 'Responsabilidades' com as tarefas, a frequência e o que é decisão da pessoa.",
+    "Defina requisitos e competências na aba 'Requisitos' e a faixa salarial de referência.",
+    "Valide cada ficha com quem ocupa o cargo e com o gestor direto.",
+    "Use as fichas em contratações, avaliações e treinamentos, e atualize uma vez por ano."
+  ],
+  "diagnostico": [
+    "Cada funcionário sabe exatamente quais são suas responsabilidades?",
+    "Há tarefas que ninguém assume ou que duas pessoas fazem ao mesmo tempo?",
+    "Funcionários reclamam de fazer coisas que \"não são da função\"?",
+    "O cargo registrado na carteira corresponde ao que a pessoa realmente faz?",
+    "Cada pessoa tem um único chefe direto?",
+    "Os salários seguem alguma lógica por cargo?",
+    "Existem requisitos mínimos escritos para cada cargo?",
+    "Você tem um organograma simples, mesmo que em uma folha?",
+    "Quando alguém sai, é difícil descobrir tudo o que ela fazia?"
+  ],
+  "plano": [
+    {"etapa": "Semana 1", "acao": "Listar todos os cargos e funcionários e desenhar o organograma simples (quem responde a quem).", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 1", "acao": "Pedir que cada funcionário anote por uma semana o que faz no dia a dia.", "responsavel": "Gerente", "prazo_dias": 10},
+    {"etapa": "Semana 2", "acao": "Consolidar as tarefas e identificar duplicidades, lacunas e desvios de função.", "responsavel": "Dono", "prazo_dias": 17},
+    {"etapa": "Semana 3", "acao": "Escrever a ficha de cada cargo: missão, 6 a 10 responsabilidades, requisitos e indicadores de sucesso.", "responsavel": "Dono", "prazo_dias": 24},
+    {"etapa": "Mês 1", "acao": "Validar as fichas com os ocupantes e ajustar com base nas observações.", "responsavel": "Gerente", "prazo_dias": 35},
+    {"etapa": "Mês 2", "acao": "Definir faixas salariais de referência por cargo, comparando com o mercado local.", "responsavel": "Dono", "prazo_dias": 60},
+    {"etapa": "Mês 2", "acao": "Conferir com o contador/advogado trabalhista a correspondência entre cargos da carteira e funções reais, e corrigir o que for necessário.", "responsavel": "Dono", "prazo_dias": 75},
+    {"etapa": "Mês 3", "acao": "Divulgar as fichas finais, arquivar e agendar a revisão anual.", "responsavel": "Assistente administrativo", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Observar o trabalho real", "como": "Anote o que cada pessoa faz de fato em uma semana normal, não só o que está no papel.", "cuidado": "Copiar descrição genérica da internet que não tem relação com o seu negócio."},
+    {"passo": "Escrever a missão do cargo", "como": "Resuma em uma frase para que o cargo existe e que resultado entrega.", "cuidado": "Missão de efeito sem resultado concreto."},
+    {"passo": "Listar responsabilidades", "como": "Use verbos de ação e frequência (diário, semanal) e diga o que a pessoa decide sozinha.", "cuidado": "Lista com 30 itens; priorize os 6 a 10 principais."},
+    {"passo": "Definir requisitos", "como": "Separe o essencial para começar do que se aprende no cargo.", "cuidado": "Exigir diploma ou experiência que o trabalho não pede."},
+    {"passo": "Definir relações", "como": "Indique a quem o cargo responde, quem ele orienta e com quem trabalha.", "cuidado": "Dois chefes para uma mesma pessoa."},
+    {"passo": "Validar e revisar", "como": "Mostre ao ocupante, ajuste e revise uma vez por ano.", "cuidado": "Fazer a ficha e guardar na gaveta."}
+  ],
+  "abas": [
+    {
+      "nome": "Cargos",
+      "descricao": "Lista de cargos, hierarquia e quantidade de pessoas.",
+      "colunas": [
+        {"nome": "Cargo", "tipo": "texto"},
+        {"nome": "Setor", "tipo": "texto"},
+        {"nome": "Reporta a", "tipo": "texto"},
+        {"nome": "Vagas ocupadas", "tipo": "numero"},
+        {"nome": "Faixa salarial de referência", "tipo": "moeda"}
+      ],
+      "exemplos": [
+        ["Gerente de loja", "Operação", "Dono", 1, 3800.0],
+        ["Vendedor(a)", "Vendas", "Gerente de loja", 3, 1900.0],
+        ["Auxiliar administrativo", "Administrativo", "Dono", 1, 1750.0]
+      ]
+    },
+    {
+      "nome": "Responsabilidades",
+      "descricao": "Tarefas de cada cargo, com frequência e nível de decisão.",
+      "colunas": [
+        {"nome": "Cargo", "tipo": "texto"},
+        {"nome": "Responsabilidade", "tipo": "texto"},
+        {"nome": "Frequência", "tipo": "lista", "opcoes": ["Diária", "Semanal", "Mensal", "Eventual"]},
+        {"nome": "Decisão", "tipo": "lista", "opcoes": ["Decide sozinho", "Consulta o chefe", "Só executa"]}
+      ],
+      "exemplos": [
+        ["Vendedor(a)", "Atender clientes e fechar vendas", "Diária", "Decide sozinho"],
+        ["Vendedor(a)", "Dar desconto acima de 10%", "Eventual", "Consulta o chefe"],
+        ["Auxiliar administrativo", "Lançar contas a pagar", "Semanal", "Só executa"]
+      ]
+    },
+    {
+      "nome": "Requisitos",
+      "descricao": "O que se exige de quem ocupa o cargo.",
+      "colunas": [
+        {"nome": "Cargo", "tipo": "texto"},
+        {"nome": "Requisito", "tipo": "texto"},
+        {"nome": "Tipo", "tipo": "lista", "opcoes": ["Obrigatório", "Desejável"]}
+      ],
+      "exemplos": [
+        ["Vendedor(a)", "Boa comunicação com clientes", "Obrigatório"],
+        ["Vendedor(a)", "Experiência anterior em varejo", "Desejável"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Descreva a função pelo que a pessoa entrega, não por adjetivos.",
+    "Em empresa pequena, é normal acumular tarefas; deixe isso claro e remunere de acordo com a função.",
+    "O cargo registrado na carteira deve refletir a função real; confirme com contador ou advogado trabalhista.",
+    "Reveja as fichas quando o negócio mudar (novo produto, nova loja, novo sistema).",
+    "Use as fichas nas entrevistas: o candidato entende o que vai fazer antes de aceitar."
+  ]
+}

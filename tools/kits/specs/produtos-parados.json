@@ -1,0 +1,86 @@
+{
+  "slug": "produtos-parados",
+  "titulo": "Produtos parados",
+  "area": "estoque",
+  "subdivisoes": ["Produtos parados"],
+  "resumo": "Identifique os itens que não vendem, calcule quanto dinheiro estão prendendo e execute um plano de saída com promoção, kit ou devolução. Ao final você terá uma lista priorizada e caixa liberado.",
+  "como_usar": [
+    "Exporte ou liste todos os produtos com quantidade em estoque, custo e data da última venda.",
+    "Na aba 'Lista de parados', calcule há quantos dias cada item não vende e marque como parado quem passou de 90 dias (ou o seu prazo).",
+    "Escolha uma ação para cada item: promoção, kit, devolução ao fornecedor, troca, doação ou baixa.",
+    "Defina um preço de saída que cubra pelo menos o custo, quando possível.",
+    "Acompanhe semanalmente na aba 'Plano de saída' quanto já foi liberado de caixa."
+  ],
+  "diagnostico": [
+    "Existem produtos no estoque que você não vende há mais de 3 meses?",
+    "Você sabe quanto dinheiro (a custo) está parado nesses itens?",
+    "Há mercadoria acumulando poeira, em caixas fechadas no fundo do depósito?",
+    "Você já comprou grande quantidade de um item que não girou como esperado?",
+    "Sabe a data da última venda de cada produto?",
+    "Costuma insistir em manter o preço cheio de itens que ninguém compra?",
+    "Já tentou devolver ou trocar mercadoria com o fornecedor?",
+    "Tem produtos que saíram de linha ou da moda?",
+    "Você planeja uma limpeza de estoque pelo menos duas vezes ao ano?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Gerar a lista de produtos com data da última venda e estoque atual", "responsavel": "Dono", "prazo_dias": 3},
+    {"etapa": "Semana 1", "acao": "Marcar como parado o que está há 90 dias sem vender e calcular o valor a custo", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 1", "acao": "Fazer contagem física dos parados para confirmar quantidades e estado", "responsavel": "Estoquista", "prazo_dias": 10},
+    {"etapa": "Semana 2", "acao": "Perguntar aos fornecedores sobre devolução, troca ou crédito dos itens parados", "responsavel": "Comprador", "prazo_dias": 14},
+    {"etapa": "Semana 2", "acao": "Definir a ação e o preço de saída para cada item", "responsavel": "Dono", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Lançar a promoção: vitrine, redes sociais, grupo de clientes e kits", "responsavel": "Vendedor", "prazo_dias": 21},
+    {"etapa": "Semana 6", "acao": "Reavaliar o que não saiu e baixar o preço mais ou doar/baixar o item", "responsavel": "Dono", "prazo_dias": 42},
+    {"etapa": "Mês 3", "acao": "Criar a regra: item sem venda em 60 dias entra na revisão mensal e não pode ser recomprado sem aprovação", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Definir o que é parado", "como": "Escolha o prazo sem venda conforme seu ramo (30 dias para perecíveis, 90 a 180 para durável).", "cuidado": "Um prazo único para tudo gera falso alarme."},
+    {"passo": "Valorizar o encalhe", "como": "Multiplique a quantidade pelo custo para saber o capital parado.", "cuidado": "Valorizar pelo preço de venda esconde o prejuízo real."},
+    {"passo": "Descobrir a causa", "como": "Pergunte: preço alto? Sem exposição? Fora de moda? Compra excessiva? Defeito?", "cuidado": "Promover sem tratar a causa só adia o problema."},
+    {"passo": "Tentar devolver ao fornecedor", "como": "Negocie crédito, troca por outro item ou devolução parcial, ainda mais se o item está lacrado.", "cuidado": "Faça isso rápido, pois o prazo de troca vence."},
+    {"passo": "Escolher o canal de saída", "como": "Monte kits (parado + campeão), venda em queima, marketplaces ou venda para outros lojistas.", "cuidado": "Não misture com produtos que estão vendendo bem sem identificar a promoção."},
+    {"passo": "Fixar o preço de saída", "como": "Comece com 15 a 25% de desconto e aumente em etapas a cada 2 semanas até o custo.", "cuidado": "Vender abaixo do custo pode ser melhor que manter parado, mas decida de propósito."},
+    {"passo": "Registrar o resultado", "como": "Anote quanto caixa foi liberado e quanto foi o prejuízo para aprender com a compra errada.", "cuidado": "Sem registro, a mesma compra errada se repete."},
+    {"passo": "Evitar a recompra", "como": "Trave a compra do item até zerar o estoque parado.", "cuidado": "Comprador automático pode repor o que não vende."}
+  ],
+  "abas": [
+    {
+      "nome": "Lista de parados",
+      "descricao": "Itens sem venda, seu custo parado e a ação escolhida.",
+      "colunas": [
+        {"nome": "Produto", "tipo": "texto"},
+        {"nome": "Quantidade", "tipo": "numero"},
+        {"nome": "Custo unitário", "tipo": "moeda"},
+        {"nome": "Data da última venda", "tipo": "data"},
+        {"nome": "Causa provável", "tipo": "lista", "opcoes": ["Preço alto", "Fora de moda", "Compra excessiva", "Sem exposição", "Defeito"]},
+        {"nome": "Ação", "tipo": "lista", "opcoes": ["Promoção", "Kit", "Devolver", "Trocar", "Doar", "Baixar"]}
+      ],
+      "exemplos": [
+        ["Produto A", 40, 18.0, "-150", "Compra excessiva", "Kit"],
+        ["Produto B", 12, 55.0, "-200", "Fora de moda", "Promoção"],
+        ["Produto C", 100, 4.5, "-120", "Sem exposição", "Devolver"]
+      ]
+    },
+    {
+      "nome": "Plano de saída",
+      "descricao": "Acompanhamento semanal da liquidação.",
+      "colunas": [
+        {"nome": "Produto", "tipo": "texto"},
+        {"nome": "Preço de saída", "tipo": "moeda"},
+        {"nome": "Início da ação", "tipo": "data"},
+        {"nome": "Unidades vendidas", "tipo": "numero"},
+        {"nome": "Status", "tipo": "lista", "opcoes": ["Planejado", "Em andamento", "Concluído", "Revisar preço"]}
+      ],
+      "exemplos": [
+        ["Produto A", 14.0, "+3", 0, "Planejado"],
+        ["Produto B", 39.9, "-7", 5, "Em andamento"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Parado não é só o que não vende; é também o que vende tão devagar que você leva mais de um ano para zerar.",
+    "Kits e brindes (levando o parado junto de um campeão) costumam funcionar melhor que desconto sozinho.",
+    "Venda para outros lojistas pode liberar caixa mesmo com margem pequena.",
+    "Coloque os parados na altura dos olhos ou no caixa por 2 semanas antes de baixar o preço.",
+    "Consulte o contador sobre baixa contábil ou doação de mercadoria, que podem ter regras e benefícios fiscais."
+  ]
+}

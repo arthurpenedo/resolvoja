@@ -1,0 +1,84 @@
+{
+  "slug": "kpis",
+  "titulo": "KPIs",
+  "area": "gestao",
+  "subdivisoes": ["KPIs"],
+  "resumo": "Um conjunto enxuto de 5 a 8 números-chave do seu negócio, com fórmula, fonte e meta. Ao final você sabe quais números olhar toda semana e como calculá-los sem erro.",
+  "como_usar": [
+    "Na aba 'Catálogo de KPIs', escolha de 5 a 8 indicadores que respondem às perguntas mais importantes do seu negócio.",
+    "Para cada um, defina a fórmula, onde o dado está e quem atualiza.",
+    "Registre os valores semanais ou mensais na aba 'Registro'.",
+    "Compare com a meta e com o período anterior.",
+    "Se um KPI não gera nenhuma decisão em 3 meses, troque por outro."
+  ],
+  "diagnostico": [
+    "Você acompanha mais de 15 números e não sabe quais importam?",
+    "Sabe quanto custa conquistar um cliente novo (CAC)?",
+    "Sabe o ticket médio e quantas vezes o cliente compra por ano?",
+    "Sabe sua margem de lucro por produto ou serviço?",
+    "Os números são atualizados em data fixa e por pessoa definida?",
+    "Cada KPI tem uma meta com a qual comparar?",
+    "Você já tomou alguma decisão nos últimos 3 meses por causa de um número?",
+    "Os dados vêm de fonte confiável (sistema, extrato), e não de memória?"
+  ],
+  "plano": [
+    {"etapa": "Dia 1", "acao": "Listar 5 perguntas que você gostaria de responder sobre o negócio (ex.: estou lucrando? meus clientes voltam?)", "responsavel": "Dono", "prazo_dias": 1},
+    {"etapa": "Dia 3", "acao": "Escolher 1 a 2 KPIs para cada pergunta, com base no catálogo", "responsavel": "Dono", "prazo_dias": 3},
+    {"etapa": "Semana 1", "acao": "Definir fórmula e fonte de dados de cada KPI", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 2", "acao": "Calcular o valor atual (linha de base) de cada KPI", "responsavel": "Dono", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Definir metas realistas para o trimestre", "responsavel": "Dono e sócio", "prazo_dias": 21},
+    {"etapa": "Semana 4", "acao": "Designar quem atualiza cada KPI e em que dia da semana", "responsavel": "Dono", "prazo_dias": 28},
+    {"etapa": "Mês 2", "acao": "Revisar: algum KPI não é confiável ou não gera decisão? Substituir", "responsavel": "Dono", "prazo_dias": 60},
+    {"etapa": "Mês 3", "acao": "Documentar as decisões tomadas por causa dos KPIs e ajustar metas", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Comece pela pergunta", "como": "Pense na decisão que o número vai apoiar (aumentar preço? contratar? cortar custo?) antes de escolher o KPI.", "cuidado": "Escolher KPI porque 'todo mundo usa'."},
+    {"passo": "Escolha poucos", "como": "Misture KPIs de resultado (faturamento, lucro) e de causa (leads, taxa de conversão).", "cuidado": "Mais de 8 KPIs vira painel que ninguém olha."},
+    {"passo": "Escreva a fórmula", "como": "Ex.: ticket médio = faturamento do mês ÷ número de vendas do mês.", "cuidado": "Calcular de jeitos diferentes a cada mês impede comparação."},
+    {"passo": "Defina a fonte", "como": "Indique onde o dado está: sistema de vendas, extrato, planilha. Prefira fonte única.", "cuidado": "Dados digitados duas vezes geram divergência."},
+    {"passo": "Fixe a periodicidade", "como": "Vendas e caixa: semanal. Margem e recompra: mensal.", "cuidado": "Medir com frequência demais gera ruído."},
+    {"passo": "Compare", "como": "Todo valor precisa de meta e de período anterior para ter significado.", "cuidado": "Olhar o número isolado sem saber se é bom ou ruim."},
+    {"passo": "Aja", "como": "Para cada KPI fora da meta, registre uma ação e um responsável.", "cuidado": "Medir sem agir é custo sem retorno."}
+  ],
+  "abas": [
+    {
+      "nome": "Catálogo de KPIs",
+      "descricao": "Definição de cada indicador: fórmula, fonte, meta e frequência.",
+      "colunas": [
+        {"nome": "KPI", "tipo": "texto"},
+        {"nome": "Pergunta que responde", "tipo": "texto"},
+        {"nome": "Fórmula", "tipo": "texto"},
+        {"nome": "Fonte do dado", "tipo": "texto"},
+        {"nome": "Meta", "tipo": "numero"},
+        {"nome": "Frequência", "tipo": "lista", "opcoes": ["Semanal", "Mensal", "Trimestral"]}
+      ],
+      "exemplos": [
+        ["Ticket médio", "Quanto cada cliente gasta por compra?", "Faturamento ÷ nº de vendas", "Sistema de vendas", 150, "Mensal"],
+        ["Taxa de conversão (%)", "Quantos orçamentos viram venda?", "Vendas ÷ orçamentos x 100", "Planilha de orçamentos", 30, "Semanal"],
+        ["Margem líquida (%)", "Sobra quanto de cada R$ 100?", "Lucro ÷ faturamento x 100", "DRE simples", 12, "Mensal"]
+      ]
+    },
+    {
+      "nome": "Registro",
+      "descricao": "Valores medidos de cada KPI ao longo do tempo.",
+      "colunas": [
+        {"nome": "Data", "tipo": "data"},
+        {"nome": "KPI", "tipo": "texto"},
+        {"nome": "Valor medido", "tipo": "numero"},
+        {"nome": "Meta", "tipo": "numero"},
+        {"nome": "Ação definida", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["-14", "Taxa de conversão (%)", 24, 30, "Fazer follow-up em 2 dias"],
+        ["-7", "Taxa de conversão (%)", 27, 30, "Manter follow-up"],
+        ["0", "Ticket médio", 138, 150, "Oferecer combo na finalização"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Se um número não muda nenhuma decisão, ele é curiosidade, não KPI.",
+    "Defina 'o que é uma venda' e 'o que é um cliente ativo' por escrito para todos medirem igual.",
+    "Cuidado com média: um cliente enorme pode esconder muitos pequenos. Olhe também a mediana quando possível.",
+    "Comece com planilha; só pague por sistema quando o hábito de olhar já existir."
+  ]
+}

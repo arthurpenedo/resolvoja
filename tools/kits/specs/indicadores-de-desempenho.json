@@ -1,0 +1,82 @@
+{
+  "slug": "indicadores-de-desempenho",
+  "titulo": "Indicadores de desempenho",
+  "area": "gestao",
+  "subdivisoes": ["Indicadores de desempenho"],
+  "resumo": "Um sistema simples para medir o desempenho da equipe e dos processos (produtividade, qualidade, prazo, satisfação). Ao final você avalia pessoas e áreas com fatos, não com impressão.",
+  "como_usar": [
+    "Escolha na aba 'Indicadores por área' de 2 a 3 indicadores para cada área (vendas, atendimento, produção, financeiro).",
+    "Combine com cada pessoa o que será medido e como, antes de começar.",
+    "Registre os resultados por pessoa ou área na aba 'Apuração mensal'.",
+    "Use a aba 'Semáforo' para classificar: verde (meta batida), amarelo (perto), vermelho (longe).",
+    "Converse com cada pessoa mensalmente sobre os resultados e combine uma melhoria."
+  ],
+  "diagnostico": [
+    "Você avalia o desempenho da equipe com dados, e não só pela sensação?",
+    "Cada pessoa sabe o que se espera dela em números?",
+    "Você mede a qualidade do que é entregue (retrabalho, reclamações), e não só a quantidade?",
+    "Mede o cumprimento de prazos?",
+    "Mede a satisfação dos clientes de alguma forma (nota, pesquisa)?",
+    "Os indicadores são discutidos com a equipe, e não só pelo dono?",
+    "Já houve conflito porque o critério de avaliação era injusto ou desconhecido?",
+    "Você acompanha o desempenho por mês, comparando com o mês anterior?"
+  ],
+  "plano": [
+    {"etapa": "Dia 2", "acao": "Listar as áreas e as entregas principais de cada uma", "responsavel": "Dono", "prazo_dias": 2},
+    {"etapa": "Semana 1", "acao": "Escolher 2 a 3 indicadores por área (quantidade, qualidade, prazo)", "responsavel": "Dono", "prazo_dias": 7},
+    {"etapa": "Semana 2", "acao": "Medir a situação atual para ter uma linha de base", "responsavel": "Dono e líderes", "prazo_dias": 14},
+    {"etapa": "Semana 3", "acao": "Definir metas realistas e faixas do semáforo", "responsavel": "Dono", "prazo_dias": 21},
+    {"etapa": "Semana 4", "acao": "Apresentar à equipe o que será medido e por quê", "responsavel": "Dono", "prazo_dias": 28},
+    {"etapa": "Mês 2", "acao": "Primeira apuração mensal e conversas individuais de feedback", "responsavel": "Dono e líderes", "prazo_dias": 45},
+    {"etapa": "Mês 2", "acao": "Corrigir indicadores que geram distorção (ex.: pessoas 'fabricando' número)", "responsavel": "Dono", "prazo_dias": 60},
+    {"etapa": "Mês 3", "acao": "Ligar o desempenho a reconhecimento ou bonificação simples", "responsavel": "Dono", "prazo_dias": 90}
+  ],
+  "procedimento": [
+    {"passo": "Separe tipos de indicador", "como": "Use quatro grupos: produtividade, qualidade, prazo e satisfação do cliente.", "cuidado": "Medir só quantidade incentiva fazer rápido e mal feito."},
+    {"passo": "Meça o que a pessoa controla", "como": "Atendente: tempo de resposta e nota do cliente. Vendedor: propostas e conversão.", "cuidado": "Cobrar de alguém um resultado que depende de outra área."},
+    {"passo": "Defina a faixa do semáforo", "como": "Ex.: verde ≥100% da meta, amarelo de 80% a 99%, vermelho <80%.", "cuidado": "Faixas diferentes por pessoa sem explicação."},
+    {"passo": "Colete o dado de forma neutra", "como": "Use registro do sistema, planilha ou pesquisa, não relato verbal.", "cuidado": "Dados informados pela própria pessoa sem conferência."},
+    {"passo": "Apure todo mês no mesmo dia", "como": "Preencha a planilha até o 5º dia útil.", "cuidado": "Acumular vários meses e analisar de uma vez."},
+    {"passo": "Converse com a pessoa", "como": "Mostre o número, pergunte o que atrapalhou e combine uma ação para o mês seguinte.", "cuidado": "Usar o indicador como punição, em vez de ferramenta para melhorar."}
+  ],
+  "abas": [
+    {
+      "nome": "Indicadores por área",
+      "descricao": "Indicadores escolhidos para cada área e as metas.",
+      "colunas": [
+        {"nome": "Área", "tipo": "texto"},
+        {"nome": "Indicador", "tipo": "texto"},
+        {"nome": "Tipo", "tipo": "lista", "opcoes": ["Produtividade", "Qualidade", "Prazo", "Satisfação"]},
+        {"nome": "Meta mensal", "tipo": "numero"},
+        {"nome": "Como medir", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["Atendimento", "Tempo médio de primeira resposta (min)", "Prazo", 15, "Relatório do WhatsApp Business"],
+        ["Produção", "Pedidos com retrabalho (%)", "Qualidade", 3, "Registro de devoluções"],
+        ["Vendas", "Propostas enviadas", "Produtividade", 40, "Planilha de propostas"]
+      ]
+    },
+    {
+      "nome": "Apuração mensal",
+      "descricao": "Resultado mensal por pessoa ou área, para calcular o semáforo.",
+      "colunas": [
+        {"nome": "Mês", "tipo": "data"},
+        {"nome": "Pessoa ou área", "tipo": "texto"},
+        {"nome": "Indicador", "tipo": "texto"},
+        {"nome": "Meta", "tipo": "numero"},
+        {"nome": "Realizado", "tipo": "numero"},
+        {"nome": "Ação combinada", "tipo": "texto"}
+      ],
+      "exemplos": [
+        ["-30", "Vendedor A", "Propostas enviadas", 40, 34, "Reservar 1h por dia para prospecção"],
+        ["-30", "Atendimento", "Tempo de resposta (min)", 15, 12, "Manter rotina"]
+      ]
+    }
+  ],
+  "dicas": [
+    "Combine as regras com a equipe antes de medir; indicadores impostos geram resistência.",
+    "Sempre equilibre quantidade com qualidade: se medir vendas, meça também cancelamentos.",
+    "Elogie publicamente os verdes e trate os vermelhos em particular.",
+    "Revise os indicadores a cada 6 meses; o que foi útil antes pode deixar de ser."
+  ]
+}
