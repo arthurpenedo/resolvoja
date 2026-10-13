@@ -8,6 +8,7 @@ import AuroraBackground from '@/components/AuroraBackground';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import BuySolutionButton from '@/components/BuySolutionButton';
+import SubscriberKitButton from '@/components/SubscriberKitButton';
 import { AREAS, getArea, getAreaGradient, hasKit } from '@/data/hub';
 import { useAuth } from '@/contexts/AuthContext';
 import { useIntegratedAi } from '@/hooks/use-integrated-ai';
@@ -298,6 +299,7 @@ export default function AreaPage() {
                                                                 transition={{ delay: 0.2, duration: 0.4 }}
                                                                 className="mt-6 grid gap-3 sm:grid-cols-2"
                                                             >
+                                                                <SubscriberKitButton subdivision={subdivision} />
                                                                 <div>
                                                                     <BuySolutionButton context={{ area: area.name, subdivision }} />
                                                                     {hasKit(subdivision) && (

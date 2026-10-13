@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import { createCheckoutSession, createManageUserSubscriptionUrl, getUserSubscriptions } from '../../api/ecommerce-subscriptions.js';
+import { liberarKit, statusCota } from '../../api/kit-quota.js';
 
 const router = Router();
 
@@ -95,6 +96,48 @@ router.post('/checkout', async (req, res) => {
 	});
 
 	return res.json({ url });
+});
+
+/**
+ * Cota de Kits de Arranque do assinante no mês: plano, limite, usados e quais soluções já baixou.
+ */
+router.get('/kits', async (req, res) => {
+	const userId = getUserIdFromRequest(req);
+
+	if (!userId) {
+		throw new Error('User ID is required');
+	}
+
+	return res.json(await statusCota({ userId }));
+});
+
+/**
+ * Baixa o Kit de Arranque de uma solução usando a cota do mês do assinante.
+ * 403 sem assinatura ativa, 404 sem kit, 429 com a cota esgotada.
+ */
+router.get('/kits/download', async (req, res) => {
+	const userId = getUserIdFromRequest(req);
+	const subdivision = typeof req.query.subdivision === 'string' ? req.query.subdivision.trim() : '';
+
+	if (!userId) {
+		throw new Error('User ID is required');
+	}
+	if (!subdivision) {
+		return res.status(400).json({ error: 'Informe a solução (subdivision).' });
+	}
+
+	try {
+		const { kit, status } = await liberarKit({ userId, subdivision });
+		res.set('X-Cota-Usados', String(status.usados));
+		res.set('X-Cota-Limite', String(status.limite));
+		res.set('Access-Control-Expose-Headers', 'X-Cota-Usados, X-Cota-Limite, Content-Disposition');
+		return res.download(kit.filePath, kit.filename);
+	} catch (erro) {
+		if ([403, 404, 429].includes(erro.status)) {
+			return res.status(erro.status).json({ error: erro.message });
+		}
+		throw erro;
+	}
 });
 
 export default router;
