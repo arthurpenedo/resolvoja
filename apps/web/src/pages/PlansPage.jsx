@@ -36,7 +36,7 @@ export default function PlansPage() {
                                 Resolva do seu jeito: <span className="text-gradient-aurora">com gente ou com IA</span>
                             </h1>
                             <p className="mt-4 text-[hsl(var(--muted-foreground))]">
-                                Fale direto com um especialista ou resolva na hora com a nossa IA. Sem fidelidade: cancele quando quiser.
+                                Fale direto com um especialista ou resolva na hora com a nossa IA.
                             </p>
                         </header>
                     </Reveal>

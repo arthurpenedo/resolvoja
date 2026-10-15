@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop';
+import Analytics from './components/Analytics';
 import ProtectedRoute from './components/ProtectedRoute';
 import { AuthProvider } from './contexts/AuthContext';
 import { SubscriptionAuthProvider } from './contexts/SubscriptionAuthContext.jsx';
@@ -44,6 +45,7 @@ function App() {
                         <Route path="/admin" element={<ProtectedRoute><AdminPage /></ProtectedRoute>} />
                         <Route path="*" element={<NotFoundPage />} />
                     </Routes>
+                    <Analytics />
                     <Toaster />
                 </SubscriptionAuthProvider>
             </AuthProvider>

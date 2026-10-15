@@ -76,7 +76,7 @@ export function ConsultoriaDestaque() {
 
 	return (
 		<div className="relative rounded-2xl border-2 border-[hsl(var(--primary))] bg-card p-6 shadow-[0_0_60px_-20px_hsl(var(--primary))] sm:p-8">
-			<span className="absolute -top-3 left-6 rounded-full bg-[hsl(var(--primary))] px-3 py-1 text-xs font-semibold text-[hsl(var(--primary-foreground))]">
+			<span className="absolute -top-4 left-6 rounded-full bg-[hsl(var(--primary))] px-4 py-1.5 text-sm font-bold uppercase tracking-wide text-[hsl(var(--primary-foreground))] sm:text-base">
 				Atendimento humano
 			</span>
 			<div className="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">

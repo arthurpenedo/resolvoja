@@ -74,6 +74,31 @@ export default function PlansList({ className, periodo, antes }) {
 	);
 }
 
+const brl = (centavos) => (centavos / 100).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+/** Anual: 12 mensalidades riscadas ao lado do preço anual, e quanto isso dá por mês (mostra a economia). */
+function PrecoAnual({ anual, mensal }) {
+	const precoAnual = anual.sale_price_in_cents ?? anual.price_in_cents;
+	const precoMensal = mensal.sale_price_in_cents ?? mensal.price_in_cents;
+	const dozeMeses = precoMensal * 12;
+	return (
+		<div className="mb-6">
+			{dozeMeses > precoAnual && (
+				<p className="text-sm text-muted-foreground">
+					De <span className="line-through">{brl(dozeMeses)}</span> por
+				</p>
+			)}
+			<p className="text-3xl font-bold">
+				{anual.sale_price_formatted ?? anual.price_formatted}
+				<span className="text-sm font-normal text-muted-foreground"> / ano</span>
+			</p>
+			<p className="mt-1 text-sm font-medium text-[hsl(var(--primary))]">
+				Equivale a {brl(Math.round(precoAnual / 12))} por mês
+			</p>
+		</div>
+	);
+}
+
 function PlanCard({ plan, subscriptions, periodo }) {
 	const variants = plan.variants ?? [];
 	const [escolhida, setSelectedVariant] = useState(variants[0]);
@@ -124,7 +149,9 @@ function PlanCard({ plan, subscriptions, periodo }) {
 					))}
 				</div>
 			)}
-			{selectedVariant && (
+			{selectedVariant && selectedVariant.title === 'Anual' && variants.some((v) => v.title === 'Mensal') ? (
+				<PrecoAnual anual={selectedVariant} mensal={variants.find((v) => v.title === 'Mensal')} />
+			) : selectedVariant && (
 				<p className="text-3xl font-bold mb-6">
 					{selectedVariant.sale_price_in_cents != null && (
 						<span className="mr-2 text-xl font-normal text-muted-foreground line-through">
