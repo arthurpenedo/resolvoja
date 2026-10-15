@@ -85,9 +85,10 @@ export default function TermosPage() {
 
 					<Secao n={6} titulo="Cancelamento da assinatura">
 						<Lista itens={[
-							'Você pode cancelar a qualquer momento no portal de gerenciamento da assinatura, sem multa.',
-							'Ao cancelar, a renovação automática é desligada e o acesso continua até o fim do período já pago.',
-							<><strong className="text-foreground">Plano anual:</strong> o valor é pago de uma vez, com desconto, por 12 meses de acesso. Depois do prazo de arrependimento, o cancelamento interrompe a renovação, mas não gera devolução proporcional dos meses restantes, que continuam disponíveis até o fim do período.</>,
+							'Você pode cancelar a qualquer momento, sem multa, no portal de gerenciamento da assinatura.',
+							'O cancelamento vale ao fim do período já pago (o mês, no plano mensal; o ano, no plano anual). Até lá, você continua com acesso completo e com a sua cota mensal.',
+							'Fora do prazo de arrependimento do item 5, os pagamentos não são reembolsáveis, salvo quando a lei exigir. Isso inclui o plano anual: não há devolução proporcional dos meses restantes.',
+							'A renovação é automática. Para não ser cobrado no próximo período, cancele pelo menos 24 horas antes da data de renovação.',
 						]} />
 					</Secao>
 
