@@ -9,6 +9,34 @@
 		<priority>0.9</priority>
 	</url>
 	<url>
+		<loc>https://resolvoja.com/area/gestao</loc>
+		<priority>0.8</priority>
+	</url>
+	<url>
+		<loc>https://resolvoja.com/area/operacoes</loc>
+		<priority>0.8</priority>
+	</url>
+	<url>
+		<loc>https://resolvoja.com/area/contabil</loc>
+		<priority>0.8</priority>
+	</url>
+	<url>
+		<loc>https://resolvoja.com/area/administrativo</loc>
+		<priority>0.8</priority>
+	</url>
+	<url>
+		<loc>https://resolvoja.com/area/tecnologia</loc>
+		<priority>0.8</priority>
+	</url>
+	<url>
+		<loc>https://resolvoja.com/area/estoque</loc>
+		<priority>0.8</priority>
+	</url>
+	<url>
+		<loc>https://resolvoja.com/area/pessoas</loc>
+		<priority>0.8</priority>
+	</url>
+	<url>
 		<loc>https://resolvoja.com/termos</loc>
 		<priority>0.3</priority>
 	</url>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 /**
  * Google Analytics 4 com consentimento (LGPD): o script do Google só carrega depois que a pessoa
@@ -32,8 +32,8 @@ function carregarGtag() {
 		window.dataLayer.push(arguments);
 	};
 	window.gtag('js', new Date());
-	// page_view é enviado à mão a cada troca de rota (o site é uma SPA)
-	window.gtag('config', GA_ID, { send_page_view: false, anonymize_ip: true });
+	// As trocas de rota da SPA viram page_view pela "métrica otimizada" do GA4 (eventos de histórico)
+	window.gtag('config', GA_ID);
 	const script = document.createElement('script');
 	script.async = true;
 	script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
@@ -42,17 +42,10 @@ function carregarGtag() {
 
 export default function Analytics() {
 	const [escolha, setEscolha] = useState(lerEscolha);
-	const { pathname, search } = useLocation();
 
 	useEffect(() => {
-		if (!GA_ID || escolha !== 'aceito') return;
-		carregarGtag();
-		window.gtag('event', 'page_view', {
-			page_path: pathname + search,
-			page_location: window.location.href,
-			page_title: document.title,
-		});
-	}, [escolha, pathname, search]);
+		if (GA_ID && escolha === 'aceito') carregarGtag();
+	}, [escolha]);
 
 	if (!GA_ID || escolha) return null;
 
